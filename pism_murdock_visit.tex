@@ -112,11 +112,13 @@
 
 % title page
 \title[] % (optional, use only with long paper titles)
-{Complex Greenland Outlet Glacier Flow Captured}
+{High resolution modeling of the Greenland Ice Sheet}
+
+\subtitle{using the Parallel Ice Sheet Model (PISM)}
 
 
 \author[Aschwanden, Fahnestock, Truffer] % (optional, use only with lots of authors)
-{Andy Aschwanden, Mark Fahnestock \& Martin Truffer}
+{}
 % - Give the names in the same order as the appear in the paper.
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
@@ -159,10 +161,6 @@
 % insert titlepage
 \begin{frame}
   \titlepage
-  \note[item]{talk is somewhat unfinished and I'm likely to get lost towards the end\ldots}
-  \note[item]{this work has emerged from a close collaboration with Mark Fahnestock and Martin Truffer}
-  \note[item]{I merely pushed some buttons}
-  \note[item]{my talk will illustrate one of the most basic principles of glaciology: ice thickness matters}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -170,58 +168,37 @@
 %
 } 
 
-
-\begin{frame}{Observed flow: SAR era}
-  \begin{columns}
-    \column[c]{2.5cm}
-    \begin{figure}
-      \shadowimage[width=\textwidth]{sar-sentinel}
-    \end{figure}
-    \column[c]{8.5cm}
-    \begin{itemize}
-    \item pioneered by I. Joughin, E. Rignot, M. Fahnestock
-    \item ERS1/2 and RADARSAT
-    \item reveals large spatial and temporal flow variability
-    \end{itemize}
-  \end{columns}
-  \begin{figure}
-    \includegraphics[width=\textwidth]{gris-early-sar}
-  \end{figure}
-\end{frame}
-
-
-\begin{frame}{Observed spatial flow variability}
-  nearly-perfect spatial coverage but non-negligible uncertainties in slow-flowing areas
-  \begin{figure}
-    \includegraphics[height=.7\textheight]{greenland-sar-3}
- \end{figure}
-\end{frame}
-
-\begin{frame}{Observed temporal flow variability}
-  increasing temporal variability using TerraSar-X/Tandem-X, Sentinel but also from optical imagery (worldview, Landsat8)
-  \begin{figure}
-    \includegraphics[height=.7\textheight]{joughin-2014-collage}
- \end{figure}
-\end{frame}
-
-
 \setbeamertemplate{background canvas}
   {
-     \tikz{\node[inner sep=0pt,opacity=.3] {\includegraphics[height=\paperheight,width=\paperwidth]{grn_iss}};}
+     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth,height=\paperheight]{jakobshavn_landsat8}};}
 } 
 
-
 \begin{frame}[plain]
-  \begin{transbox}[0.8]
-    \begin{block}{We note}
-      \begin{itemize}
-      \item any credible modeling effort must be able to explain this variability
-      \item ice thickness is a leading order constraint on flow
-      \end{itemize}
-    \end{block}
+  \vspace{-3em}
+  \begin{transbox}[0.4]
+    \begin{itemize}
+    \item Over the past decades, the Greenland Ice Sheet (GrIS) has been loosing mass at an accelerating rate, thereby raising global mean sea level
+    \end{itemize}
   \end{transbox}
 \end{frame}
 
+\begin{frame}[plain]
+  \vspace{-3em}
+  \begin{transbox}[0.4]
+    \begin{itemize}
+    \item Ice discharge to the ocean mainly occurs through Greenland's 200+ outlet glaciers
+    \end{itemize}
+  \end{transbox}
+\end{frame}
+
+\begin{frame}[plain]
+  \vspace{-3em}
+  \begin{transbox}[0.4]
+    \begin{itemize}
+    \item Outlet glaciers are fast-flowing ($>$200\,m/yr) topographically-controlled features terminating in narrow fjords $\sim\le$10\,km wide.
+    \end{itemize}
+  \end{transbox}
+\end{frame}
 
 \setbeamertemplate{background canvas}
 {
@@ -243,47 +220,50 @@
 \end{frame}
 
 
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=.3] {\includegraphics[height=\paperheight,width=\paperwidth]{grn_iss}};}
+} 
 
-\begin{frame}{Where we need to go}
-  \begin{block}{We explain the complex flow patterns using accurate, dense ice thickness measurements}
+
+\begin{frame}[plain]
+  \begin{transbox}[0.8]
+    \begin{block}{We note}
+      \begin{itemize}
+      \item any credible modeling effort must be able to explain this variability
+      \item model resolution must be high enough to capture outlet glaciers
+      \item Glaciology 100: ice thickness is a leading order constraint on flow
+      \end{itemize}
+    \end{block}
+  \end{transbox}
+\end{frame}
+
+
+\setbeamertemplate{background canvas}
+{
+%
+} 
+
+
+\begin{frame}
+  \begin{block}{Until recently models were not able to capture outlet glacier flow due to}
     \begin{itemize}
-    \item with a computationally-efficient high-resolution ice sheet model
-    \item coupled to uniformly applied models of subglacial hydrology and basal sliding?
+    \item insufficient model resolution
+    \item insufficient input data set resolution
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Progress was made due to}
+    \begin{itemize}
+    \item model improvements (parallelism, efficient meshing, etc)
+    \item large scale data collection efforts to increase input data set resolution
     \end{itemize}
   \end{block}
 \end{frame}
 
 
-\begin{frame}{NASA Operation IceBridge}
-  \vspace{-0.74em}
-  \begin{columns}
-    \column[c]{2cm}
-    \includegraphics[width=\textwidth]{nasa-logo} \\
-    \includegraphics[width=\textwidth]{oib}
-    \column[c]{10cm}
-    \begin{itemize}
-    \item NASA realized that collecting a lot more ice thickness measurements is crucial to make ice sheet models better
-    \item ice thickness measurements using the CReSIS radar became an important part of their Operation IceBridge mission (2009--today)
-    \end{itemize}
-  \end{columns}
-\end{frame}
-
-
-\begin{frame}{NASA Operation IceBridge}
-\vspace{-0.74em}
-  \begin{columns}
-    \column[c]{2.5cm}
-    \only<1>{2001}
-    \only<2>{from 2009 on}
-    \only<3>{2014}
-    \column[c]{6cm}
-    \begin{figure}
-      \includegraphics<1>[height=8cm]{greenland-bed-old}
-      \includegraphics<2>[height=8cm]{greenland-bed-old-oib}
-      \includegraphics<3>[height=8cm]{greenland-bed-mcb}
-    \end{figure}
-  \end{columns}
-\end{frame}
 
 \begin{frame}{Zoom in to Jakobshavn Isbr{\ae}}
   \begin{figure}
@@ -376,42 +356,6 @@
 \end{frame}
 
 
-\begin{frame}{Model calibration at 1,500\,m resolution}
-  \vspace{-.5em}
-  \begin{columns}
-    \column[c]{6.5cm}
-    \begin{figure}
-      \includegraphics[width=\textwidth]{calib-speeds}
-    \end{figure}
-    \column[c]{5.5cm}
-    \begin{itemize}
-    \item 15 simulations to explore parameter space (sliding law exponent $q$, enhancement factor $E$, SSA flow law exponent $n$)
-    \item choose simulation with smallest r.m.s. difference
-    \end{itemize}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Model calibration at 1,500\,m resolution}
-  \vspace{-.5em}
-  \begin{columns}
-    \column[c]{5cm}
-    \begin{figure}
-      \includegraphics<1>[width=\textwidth]{calib-speed-010-3}
-      \includegraphics<2>[width=\textwidth]{calib-speed-025-3}
-      \includegraphics<3>[width=\textwidth]{calib-speed-033-3}
-      \includegraphics<4>[width=\textwidth]{calib-speed-050-3}
-      \includegraphics<5>[width=\textwidth]{calib-speed-060-325}
-      \includegraphics<6>[width=\textwidth]{calib-speed-080-3}
-    \end{figure}
-    \column[c]{5.5cm}
-    \begin{itemize}
-    \item general flow pattern well reproduced by all simulations
-    \item slow flow in the interior, fast flow in outlet glaciers
-    \item results more sensitive to ice thickness than to ice dynamics
-    \item<6> results are very robust
-    \end{itemize}
-  \end{columns}
-\end{frame}
 
 
 \begin{frame}{Best simulation}
