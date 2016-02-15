@@ -1,0 +1,16 @@
+pism_murdock_visit.pdf
+
+beamer*UAF*.sty
+uaf_beamer*.png
+
+*.out
+*.aux
+*.log
+*.bbl
+*.blg
+*.toc
+*.snm
+*.nav
+*.synctex.gz
+*~
+
