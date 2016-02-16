@@ -3,7 +3,7 @@
 
 \mode<presentation>
 {
-  \usetheme[footline]{UAFshade}
+  \usetheme[footline,headline]{PISMshade}
   \setbeamercovered{transparent}
 }
 
@@ -154,7 +154,7 @@
 
 \setbeamertemplate{background canvas}
   {
-     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{uaf_beamer_shade_bg}};}
+     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{pism_beamer_shade_bg}};}
 } 
 
 
@@ -268,177 +268,45 @@
 \end{frame}
 
 
-
-\begin{frame}{Zoom in to Jakobshavn Isbr{\ae}}
-  \begin{figure}
-    \small{Bamber (2001) \hspace{5em} Morlighem (2014)}
-    \includegraphics[width=12cm]{jako_bed}
- \end{figure}
+\begin{frame}{The Parallel Ice Sheet Model (PISM) is\ldots}
+  \begin{itemize}
+  \item open-source, fully parallel based on PETSc
+  \item being developed at UAF since 20XX
+  \item supported by NASA grants No.~NNX13AM16G and  NNX13AK27G
+  \end{itemize}
+  \begin{columns}
+    \column[c]{4.75cm}
+    \begin{figure}
+      \includegraphics[width=\textwidth]{pism-uaf-publications}
+    \end{figure}
+    \column[c]{6.25cm}
+    \includegraphics<1>[width=\textwidth]{pism-users}
+  \end{columns}
 \end{frame}
 
 
-\begin{frame}{NASA Operation IceBridge}
-  \begin{columns}
-    \column[c]{8cm}
-    \begin{figure}
-      \small{Bamber (2001) \hspace{4em} Morlighem (2014)}
-      \includegraphics[height=7.5cm]{greenland_bed}
-    \end{figure}
-    \column[c]{4cm}
+\begin{frame}{}
+  \begin{block}{Access to local HPC resources is crucial for the UAF PISM team}
     \begin{itemize}
-    \item from 5\,km to 150\,m horizontal grid resolution
+    \item fast, iterative code development and testing
+    \item constant scaling and performance analysis during development
+    \item ``actual'' cutting edge science: The UAF PISM team just published results in Nature Communications
     \end{itemize}
-  \end{columns}
+  \end{block}
 \end{frame}
 
-\begin{frame}{NASA Operation IceBridge}
+
+
+\begin{frame}{The importance of model resolution}
   \begin{figure}
-    \includegraphics[height=2.5cm]{nasa-logo} \qquad
-    \includegraphics[height=2.5cm]{oib} \qquad
-    \includegraphics[height=2.5cm]{1000-dollar-bills}
-  \end{figure}
-  \begin{itemize}
-  \item do NASA's OIB million\$ really make ice sheet models better?
-  \item use your favorite high resolution ice sheet model to find out
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}{Validation metrics: flow through flux gates}
-  \vspace{-1em}
-  \begin{columns}
-    \column[c]{4cm}
-    \begin{figure}
-      \includegraphics<1>[width=3cm]{upernavik-gate-zoom}
-    \end{figure}
-    \begin{figure}
-      \includegraphics<1>[width=4cm]{Kong_Oscar_Gletscher_velsurf_normal_profile_250m_greenland_2008-2009_grid_mo14_flow_sel_green}
-    \end{figure}
-    \column[c]{7cm}
-    \begin{figure}
-      \includegraphics<1>[height=7.5cm]{greenland-gates-29}
-    \end{figure}
-  \end{columns}
-\end{frame}
-
-
-\begin{frame}{Validation metrics: flow through flux gates}
-  \vspace{-1em}
-  \begin{columns}
-    \column[c]{4cm}
-    \begin{figure}
-      \includegraphics<1>[width=3cm]{upernavik-gate-zoom}
-    \end{figure}
-    \begin{figure}
-      \includegraphics<1>[width=4cm]{Kong_Oscar_Gletscher_velsurf_normal_profile_250m_greenland_2008-2009_grid_mo14_flow_sel_green}
-    \end{figure}
-    \column[c]{7cm}
-    \begin{block}{Metrics of success}
-      \begin{itemize}
-      \item assess model performance by comparing observed and simulated surface velocities along cross-flow profiles of 29  outlet glaciers
-      \item quantify model's ability to capture the spatial variation in flow structure using \vspace{-.75em}
-        \begin{itemize}
-        \item the Pearson $r$ correlation coefficient and 
-        \item the r.m.s. difference
-        \end{itemize}
-        between observations and simulations along the 29 profiles
-      \item evaluate every 250\,m \alert{$\Rightarrow$ gates as shapefiles available on github}
-      \end{itemize}
-    \end{block}
-  \end{columns}
-\end{frame}
-
-
-\begin{frame}{Model setup}
-  \includegraphics[width=4cm]{pism-logo}
-  \begin{itemize}
-  \item this study is not about PISM
-  \item any ISM capable of <1\,km grid resolution will do
-  \item enthalpy field from a paleo-climate initialization
-  \item calculate diagnostic velocity fields that correspond to a given geometry using flux correction method
-  \end{itemize}
-\end{frame}
-
-
-
-
-\begin{frame}{Best simulation}
-  \includegraphics[height=8cm]{greenland-overview-3}
-\end{frame}
-
-\begin{frame}{Role of model resolution}
-  \includegraphics[width=\textwidth]{jakobshavn-beds}
-\end{frame}
-
-\begin{frame}{Role of model resolution}
-  \begin{figure}
-    \includegraphics[height=6cm]{grid-resolution-4}
+    \includegraphics[width=\textwidth]{jakobshavn-beds}
+    \\ \small adapted from Aschwanden, Fahnestock, Truffer (Nature Communiations, 2016)
   \end{figure}
 \end{frame}
 
 
-\begin{frame}{Role of ice thickness}
-  \begin{figure}
-    \includegraphics<1>[width=\textwidth]{nw-coast-1-4500m-ba2001-01}
-    \includegraphics<2>[width=\textwidth]{nw-coast-1-4500m-mo2014-01}
-    \includegraphics<3>[width=\textwidth]{nw-coast-1-600m-ba2001-01}
-    \includegraphics<4>[width=\textwidth]{nw-coast-1-600m-mo2014-01}
-    \\[1em]
-    \only<1>{low model and low data set resolution}
-    \only<2>{low model and high  data set resolution}
-    \only<3>{high model and low data set resolution}
-    \only<4>{high model and high data set resolution}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Role of ice thickness}
-  \begin{figure}
-    \includegraphics<1>[width=\textwidth]{nw-coast-1-600m-mo2014-01}
-  \end{figure}
-      \begin{itemize}
-        \item only {\bf high} \alert{model} and \alert{data} set resolution result in outlet glacier flow
-      \end{itemize}
-\end{frame}
-
-
-\begin{frame}{What really matters}
-  \begin{enumerate}
-    \item an accurate map of subglacial topography
-    \item a stress regime in which viscous membrane stresses are part of the balance with basal sliding resistance
-    \item an energy-conservation-driven basal stress model derived (conceptually) from a model of a wet, pressurized, deformable basal layer
-    \item  high model resolution over all areas of the ice sheet where sliding is possible and/or steep/rough basal topography exists
-  \end{enumerate}
-\end{frame}
-
-
-\begin{frame}{Conclusions}
-  \begin{itemize}
-    \item first time that the general flow patterns are captured for the {\bf right} reason
-    \item for isbr{\ae}-type glaciers ice thickness matters the most, subglacial hydrology comes later
-    \item this is very encouraging
-    \item opens the door for prognostic simulations using simple models of subglacial hydrology
-  \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}{Final Remarks}
-  \begin{itemize}
-    \item ice thickness mapping by NASA's OIB and similar efforts are paying off big time
-    \item similar efforts are suggested for Antarctica
-  \end{itemize}
-\end{frame}
-
-
-\begin{frame}{Final Remarks}
-\begin{columns}
-  \column[c]{3cm}
-  \begin{figure}
-    \includegraphics[width=1.75cm]{pandoras-box}
-  \end{figure}
-  \column[c]{8cm}
-  The days of coarse ($>$1\,km) resolution Greenland models are over
-\end{columns}
+\begin{frame}{Computational needs}
+coming soon: typical no. of cores and wallclock hours needed for high-resolution simulations
 \end{frame}
 
 
