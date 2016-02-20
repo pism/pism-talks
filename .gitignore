@@ -1,7 +1,7 @@
 pism_murdock_visit.pdf
 
-beamer*UAF*.sty
-uaf_beamer*.png
+beamer*.sty
+*beamer*.png
 
 *.out
 *.aux
