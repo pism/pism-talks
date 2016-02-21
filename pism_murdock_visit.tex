@@ -174,34 +174,30 @@
 } 
 
 \begin{frame}[plain]
-  \vspace{-3em}
-  \begin{transbox}[0.6]
     \begin{itemize}
     \item Over the past decades, the Greenland Ice Sheet (GrIS) has been loosing mass at an accelerating rate, thereby raising global mean sea level
     \end{itemize}
-    \begin{figure}  % better figure coming
-      \includegraphics[width=5cm]{gris-grace-trend} \\
-      (better figure coming)
+    \begin{figure}
+      \includegraphics[width=11cm]{grace_greenland_2004_2012_still_print} \\
   \end{figure}
-  \end{transbox}
 \end{frame}
 
 \begin{frame}[plain]
-  \vspace{-3em}
-  \begin{transbox}[0.4]
     \begin{itemize}
     \item Ice discharge to the ocean mainly occurs through Greenland's 200+ outlet glaciers
     \end{itemize}
-  \end{transbox}
+    \begin{figure}
+      \includegraphics[width=9.5cm]{jako-front-positions}
+  \end{figure}
 \end{frame}
 
 \begin{frame}[plain]
-  \vspace{-3em}
-  \begin{transbox}[0.4]
     \begin{itemize}
     \item Outlet glaciers are fast-flowing ($>$200\,m/yr) topographically-controlled features terminating in narrow fjords $\sim\le$10\,km wide.
     \end{itemize}
-  \end{transbox}
+    \begin{figure}
+      \includegraphics[width=9.5cm]{jako-gl}
+  \end{figure}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -209,7 +205,7 @@
 %
 } 
 
-\begin{frame}{Flow speeds}
+\begin{frame}{Flow speeds vary over several orders of magnitude}
 \vspace{-0.74em}
   \begin{columns}
     \column[c]{5cm}
@@ -256,6 +252,20 @@
     \item insufficient input data set resolution
     \end{itemize}
   \end{block}
+  \begin{columns}
+    \column[c]{3.5cm}
+    \begin{figure}
+      \includegraphics[width=\textwidth]{greenland-obs-overview}
+    \end{figure}
+    \column[c]{4cm}
+    \only<1>{observed}
+    \includegraphics<1>[width=\textwidth]{jakobshavn-obs-nogate}
+    \only<1>{\\ {} }
+    \only<2>{simulated}
+    \includegraphics<2>[width=\textwidth]{jakobshavn-speed-exp-4500m-ba01}
+    \only<2>{\\ {} }
+  \end{columns}
+
 \end{frame}
 
 \begin{frame}
@@ -265,13 +275,17 @@
     \item large scale data collection efforts to increase input data set resolution
     \end{itemize}
   \end{block}
+  \begin{figure}
+    \small{Bamber (2001) \hspace{5em} Morlighem (2014)}
+    \includegraphics[width=11cm]{jako_bed}
+ \end{figure}
 \end{frame}
 
 
 \begin{frame}{The Parallel Ice Sheet Model (PISM) is\ldots}
   \begin{itemize}
   \item open-source, fully parallel based on PETSc
-  \item being developed at UAF since 20XX
+  \item being developed at UAF since 2006
   \item supported by NASA grants No.~NNX13AM16G and  NNX13AK27G
   \end{itemize}
   \begin{columns}
@@ -305,12 +319,18 @@
 \end{frame}
 
 
-\begin{frame}{Computational needs}
-coming soon: typical no. of cores and wallclock hours needed for high-resolution simulations
+\begin{frame}{Computational aspects}
+  To resolve outlet glacier flow, horizontal grid resolutions $\le$1\,km (ideally $\le$500\,m) are needed
+  \begin{itemize}
+  \item on current UAF HPC resources, a 100 year long simulation at 600\,m resolution takes $\sim$ 120 wall clock hours on 500 cores
+  \item only selected simulations can be run at the required resolutions
+  \item PISM simulations would benefit from
+    \begin{itemize}
+    \item more cores: higher resolutions
+  \item faster CPU's: reduced integration times for long simulations
+  \end{itemize}
+\end{itemize}
 \end{frame}
-
-
-
 
 
 \end{document}
