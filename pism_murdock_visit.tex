@@ -1,6 +1,5 @@
 \documentclass[hide notes,intlimits]{beamer}
 
-
 \mode<presentation>
 {
   \usetheme[footline,headline]{PISMshade}
@@ -112,13 +111,14 @@
 
 % title page
 \title[] % (optional, use only with long paper titles)
-{High resolution modeling of the Greenland Ice Sheet}
+%{High resolution modeling of the Greenland Ice Sheet}
+{Understanding Rapidly-changing Ice Sheets with Models at Scale}
 
-\subtitle{using the Parallel Ice Sheet Model (PISM)}
+%\subtitle{using the Parallel Ice Sheet Model (PISM)}
 
 
 \author[Aschwanden, Fahnestock, Truffer] % (optional, use only with lots of authors)
-{}
+{Andy Aschwanden ($\to$ Ed Bueler)}
 % - Give the names in the same order as the appear in the paper.
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
@@ -174,119 +174,128 @@
 } 
 
 \begin{frame}[plain]
+
+\phantom{foo}
+
+the Greenland Ice Sheet 
+
     \begin{itemize}
-    \item Over the past decades, the Greenland Ice Sheet (GrIS) has been loosing mass at an accelerating rate, thereby raising global mean sea level
+    \item is $1200\,\text{km}\,\times 2400\,\text{km}$
+    \item has ice equivalent to 7 m of sea-level rise
+    \item over the past decades, has been losing mass at an accelerating rate
     \end{itemize}
     \begin{figure}
-      \includegraphics[width=11cm]{grace_greenland_2004_2012_still_print} \\
+      \includegraphics[width=12cm]{grace_greenland_2004_2012_still_print} \\
   \end{figure}
 \end{frame}
+
 
 \begin{frame}[plain]
     \begin{itemize}
-    \item Ice discharge to the ocean mainly occurs through Greenland's 200+ outlet glaciers
+    \item ice discharge to the ocean mainly occurs through Greenland's 200+ \emph{outlet glaciers}
+    \item outlet glaciers are fast ($>$200\,m/yr), bedrock-controlled, flows terminating in narrow fjords ($<$10\,km wide)
     \end{itemize}
-    \begin{figure}
-      \includegraphics[width=9.5cm]{jako-front-positions}
-  \end{figure}
+    \begin{center}
+      \includegraphics[width=8.5cm]{jako-front-positions}
+    \end{center}
 \end{frame}
+
+%\begin{frame}[plain]
+%    \begin{itemize}
+%    \item Outlet glaciers are fast-flowing ($>$200\,m/yr) topographically-controlled features terminating in narrow fjords $\sim\le$10\,km wide.
+%    \end{itemize}
+%    \begin{figure}
+%      %\includegraphics[width=9.5cm]{jako-gl}
+%      FIXME
+%  \end{figure}
+%\end{frame}
+ 
 
 \begin{frame}[plain]
-    \begin{itemize}
-    \item Outlet glaciers are fast-flowing ($>$200\,m/yr) topographically-controlled features terminating in narrow fjords $\sim\le$10\,km wide.
-    \end{itemize}
-    \begin{figure}
-      \includegraphics[width=9.5cm]{jako-front-positions}
-  \end{figure}
-\end{frame}
 
-\setbeamertemplate{background canvas}
-{
-%
-} 
+\phantom{foo}
 
-\begin{frame}{Flow speeds vary over several orders of magnitude}
-\vspace{-0.74em}
+flow speeds vary over several orders of magnitude
+
+\begin{itemize}
+\item over distances of a few kilometers
+\end{itemize}
+
+\vspace{-5mm}
   \begin{columns}
-    \column[c]{5cm}
+    \column[c]{5.5cm}
     \begin{figure}
       \includegraphics[width=\textwidth]{greenland-obs-overview}
     \end{figure}
-    \column[c]{5cm}
-    \only<1>{Jakobshavn Isbr{\ae}}
-    \includegraphics<1>[width=\textwidth]{jakobshavn-obs-nogate}
-    \only<1>{\\ {} }
+    \column[c]{6cm}
+    Jakobshavn Isbr{\ae}:
+    
+    \medskip
+    \includegraphics[width=\textwidth]{jakobshavn-obs-nogate}
   \end{columns}
 \end{frame}
 
 
-\setbeamertemplate{background canvas}
-  {
-     \tikz{\node[inner sep=0pt,opacity=.3] {\includegraphics[height=\paperheight,width=\paperwidth]{grn_iss}};}
-} 
-
+%\setbeamertemplate{background canvas}
+%  {
+%     \tikz{\node[inner sep=0pt,opacity=.3] %{\includegraphics[height=\paperheight,width=\paperwidth]{grn_iss}};}
+%} 
 
 \begin{frame}[plain]
-  \begin{transbox}[0.8]
-    \begin{block}{We note}
+
+\begin{itemize}
+\item modeling challenges in explaining variability of outlet glaciers:
       \begin{itemize}
-      \item any credible modeling effort must be able to explain this variability
-      \item model resolution must be high enough to capture outlet glaciers
-      \item Glaciology 100: ice thickness is a leading order constraint on flow
+      \item[$\circ$] \emph{resolution}:  must be high enough to resolve fjords
+      \item[$\circ$] \emph{geometric data}: ice thickness is key to flow speed
       \end{itemize}
-    \end{block}
-  \end{transbox}
-\end{frame}
+\item result: until recently, models failed to capture outlet glaciers
+\end{itemize}
 
-
-\setbeamertemplate{background canvas}
-{
-%
-} 
-
-
-\begin{frame}
-  \begin{block}{Until recently models were not able to capture outlet glacier flow due to}
-    \begin{itemize}
-    \item insufficient model resolution
-    \item insufficient input data set resolution
-    \end{itemize}
-  \end{block}
   \begin{columns}
-    \column[c]{3.5cm}
-    \begin{figure}
-      \includegraphics[width=\textwidth]{greenland-obs-overview}
-    \end{figure}
-    \column[c]{4cm}
-    \only<1>{observed}
-    \includegraphics<1>[width=\textwidth]{jakobshavn-obs-nogate}
-    \only<1>{\\ {} }
-    \only<2>{simulated}
-    \includegraphics<2>[width=\textwidth]{jakobshavn-speed-exp-4500m-ba01}
-    \only<2>{\\ {} }
-  \end{columns}
+    \column[c]{5cm}
+    \emph{observed}
 
+\medskip
+    \includegraphics[width=\textwidth]{jakobshavn-obs-nogate}
+    \column[c]{5cm}
+    \emph{simulated circa 2009}
+
+\medskip
+    \includegraphics[width=\textwidth]{jakobshavn-speed-exp-4500m-ba01}
+  \end{columns}
 \end{frame}
 
-\begin{frame}
-  \begin{block}{Progress was made due to}
-    \begin{itemize}
-    \item model improvements (parallelism, efficient meshing, etc)
-    \item large scale data collection efforts to increase input data set resolution
-    \end{itemize}
-  \end{block}
+
+\begin{frame}[plain]
+
+\phantom{foo}
+
+recent progress due to:
+
+\begin{itemize}
+\item model improvements (parallelism, better physics, etc)
+\item many NASA airplane-based ice-penetrating-radar flights \dots gives improved map of bedrock under ice
+\end{itemize}
+
   \begin{figure}
-    \small{Bamber (2001) \hspace{5em} Morlighem (2014)}
-    \includegraphics[width=11cm]{jako_bed}
+    \small{Bamber (2001) \hspace{7em} Morlighem (2014)}
+    \includegraphics[width=12cm]{jako_bed}
  \end{figure}
 \end{frame}
 
 
-\begin{frame}{The Parallel Ice Sheet Model (PISM) is\ldots}
+\setbeamertemplate{background canvas}
+{
+%
+}
+
+
+\begin{frame}{Parallel Ice Sheet Model (PISM)}
   \begin{itemize}
-  \item open-source, fully parallel based on PETSc
-  \item being developed at UAF since 2006
-  \item supported by NASA grants No.~NNX13AM16G and  NNX13AK27G
+  \item open-source, fully-parallel from start in 2006
+  \item primary development at UAF, with global user base
+  \item sustained NASA support \tiny (NAG5-11371, NNX09AJ38C, NNX13AM16G, NNX13AK27G)
   \end{itemize}
   \begin{columns}
     \column[c]{4.75cm}
@@ -299,38 +308,55 @@
 \end{frame}
 
 
-\begin{frame}{}
-  \begin{block}{Access to local HPC resources is crucial for the UAF PISM team}
-    \begin{itemize}
-    \item fast, iterative code development and testing
-    \item constant scaling and performance analysis during development
-    \item ``actual'' cutting edge science: The UAF PISM team just published results in Nature Communications
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-
-
-\begin{frame}{The importance of model resolution}
-  \begin{figure}
-    \includegraphics[width=\textwidth]{jakobshavn-beds}
-    \\ \small adapted from Aschwanden, Fahnestock, Truffer (Nature Communiations, 2016)
-  \end{figure}
-\end{frame}
-
-
-\begin{frame}{Computational aspects}
-  To resolve outlet glacier flow, horizontal grid resolutions $\le$1\,km (ideally $\le$500\,m) are needed
+\begin{frame}{computational aspects}
+  
   \begin{itemize}
-  \item on current UAF HPC resources, a 100 year long simulation at 600\,m resolution takes $\sim$ 120 wall clock hours on 500 cores
-  \item only selected simulations can be run at the required resolutions
-  \item PISM simulations would benefit from
+  \item resolving outlet glacier flow requires horizontal grid resolutions $<$1\,km
+       \begin{itemize}
+       \item[$\circ$] ideally $<$500\,m
+       \item[$\circ$] on current UAF HPC resources, a 100 year long simulation at 600\,m resolution takes $\sim$ 120 wall clock hours on 500 cores
+       \item[$\circ$] only selected simulations can be run at the required resolutions
+       \end{itemize}
+  \item PISM simulations benefit from
     \begin{itemize}
-    \item more cores: higher resolutions
-  \item faster CPU's: reduced integration times for long simulations
-  \end{itemize}
+    \item \emph{more cores}: higher resolutions
+    \item \emph{faster CPUs}: reduced integration times for long simulations
+    \end{itemize}
 \end{itemize}
 \end{frame}
 
 
+\begin{frame}{access to local HPC resources is crucial}
+
+    \begin{itemize}
+    \item the UAF PISM team does
+       \begin{itemize}
+       \item[$\circ$] fast, iterative code development and testing
+       \item[$\circ$] constant scaling and performance analysis during development
+       \end{itemize}    
+    \item result is cutting edge science
+       \begin{itemize}
+       \item[$\circ$] 12 PISM-using publications in \emph{Science, Nature, PNAS} journals
+       \item[$\circ$] including new Greenland ice sheet results from UAF (below)
+       \end{itemize}
+    \end{itemize}
+
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{jakobshavn-beds}
+    \\ \hfill \scriptsize from Aschwanden, Fahnestock, \& Truffer, \emph{Nature Comm.} 2016
+\end{center}
+\end{frame}
+
+
+
+%\begin{frame}{The importance of model resolution}
+%  \begin{figure}
+%    \includegraphics[width=\textwidth]{jakobshavn-beds}
+%    \\ \small adapted from Aschwanden, Fahnestock, Truffer (Nature Communiations, 2016)
+%  \end{figure}
+%\end{frame}
+
+
+
 \end{document}
+
