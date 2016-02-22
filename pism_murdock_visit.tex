@@ -1,6 +1,5 @@
 \documentclass[hide notes,intlimits]{beamer}
 
-
 \mode<presentation>
 {
   \usetheme[footline,headline]{PISMshade}
@@ -112,13 +111,14 @@
 
 % title page
 \title[] % (optional, use only with long paper titles)
-{High resolution modeling of the Greenland Ice Sheet}
+%{High resolution modeling of the Greenland Ice Sheet}
+{Understanding Rapidly-changing Ice Sheets with Models at Scale}
 
-\subtitle{using the Parallel Ice Sheet Model (PISM)}
+%\subtitle{using the Parallel Ice Sheet Model (PISM)}
 
 
 \author[Aschwanden, Fahnestock, Truffer] % (optional, use only with lots of authors)
-{}
+{Andy Aschwanden ($\to$ Ed Bueler)}
 % - Give the names in the same order as the appear in the paper.
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
@@ -175,106 +175,109 @@
 
 \begin{frame}[plain]
     \begin{itemize}
-    \item Over the past decades, the Greenland Ice Sheet (GrIS) has been loosing mass at an accelerating rate, thereby raising global mean sea level
+    \item Over the past decades, the Greenland Ice Sheet has been losing mass at an accelerating rate, raising global mean sea level
+    \item The Greenland Ice Sheet is $1200\,\text{km}\,\times 2400\,\text{km}$ and has $\sim$7.2 m sea-level equivalent
     \end{itemize}
     \begin{figure}
-      \includegraphics[width=11cm]{grace_greenland_2004_2012_still_print} \\
+      \includegraphics[width=12cm]{grace_greenland_2004_2012_still_print} \\
   \end{figure}
 \end{frame}
 
-\begin{frame}[plain]
-    \begin{itemize}
-    \item Ice discharge to the ocean mainly occurs through Greenland's 200+ outlet glaciers
-    \end{itemize}
-    \begin{figure}
-      \includegraphics[width=9.5cm]{jako-front-positions}
-  \end{figure}
-\end{frame}
 
 \begin{frame}[plain]
     \begin{itemize}
-    \item Outlet glaciers are fast-flowing ($>$200\,m/yr) topographically-controlled features terminating in narrow fjords $\sim\le$10\,km wide.
+    \item Ice discharge to the ocean mainly occurs through Greenland's 200+ \emph{outlet glaciers}
+    \item Outlet glaciers are fast ($>$200\,m/yr), bedrock-controlled, flows terminating in narrow fjords ($<$10\,km wide)
     \end{itemize}
-    \begin{figure}
-      \includegraphics[width=9.5cm]{jako-gl}
-  \end{figure}
+    \begin{center}
+      \includegraphics<1>[width=8.5cm]{jako-front-positions}
+      \only<2>{FIXME}
+    \end{center}
 \end{frame}
+
+%\begin{frame}[plain]
+%    \begin{itemize}
+%    \item Outlet glaciers are fast-flowing ($>$200\,m/yr) topographically-controlled features terminating in narrow fjords $\sim\le$10\,km wide.
+%    \end{itemize}
+%    \begin{figure}
+%      %\includegraphics[width=9.5cm]{jako-gl}
+%      FIXME
+%  \end{figure}
+%\end{frame}
+ 
+
+\begin{frame}[plain]
+
+\begin{itemize}
+\item Flow speeds vary over several orders of magnitude
+\item Over a few kilometers
+\end{itemize}
+
+\vspace{-5mm}
+  \begin{columns}
+    \column[c]{5.5cm}
+    \begin{figure}
+      \includegraphics[width=\textwidth]{greenland-obs-overview}
+    \end{figure}
+    \column[c]{6cm}
+    Jakobshavn Isbr{\ae}:
+    
+    \medskip
+    \includegraphics[width=\textwidth]{jakobshavn-obs-nogate}
+  \end{columns}
+\end{frame}
+
+
+%\setbeamertemplate{background canvas}
+%  {
+%     \tikz{\node[inner sep=0pt,opacity=.3] %{\includegraphics[height=\paperheight,width=\paperwidth]{grn_iss}};}
+%} 
+
+
+
 
 \setbeamertemplate{background canvas}
 {
 %
 } 
 
-\begin{frame}{Flow speeds vary over several orders of magnitude}
-\vspace{-0.74em}
-  \begin{columns}
-    \column[c]{5cm}
-    \begin{figure}
-      \includegraphics[width=\textwidth]{greenland-obs-overview}
-    \end{figure}
-    \column[c]{5cm}
-    \only<1>{Jakobshavn Isbr{\ae}}
-    \includegraphics<1>[width=\textwidth]{jakobshavn-obs-nogate}
-    \only<1>{\\ {} }
-  \end{columns}
-\end{frame}
 
+\begin{frame}{modeling challenges}
 
-\setbeamertemplate{background canvas}
-  {
-     \tikz{\node[inner sep=0pt,opacity=.3] {\includegraphics[height=\paperheight,width=\paperwidth]{grn_iss}};}
-} 
-
-
-\begin{frame}[plain]
-  \begin{transbox}[0.8]
-    \begin{block}{We note}
+\begin{itemize}
+\item challenges in explaining variability of outlet glaciers:
       \begin{itemize}
-      \item any credible modeling effort must be able to explain this variability
-      \item model resolution must be high enough to capture outlet glaciers
-      \item Glaciology 100: ice thickness is a leading order constraint on flow
+      \item[$\circ$] \emph{resolution}:  must be high enough to resolve fjords
+      \item[$\circ$] \emph{geometric data}: ice thickness is key to flow speed
       \end{itemize}
-    \end{block}
-  \end{transbox}
-\end{frame}
+\item result: until recently, models failed to capture outlet glaciers
+\end{itemize}
 
-
-\setbeamertemplate{background canvas}
-{
-%
-} 
-
-
-\begin{frame}
-  \begin{block}{Until recently models were not able to capture outlet glacier flow due to}
-    \begin{itemize}
-    \item insufficient model resolution
-    \item insufficient input data set resolution
-    \end{itemize}
-  \end{block}
   \begin{columns}
-    \column[c]{3.5cm}
-    \begin{figure}
-      \includegraphics[width=\textwidth]{greenland-obs-overview}
-    \end{figure}
     \column[c]{4cm}
-    \only<1>{observed}
-    \includegraphics<1>[width=\textwidth]{jakobshavn-obs-nogate}
-    \only<1>{\\ {} }
-    \only<2>{simulated}
-    \includegraphics<2>[width=\textwidth]{jakobshavn-speed-exp-4500m-ba01}
-    \only<2>{\\ {} }
-  \end{columns}
+    \emph{observed}
 
+\medskip
+    \includegraphics[width=\textwidth]{jakobshavn-obs-nogate}
+    \column[c]{4cm}
+    \emph{simulated circa 2009}
+
+\medskip
+    \includegraphics[width=\textwidth]{jakobshavn-speed-exp-4500m-ba01}
+  \end{columns}
 \end{frame}
 
-\begin{frame}
-  \begin{block}{Progress was made due to}
+
+\begin{frame}{progress}
+
+\begin{itemize}
+\item due to:
     \begin{itemize}
-    \item model improvements (parallelism, efficient meshing, etc)
-    \item large scale data collection efforts to increase input data set resolution
+    \item[$\circ$] model improvements (parallelism, better physics, etc)
+    \item[$\circ$] many NASA airplane-based ice-penetrating-radar flights \dots gives improved map of bedrock under ice
     \end{itemize}
-  \end{block}
+\end{itemize}
+
   \begin{figure}
     \small{Bamber (2001) \hspace{5em} Morlighem (2014)}
     \includegraphics[width=11cm]{jako_bed}
@@ -282,11 +285,11 @@
 \end{frame}
 
 
-\begin{frame}{The Parallel Ice Sheet Model (PISM) is\ldots}
+\begin{frame}{Parallel Ice Sheet Model (PISM)}
   \begin{itemize}
-  \item open-source, fully parallel based on PETSc
-  \item being developed at UAF since 2006
-  \item supported by NASA grants No.~NNX13AM16G and  NNX13AK27G
+  \item open-source, fully-parallel from initiation in 2006
+  \item primary development at UAF, with global user base
+  \item sustained NASA support \tiny (NAG5-11371, NNX09AJ38C, NNX13AM16G, NNX13AK27G)
   \end{itemize}
   \begin{columns}
     \column[c]{4.75cm}
@@ -304,19 +307,28 @@
     \begin{itemize}
     \item fast, iterative code development and testing
     \item constant scaling and performance analysis during development
-    \item ``actual'' cutting edge science: The UAF PISM team just published results in Nature Communications
+    \item result is cutting edge science
+       \begin{itemize}
+       \item[$\circ$] UAF PISM team published results in \emph{Nature Communications} 2016 (below)
+       \item[$\circ$] 11 other PISM-using publications in \emph{Science, Nature, PNAS} journals
+       \end{itemize}
     \end{itemize}
   \end{block}
+
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{jakobshavn-beds}
+    \\ \hfill \scriptsize adapted from Aschwanden, Fahnestock, \& Truffer, 2016
+\end{center}
 \end{frame}
 
 
 
-\begin{frame}{The importance of model resolution}
-  \begin{figure}
-    \includegraphics[width=\textwidth]{jakobshavn-beds}
-    \\ \small adapted from Aschwanden, Fahnestock, Truffer (Nature Communiations, 2016)
-  \end{figure}
-\end{frame}
+%\begin{frame}{The importance of model resolution}
+%  \begin{figure}
+%    \includegraphics[width=\textwidth]{jakobshavn-beds}
+%    \\ \small adapted from Aschwanden, Fahnestock, Truffer (Nature Communiations, 2016)
+%  \end{figure}
+%\end{frame}
 
 
 \begin{frame}{Computational aspects}
