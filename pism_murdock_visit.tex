@@ -174,9 +174,15 @@
 } 
 
 \begin{frame}[plain]
+
+\phantom{foo}
+
+the Greenland Ice Sheet 
+
     \begin{itemize}
-    \item Over the past decades, the Greenland Ice Sheet has been losing mass at an accelerating rate, raising global mean sea level
-    \item The Greenland Ice Sheet is $1200\,\text{km}\,\times 2400\,\text{km}$ and has $\sim$7.2 m sea-level equivalent
+    \item is $1200\,\text{km}\,\times 2400\,\text{km}$
+    \item has ice equivalent to 7 m of sea-level rise
+    \item over the past decades, has been losing mass at an accelerating rate
     \end{itemize}
     \begin{figure}
       \includegraphics[width=12cm]{grace_greenland_2004_2012_still_print} \\
@@ -186,12 +192,11 @@
 
 \begin{frame}[plain]
     \begin{itemize}
-    \item Ice discharge to the ocean mainly occurs through Greenland's 200+ \emph{outlet glaciers}
-    \item Outlet glaciers are fast ($>$200\,m/yr), bedrock-controlled, flows terminating in narrow fjords ($<$10\,km wide)
+    \item ice discharge to the ocean mainly occurs through Greenland's 200+ \emph{outlet glaciers}
+    \item outlet glaciers are fast ($>$200\,m/yr), bedrock-controlled, flows terminating in narrow fjords ($<$10\,km wide)
     \end{itemize}
     \begin{center}
-      \includegraphics<1>[width=8.5cm]{jako-front-positions}
-      \only<2>{FIXME}
+      \includegraphics[width=8.5cm]{jako-front-positions}
     \end{center}
 \end{frame}
 
@@ -208,9 +213,12 @@
 
 \begin{frame}[plain]
 
+\phantom{foo}
+
+flow speeds vary over several orders of magnitude
+
 \begin{itemize}
-\item Flow speeds vary over several orders of magnitude
-\item Over a few kilometers
+\item over distances of a few kilometers
 \end{itemize}
 
 \vspace{-5mm}
@@ -233,19 +241,10 @@
 %     \tikz{\node[inner sep=0pt,opacity=.3] %{\includegraphics[height=\paperheight,width=\paperwidth]{grn_iss}};}
 %} 
 
-
-
-
-\setbeamertemplate{background canvas}
-{
-%
-} 
-
-
-\begin{frame}{modeling challenges}
+\begin{frame}[plain]
 
 \begin{itemize}
-\item challenges in explaining variability of outlet glaciers:
+\item modeling challenges in explaining variability of outlet glaciers:
       \begin{itemize}
       \item[$\circ$] \emph{resolution}:  must be high enough to resolve fjords
       \item[$\circ$] \emph{geometric data}: ice thickness is key to flow speed
@@ -254,12 +253,12 @@
 \end{itemize}
 
   \begin{columns}
-    \column[c]{4cm}
+    \column[c]{5cm}
     \emph{observed}
 
 \medskip
     \includegraphics[width=\textwidth]{jakobshavn-obs-nogate}
-    \column[c]{4cm}
+    \column[c]{5cm}
     \emph{simulated circa 2009}
 
 \medskip
@@ -268,26 +267,33 @@
 \end{frame}
 
 
-\begin{frame}{progress}
+\begin{frame}[plain]
+
+\phantom{foo}
+
+recent progress due to:
 
 \begin{itemize}
-\item due to:
-    \begin{itemize}
-    \item[$\circ$] model improvements (parallelism, better physics, etc)
-    \item[$\circ$] many NASA airplane-based ice-penetrating-radar flights \dots gives improved map of bedrock under ice
-    \end{itemize}
+\item model improvements (parallelism, better physics, etc)
+\item many NASA airplane-based ice-penetrating-radar flights \dots gives improved map of bedrock under ice
 \end{itemize}
 
   \begin{figure}
-    \small{Bamber (2001) \hspace{5em} Morlighem (2014)}
-    \includegraphics[width=11cm]{jako_bed}
+    \small{Bamber (2001) \hspace{7em} Morlighem (2014)}
+    \includegraphics[width=12cm]{jako_bed}
  \end{figure}
 \end{frame}
 
 
+\setbeamertemplate{background canvas}
+{
+%
+}
+
+
 \begin{frame}{Parallel Ice Sheet Model (PISM)}
   \begin{itemize}
-  \item open-source, fully-parallel from initiation in 2006
+  \item open-source, fully-parallel from start in 2006
   \item primary development at UAF, with global user base
   \item sustained NASA support \tiny (NAG5-11371, NNX09AJ38C, NNX13AM16G, NNX13AK27G)
   \end{itemize}
@@ -302,22 +308,42 @@
 \end{frame}
 
 
-\begin{frame}{}
-  \begin{block}{Access to local HPC resources is crucial for the UAF PISM team}
+\begin{frame}{computational aspects}
+  
+  \begin{itemize}
+  \item resolving outlet glacier flow requires horizontal grid resolutions $<$1\,km
+       \begin{itemize}
+       \item[$\circ$] ideally $<$500\,m
+       \item[$\circ$] on current UAF HPC resources, a 100 year long simulation at 600\,m resolution takes $\sim$ 120 wall clock hours on 500 cores
+       \item[$\circ$] only selected simulations can be run at the required resolutions
+       \end{itemize}
+  \item PISM simulations benefit from
     \begin{itemize}
-    \item fast, iterative code development and testing
-    \item constant scaling and performance analysis during development
+    \item \emph{more cores}: higher resolutions
+    \item \emph{faster CPUs}: reduced integration times for long simulations
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{access to local HPC resources is crucial}
+
+    \begin{itemize}
+    \item the UAF PISM team does
+       \begin{itemize}
+       \item[$\circ$] fast, iterative code development and testing
+       \item[$\circ$] constant scaling and performance analysis during development
+       \end{itemize}    
     \item result is cutting edge science
        \begin{itemize}
-       \item[$\circ$] UAF PISM team published results in \emph{Nature Communications} 2016 (below)
-       \item[$\circ$] 11 other PISM-using publications in \emph{Science, Nature, PNAS} journals
+       \item[$\circ$] 12 PISM-using publications in \emph{Science, Nature, PNAS} journals
+       \item[$\circ$] including new Greenland ice sheet results from UAF (below)
        \end{itemize}
     \end{itemize}
-  \end{block}
 
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{jakobshavn-beds}
-    \\ \hfill \scriptsize adapted from Aschwanden, Fahnestock, \& Truffer, 2016
+    \includegraphics[width=0.8\textwidth]{jakobshavn-beds}
+    \\ \hfill \scriptsize from Aschwanden, Fahnestock, \& Truffer, \emph{Nature Comm.} 2016
 \end{center}
 \end{frame}
 
@@ -330,19 +356,6 @@
 %  \end{figure}
 %\end{frame}
 
-
-\begin{frame}{Computational aspects}
-  To resolve outlet glacier flow, horizontal grid resolutions $\le$1\,km (ideally $\le$500\,m) are needed
-  \begin{itemize}
-  \item on current UAF HPC resources, a 100 year long simulation at 600\,m resolution takes $\sim$ 120 wall clock hours on 500 cores
-  \item only selected simulations can be run at the required resolutions
-  \item PISM simulations would benefit from
-    \begin{itemize}
-    \item more cores: higher resolutions
-  \item faster CPU's: reduced integration times for long simulations
-  \end{itemize}
-\end{itemize}
-\end{frame}
 
 
 \end{document}
