@@ -112,7 +112,7 @@
 % title page
 \title[] % (optional, use only with long paper titles)
 %{High resolution modeling of the Greenland Ice Sheet}
-{Understanding Rapidly-changing Ice Sheets with Models at Scale}
+{Understanding Rapidly-changing Ice Sheets \\ with Models}
 
 %\subtitle{using the Parallel Ice Sheet Model (PISM)}
 
@@ -164,14 +164,10 @@
 \end{frame}
 
 \setbeamertemplate{background canvas}
-{
-%
-} 
-
-\setbeamertemplate{background canvas}
   {
      \tikz{\node[inner sep=0pt,opacity=0.4] {\includegraphics[width=\paperwidth,height=\paperheight]{jakobshavn_landsat8}};}
 } 
+
 
 \begin{frame}[plain]
 
@@ -180,9 +176,9 @@
 the Greenland Ice Sheet:
 
     \begin{itemize}
-    \item $1200\,\text{km}\,\times 2400\,\text{km}$ \dots ``dwarf continent''
+    \item extent of $1200\,\text{km}\,\times 2400\,\text{km}$ \dots it's a ``dwarf continent''
     \item has ice equivalent to 7 m of sea-level rise
-    \item over the past decades, has been losing mass at an accelerating rate
+    \item over past 2 decades: losing mass at an accelerating rate
     \end{itemize}
     \begin{figure}
       \includegraphics[width=12cm]{grace_greenland_2004_2012_still_print} \\
@@ -199,16 +195,6 @@ the Greenland Ice Sheet:
       \includegraphics[width=9.5cm]{jako-front-positions}
     \end{center}
 \end{frame}
-
-%\begin{frame}[plain]
-%    \begin{itemize}
-%    \item Outlet glaciers are fast-flowing ($>$200\,m/yr) topographically-controlled features terminating in narrow fjords $\sim\le$10\,km wide.
-%    \end{itemize}
-%    \begin{figure}
-%      %\includegraphics[width=9.5cm]{jako-gl}
-%      FIXME
-%  \end{figure}
-%\end{frame}
  
 
 \begin{frame}[plain]
@@ -235,11 +221,6 @@ flow speeds vary over several orders of magnitude
   \end{columns}
 \end{frame}
 
-
-%\setbeamertemplate{background canvas}
-%  {
-%     \tikz{\node[inner sep=0pt,opacity=.3] %{\includegraphics[height=\paperheight,width=\paperwidth]{grn_iss}};}
-%} 
 
 \begin{frame}[plain]
 
@@ -298,6 +279,7 @@ recent progress due to:
   \begin{itemize}
   \item open-source, fully-parallel from start in 2006
   \item primary development at UAF, with global user base
+  \item $>$100k lines of code; mostly C++
   \item sustained NASA support \tiny (NAG5-11371, NNX09AJ38C, NNX13AM16G, NNX13AK27G)
   \end{itemize}
   \begin{columns}
@@ -349,16 +331,6 @@ recent progress due to:
     \\ \hfill \scriptsize from Aschwanden, Fahnestock, \& Truffer, \emph{Nature Comm.} 2016
 \end{center}
 \end{frame}
-
-
-
-%\begin{frame}{The importance of model resolution}
-%  \begin{figure}
-%    \includegraphics[width=\textwidth]{jakobshavn-beds}
-%    \\ \small adapted from Aschwanden, Fahnestock, Truffer (Nature Communiations, 2016)
-%  \end{figure}
-%\end{frame}
-
 
 
 \end{document}
