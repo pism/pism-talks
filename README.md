@@ -1,2 +1,2 @@
 # pism-talks
-PISM talks
+PISM talks at meetings, seminars, etc.
