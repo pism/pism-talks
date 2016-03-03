@@ -114,11 +114,11 @@
 
 % title page
 \title[] % (optional, use only with long paper titles)
-{Complex Greenland Outlet Glacier Flow Captured}
+{Why care about Greenland's outlet glaciers?}
 
 
-\author[Aschwanden, Fahnestock, Truffer] % (optional, use only with lots of authors)
-{Andy Aschwanden, Mark Fahnestock \& Martin Truffer}
+\author[Aschwanden] % (optional, use only with lots of authors)
+{Andy Aschwanden}
 % - Give the names in the same order as the appear in the paper.
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
@@ -161,10 +161,6 @@
 % insert titlepage
 \begin{frame}
   \titlepage
-  \note[item]{talk is somewhat unfinished and I'm likely to get lost towards the end\ldots}
-  \note[item]{this work has emerged from a close collaboration with Mark Fahnestock and Martin Truffer}
-  \note[item]{I merely pushed some buttons}
-  \note[item]{my talk will illustrate one of the most basic principles of glaciology: ice thickness matters}
 \end{frame}
 
 
@@ -190,10 +186,87 @@
 % ]{foo}{random.flv}
 % \end{frame}
 
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=.3] {\includegraphics[height=\paperheight,width=\paperwidth]{grn_iss}};}
+} 
+
+
+\begin{frame}{The Greenland Ice Sheet}
+  \begin{transbox}[0.8]
+    \begin{itemize}
+    \item extent of $1200\,\text{km}\,\times 2400\,\text{km}$ \dots it's a ``dwarf continent''
+    \item has ice equivalent to 7 m of sea-level rise
+    \item over past 2 decades: losing mass at an accelerating rate
+    \end{itemize}
+  \end{transbox}
+\end{frame}
+
+
+\setbeamertemplate{background canvas}
+{
+%
+} 
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt] {\includegraphics[height=\paperheight,width=\paperwidth]{grace_greenland_2004_2012_still_print}};}
+} 
+
 \begin{frame}[plain]
-  \begin{figure}[ht]
-    \includemovie[text={\small(Loading Video...)}]{\paperwidth}{\paperheight}{grace_greenland_2004_2013_1080p.mp4}
-  \end{figure}\end{frame}
+    \begin{figure}
+      % \includemovie[text={\includegraphics[width=\paperwidth]{grace_greenland_2004_2012_still_print}}]{\paperwidth}{}{grace_greenland_2004_2013_1080p.mp4}
+      \includemovie[text={\includegraphics[width=\paperwidth]{grace_greenland_2004_2012_still_print}}]{\paperwidth}{}{grace_greenland_2004_2013_1080p.mp4}
+  \end{figure}
+\end{frame}
+
+
+\setbeamertemplate{background canvas}
+{
+%
+} 
+
+
+\begin{frame}[plain]
+    \begin{itemize}
+    \item increase equally split between changes in surface mass balance and ice discharge
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[plain]
+    \begin{itemize}
+    \item ice discharge to the ocean mostly through 200+ ``outlet glaciers''
+    \item outlet glaciers are fast flows ($>$200\,m/yr), controlled by bedrock geometry, terminating in narrow fjords ($<$10\,km wide)
+    \end{itemize}
+    \begin{center}
+      \includegraphics[width=9.5cm]{jako-front-positions}
+    \end{center}
+\end{frame}
+ 
+
+\begin{frame}[plain]
+\phantom{foo}
+flow speeds vary over several orders of magnitude
+
+\begin{itemize}
+\item over distances of a few kilometers
+\end{itemize}
+
+\vspace{-5mm}
+  \begin{columns}
+    \column[c]{5.5cm}
+    \begin{figure}
+      \includegraphics[width=\textwidth]{greenland-obs-overview}
+    \end{figure}
+    \column[c]{6cm}
+    Jakobshavn Isbr{\ae}:
+    
+    \medskip
+    \includegraphics[width=\textwidth]{jakobshavn-obs-nogate}
+  \end{columns}
+\end{frame}
+
 
 \begin{frame}{The beginning of Greenland ice flow modeling}
   \begin{columns}
