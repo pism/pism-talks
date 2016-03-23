@@ -19,9 +19,9 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,shadows, calc}
 
-\usepackage{pgfpages}
-\setbeamertemplate{note page}[plain]
-\setbeameroption{show notes on second screen=right}
+% \usepackage{pgfpages}
+% \setbeamertemplate{note page}[plain]
+% \setbeameroption{show notes on second screen=right}
 
 
 \definecolor{dark red}{HTML}{E41A1C}
@@ -193,7 +193,9 @@
 
 
 \begin{frame}[plain]
-  \note[item]{but then I decided to talk about the Greenland Ice Sheet instead, as promised in the seminar announcement}
+  \note[item]{but who wants to see nice field works pictures}
+  \note[item]{when you can learn something about the Greenland Ice Sheet?}
+  \note[item]{so I'm going to talk about the Greenland Ice Sheet, as promised in the seminar announcement}
 \end{frame}
 
 
@@ -236,6 +238,7 @@
   \item<2> 280\,Gt is about half of Lake Eerie or a 15\,cm high layer of water covering Alaska
   \end{itemize}
   \note[item]{show NASA GRACE mass loss animation}
+  \note[item]{greatest losses occur on the west coast and SE coast} 
   \note[item]{explain how much 280 Gt really are}
 \end{frame}
 
@@ -284,6 +287,11 @@
     \includegraphics[width=.96\textwidth]{ice-sheet-cartoon}
   \end{figure}
   \note[item]{explain surface melt, ice discharge/calving, and basal melt}
+  \note[item]{snow accumulates in the colder, higher altitude areas in the interior}
+  \note[item]{turns into ice}
+  \note[item]{and starts to flow downhill towards the coast}
+  \note[item]{near the coast, surface melting can occur in the summer}
+  \note[item]{but also some ice is dumped directly into the ocean}
   \note[item]{before the mid-90s mass loss was dominated by surface mass balance (80-90\%)}
   \note[item]{contribution of ice discharge was modest (10--20\%)}
   \note[item]{explaining in more detail in the next slide}
@@ -301,6 +309,7 @@
     \item ice discharge to the ocean occurs through 200+ ``outlet glaciers''
     \item outlet glaciers are flowing fast ($>$200\,m/yr), are controlled by bedrock geometry, and terminate in narrow fjords ($\sim <$10\,km wide)
     \end{itemize}
+    \note[item]{outlet glaciers look pretty spectacular}
 \end{frame}
  
 
@@ -336,7 +345,7 @@
     \includegraphics[height=.8\textheight]{MODISGreenlandJakobshavn} \\
     \scriptsize{based on MODIS data from M. Fahnestock}
   \end{figure}
-  \note[item]{Jakobshavn serves as example to show outlet glacier change}
+  \note[item]{in this talk I will focus on Jakobshavn}
   \note[item]{Greenland's biggest and fastest flowing outlet glacier}
   \note[item]{drains about 7\% of the entire ice sheet}
 \end{frame}
@@ -346,11 +355,11 @@
  \begin{figure}
     \includegraphics[width=\textwidth]{Jakobshavn_groundline_retreat} \\
   \end{figure}
-  \note[item]{Echelmeyer and Harrison investigated Jakobshavn in the mid-80s}
-  \note[item]{found high flow speeds but the lack of seasonal variations}
+  \note[item]{Will Harrison and late Keith Echelmeyer investigated Jakobshavn in the mid-80s}
+  \note[item]{at that time JIB had a $\sim$10\,km long floating tongue}
+  \note[item]{they found high flow speeds}
   \note[item]{relatively steady behavior}
-  \note[item]{seasonal variations in flow speed in 1995}
-  \note[item]{and in 1997, the glacier suddenly switched from slow thickening to rapid thinning}
+  \note[item]{in 1997, the glacier suddenly switched from slow thickening to rapid thinning}
   \note[item]{caused by an increase in subsurface ocean temperature from 1.7degC in 1995 to 3.3degC in 1998, leading to increased melting}
   \note[item]{In summer 1998 the first major increase in surface velocity was seen}
   \note[item]{first departure from the normal pattern of frontal positions 1998}
@@ -366,13 +375,15 @@
     \includegraphics<4>[width=\textwidth]{jib-front-1990-2005-change}
     \includegraphics<5>[width=\textwidth]{jib-front-1990-2005-plug}
   \end{figure}
-\note[item]{exact timing of the break-up remains elusive due to poor satellite coverage at that time}
+  \note[item]{the loss of the floating tongue is what I'm calling pulling the plug}
+  \note[item]{exact timing of the break-up remains elusive due to poor satellite coverage at that time}
 \end{frame}
 
 
 \begin{frame}{When you pull the plug: speed-up 1992-2000}
   \begin{itemize}
     \item almost doubled its flow speed between the 1992 and 2000
+    \item slow but steady increase since then
   \end{itemize}
   \begin{figure}
     \includegraphics[width=\textwidth]{Joughin2004Fig2} \\
@@ -391,7 +402,7 @@
 \begin{frame}{When you pull the plug: changes in ice discharge 2000-2010}
   \begin{itemize}
   \item increase in discharge from 40\,Gt/yr in 2000 to $\sim$60\,Gt/yr in 2010
-  \item compared to $\sim$75\,Gt/yr from all Alaskan glaciers
+  \item compared to $\sim$75\,Gt/yr total mass loss from all Alaskan glaciers
   \end{itemize}
   \note[item]{illustration of the speed up}
 \end{frame}
@@ -519,16 +530,16 @@
 
 \begin{frame}{Challenge: basal boundary condition}
   \begin{columns}[c]
-    \begin{column}{.50\linewidth}
+    \begin{column}{.45\linewidth}
       \begin{figure}
         \scriptsize{basal resistance} \\
         \includegraphics[width=\textwidth]{tauc}
       \end{figure}
     \end{column}
-    \begin{column}{.5\linewidth}
+    \begin{column}{.54\linewidth}
       \begin{itemize}
       \item stresses vary by orders of magnitude
-      \item transience and complexity of basal water flow
+      \item basal hydrology, the glacier's ``plumbing system'' runs on a faster ime scale than ice flow
       \item despite more than 5 decades of research, we only have crude parametrizations
       \end{itemize}
     \end{column}
@@ -600,6 +611,7 @@
     \end{columns}
     \note<2->[item]{the main focus of my talk is on}
     \note<2->[item]{initial conditions and computational costs}
+    \note<2->[item]{solving the Stokes equations is expensive}
 \end{frame}
 
 
@@ -611,12 +623,9 @@
     \item green and blue: standard vertically-exaggerated cross section
     \end{itemize}
     \begin{center}
-      \includegraphics[width=0.4\textwidth]{green_transect}
+      \includegraphics[width=0.4\textwidth]{green_transect} \\
+      \footnotesize{Figure by E. Bueler}
     \end{center}
-    \begin{itemize}
-      \footnotesize
-    \item you can scale Stokes equation using smallness of $\epsilon = [H]/[L]$, where $[H]$ is a typical thickness of an ice sheet and $[L]$ is a typical horizontal dimension
-    \end{itemize}
   \end{block}
 \end{frame}
 
@@ -727,17 +736,15 @@
 
 
 \begin{frame}{NASA Operation IceBridge}
-\vspace{-0.74em}
+  \vspace{-0.74em}
   \begin{columns}
-    \column[c]{2.5cm}
-    \only<1>{2001}
-    \only<2>{from 2009 on}
-    \only<3>{2014}
+    \column[c]{4cm}
+    \begin{itemize}
+    \item additional flight lines since 2009
+    \end{itemize}
     \column[c]{6cm}
     \begin{figure}
-      \includegraphics<1>[height=8cm]{greenland-bed-old}
-      \includegraphics<2>[height=8cm]{greenland-bed-old-oib}
-      \includegraphics<3>[height=8cm]{greenland-bed-mcb}
+      \includegraphics[height=8cm]{greenland-bed-old-oib}
     \end{figure}
   \end{columns}
 \end{frame}
@@ -773,6 +780,8 @@
   \begin{itemize}
   \item do NASA's OIB million\$ really make ice sheet models better?
   \end{itemize}
+  \note[item]{so the multi million dollar question is}
+  \note[item]{does this investment pay off?}
 \end{frame}
 
 
@@ -788,6 +797,9 @@
     \includegraphics<1>[width=\textwidth]{jakobshavn-obs-nogate}
     \only<1>{\\ {} }
   \end{columns}
+  \note[item]{let's look at JIB again}
+  \note[item]{observations show strongly channelized flow}
+  \note[item]{with high flow speeds in the center}
 \end{frame}
 
 
@@ -811,6 +823,10 @@
     \only<2,4>{\\ simulated surface speed}
     \only<3>{\\ 600\,m, new data set (2014)}
   \end{columns}
+  \note<1>[item]{now let's do a simualulation with the old ice thickness data}
+  \note<2>[item]{there isn't really any fast flow}
+  \note<3>[item]{now use the new ice thickness}
+  \note<4>[item]{and we get fast flow}
 \end{frame}
 
 
@@ -833,6 +849,8 @@
     \begin{figure}
       \movie[showcontrols=true,loop,width=8cm]{\includegraphics[width=8cm]{jako_hindcast_frame000}}{jako_hindcast_hd.mov}
   \end{figure}
+  \note[item]{now that we can capture the present-day flow patterns}
+  \note[item]{reasonably well, we can add the temporal dimension}
 \end{frame}
 
 
@@ -845,9 +863,80 @@
 
 
 \begin{frame}{Summary}
+  \begin{columns}[c]
+    \begin{column}{2.25cm}
+      \shadowimage[width=2cm]{plug}        
+    \end{column}
+    \begin{column}{10cm}
+      ``pulling the plug'' (loss of floating tongue) causes outlet glaciers to speed up    
+    \end{column}
+  \end{columns}
+  \begin{columns}[c]
+    \begin{column}{2.25cm}
+      \shadowimage[width=2cm]{jakobshavn-speed-exp-600-v1.2-no-scale-no-gate}
+    \end{column}
+    \begin{column}{10cm}
+     outlet glacier flow is well captured where accurate ice thickness data are available (large return on investment)
+    \end{column}
+  \end{columns}
+  \begin{columns}[c]
+    \begin{column}{2.25cm}
+      \shadowimage[width=2cm]{jako_hindcast_frame000}    
+    \end{column}
+    \begin{column}{10cm}
+      initial efforts to simulate the recent past are promising    
+    \end{column}
+  \end{columns}
+  \begin{columns}[c]
+    \begin{column}{2.25cm}
+      \shadowimage[width=2cm]{jak_collapse_frame_last}    
+    \end{column}
+    \begin{column}{10cm}
+      how will Greenland look like in a 1000 years?
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}{Acknowledgments}
+  \begin{figure}
+    \includegraphics[height=1.5cm]{nasa-logo}
+    \includegraphics[height=1.5cm]{NSF_logo_color}
+  \end{figure}
+  
+  \begin{columns}[c]
+    \begin{column}{2cm}
+      \shadowimage[height=1.75cm]{mark}    
+    \end{column}
+    \begin{column}{3cm}
+      Mark Fahnestock
+    \end{column}
+    \begin{column}{2.cm}
+      \shadowimage[height=1.75cm]{martin}    
+    \end{column}
+    \begin{column}{3.5cm}
+      Martin Truffer
+    \end{column}
+  \end{columns}
+
+  \begin{columns}[c]
+    \vspace{-.5em}
+    \begin{column}{2cm}
+      \shadowimage[height=1.75cm]{ed}    
+    \end{column}
+    \begin{column}{3cm}
+      Ed Bueler
+    \end{column}
+    \begin{column}{2cm}
+      \shadowimage[height=1.75cm]{constantine}    
+    \end{column}
+    \begin{column}{3.5cm}
+      Constantine Khroulev
+    \end{column}
+  \end{columns}
+  \bigskip
   \begin{itemize}
-  \item  ``pulling the plug'' (loss of floating tongue) causes outlet glaciers to speed up
-  \item the flow of Greenland's outlet glaciers is well captured where accurate ice thickness data are available
+    \item \ldots and the glacier's group
   \end{itemize}
 \end{frame}
 
