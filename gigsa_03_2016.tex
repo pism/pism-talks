@@ -8,9 +8,8 @@
 }
 
 % load packages
-%\usepackage{media9}
-%\usepackage{movie15}
 \usepackage{multimedia}
+\usepackage{animate}
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
@@ -19,6 +18,10 @@
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,shadows, calc}
+
+\usepackage{pgfpages}
+\setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen=right}
 
 
 \definecolor{dark red}{HTML}{E41A1C}
@@ -118,7 +121,7 @@
 \title[] % (optional, use only with long paper titles)
 {Pulling the plug}
 
-\subtitle{When Greenland's outlet glaciers speed up}
+\subtitle{When a Greenland outlet glacier speeds up}
 
 
 \author[Aschwanden] % (optional, use only with lots of authors)
@@ -132,7 +135,7 @@
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
 
-\titlegraphic{\vskip-0.5cm\includegraphics[width=\textwidth]{gris-nw-speed-exp-600m}}
+\titlegraphic{\vskip-0.5cm\shadowimage[width=\textwidth]{gris-nw-speed-exp-600m}}
 
 \date{}
 
@@ -167,6 +170,7 @@
 % insert titlepage
 \begin{frame}
   \titlepage
+  \note[item]{Today I'd like to present some of the work the ``modeling corner'' of the glacier's group is doing}
 \end{frame}
 
 
@@ -176,8 +180,21 @@
 } 
 
 \begin{frame}[plain]
+\note[item]{I've just returned from field work on Taku Glacier on Sunday}
+\note[item]{and only had two days to prepare this talk}
+\note[item]{it was suggested to me I could show some pictures of field work instead like these two}
 \end{frame}
 
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{taku-aurora-jenna}};}
+} 
+
+
+\begin{frame}[plain]
+  \note[item]{but then I decided to talk about the Greenland Ice Sheet instead, as promised in the seminar announcement}
+\end{frame}
 
 
 \setbeamertemplate{background canvas}
@@ -196,9 +213,13 @@
 \begin{frame}[plain]
     \begin{itemize}
     \item extent of $1200\,\text{km}\,\times 2400\,\text{km}$ \dots it's a ``dwarf continent''
+    \item total area: 2.1 million km$^2$
+    \item ice covered area:  1.7 million km$^2$
+    \item \alert{for comparison: that's the total area of Alaska}
     \item has ice equivalent to 7 m of sea-level rise
     \item over past 2 decades: losing mass at an accelerating rate
     \end{itemize}
+    \note[item]{Explain why Greenland is of interest}
 \end{frame}
 
 
@@ -211,6 +232,11 @@
     \begin{figure}
       \movie[showcontrols=true,loop,width=12cm]{\includegraphics[width=12cm]{grace_greenland_2004_2012_still_print}}{grace_greenland_2004_2013_1080p.mov}
   \end{figure}
+  \begin{itemize}
+  \item<2> 280\,Gt is about half of Lake Eerie or a 15\,cm high layer of water covering Alaska
+  \end{itemize}
+  \note[item]{show NASA GRACE mass loss animation}
+  \note[item]{explain how much 280 Gt really are}
 \end{frame}
 
 
@@ -221,27 +247,29 @@
 
 \begin{frame}[plain]
   \textbf{The increase in mass loss is roughly equally split between changes in}
-    \begin{columns}[c]
-      \begin{column}{.28\linewidth}
-        \begin{figure}
-          \includegraphics[width=\linewidth]{gris-melt-ponds}
-        \end{figure}
-      \end{column}
-      \begin{column}{.67\linewidth}
-        \textbf{surface mass balance}
-      \end{column}
-    \end{columns}
-    \begin{columns}[c]
-      \begin{column}{.28\linewidth}
-        \begin{figure}
-          \includegraphics<1>[width=\linewidth]{storeglacier}
-        \end{figure}
-      \end{column}
-      \begin{column}{.67\linewidth}
-        \textbf{ice discharge}
-      \end{column}
-    \end{columns}
-
+  \begin{columns}[c]
+    \begin{column}{.3\linewidth}
+      \begin{figure}
+        \includegraphics[width=\linewidth]{gris-melt-ponds}
+      \end{figure}
+    \end{column}
+    \begin{column}{.3\linewidth}
+      \textbf{surface mass balance}
+    \end{column}
+  \end{columns}
+  \begin{columns}[c]
+    \begin{column}{.3\linewidth}
+      \begin{figure}
+        \includegraphics<1>[width=\linewidth]{storeglacier}
+      \end{figure}
+    \end{column}
+    \begin{column}{.3\linewidth}
+      \textbf{ice discharge}
+    \end{column}
+  \end{columns}
+  \bigskip
+  \textbf{What does that mean?}
+  \note[item]{}
 \end{frame}
 
 
@@ -251,7 +279,7 @@
 } 
 
 
-\begin{frame}{How does an ice sheet lose mass?}
+\begin{frame}{How an ice sheet loses mass}
   \begin{figure}
     \includegraphics[width=.96\textwidth]{ice-sheet-cartoon}
   \end{figure}
@@ -262,19 +290,40 @@
 \end{frame}
 
 
-
 \setbeamertemplate{background canvas}
   {
      \tikz{\node[inner sep=0pt,opacity=.75] {\includegraphics[height=\paperheight,width=\paperwidth]{outlet-glacier-collage-01}};}
 }
 
 \begin{frame}[plain]
+  \textbf{In Greenland}
     \begin{itemize}
-    \item ice discharge to the ocean mostly through 200+ ``outlet glaciers''
-    \item outlet glaciers are flowing fast ($>$200\,m/yr), are controlled by bedrock geometry, and terminate in narrow fjords ($<$10\,km wide)
+    \item ice discharge to the ocean occurs through 200+ ``outlet glaciers''
+    \item outlet glaciers are flowing fast ($>$200\,m/yr), are controlled by bedrock geometry, and terminate in narrow fjords ($\sim <$10\,km wide)
     \end{itemize}
 \end{frame}
  
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{outlet-glacier-collage-01}};}
+}
+
+\begin{frame}[plain]
+  \note[item]{some very passionate glaciologists get really close to the terminus in their sailing boats}
+\end{frame}
+
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{outlet-glacier-collage-alun-01}};}
+}
+
+\begin{frame}[plain]
+  \note[item]{some very passionate glaciologists get really close to the terminus in their sailing boats}
+\end{frame}
+
+
 
 \setbeamertemplate{background canvas}
 {
@@ -287,12 +336,13 @@
     \includegraphics[height=.8\textheight]{MODISGreenlandJakobshavn} \\
     \scriptsize{based on MODIS data from M. Fahnestock}
   \end{figure}
-  \note[item]{Jakobshavn serves as example to show observed changes}
+  \note[item]{Jakobshavn serves as example to show outlet glacier change}
   \note[item]{Greenland's biggest and fastest flowing outlet glacier}
   \note[item]{drains about 7\% of the entire ice sheet}
 \end{frame}
 
-\begin{frame}{Jakobshavn Isbr{\ae}, west Greenland}
+
+\begin{frame}{A short history}
  \begin{figure}
     \includegraphics[width=\textwidth]{Jakobshavn_groundline_retreat} \\
   \end{figure}
@@ -307,17 +357,20 @@
   \note[item]{retreat of the ice front started around 2002}
 \end{frame}
 
-\begin{frame}{Jakobshavn Isbr{\ae}, west Greenland}
+
+\begin{frame}{Frontal retreat 1990--2005}
  \begin{figure}
     \includegraphics<1>[width=\textwidth]{jib-front-1990}
-    \includegraphics<2>[width=\textwidth]{jib-front-2005}
-    \includegraphics<3>[width=\textwidth]{jib-front-1990-2005-change}
-    \includegraphics<4>[width=\textwidth]{jib-front-1990-2005-plug}
+    \includegraphics<2>[width=\textwidth]{jib-front-1990-floating}
+    \includegraphics<3>[width=\textwidth]{jib-front-2005}
+    \includegraphics<4>[width=\textwidth]{jib-front-1990-2005-change}
+    \includegraphics<5>[width=\textwidth]{jib-front-1990-2005-plug}
   \end{figure}
+\note[item]{exact timing of the break-up remains elusive due to poor satellite coverage at that time}
 \end{frame}
 
 
-\begin{frame}{Speed-up of Jakobshavn Isbr{\ae} 1992-2000}
+\begin{frame}{When you pull the plug: speed-up 1992-2000}
   \begin{itemize}
     \item almost doubled its flow speed between the 1992 and 2000
   \end{itemize}
@@ -329,12 +382,46 @@
 \end{frame}
 
 
-\begin{frame}{}
-  ice sheet models are needed to understand these changes
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=0.8] {\includegraphics[height=\paperheight,width=\paperwidth]{jakobshavn-2007}};}
+}
+
+
+\begin{frame}{When you pull the plug: changes in ice discharge 2000-2010}
+  \begin{itemize}
+  \item increase in discharge from 40\,Gt/yr in 2000 to $\sim$60\,Gt/yr in 2010
+  \item compared to $\sim$75\,Gt/yr from all Alaskan glaciers
+  \end{itemize}
+  \note[item]{illustration of the speed up}
 \end{frame}
 
 
-\begin{frame}{What is an ice sheet model?}
+\setbeamertemplate{background canvas}
+{
+%
+} 
+
+\begin{frame}{When you pull the plug: surface elevation changes 1985-2007}
+
+  \begin{figure}
+    \includegraphics[width=.8\textwidth]{jib-obs-surface-diff-motyka} \\
+    \footnotesize{Motyka, Fahnestock, Truffer (2010)}
+  \end{figure}
+  \note[item]{as a consequence of the increased discharge, the ice surface is drawing down near the glacier terminus}
+\end{frame}
+
+
+\begin{frame}{How can we reconcile/understand these changes?}
+ \begin{figure}
+    \includegraphics[height=4.15cm]{Joughin2004Fig2} \\
+    \includegraphics[height=3.20cm]{jib-front-1990-2005-change}
+    \includegraphics[height=3.20cm]{jib-obs-surface-diff-motyka}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Answer: use an ice sheet model}
   \begin{figure}
     \includegraphics[width=8cm]{grn_system_eqns}
   \end{figure}
@@ -358,7 +445,6 @@
   \note[item]{Ice flow is governed by Stokes equations with a power-law rheology}
   \note[item]{Because the viscosity of ice strongly depends on the thermal state, we also need to solve an energy balance equation}
   \note[item]{This makes the problem thermomechanically-coupled.}
-  \note[item]{some processes such as hydrology are currently only parametrized}
 \end{frame}
 
 
@@ -366,15 +452,18 @@
   \begin{columns}[c]
     \begin{column}{.28\linewidth}
       \begin{figure}
-        \includegraphics<1>[width=\linewidth]{ggstokes}
+        \includegraphics[width=\linewidth]{ggstokes}
         \\ \scriptsize{G.~G.~Stokes}
       \end{figure}
     \end{column}
     \begin{column}{.67\linewidth}
-      \begin{itemize}
-      \item composed of a single, largely homogenous material
+      \begin{itemize}[<+- | alert@+>]
+      \item composed of a single, largely homogeneous material
       \item flow governed by the Stokes equations known since the mid-19th century
       \item flows slowly: we can ignore turbulence, Coriolis and other inertial effects
+      \item no density/salinity stratification
+      \item most of what makes atmosphere and ocean flow interesting is missing
+      \item so what makes the flow of slow, cold, laminar ice interesting?
       \end{itemize}
     \end{column}
   \end{columns}
@@ -382,10 +471,10 @@
 
 
 \begin{frame}{Why ice sheet modeling is so hard}
-    \begin{columns}[c]
+    \begin{columns}[c]<1-2>
       \begin{column}{.28\linewidth}
         \begin{figure}
-          \includegraphics<1>[width=\linewidth]{storeglacier}
+          \includegraphics[width=\linewidth]{storeglacier}
         \end{figure}
       \end{column}
       \begin{column}{.67\linewidth}
@@ -397,10 +486,10 @@
       \end{block}
       \end{column}
     \end{columns}
-    \begin{columns}[c]
+    \begin{columns}[c]<1>
       \begin{column}{.28\linewidth}
         \begin{figure}
-          \includegraphics<1>[width=\linewidth]{canale_grande_V05}
+          \includegraphics[width=\linewidth]{canale_grande_V05}
         \end{figure}
       \end{column}
       \begin{column}{.67\linewidth}
@@ -411,10 +500,10 @@
       \end{block}
       \end{column}
     \end{columns}
-    \begin{columns}[c]
+    \begin{columns}[c]<1>
       \begin{column}{.3\linewidth}
         \begin{figure}
-          \includegraphics<1>[width=\linewidth]{bw_front_sm}
+          \includegraphics[width=\linewidth]{bw_front_sm}
         \end{figure}
       \end{column}
       \begin{column}{.67\linewidth}
@@ -465,25 +554,109 @@
 \end{frame}
 
 
+\begin{frame}{Why ice sheet modeling is so hard}
+    \begin{columns}[c]<1>
+      \begin{column}{.28\linewidth}
+        \begin{figure}
+          \includegraphics[width=\linewidth]{storeglacier}
+        \end{figure}
+      \end{column}
+      \begin{column}{.67\linewidth}
+        \begin{block}{Boundary conditions}
+        \begin{itemize}
+        \item seaward margin boundary condition
+        \item basal boundary condition
+        \end{itemize}
+      \end{block}
+      \end{column}
+    \end{columns}
+    \begin{columns}[c]<1-2>
+      \begin{column}{.28\linewidth}
+        \begin{figure}
+          \includegraphics[width=\linewidth]{canale_grande_V05}
+        \end{figure}
+      \end{column}
+      \begin{column}{.67\linewidth}
+        \begin{block}{Initial conditions}
+        \begin{itemize}
+        \item ice thickness / subglacial topography is a first order constraint on ice flow
+        \end{itemize}
+      \end{block}
+      \end{column}
+    \end{columns}
+    \begin{columns}[c]<1-3>
+      \begin{column}{.3\linewidth}
+        \begin{figure}
+          \includegraphics[width=\linewidth]{bw_front_sm}
+        \end{figure}
+      \end{column}
+      \begin{column}{.67\linewidth}
+        \begin{block}{Computational costs}
+        \begin{itemize}
+        \item solving the Stokes equations is computationally very expensive
+        \end{itemize}
+      \end{block}
+      \end{column}
+    \end{columns}
+    \note<2->[item]{the main focus of my talk is on}
+    \note<2->[item]{initial conditions and computational costs}
+\end{frame}
 
 
-
-\begin{frame}{Challenge: ice thickness}
-  \begin{columns}
-    \column[c]{1.25cm}
-    \includegraphics[width=\textwidth]{nasa-logo} \\
-    \includegraphics[width=\textwidth]{oib}
-    \column[c]{10cm}
+\begin{frame}{1. Simplify the Stokes equations}
+  \begin{block}{Ice sheets are shallow}
     \begin{itemize}
-    \item ice thickness is a leading order constraint on ice flow
-    \item NASA realized that collecting a lot more ice thickness measurements is crucial to make ice sheet models better
-    \item ice thickness measurements using the CReSIS radar became an important part of their Operation IceBridge mission (2009--today)
+    \item below in red is a no-vertical-exaggeration cross section of Greenland at $71^\circ$
+      \small
+    \item green and blue: standard vertically-exaggerated cross section
     \end{itemize}
+    \begin{center}
+      \includegraphics[width=0.4\textwidth]{green_transect}
+    \end{center}
+    \begin{itemize}
+      \footnotesize
+    \item you can scale Stokes equation using smallness of $\epsilon = [H]/[L]$, where $[H]$ is a typical thickness of an ice sheet and $[L]$ is a typical horizontal dimension
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{2. High Performance Computing (HPC)}
+  \begin{block}{Exploit modern HPC through parallelism}
+    \begin{figure}
+      \includegraphics[width=5.5cm]{bw_front_sm}
+      \hfill
+      \includegraphics[width=5.5cm]{jason-parallel}
+    \end{figure}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}{Parallel Ice Sheet Model (PISM)}
+  \includegraphics[width=4cm]{pism-logo}
+  \begin{itemize}
+  \item open-source, fully-parallel from start in 2006
+  \item primary development at UAF, with global user base
+  \item $>$100k lines of code; mostly C++
+  \item sustained NASA support \tiny (NAG5-11371, NNX09AJ38C, NNX13AM16G, NNX13AK27G), PI's Bueler, Aschwanden
+  \end{itemize}
+  \begin{columns}
+    \column[c]{4.75cm}
+    \begin{figure}
+      \includegraphics[width=\textwidth]{pism-uaf-publications}
+    \end{figure}
+    \column[c]{6.25cm}
+    \includegraphics<1>[width=\textwidth]{pism-users}
   \end{columns}
-  \begin{figure}
-    \includegraphics[width=6cm]{canale_grande_V05}
-  \end{figure}
-\note[item]{ice thickness is the difference between ice upper surface and the subglacial topography}
+\end{frame}
+
+\begin{frame}{Parallel Ice Sheet Model (PISM) cont.}
+  \includegraphics[width=4cm]{pism-logo}
+  \begin{itemize}
+  \item PISM uses a computationally-efficient approximation to the Stokes equations
+  \item PISM runs on large HPC systems
+  \item currently installed on GI RCS's pacman, fish, \& chinook, as well as on NASA's pleiades cluster
+  \item simulations typically use 100-500 cores and may take up to two weeks wall time to complete
+  \end{itemize}
 \end{frame}
 
 
@@ -517,7 +690,7 @@
       \end{block}
       \end{column}
     \end{columns}
-    \begin{columns}[c]<1-2>
+    \begin{columns}[c]<1>
       \begin{column}{.3\linewidth}
         \begin{figure}
           \includegraphics[width=\linewidth]{bw_front_sm}
@@ -534,332 +707,149 @@
 \end{frame}
 
 
-
-% \begin{frame}{NASA Operation IceBridge}
-% \vspace{-0.74em}
-%   \begin{columns}
-%     \column[c]{2.5cm}
-%     \only<1>{2001}
-%     \only<2>{from 2009 on}
-%     \only<3>{2014}
-%     \column[c]{6cm}
-%     \begin{figure}
-%       \includegraphics<1>[height=8cm]{greenland-bed-old}
-%       \includegraphics<2>[height=8cm]{greenland-bed-old-oib}
-%       \includegraphics<3>[height=8cm]{greenland-bed-mcb}
-%     \end{figure}
-%   \end{columns}
-% \end{frame}
-
-% \begin{frame}{Zoom in to Jakobshavn Isbr{\ae}}
-%   \begin{figure}
-%     \small{Bamber (2001) \hspace{5em} Morlighem (2014)}
-%     \includegraphics[width=12cm]{jako_bed}
-%  \end{figure}
-% \end{frame}
+\begin{frame}{Challenge: ice thickness}
+  \begin{columns}
+    \column[c]{1.25cm}
+    \includegraphics[width=\textwidth]{nasa-logo} \\
+    \includegraphics[width=\textwidth]{oib}
+    \column[c]{10cm}
+    \begin{itemize}
+    \item ice thickness is a leading order constraint on ice flow
+    \item NASA realized that collecting a lot more ice thickness measurements is crucial to make ice sheet models better
+    \item ice thickness measurements using the CReSIS radar became an important part of their Operation IceBridge mission (2009--today)
+    \end{itemize}
+  \end{columns}
+  \begin{figure}
+    \includegraphics[width=6cm]{canale_grande_V05}
+  \end{figure}
+\note[item]{ice thickness is the difference between ice upper surface and the subglacial topography}
+\end{frame}
 
 
-% \begin{frame}{NASA Operation IceBridge}
-%   \begin{columns}
-%     \column[c]{8cm}
-%     \begin{figure}
-%       \small{Bamber (2001) \hspace{4em} Morlighem (2014)}
-%       \includegraphics[height=7.5cm]{greenland_bed}
-%     \end{figure}
-%     \column[c]{4cm}
-%     \begin{itemize}
-%     \item from 5\,km to 150\,m horizontal grid resolution
-%     \end{itemize}
-%   \end{columns}
-% \end{frame}
+\begin{frame}{NASA Operation IceBridge}
+\vspace{-0.74em}
+  \begin{columns}
+    \column[c]{2.5cm}
+    \only<1>{2001}
+    \only<2>{from 2009 on}
+    \only<3>{2014}
+    \column[c]{6cm}
+    \begin{figure}
+      \includegraphics<1>[height=8cm]{greenland-bed-old}
+      \includegraphics<2>[height=8cm]{greenland-bed-old-oib}
+      \includegraphics<3>[height=8cm]{greenland-bed-mcb}
+    \end{figure}
+  \end{columns}
+\end{frame}
 
-\begin{frame}{Challenge: computational costs}
-  To make ice sheet modeling compuationally tractable:
+\begin{frame}{Zoom in to Jakobshavn Isbr{\ae}}
+  \begin{figure}
+    \small{old (2001) \hspace{5em} new (2014)}
+    \includegraphics[width=12cm]{jako_bed}
+ \end{figure}
+\end{frame}
+
+
+\begin{frame}{NASA Operation IceBridge}
+  \begin{columns}
+    \column[c]{8cm}
+    \begin{figure}
+      \small{old (2001) \hspace{4em} new (2014)}
+      \includegraphics[height=7.5cm]{greenland_bed}
+    \end{figure}
+    \column[c]{4cm}
+    \begin{itemize}
+    \item from 5\,km to 150\,m horizontal grid resolution
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{NASA Operation IceBridge}
+  \begin{figure}
+    \includegraphics[height=2.5cm]{nasa-logo} \qquad
+    \includegraphics[height=2.5cm]{oib} \qquad
+    \includegraphics[height=2.5cm]{1000-dollar-bills}
+  \end{figure}
   \begin{itemize}
-  \item simplify the Stokes equations (ice sheets are shallow)
-  \item take advantage of modern High Performance Computing
-  \item exploit parallelism
+  \item do NASA's OIB million\$ really make ice sheet models better?
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Parallel Ice Sheet Model (PISM)}
-  \includegraphics[width=4cm]{pism-logo}
-  \begin{itemize}
-  \item open-source, fully-parallel from start in 2006
-  \item primary development at UAF, with global user base
-  \item $>$100k lines of code; mostly C++
-  \item sustained NASA support \tiny (NAG5-11371, NNX09AJ38C, NNX13AM16G, NNX13AK27G)
-  \end{itemize}
+
+\begin{frame}{Observed flow speeds}
+\vspace{-0.74em}
   \begin{columns}
-    \column[c]{4.75cm}
+    \column[c]{5cm}
     \begin{figure}
-      \includegraphics[width=\textwidth]{pism-uaf-publications}
+      \includegraphics[width=\textwidth]{greenland-obs-overview}
     \end{figure}
-    \column[c]{6.25cm}
-    \includegraphics<1>[width=\textwidth]{pism-users}
+    \column[c]{5cm}
+    \only<1>{Jakobshavn Isbr{\ae}}
+    \includegraphics<1>[width=\textwidth]{jakobshavn-obs-nogate}
+    \only<1>{\\ {} }
   \end{columns}
 \end{frame}
 
 
-% \begin{frame}{The beginning of Greenland ice flow modeling}
-%   \begin{columns}
-%     \column[c]{4.25cm}
-%     \begin{figure}
-%       \includegraphics<1>[height=.65\textheight]{greve_1997_mass_flux}
-%       \small 
-%       \caption{Simulated ass flux (SICOPOLIS) from Greve (1997)}
-%     \end{figure}
-%     \column[c]{6.75cm}
-%     \begin{itemize}
-%       \item started in the mid-1990's
-%       \item pioneered by R. Greve, P. Huybrechts, C. Ritz and others
-%       \item based on the Shallow Ice Approximation
-%       \item horizontal grid size: 20--40\,km
-%     \end{itemize}
-%   \end{columns}
-% \end{frame}
+\begin{frame}{Ice thickness and simulated flow speeds}
+\vspace{-0.74em}
+  \begin{columns}
+    \column[c]{5cm}
+    \begin{figure}
+      \includegraphics<1-2>[width=\textwidth]{greenland-obs-basal-overview}
+      \includegraphics<3-4>[width=\textwidth]{greenland-obs-basal-overview-mo14}
+    \end{figure}
+    \column[c]{5cm}
+    \only<1,3>{Jakobshavn Isbr{\ae}}
+    \only<2>{no fast flow}
+    \only<4>{fast flow appears}
+    \includegraphics<1>[width=\textwidth]{jakobshavn-bed-5000m-ba01}
+    \includegraphics<2>[width=\textwidth]{jakobshavn-speed-exp-4500m-ba01}
+    \includegraphics<3>[width=\textwidth]{jakobshavn-bed-mo14}
+    \includegraphics<4>[width=\textwidth]{jakobshavn-speed-exp-600-v1.2-no-scale-no-gate}
+    \only<1>{\\ 5\,km, old data set (2001)}
+    \only<2,4>{\\ simulated surface speed}
+    \only<3>{\\ 600\,m, new data set (2014)}
+  \end{columns}
+\end{frame}
 
 
-% \begin{frame}{Observed flow: pre-SAR era}
-%   \begin{columns}
-%     \column[c]{2.75cm}
-%     \begin{figure}
-%       \shadowimage[width=\textwidth]{stake-measurement-gulkana}
-%       \caption{credit: L. Sass, USGS}
-%     \end{figure}
-%     \column[c]{8.5cm}
-%     \begin{itemize}
-%     \item spatial and temporal coverage was very limited
-%     \item mostly point measurements, e.g.
-%     \begin{itemize}
-%     \item Jakobshavn Isbr{\ae} (e.g. Echelmeyer, 1990)
-%     \item EGIG, PARCA 2000\,m velocity line
-%     \end{itemize}
-%   \item it was already known that Jakobshavn Isbr{\ae} is flowing fast
-%   \end{itemize}
-% \end{columns}
-% \end{frame}
-
-
-% \begin{frame}{Observed flow: SAR era}
-%   \begin{columns}
-%     \column[c]{2.5cm}
-%     \begin{figure}
-%       \shadowimage[width=\textwidth]{sar-sentinel}
-%     \end{figure}
-%     \column[c]{8.5cm}
-%     \begin{itemize}
-%     \item pioneered by I. Joughin, E. Rignot, M. Fahnestock
-%     \item ERS1/2 and RADARSAT
-%     \item reveals large spatial and temporal flow variability
-%     \end{itemize}
-%   \end{columns}
-%   \begin{figure}
-%     \includegraphics[width=\textwidth]{gris-early-sar}
-%   \end{figure}
-% \end{frame}
-
-
-% \begin{frame}{Observed spatial flow variability}
-%   nearly-perfect spatial coverage but non-negligible uncertainties in slow-flowing areas
-%   \begin{figure}
-%     \includegraphics[height=.7\textheight]{greenland-sar-3}
-%  \end{figure}
-% \end{frame}
-
-% \begin{frame}{Observed temporal flow variability}
-%   increasing temporal variability using TerraSar-X/Tandem-X, Sentinel but also from optical imagery (worldview, Landsat8)
-%   \begin{figure}
-%     \includegraphics[height=.7\textheight]{joughin-2014-collage}
-%  \end{figure}
-% \end{frame}
+\begin{frame}{Can we capture the present-day flow field?}
+  \begin{figure}
+    \includegraphics[height=7cm]{greenland-overview-3}
+    \\ \scriptsize{Aschwanden, Fahnestock, Truffer (2016) \textit{Nature Communications}}
+  \end{figure}
+  \note[item]{first time capturing the flow field for the right reason}
+  \note[item]{this is quite a break through in ice sheet modeling}
+  \note[item]{though not a surprising one}
+  \note[item]{it just confirms what students learn in glaciology 100:}
+  \note[item]{ice flows downhill}
+\end{frame}
 
 
 
-% \begin{frame}{Flow speeds}
-% \vspace{-0.74em}
-%   \begin{columns}
-%     \column[c]{5cm}
-%     \begin{figure}
-%       \includegraphics[width=\textwidth]{greenland-obs-overview}
-%     \end{figure}
-%     \column[c]{5cm}
-%     \only<1>{Jakobshavn Isbr{\ae}}
-%     \includegraphics<1>[width=\textwidth]{jakobshavn-obs-nogate}
-%     \only<1>{\\ {} }
-%   \end{columns}
-% \end{frame}
+\begin{frame}{Understanding the recent past}
+  first high-resolution hindcast of the satellite era
+    \begin{figure}
+      \movie[showcontrols=true,loop,width=8cm]{\includegraphics[width=8cm]{jako_hindcast_frame000}}{jako_hindcast_hd.mov}
+  \end{figure}
+\end{frame}
 
 
-% \begin{frame}{Ice thickness map until 2013/14}
-% \vspace{-0.74em}
-%   \begin{columns}
-%     \column[c]{5cm}
-%     \begin{figure}
-%       \includegraphics[width=\textwidth]{greenland-obs-basal-overview}
-%     \end{figure}
-%     \column[c]{5cm}
-%     \only<1>{Jakobshavn Isbr{\ae}}
-%     \only<2>{no fast flow}
-%     \includegraphics<1>[width=\textwidth]{jakobshavn-bed-5000m-ba01}
-%     \includegraphics<2>[width=\textwidth]{jakobshavn-speed-exp-4500m-ba01}
-%     \only<1>{\\ 5\,km, Bamber et al. (2001)}
-%     \only<2>{\\ simulated surface speed}
-%   \end{columns}
-% \end{frame}
+\begin{frame}{Next step: Vulnerability assessment}
+  What has the future in stock?
+    \begin{figure}
+      \movie[showcontrols=true,autostart,loop,width=12cm]{\includegraphics[width=12cm]{jak_collapse_frame000}}{jak_collapse.mov}
+  \end{figure}
+\end{frame}
 
 
-
-% \begin{frame}{NASA Operation IceBridge}
-%   \vspace{-0.74em}
-%   \begin{columns}
-%     \column[c]{2cm}
-%     \includegraphics[width=\textwidth]{nasa-logo} \\
-%     \includegraphics[width=\textwidth]{oib}
-%     \column[c]{10cm}
-%     \begin{itemize}
-%     \item NASA realized that collecting a lot more ice thickness measurements is crucial to make ice sheet models better
-%     \item ice thickness measurements using the CReSIS radar became an important part of their Operation IceBridge mission (2009--today)
-%     \end{itemize}
-%   \end{columns}
-% \end{frame}
-
-
-% \begin{frame}{NASA Operation IceBridge}
-% \vspace{-0.74em}
-%   \begin{columns}
-%     \column[c]{2.5cm}
-%     \only<1>{2001}
-%     \only<2>{from 2009 on}
-%     \only<3>{2014}
-%     \column[c]{6cm}
-%     \begin{figure}
-%       \includegraphics<1>[height=8cm]{greenland-bed-old}
-%       \includegraphics<2>[height=8cm]{greenland-bed-old-oib}
-%       \includegraphics<3>[height=8cm]{greenland-bed-mcb}
-%     \end{figure}
-%   \end{columns}
-% \end{frame}
-
-% \begin{frame}{Zoom in to Jakobshavn Isbr{\ae}}
-%   \begin{figure}
-%     \small{Bamber (2001) \hspace{5em} Morlighem (2014)}
-%     \includegraphics[width=12cm]{jako_bed}
-%  \end{figure}
-% \end{frame}
-
-
-% \begin{frame}{NASA Operation IceBridge}
-%   \begin{columns}
-%     \column[c]{8cm}
-%     \begin{figure}
-%       \small{Bamber (2001) \hspace{4em} Morlighem (2014)}
-%       \includegraphics[height=7.5cm]{greenland_bed}
-%     \end{figure}
-%     \column[c]{4cm}
-%     \begin{itemize}
-%     \item from 5\,km to 150\,m horizontal grid resolution
-%     \end{itemize}
-%   \end{columns}
-% \end{frame}
-
-% \begin{frame}{NASA Operation IceBridge}
-%   \begin{figure}
-%     \includegraphics[height=2.5cm]{nasa-logo} \qquad
-%     \includegraphics[height=2.5cm]{oib} \qquad
-%     \includegraphics[height=2.5cm]{1000-dollar-bills}
-%   \end{figure}
-%   \begin{itemize}
-%   \item do NASA's OIB million\$ really make ice sheet models better?
-%   \item use your favorite high resolution ice sheet model to find out
-% \end{itemize}
-% \end{frame}
-
-
-
-
-
-% \begin{frame}{Best simulation}
-%   \includegraphics[height=8cm]{greenland-overview-3}
-% \end{frame}
-
-% \begin{frame}{Role of model resolution}
-%   \includegraphics[width=\textwidth]{jakobshavn-beds}
-% \end{frame}
-
-% \begin{frame}{Role of model resolution}
-%   \begin{figure}
-%     \includegraphics[height=6cm]{grid-resolution-4}
-%   \end{figure}
-% \end{frame}
-
-
-% \begin{frame}{Role of ice thickness}
-%   \begin{figure}
-%     \includegraphics<1>[width=\textwidth]{nw-coast-1-4500m-ba2001-01}
-%     \includegraphics<2>[width=\textwidth]{nw-coast-1-4500m-mo2014-01}
-%     \includegraphics<3>[width=\textwidth]{nw-coast-1-600m-ba2001-01}
-%     \includegraphics<4>[width=\textwidth]{nw-coast-1-600m-mo2014-01}
-%     \\[1em]
-%     \only<1>{low model and low data set resolution}
-%     \only<2>{low model and high  data set resolution}
-%     \only<3>{high model and low data set resolution}
-%     \only<4>{high model and high data set resolution}
-%   \end{figure}
-% \end{frame}
-
-% \begin{frame}{Role of ice thickness}
-%   \begin{figure}
-%     \includegraphics<1>[width=\textwidth]{nw-coast-1-600m-mo2014-01}
-%   \end{figure}
-%       \begin{itemize}
-%         \item only {\bf high} \alert{model} and \alert{data} set resolution result in outlet glacier flow
-%       \end{itemize}
-% \end{frame}
-
-
-
-
-
-
-% \begin{frame}{Conclusions}
-%   \begin{itemize}
-%     \item first time that the general flow patterns are captured for the {\bf right} reason
-%     \item for isbr{\ae}-type glaciers ice thickness matters the most, subglacial hydrology comes later
-%     \item this is very encouraging
-%     \item opens the door for prognostic simulations using simple models of subglacial hydrology
-%   \end{itemize}
-% \end{frame}
-
-
-% \begin{frame}{Final Remarks}
-%   \begin{itemize}
-%     \item we don't get Humboldt Gletscher and NEGIS right. \alert{Fahnestock hypothesis:} related to (thermal) history
-%     \item some of the remaining discrepancies could also be attributed to limited knowledge of ice thickness in the vast interior of Greenland
-%     \item we get good results using a shallow model that includes vertical shearing and horizontal membrane stresses
-%     \item IPCC AR4's \alert{``\ldots but recent changes in ice sheet margins and ice streams cannot be simulated accurately with these models, demonstrating a need for resolving the full stress configuration.''} was formulated in a somewhat unfortunate way
-%   \end{itemize}
-% \end{frame}
-
-% \begin{frame}{Final Remarks}
-%   \begin{itemize}
-%     \item ice thickness mapping by NASA's OIB and similar efforts are paying off big time
-%     \item similar efforts are suggested for Antarctica
-%   \end{itemize}
-% \end{frame}
-
-
-% \begin{frame}{Final Remarks}
-% \begin{columns}
-%   \column[c]{3cm}
-%   \begin{figure}
-%     \includegraphics[width=1.75cm]{pandoras-box}
-%   \end{figure}
-%   \column[c]{8cm}
-%   The days of coarse ($>$1\,km) resolution Greenland models are over
-% \end{columns}
-% \end{frame}
-
+\begin{frame}{Summary}
+  \begin{itemize}
+  \item  ``pulling the plug'' (loss of floating tongue) causes outlet glaciers to speed up
+  \item the flow of Greenland's outlet glaciers is well captured where accurate ice thickness data are available
+  \end{itemize}
+\end{frame}
 
 
 
