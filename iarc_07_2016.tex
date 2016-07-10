@@ -121,7 +121,7 @@
 \title[] % (optional, use only with long paper titles)
 {Disappearing Ice}
 
-\subtitle{When a Greenland outlet glacier speeds up}
+\subtitle{When you pull the plug}
 
 
 \author[Aschwanden] % (optional, use only with lots of authors)
@@ -211,13 +211,10 @@
 \begin{frame}[plain]
 \end{frame}
 
-
-
 \setbeamertemplate{background canvas}
 {
 %
 } 
-
 
 \begin{frame}{How an ice sheet loses mass}
   \begin{figure}
@@ -234,14 +231,21 @@
   \note[item]{explaining in more detail in the next slide}
 \end{frame}
 
-\begin{frame}{Postitive feedsbacks}
-(at least) two positive feedbacks accelerate mass loss
-\begin{itemize}
-\item with the climate (Bodvardsson effect)
-\item geometrical instability (marine ice sheet hypothesis)
-\end{itemize}
+
+\begin{frame}{Why we expect strong mass loss}
+  \begin{block}{Positive feedbacks}
+    (at least) two positive feedbacks accelerate mass loss
+    \begin{itemize}
+    \item with the climate (Bodvardsson effect)
+    \item geometrical instability (marine ice sheet hypothesis)
+    \end{itemize}
+  \end{block}
 \end{frame}
 
+\setbeamertemplate{background canvas}
+{
+%
+} 
 
 \begin{frame}{Mountain Glacier}
  \begin{figure}
@@ -255,22 +259,151 @@
   \end{figure}
 \end{frame}
 
+\begin{frame}{Marine Ice Sheet Instability Hypothesis}
+ \begin{figure}
+    \includegraphics[height=8cm]{vaughan-misi}
+  \end{figure}
+\end{frame}
 
-\begin{frame}{Marine Ice Sheet Instability}
+\begin{frame}{Marine Ice Sheet Instability Hypothesis}
  \begin{figure}
     \includegraphics[width=\textwidth]{mercer_1978}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Marine Ice Sheet Instability}
- \begin{figure}
-    \includegraphics[height=8cm]{ant-marine}
-  \end{figure}
+\begin{frame}{Marine Ice Sheet Instability Hypothesis}
+  \begin{columns}[c]
+    \begin{column}{.65\linewidth}
+      \begin{figure}
+        \includegraphics<1>[height=8cm]{ant-marine}
+        \includegraphics<2>[height=8cm]{ant-shelves}
+      \end{figure}
+    \end{column}
+    \begin{column}{.38\linewidth}
+      \begin{itemize}
+      \item large areas are below sea level
+      \item up to 1\,m SLR by 2100 (DeConto \& Pollard, 2016)
+      \item up to 15\,m SLR by 2500 (DeConto \& Pollard, 2016)
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Marine Ice Sheet Instability Hypothesis}
+  \begin{columns}[c]
+    \begin{column}{.60\linewidth}
+      \begin{figure}
+        \includegraphics[height=8cm]{gris-marine}
+      \end{figure}
+    \end{column}
+    \begin{column}{.40\linewidth}
+      \begin{itemize}
+        \item interior is below sea level
+        \item but few ``gates'' exist
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Focus on Greenland}
+  \begin{columns}[c]
+    \begin{column}{.60\linewidth}
+      \begin{figure}
+        \includegraphics[height=8cm]{gris-marine}
+      \end{figure}
+    \end{column}
+    \begin{column}{.40\linewidth}
+      \begin{itemize}
+        \item interior is below sea level
+        \item but few ``gates'' exist
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{nasa-mapping-greenland-ice-sheet}};}
+} 
+
+\begin{frame}[plain]
 \end{frame}
 
 \setbeamertemplate{background canvas}
   {
-     \tikz{\node[inner sep=0pt,opacity=.75] {\includegraphics[height=\paperheight,width=\paperwidth]{outlet-glacier-collage-01}};}
+     \tikz{\node[inner sep=0pt,opacity=.5] {\includegraphics[height=\paperheight,width=\paperwidth]{nasa-mapping-greenland-ice-sheet}};}
+} 
+
+\begin{frame}[plain]
+    \begin{itemize}
+    \item extent of $1200\,\text{km}\,\times 2400\,\text{km}$ \dots it's a ``dwarf continent''
+    \item total area: 2.1 million km$^2$
+    \item ice covered area:  1.7 million km$^2$
+    \item \alert{for comparison: that's the total area of Alaska}
+    \item has ice equivalent to 7 m of sea-level rise
+    \item over past 2 decades: losing mass at an accelerating rate
+    \end{itemize}
+    \note[item]{Explain why Greenland is of interest}
+\end{frame}
+
+
+\setbeamertemplate{background canvas}
+{
+%
+} 
+
+\begin{frame}[plain]
+    \begin{figure}
+      \movie[showcontrols=true,loop,width=12cm]{\includegraphics[width=12cm]{grace_greenland_2004_2012_still_print}}{grace_greenland_2004_2013_1080p.mov}
+  \end{figure}
+  \begin{itemize}
+  \item<2> 280\,Gt is about half of Lake Eerie or a 15\,cm high layer of water covering Alaska
+  \end{itemize}
+  \note[item]{show NASA GRACE mass loss animation}
+  \note[item]{greatest losses occur on the west coast and SE coast} 
+  \note[item]{explain how much 280 Gt really are}
+\end{frame}
+
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=.5] {\includegraphics[height=\paperheight,width=\paperwidth]{nasa-mapping-greenland-ice-sheet}};}
+} 
+
+\begin{frame}[plain]
+  \textbf{The increase in mass loss is roughly equally split between changes in}
+  \begin{columns}[c]
+    \begin{column}{.3\linewidth}
+      \begin{figure}
+        \includegraphics[width=\linewidth]{gris-melt-ponds}
+      \end{figure}
+    \end{column}
+    \begin{column}{.3\linewidth}
+      \textbf{surface mass balance}
+    \end{column}
+  \end{columns}
+  \begin{columns}[c]
+    \begin{column}{.3\linewidth}
+      \begin{figure}
+        \includegraphics<1>[width=\linewidth]{storeglacier}
+      \end{figure}
+    \end{column}
+    \begin{column}{.3\linewidth}
+      \textbf{ice discharge}
+    \end{column}
+  \end{columns}
+  \bigskip
+  \textbf{What does that mean?}
+  \note[item]{}
+\end{frame}
+
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=.65] {\includegraphics[height=\paperheight,width=\paperwidth]{outlet-glacier-collage-01}};}
 }
 
 \begin{frame}[plain]
@@ -282,6 +415,17 @@
     \note[item]{outlet glaciers look pretty spectacular}
 \end{frame}
  
+\setbeamertemplate{background canvas}
+{
+%
+} 
+
+\begin{frame}{Focus on Greenland}
+      \begin{figure}
+        \includegraphics[height=8cm]{gris-marine-4outlet}
+      \end{figure}
+\end{frame}
+
 
 \setbeamertemplate{background canvas}
   {
