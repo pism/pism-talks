@@ -890,7 +890,7 @@
         \begin{block}{Initial conditions}
         \begin{itemize}
         \item ice has a long memory
-        \item ice thickness / subglacial topography is a first order constraint on ice flow
+        \item<1> ice thickness / subglacial topography is a first order constraint on ice flow
         \end{itemize}
       \end{block}
       \end{column}
@@ -999,8 +999,8 @@
 \end{frame}
 
 
-\begin{frame}{{\color{dark green}{Inverse}} methods}
-    Some ice sheet models like ISSM, Elmer, and VarGlaS have built-in data assimilation using adjont methods
+\begin{frame}{Inverse methods}
+  data assimilation using adjont methods
   \begin{columns}[c]
     \begin{column}{.46\textwidth}
       \begin{figure}
@@ -1020,9 +1020,36 @@
   \end{columns}
 \end{frame}
 
-
-
 \begin{frame}{Why ice sheet modeling is so hard}
+    \begin{columns}[c]<1>
+      \begin{column}{.3\linewidth}
+        \begin{figure}
+          \includegraphics[width=\linewidth]{bw_front_sm}
+        \end{figure}
+      \end{column}
+      \begin{column}{.67\linewidth}
+        \begin{block}{Computational costs}
+        \begin{itemize}
+        \item solving the Stokes equations is computationally very expensive
+        \end{itemize}
+      \end{block}
+      \end{column}
+    \end{columns}
+    \begin{columns}[c]<1-2>
+      \begin{column}{.28\linewidth}
+        \begin{figure}
+          \includegraphics[width=\linewidth]{canale_grande_V05}
+        \end{figure}
+      \end{column}
+      \begin{column}{.67\linewidth}
+        \begin{block}{Initial conditions}
+        \begin{itemize}
+        \item<1> ice has a long memory
+        \item ice thickness / subglacial topography is a first order constraint on ice flow
+        \end{itemize}
+      \end{block}
+      \end{column}
+    \end{columns}
     \begin{columns}[c]<1>
       \begin{column}{.28\linewidth}
         \begin{figure}
@@ -1038,86 +1065,7 @@
       \end{block}
       \end{column}
     \end{columns}
-    \begin{columns}[c]<1-2>
-      \begin{column}{.28\linewidth}
-        \begin{figure}
-          \includegraphics[width=\linewidth]{canale_grande_V05}
-        \end{figure}
-      \end{column}
-      \begin{column}{.67\linewidth}
-        \begin{block}{Initial conditions}
-        \begin{itemize}
-        \item ice thickness / subglacial topography is a first order constraint on ice flow
-        \end{itemize}
-      \end{block}
-      \end{column}
-    \end{columns}
-    \begin{columns}[c]<1-3>
-      \begin{column}{.3\linewidth}
-        \begin{figure}
-          \includegraphics[width=\linewidth]{bw_front_sm}
-        \end{figure}
-      \end{column}
-      \begin{column}{.67\linewidth}
-        \begin{block}{Computational costs}
-        \begin{itemize}
-        \item solving the Stokes equations is computationally very expensive
-        \end{itemize}
-      \end{block}
-      \end{column}
-    \end{columns}
-    \note<2->[item]{the main focus of my talk is on}
-    \note<2->[item]{initial conditions and computational costs}
-    \note<2->[item]{solving the Stokes equations is expensive}
 \end{frame}
-
-
-\begin{frame}{Why ice sheet modeling is so hard}
-    \begin{columns}[c]<1>
-      \begin{column}{.28\linewidth}
-        \begin{figure}
-          \includegraphics[width=\linewidth]{storeglacier}
-        \end{figure}
-      \end{column}
-      \begin{column}{.67\linewidth}
-        \begin{block}{Boundary conditions}
-        \begin{itemize}
-        \item seaward margin boundary condition
-        \item basal boundary condition
-        \end{itemize}
-      \end{block}
-      \end{column}
-    \end{columns}
-    \begin{columns}[c]<1-2>
-      \begin{column}{.28\linewidth}
-        \begin{figure}
-          \includegraphics[width=\linewidth]{canale_grande_V05}
-        \end{figure}
-      \end{column}
-      \begin{column}{.67\linewidth}
-        \begin{block}{Initial conditions}
-        \begin{itemize}
-        \item ice thickness / subglacial topography is a first order constraint on ice flow
-        \end{itemize}
-      \end{block}
-      \end{column}
-    \end{columns}
-    \begin{columns}[c]<1>
-      \begin{column}{.3\linewidth}
-        \begin{figure}
-          \includegraphics[width=\linewidth]{bw_front_sm}
-        \end{figure}
-      \end{column}
-      \begin{column}{.67\linewidth}
-        \begin{block}{Computational costs}
-        \begin{itemize}
-        \item solving the Stokes equations is computationally very expensive
-        \end{itemize}
-      \end{block}
-      \end{column}
-    \end{columns}
-\end{frame}
-
 
 \begin{frame}{Challenge: ice thickness}
   \begin{columns}
