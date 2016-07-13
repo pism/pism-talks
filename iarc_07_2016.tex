@@ -15,6 +15,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[multidot]{grffile}
+\usepackage[amssymb]{SIunits}
+
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,shadows, calc}
@@ -39,6 +41,43 @@
 \definecolor{uaf violet}{HTML}{984EA3}
 \definecolor{uaf orange}{HTML}{FF7F00}
 \setbeamercolor{boxed}{fg=black,bg=uaf yellow}
+
+
+% Define block styles
+\tikzstyle{initialization} = [ellipse, draw, 
+    text badly centered, draw=dark violet,
+        % The filling: 
+        top color=white, 
+        bottom color=dark violet]
+\tikzstyle{initialization faded} = [ellipse, draw, 
+    text badly centered, draw=dark violet!50,
+        % The filling: 
+        top color=white, 
+        bottom color=dark violet!25]
+\tikzstyle{hindcast} = [ellipse, draw,
+    text badly centered, rounded corners,draw=dark orange,
+        % The filling: 
+        top color=white, 
+        bottom color=dark orange]
+\tikzstyle{hindcast faded} = [ellipse, draw,
+    text badly centered, rounded corners,draw=dark orange!50,
+        % The filling: 
+        top color=white, 
+        bottom color=dark orange!25]
+\tikzstyle{forecast} = [ellipse, draw,
+    text badly centered, rounded corners,draw=dark blue,
+        % The filling: 
+        top color=white, 
+        bottom color=dark blue]
+\tikzstyle{forecast faded} = [ellipse, draw,
+    text badly centered, rounded corners,draw=dark blue!50,
+        % The filling: 
+        top color=white, 
+        bottom color=dark blue!50]
+\tikzstyle{arrow line} = [draw, -latex']
+\tikzstyle{line} = [draw]
+
+
 
 \graphicspath{{figures/}}
 
@@ -597,6 +636,35 @@
 
 \begin{frame}{Why ice sheet modeling is so hard}
     \begin{columns}[c]<1-2>
+      \begin{column}{.3\linewidth}
+        \begin{figure}
+          \includegraphics[width=\linewidth]{bw_front_sm}
+        \end{figure}
+      \end{column}
+      \begin{column}{.67\linewidth}
+        \begin{block}{Computational costs}
+        \begin{itemize}
+        \item solving the Stokes equations is computationally very expensive
+        \end{itemize}
+      \end{block}
+      \end{column}
+    \end{columns}
+    \begin{columns}[c]<1>
+      \begin{column}{.28\linewidth}
+        \begin{figure}
+          \includegraphics[width=\linewidth]{canale_grande_V05}
+        \end{figure}
+      \end{column}
+      \begin{column}{.67\linewidth}
+        \begin{block}{Initial conditions}
+        \begin{itemize}
+        \item ice has a long memory
+        \item ice thickness / subglacial topography is a first order constraint on ice flow
+        \end{itemize}
+      \end{block}
+      \end{column}
+    \end{columns}
+    \begin{columns}[c]<1>
       \begin{column}{.28\linewidth}
         \begin{figure}
           \includegraphics[width=\linewidth]{storeglacier}
@@ -611,20 +679,193 @@
       \end{block}
       \end{column}
     \end{columns}
-    \begin{columns}[c]<1>
-      \begin{column}{.28\linewidth}
-        \begin{figure}
-          \includegraphics[width=\linewidth]{canale_grande_V05}
-        \end{figure}
-      \end{column}
-      \begin{column}{.67\linewidth}
-        \begin{block}{Initial conditions}
-        \begin{itemize}
-        \item ice thickness / subglacial topography is a first order constraint on ice flow
-        \end{itemize}
-      \end{block}
-      \end{column}
-    \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{From Navier-Stokes to Stokes}
+  \begin{block}{Momentum Balance}
+    \begin{equation}
+        \underbrace{\rho \frac{\text{d} \mathbf{v}}{\text{d} t}}_{\text{acceleration}} = - \underbrace{\nabla \cdot \mathbf{T'}}_{\text{deviatoric}} + \underbrace{\nabla p}_{\text{isotropic}} + \underbrace{\rho\mathbf{g}}_{\text{gravity}} - \underbrace{2\rho\boldsymbol{\Omega} \times \mathbf{v}}_{\text{Coriolis force}} 
+   \end{equation}
+   This is the \alert{Navier-Stokes} equation for incompressible flow
+   \vskip.5em
+   \begin{itemize}
+     \item still rather complicated
+     \item do we really need all these terms?
+     \item \alert{Scale Analysis} is a power- and useful concept to assess the relative importance of terms
+     \end{itemize}
+  \end{block}
+\end{frame}
+ 
+\begin{frame}{From Navier-Stokes to Stokes}
+  \begin{block}{Ice sheets are shallow}
+    \begin{itemize}
+    \item below in red is a no-vertical-exaggeration cross section of Greenland at $71^\circ$
+      \small
+    \item green and blue: standard vertically-exaggerated cross section
+    \end{itemize}
+    \begin{center}
+      \includegraphics[width=0.4\textwidth]{green_transect} \\
+      \footnotesize{Figure by E. Bueler}
+    \end{center}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Scale Analysis}
+  \begin{block}{Some typical values for an ice sheet}
+  \begin{equation*}
+  \begin{array}{rccl}
+    \text{horizontal extend} &  [L] & = & \unit{1000}\kilo\meter\\
+    \text{vertical extend} & [H] & = & \unit{1}\kilo\meter \\
+    \text{horizontal velocity} & [U] & = & \unit{100}\meter\power{a}{-1}\\
+    \text{vertical velocity} & [W] & = & \unit{0.1}\meter\power{a}{-1}\\
+    \text{pressure} & [P] & = & \rho g[H] = \unit{10}\mega\pascal\\
+    \text{time-scale} & [T] & = &[L]/[U] = 10^{4}\usk\power{a}{1}\\
+  \end{array}
+  \end{equation*}
+  \end{block}
+  The aspect ratio $\epsilon$ is defined as
+  \begin{equation*}
+    \epsilon = \frac{[H]}{[L]} = \frac{[W]}{[L]} = 10^{-3} \text{ for an ice sheet}
+  \end{equation*}
+  \begin{itemize}
+    \item The scaling argument for valley glaciers is almost the same
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Scale Analysis}
+  \begin{block}{Froude number}
+    The \alert{Froude number $Fr$} is the ratio of acceleration and pressure gradient. In the horizontal we have
+  \begin{equation*}
+    Fr = \frac{\rho[U]/[t]}{[P]/[L]} = \frac{\rho[U]^{2}/[L]}{\rho g [H]/[L]} = \frac{[U]^{2}}{g[H]} \approx 10^{-15}
+  \end{equation*}
+  and in the vertical
+  \begin{equation*}
+    Fr = \frac{\rho[W]/[t]}{[P]/[L]} = \frac{\rho[W]^{2}/[L]}{\rho g [H]/[L]} = \frac{[\epsilon U]^{2}}{g[H]} \approx 10^{-21}
+  \end{equation*}
+  $\Rightarrow$ The \alert{acceleration term} is \alert{negligible}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Scale Analysis}
+  \begin{block}{Rossby number}
+    The \alert{Rossby number $Ro$} is the ratio of acceleration and Coriolis force
+  \begin{equation*}
+    Ro = \frac{\rho[U]/[t]}{2\rho\Omega[U]} = \frac{\rho[U]^{2}/[L]}{2\rho\Omega[U]} = \frac{[U]}{2 \Omega [L]} \approx 2\times10^{-8}
+  \end{equation*}
+  and thus the Coriolis to pressure gradient is
+  \begin{equation*}
+   \frac{2\rho\Omega[U]}{[P]/[L]} = \frac{Fr}{Ro}\approx 5 \times 10^{-8}
+  \end{equation*}
+  $\Rightarrow$ The \alert{Coriolis term} is also \alert{negligible}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Stokes Equation}
+  By neglecting both the
+  \begin{itemize}
+  \item acceleration term
+  \item Coriolis term
+  \end{itemize}
+  the Navier-Stokes equation simplifies to
+  \begin{eqnarray}
+     \nabla \cdot \left(\eta\left(\nabla \mathbf{v} + \nabla \mathbf{v}^{\text{T}}\right)\right) - \nabla p & = & - \rho \mathbf{g}
+  \end{eqnarray}
+  \begin{itemize}
+  \item gravitational force exerted on the ice is balanced by stress within the ice
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Constitutive equation: ice viscosity $\eta$}
+  \begin{columns}
+    \column[c]{2.25cm}
+    \begin{figure}
+      \includegraphics[width=2cm]{figures/fig_4_04}
+    \end{figure}
+    \column[c]{9cm}
+    Numerous lab experiments and field measurements suggest
+    \begin{equation}
+      \frac{1}{\eta\left(T,p,\sigma_{\text{e}}\right)} =2A\left(T,\omega,p\right)f\left(\sigma_{\text{e}}\right)
+    \end{equation}
+    \begin{equation*}
+      \begin{array}{rcll}
+        A(T,\omega,p) & = & A_{0} e^{-(Q+pV)/T} + f(\omega) &\quad \text{Arrhenius law-ish}\\[.25em]
+        f\left(\sigma_{\text{e}}\right) & = &\sigma_{\text{e}}^{n-1} &\quad \text{power law}
+      \end{array}
+    \end{equation*}
+  \end{columns}
+  \begin{itemize}
+  \item $A$ is called \alert{rate factor}, $T$ is temperature, $\omega$ is water content
+  \item $n$ is the exponent of the flow law, usually taken as $n=3$
+  \end{itemize}
+  \vskip1em
+  This is known as \alert{Glen's flow law} but similar to Norton's flow law for the flow of steel at high temperatures
+\end{frame}
+
+
+\begin{frame}{Viscosity}
+\begin{itemize}
+  \item Because viscosity depends on temperature and water content, we have a thermodynamically-coupled problem
+  \item[$\Rightarrow$] need to solve an energy balance equation
+  \item if ice is at the pressure melting point, it becomes a two-phase flow problem and a Stefan problem
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Stokes Equation}
+  \begin{block}{Ice sheets are shallow}
+    \begin{itemize}
+    \item below in red is a no-vertical-exaggeration cross section of Greenland at $71^\circ$
+      \small
+    \item green and blue: standard vertically-exaggerated cross section
+    \end{itemize}
+    \begin{center}
+      \includegraphics[width=0.4\textwidth]{green_transect} \\
+      \footnotesize{Figure by E. Bueler}
+    \end{center}
+  \end{block}
+\end{frame}
+
+\begin{frame}{High Performance Computing (HPC)}
+  \begin{block}{Exploit modern HPC through parallelism}
+    \begin{figure}
+      \includegraphics[width=5.5cm]{jason-parallel}
+      \hfill
+      \includegraphics[width=5.5cm]{bw_front_sm}
+    \end{figure}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}{Parallel Ice Sheet Model (PISM)}
+  \includegraphics[width=4cm]{pism-logo}
+  \begin{itemize}
+  \item open-source, fully-parallel from start in 2006
+  \item primary development at UAF, with global user base
+  \item $>$100k lines of code; mostly C++
+  \item sustained NASA support \tiny (NAG5-11371, NNX09AJ38C, NNX13AM16G, NNX13AK27G), PI's Bueler, Aschwanden
+  \end{itemize}
+  \begin{columns}
+    \column[c]{4.75cm}
+    \begin{figure}
+      \includegraphics[width=\textwidth]{pism-uaf-publications}
+    \end{figure}
+    \column[c]{6.25cm}
+    \includegraphics<1>[width=\textwidth]{pism-users}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Why ice sheet modeling is so hard}
     \begin{columns}[c]<1>
       \begin{column}{.3\linewidth}
         \begin{figure}
@@ -639,44 +880,146 @@
       \end{block}
       \end{column}
     \end{columns}
+    \begin{columns}[c]<1-2>
+      \begin{column}{.28\linewidth}
+        \begin{figure}
+          \includegraphics[width=\linewidth]{canale_grande_V05}
+        \end{figure}
+      \end{column}
+      \begin{column}{.67\linewidth}
+        \begin{block}{Initial conditions}
+        \begin{itemize}
+        \item ice has a long memory
+        \item ice thickness / subglacial topography is a first order constraint on ice flow
+        \end{itemize}
+      \end{block}
+      \end{column}
+    \end{columns}
+    \begin{columns}[c]<1>
+      \begin{column}{.28\linewidth}
+        \begin{figure}
+          \includegraphics[width=\linewidth]{storeglacier}
+        \end{figure}
+      \end{column}
+      \begin{column}{.67\linewidth}
+        \begin{block}{Boundary conditions}
+        \begin{itemize}
+        \item seaward margin boundary condition
+        \item basal boundary condition
+        \end{itemize}
+      \end{block}
+      \end{column}
+    \end{columns}
 \end{frame}
 
 
-\begin{frame}{Challenge: basal boundary condition}
+\begin{frame}{Initialization}
+  \begin{figure} \footnotesize
+    \begin{tikzpicture}[node distance = 3cm, auto]
+      % Place nodes
+      \node [initialization] (initialization) {initialization};
+      \node [hindcast faded, right of=initialization] (hindcast) {hindcast};
+      \node [forecast faded, right of=hindcast] (forecast) {forecast};      
+      \path [arrow line] (initialization) -- (hindcast);
+      \path [arrow line] (hindcast) -- (forecast);
+    \end{tikzpicture}
+  \end{figure}
+  \begin{itemize}
+  \item ice sheet model simulations require an initialized ice sheet
+  \end{itemize}
   \begin{columns}[c]
-    \begin{column}{.45\linewidth}
+    \begin{column}{.5\textwidth}
       \begin{figure}
-        \scriptsize{basal resistance} \\
-        \includegraphics[width=\textwidth]{tauc}
+        \includegraphics[width=0.25\textwidth]{sr-greenland_topg} \vspace{.1em}
+        \includegraphics[width=0.25\textwidth]{sr-greenland_thk} \vspace{.1em}
+        \includegraphics[width=0.25\textwidth]{sr-greenland_temp}
       \end{figure}
     \end{column}
-    \begin{column}{.54\linewidth}
+    \begin{column}{.5\textwidth}
+      distribution of
       \begin{itemize}
-      \item stresses vary by orders of magnitude
-      \item basal hydrology, the glacier's ``plumbing system'' runs on a faster ime scale than ice flow
-      \item despite more than 5 decades of research, we only have crude parametrizations
+      \item mass (ice thickness)
+      \item momentum (basal friction)
+      \item energy (temperature)
       \end{itemize}
+      within the ice sheet
+    \end{column}
+  \end{columns}   
+  \vspace{1em}
+  \begin{columns}[t]
+    \begin{column}{.5\textwidth}
+      \begin{block}{Problem}
+        \begin{itemize}
+        \item full set of initial conditions not readily available through observations alone
+        \end{itemize}
+      \end{block}  
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{block}{Solution}
+        \begin{itemize}
+        \item use of assimilation techniques
+          \begin{itemize}
+          \item inverse methods
+          \item past climate initialization (``spin-up'')
+          \end{itemize}
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}   
+\end{frame}
+
+
+\begin{frame}{Initialization}
+  \begin{figure} \footnotesize
+    \begin{tikzpicture}[node distance = 3cm, auto]
+      % Place nodes
+      \node [initialization] (initialization) {initialization};
+      \node [hindcast faded, right of=initialization] (hindcast) {hindcast};
+      \node [forecast faded, right of=hindcast] (forecast) {forecast};      
+      \path [arrow line] (initialization) -- (hindcast);
+      \path [arrow line] (hindcast) -- (forecast);
+    \end{tikzpicture}
+  \end{figure}
+
+  \begin{transbox}[0.75]
+    Two general types of methods
+    \begin{block}{Inverse methods}
+      \begin{itemize}
+      \item assimilate present-day data
+      \item obtain missing data using inverse theory
+      \end{itemize}
+    \end{block}
+    \begin{block}{Past climate initialization}
+      \begin{itemize}
+      \item start simulation far back in the past with initial guess
+      \item forward simulation using information about past climate
+      \end{itemize}
+    \end{block}
+  \end{transbox}
+\end{frame}
+
+
+\begin{frame}{{\color{dark green}{Inverse}} methods}
+    Some ice sheet models like ISSM, Elmer, and VarGlaS have built-in data assimilation using adjont methods
+  \begin{columns}[c]
+    \begin{column}{.46\textwidth}
+      \begin{figure}
+        \alert{surface velocities} \\
+        \includegraphics[height=6cm]{greenland-sar}
+      \end{figure}
+    \end{column}
+    \begin{column}{.04\textwidth}
+      \alert{\Large $\Rightarrow$}
+    \end{column}
+    \begin{column}{.46\textwidth}
+      \begin{figure}
+        \alert{basal yield stress} \\ 
+        \includegraphics[height=6cm]{tauc}
+      \end{figure}
     \end{column}
   \end{columns}
-  \note[item]{First, stresses at the base vary by several orders of magnitude}
-  \note[item]{depend on many factors, most importantly on the presence or absence of water}
-  \note[item]{basal hydrology (the glacier's plumbing system) runs on a faster time scale than the ice flow itself}
-  \note[item]{but the sub-glacial environment is not easy accessible}
-  \note[item]{at the basal boundary, interactions between water flow, friction, heat flow, and sediment deformation is so complex that a deriving a theory from first principles is real challenge}
 \end{frame}
 
-
-\begin{frame}{Challenge: seaward margin boundary condition}
-      \begin{figure}
-        \includegraphics[width=.75\textwidth]{ice-shelf}
-      \end{figure}
-      \begin{itemize}
-      \item ocean circulation $\Rightarrow$ basal melt rates
-      \item calving mechanism
-      \end{itemize}
-      \note[item]{a big challenge is to understand how changing ocean currents and ocean temperatures affects sub-shelf basal melt rates}
-      \note[item]{how this can weaken a shelf, and potentially lead to break up}
-\end{frame}
 
 
 \begin{frame}{Why ice sheet modeling is so hard}
@@ -726,60 +1069,6 @@
     \note<2->[item]{the main focus of my talk is on}
     \note<2->[item]{initial conditions and computational costs}
     \note<2->[item]{solving the Stokes equations is expensive}
-\end{frame}
-
-
-\begin{frame}{1. Simplify the Stokes equations}
-  \begin{block}{Ice sheets are shallow}
-    \begin{itemize}
-    \item below in red is a no-vertical-exaggeration cross section of Greenland at $71^\circ$
-      \small
-    \item green and blue: standard vertically-exaggerated cross section
-    \end{itemize}
-    \begin{center}
-      \includegraphics[width=0.4\textwidth]{green_transect} \\
-      \footnotesize{Figure by E. Bueler}
-    \end{center}
-  \end{block}
-\end{frame}
-
-\begin{frame}{2. High Performance Computing (HPC)}
-  \begin{block}{Exploit modern HPC through parallelism}
-    \begin{figure}
-      \includegraphics[width=5.5cm]{bw_front_sm}
-      \hfill
-      \includegraphics[width=5.5cm]{jason-parallel}
-    \end{figure}
-  \end{block}
-\end{frame}
-
-
-\begin{frame}{Parallel Ice Sheet Model (PISM)}
-  \includegraphics[width=4cm]{pism-logo}
-  \begin{itemize}
-  \item open-source, fully-parallel from start in 2006
-  \item primary development at UAF, with global user base
-  \item $>$100k lines of code; mostly C++
-  \item sustained NASA support \tiny (NAG5-11371, NNX09AJ38C, NNX13AM16G, NNX13AK27G), PI's Bueler, Aschwanden
-  \end{itemize}
-  \begin{columns}
-    \column[c]{4.75cm}
-    \begin{figure}
-      \includegraphics[width=\textwidth]{pism-uaf-publications}
-    \end{figure}
-    \column[c]{6.25cm}
-    \includegraphics<1>[width=\textwidth]{pism-users}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Parallel Ice Sheet Model (PISM) cont.}
-  \includegraphics[width=4cm]{pism-logo}
-  \begin{itemize}
-  \item PISM uses a computationally-efficient approximation to the Stokes equations
-  \item PISM runs on large HPC systems
-  \item currently installed on GI RCS's pacman, fish, \& chinook, as well as on NASA's pleiades cluster
-  \item simulations typically use 100-500 cores and may take up to two weeks wall time to complete
-  \end{itemize}
 \end{frame}
 
 
@@ -959,21 +1248,89 @@
 
 
 
-\begin{frame}{Understanding the recent past}
-  first high-resolution hindcast of the satellite era
-    \begin{figure}
-      \movie[showcontrols=true,loop,width=8cm]{\includegraphics[width=8cm]{jako_hindcast_frame000}}{jako_hindcast_hd.mov}
-  \end{figure}
-  \note[item]{now that we can capture the present-day flow patterns}
-  \note[item]{reasonably well, we can add the temporal dimension}
+\begin{frame}{Why ice sheet modeling is so hard}
+    \begin{columns}[c]<1>
+      \begin{column}{.3\linewidth}
+        \begin{figure}
+          \includegraphics[width=\linewidth]{bw_front_sm}
+        \end{figure}
+      \end{column}
+      \begin{column}{.67\linewidth}
+        \begin{block}{Computational costs}
+        \begin{itemize}
+        \item solving the Stokes equations is computationally very expensive
+        \end{itemize}
+      \end{block}
+      \end{column}
+    \end{columns}
+    \begin{columns}[c]<1>
+      \begin{column}{.28\linewidth}
+        \begin{figure}
+          \includegraphics[width=\linewidth]{canale_grande_V05}
+        \end{figure}
+      \end{column}
+      \begin{column}{.67\linewidth}
+        \begin{block}{Initial conditions}
+        \begin{itemize}
+        \item ice has a long memory
+        \item ice thickness / subglacial topography is a first order constraint on ice flow
+        \end{itemize}
+      \end{block}
+      \end{column}
+    \end{columns}
+    \begin{columns}[c]<1-2>
+      \begin{column}{.28\linewidth}
+        \begin{figure}
+          \includegraphics[width=\linewidth]{storeglacier}
+        \end{figure}
+      \end{column}
+      \begin{column}{.67\linewidth}
+        \begin{block}{Boundary conditions}
+        \begin{itemize}
+        \item seaward margin boundary condition
+        \item basal boundary condition
+        \end{itemize}
+      \end{block}
+      \end{column}
+    \end{columns}
 \end{frame}
 
 
-\begin{frame}{Next step: Vulnerability assessment}
-  What has the future in stock?
-    \begin{figure}
-      \movie[showcontrols=true,autostart,loop,width=12cm]{\includegraphics[width=12cm]{jak_collapse_frame000}}{jak_collapse.mov}
-  \end{figure}
+
+\begin{frame}{Challenge: basal boundary condition}
+  \begin{columns}[c]
+    \begin{column}{.45\linewidth}
+      \begin{figure}
+        \scriptsize{basal resistance} \\
+        \includegraphics[width=\textwidth]{tauc}
+      \end{figure}
+    \end{column}
+    \begin{column}{.54\linewidth}
+      \begin{itemize}
+      \item stresses vary by orders of magnitude
+      \item basal hydrology, the glacier's ``plumbing system'' runs on a faster ime scale than ice flow
+      \item despite more than 5 decades of research, we only have crude parametrizations
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \note[item]{First, stresses at the base vary by several orders of magnitude}
+  \note[item]{depend on many factors, most importantly on the presence or absence of water}
+  \note[item]{basal hydrology (the glacier's plumbing system) runs on a faster time scale than the ice flow itself}
+  \note[item]{but the sub-glacial environment is not easy accessible}
+  \note[item]{at the basal boundary, interactions between water flow, friction, heat flow, and sediment deformation is so complex that a deriving a theory from first principles is real challenge}
+\end{frame}
+
+
+\begin{frame}{Challenge: seaward margin boundary condition}
+      \begin{figure}
+        \includegraphics[width=.75\textwidth]{ice-shelf}
+      \end{figure}
+      \begin{itemize}
+      \item ocean circulation $\Rightarrow$ basal melt rates
+      \item calving mechanism
+      \end{itemize}
+      \note[item]{a big challenge is to understand how changing ocean currents and ocean temperatures affects sub-shelf basal melt rates}
+      \note[item]{how this can weaken a shelf, and potentially lead to break up}
 \end{frame}
 
 
@@ -1055,8 +1412,5 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[plain]
-  \animategraphics[autoplay,keepaspectratio,loop]{0.5}{taku-}{1}{18}
-\end{frame}
 
 \end{document}
