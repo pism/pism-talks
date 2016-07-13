@@ -158,9 +158,8 @@
 
 % title page
 \title[] % (optional, use only with long paper titles)
-{Disappearing Ice}
+{Disappearing Ice Sheets}
 
-\subtitle{When you pull the plug}
 
 
 \author[Aschwanden] % (optional, use only with lots of authors)
@@ -286,13 +285,13 @@
 %
 } 
 
-\begin{frame}{Mountain Glacier}
+\begin{frame}{Bodvardsson effect: mountain Glacier}
  \begin{figure}
     \includegraphics[width=\textwidth]{bodvardsson-effect_mountain_glacier}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Ice Sheet}
+\begin{frame}{Bodvardsson effect: ice Sheet}
  \begin{figure}
     \includegraphics[width=\textwidth]{bodvardsson-effect_ice_sheet}
   \end{figure}
@@ -449,6 +448,7 @@
 \begin{frame}[plain]
   \textbf{In Greenland}
     \begin{itemize}
+    \item surface mass balance: Regine talked about this, here we focus on ice dynamics
     \item ice discharge to the ocean occurs through 200+ ``outlet glaciers''
     \item outlet glaciers are flowing fast ($>$200\,m/yr), are controlled by bedrock geometry, and terminate in narrow fjords ($\sim <$10\,km wide)
     \end{itemize}
@@ -557,6 +557,7 @@
   \begin{itemize}
   \item increase in discharge from 40\,Gt/yr in 2000 to $\sim$60\,Gt/yr in 2010
   \item compared to $\sim$75\,Gt/yr total mass loss from all Alaskan glaciers
+  \item fresh water flux into Artic ocean affects ocean circulation
   \end{itemize}
   \note[item]{illustration of the speed up}
 \end{frame}
@@ -692,7 +693,7 @@
    This is the \alert{Navier-Stokes} equation for incompressible flow
    \vskip.5em
    \begin{itemize}
-     \item still rather complicated
+     \item rather complicated
      \item do we really need all these terms?
      \item \alert{Scale Analysis} is a power- and useful concept to assess the relative importance of terms
      \end{itemize}
@@ -821,20 +822,6 @@
   \end{itemize}
 \end{frame}
 
-
-\begin{frame}{Stokes Equation}
-  \begin{block}{Ice sheets are shallow}
-    \begin{itemize}
-    \item below in red is a no-vertical-exaggeration cross section of Greenland at $71^\circ$
-      \small
-    \item green and blue: standard vertically-exaggerated cross section
-    \end{itemize}
-    \begin{center}
-      \includegraphics[width=0.4\textwidth]{green_transect} \\
-      \footnotesize{Figure by E. Bueler}
-    \end{center}
-  \end{block}
-\end{frame}
 
 \begin{frame}{High Performance Computing (HPC)}
   \begin{block}{Exploit modern HPC through parallelism}
@@ -1000,7 +987,7 @@
 \end{frame}
 
 
-\begin{frame}{Inverse methods}
+\begin{frame}{Initialization: inverse methods}
   data assimilation using adjont methods
   \begin{columns}[c]
     \begin{column}{.46\textwidth}
@@ -1020,6 +1007,146 @@
     \end{column}
   \end{columns}
 \end{frame}
+
+
+\begin{frame}{Initialization: glacial cycle}
+  \begin{figure} \footnotesize
+    \begin{tikzpicture}[node distance = 3cm, auto]
+      % Place nodes
+      \node [initialization] (initialization) {initialization};
+      \node [hindcast faded, right of=initialization] (hindcast) {hindcast};
+      \node [forecast faded, right of=hindcast] (forecast) {forecast};      
+      \path [arrow line] (initialization) -- (hindcast);
+      \path [arrow line] (hindcast) -- (forecast);
+    \end{tikzpicture}
+  \end{figure}
+  \begin{itemize}
+  \item use low-dimensional time series data from physical surrogates (e.g. $\delta ^{18}O$ record from ice core) for paleo-climate record
+  \item run through glacial cycle(s)
+  \end{itemize}
+  \begin{figure}
+    \includegraphics[height=2.5cm]{gripDeltaT}
+    \includegraphics[height=2.25cm]{t2m_racmo_clrun_baseline}
+    \includegraphics[height=2.25cm]{cmb_racmo_clrun_baseline}
+      \end{figure}
+\end{frame}
+
+
+\begin{frame}{Hindcast}
+  \begin{figure} \footnotesize
+    \begin{tikzpicture}[node distance = 3cm, auto]
+      % Place nodes
+      \node [initialization faded] (initialization) {initialization};
+      \node [hindcast, right of=initialization] (hindcast) {hindcast};
+      \node [forecast faded, right of=hindcast] (forecast) {forecast};      
+      \path [arrow line] (initialization) -- (hindcast);
+      \path [arrow line] (hindcast) -- (forecast);
+    \end{tikzpicture}
+  \end{figure}
+  \begin{itemize}
+  \item RACMO2/GR driven by
+    \begin{itemize}
+      \item ERA-reanalysis from 1961-2004
+      \item HadGEM2 from 1971-2004
+    \end{itemize}
+    \item PISM driven by \alert{monthly time-series} of:
+ \end{itemize}
+ \begin{columns}[c]
+    \begin{column}{.5\linewidth}
+      \vspace{-.5cm}
+      \begin{figure}
+        \scriptsize{2\,m air temperature}\\
+        \includegraphics[width=0.6\linewidth]{t2m_racmo_clrun_baseline}
+     \end{figure}
+    \end{column}
+    \begin{column}{.5\linewidth}
+      \vspace{-.5cm}
+      \begin{figure}
+        \scriptsize{climatic mass balance}\\
+        \includegraphics[width=0.6\linewidth]{cmb_racmo_clrun_baseline}
+     \end{figure}
+    \end{column}
+  \end{columns}
+  \note[item]{Well, ERA-initialization refers to a model initialization using a climate data reanalysis product fed into RACMO,}
+  \note[item]{whereas in HadGEM2 initialization, RACMO was driven by the global circulation model HadGEM2}
+\end{frame}
+
+\begin{frame}{Forecast}
+     \begin{figure} \footnotesize
+      \begin{tikzpicture}[node distance = 3cm, auto]
+        % Place nodes
+        \node [initialization faded] (initialization) {initialization};
+        \node [hindcast faded, right of=initialization] (hindcast) {hindcast};
+        \node [forecast, right of=hindcast] (forecast) {forecast};      
+        \path [arrow line] (initialization) -- (hindcast);
+        \path [arrow line] (hindcast) -- (forecast);
+      \end{tikzpicture}
+    \end{figure}
+  \begin{itemize}
+  \item RACMO2/GR driven by HadGEM2 RCP 4.5 forcing
+  \item PISM driven by RACMO climate:
+    \begin{itemize}
+      \item RACMO - HadGEM2 directly
+      \item RACMO - ERA/HadGEM2 anomalies
+    \end{itemize}
+  \end{itemize}
+      \begin{figure}
+       \includegraphics[width=7cm]{ts_HadGEM2_RCP45}
+     \end{figure}
+\end{frame}
+
+\begin{frame}{Validation: comparison with observations}
+  Hindcasts cover an era where we have a variety of in-situ and remotely-sensed observations such as:
+  \begin{columns}[c]
+    \begin{column}{.4\linewidth}
+    \begin{figure}
+      \includegraphics[height=1.5cm]{sar-validation}
+    \end{figure}
+  \end{column}
+    \begin{column}{.6\linewidth}
+      \begin{itemize}
+      \item time series of surface velocities from SAR
+  \end{itemize}
+\end{column}
+ \end{columns}   
+  \vspace{-.5em}
+  \begin{columns}[c]
+    \begin{column}{.4\linewidth}
+      \begin{figure}
+        \includegraphics[height=1.5cm]{grace-validation} 
+      \end{figure}
+    \end{column}
+    \begin{column}{.6\linewidth}
+      \begin{itemize}
+      \item cumulative mass change from GRACE
+    \end{itemize}
+  \end{column}
+ \end{columns}   
+ \vspace{-1em}
+ \begin{columns}[c]
+   \begin{column}{.4\linewidth}
+     \begin{figure}
+       \includegraphics[height=1.5cm]{icesat-validation}
+     \end{figure}
+   \end{column}
+   \begin{column}{.6\linewidth}
+     \begin{itemize}     
+     \item elevation change from 2003--2009 (ICESat)
+     \end{itemize}
+ \end{column}
+ \end{columns}   
+ \begin{columns}[c]
+   \begin{column}{.4\linewidth}
+   \end{column}
+   \begin{column}{.6\linewidth}
+     \begin{itemize}     
+     \item more data products are becoming available every month
+     \end{itemize}
+ \end{column}
+ \end{columns}   
+
+\end{frame}
+
 
 \begin{frame}{Why ice sheet modeling is so hard}
     \begin{columns}[c]<1>
@@ -1124,18 +1251,6 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{NASA Operation IceBridge}
-  \begin{figure}
-    \includegraphics[height=2.5cm]{nasa-logo} \qquad
-    \includegraphics[height=2.5cm]{oib} \qquad
-    \includegraphics[height=2.5cm]{1000-dollar-bills}
-  \end{figure}
-  \begin{itemize}
-  \item do NASA's OIB million\$ really make ice sheet models better?
-  \end{itemize}
-  \note[item]{so the multi million dollar question is}
-  \note[item]{does this investment pay off?}
-\end{frame}
 
 
 \begin{frame}{Observed flow speeds}
@@ -1283,83 +1398,65 @@
 \end{frame}
 
 
-\begin{frame}{Summary}
-  \begin{columns}[c]
-    \begin{column}{2.25cm}
-      \shadowimage[width=2cm]{plug}        
-    \end{column}
-    \begin{column}{10cm}
-      ``pulling the plug'' (loss of floating tongue) causes outlet glaciers to speed up    
-    \end{column}
-  \end{columns}
-  \begin{columns}[c]
-    \begin{column}{2.25cm}
-      \shadowimage[width=2cm]{jakobshavn-speed-exp-600-v1.2-no-scale-no-gate}
-    \end{column}
-    \begin{column}{10cm}
-     outlet glacier flow is well captured where accurate ice thickness data are available (large return on investment)
-    \end{column}
-  \end{columns}
-  \begin{columns}[c]
-    \begin{column}{2.25cm}
-      \shadowimage[width=2cm]{jako_hindcast_frame000}    
-    \end{column}
-    \begin{column}{10cm}
-      initial efforts to simulate the recent past are promising    
-    \end{column}
-  \end{columns}
-  \begin{columns}[c]
-    \begin{column}{2.25cm}
-      \shadowimage[width=2cm]{jak_collapse_frame_last}    
-    \end{column}
-    \begin{column}{10cm}
-      how will Greenland look like in a 1000 years?
-    \end{column}
-  \end{columns}
-
-\end{frame}
-
-\begin{frame}{Acknowledgments}
-  \begin{figure}
-    \includegraphics[height=1.5cm]{nasa-logo}
-    \includegraphics[height=1.5cm]{NSF_logo_color}
+\begin{frame}{What has the future in stock?}
+    \begin{figure}
+      \movie[showcontrols=true,autostart,loop,width=12cm]{\includegraphics[width=12cm]{jak_collapse_frame000}}{jak_collapse.mov}
   \end{figure}
-  
-  \begin{columns}[c]
-    \begin{column}{2cm}
-      \shadowimage[height=1.75cm]{mark}    
-    \end{column}
-    \begin{column}{3cm}
-      Mark Fahnestock
-    \end{column}
-    \begin{column}{2.cm}
-      \shadowimage[height=1.75cm]{martin}    
-    \end{column}
-    \begin{column}{3.5cm}
-      Martin Truffer
-    \end{column}
-  \end{columns}
-
-  \begin{columns}[c]
-    \vspace{-.5em}
-    \begin{column}{2cm}
-      \shadowimage[height=1.75cm]{ed}    
-    \end{column}
-    \begin{column}{3cm}
-      Ed Bueler
-    \end{column}
-    \begin{column}{2cm}
-      \shadowimage[height=1.75cm]{constantine}    
-    \end{column}
-    \begin{column}{3.5cm}
-      Constantine Khroulev
-    \end{column}
-  \end{columns}
-  \bigskip
-  \begin{itemize}
-    \item \ldots and the glacier's group
-  \end{itemize}
 \end{frame}
+
+
+\begin{frame}{Ice sheets in Earth System Models}
+\begin{itemize}
+\item groups are working on integrating ice sheet models as the land ice component in GCMs
+\item 2005: first interactive land ice model in a GCM
+\item today: a few Earth System Models have interactive ice sheets
+\item technical challenges remain, land ice models have to be run at much higher resolution than the atmosphere component
+\end{itemize}
+\end{frame}
+
+
+
+% \begin{frame}{Acknowledgments}
+%   \begin{figure}
+%     \includegraphics[height=1.5cm]{nasa-logo}
+%     \includegraphics[height=1.5cm]{NSF_logo_color}
+%   \end{figure}
+  
+%   \begin{columns}[c]
+%     \begin{column}{2cm}
+%       \shadowimage[height=1.75cm]{mark}    
+%     \end{column}
+%     \begin{column}{3cm}
+%       Mark Fahnestock
+%     \end{column}
+%     \begin{column}{2.cm}
+%       \shadowimage[height=1.75cm]{martin}    
+%     \end{column}
+%     \begin{column}{3.5cm}
+%       Martin Truffer
+%     \end{column}
+%   \end{columns}
+
+%   \begin{columns}[c]
+%     \vspace{-.5em}
+%     \begin{column}{2cm}
+%       \shadowimage[height=1.75cm]{ed}    
+%     \end{column}
+%     \begin{column}{3cm}
+%       Ed Bueler
+%     \end{column}
+%     \begin{column}{2cm}
+%       \shadowimage[height=1.75cm]{constantine}    
+%     \end{column}
+%     \begin{column}{3.5cm}
+%       Constantine Khroulev
+%     \end{column}
+%   \end{columns}
+%   \bigskip
+%   \begin{itemize}
+%     \item \ldots and the glacier's group
+%   \end{itemize}
+% \end{frame}
 
 
 \end{document}
