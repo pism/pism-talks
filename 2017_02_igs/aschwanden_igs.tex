@@ -1,0 +1,282 @@
+\documentclass[hide notes,intlimits]{beamer}
+
+
+\mode<presentation>
+{
+  \usetheme[footline]{UAFshade}
+  \setbeamercovered{transparent}
+}
+
+% load packages
+\usepackage{multimedia}
+\usepackage{animate}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[multidot]{grffile}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,shadows, calc}
+
+% \usepackage{pgfpages}
+% \setbeamertemplate{note page}[plain]
+% \setbeameroption{show notes on second screen=right}
+
+
+\definecolor{dark red}{HTML}{E41A1C}
+\definecolor{dark green}{HTML}{4DAF4A}
+\definecolor{dark violet}{HTML}{984EA3}
+\definecolor{dark blue}{HTML}{084594}
+\definecolor{dark orange}{HTML}{FF7F00}
+\definecolor{light blue}{HTML}{377EB8}
+\definecolor{light red}{HTML}{FB9A99}
+\definecolor{light violet}{HTML}{CAB2D6}
+
+\definecolor{uaf red}{HTML}{E41A1C}
+\definecolor{uaf blue}{HTML}{377EB8}
+\definecolor{uaf green}{HTML}{4DAF4A}
+\definecolor{uaf violet}{HTML}{984EA3}
+\definecolor{uaf orange}{HTML}{FF7F00}
+\setbeamercolor{boxed}{fg=black,bg=uaf yellow}
+
+\graphicspath{{figures/}}
+
+\setbeamerfont{caption}{size=\scriptsize}
+
+% code adapted from http://tex.stackexchange.com/a/11483/3954
+
+% some parameters for customization
+\def\shadowshift{3pt,-3pt}
+\def\shadowradius{6pt}
+
+\colorlet{innercolor}{black!60}
+\colorlet{outercolor}{gray!05}
+
+% this draws a shadow under a rectangle node
+\newcommand\drawshadow[1]{
+    \begin{pgfonlayer}{shadow}
+        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.south west)+(\shadowshift)+(\shadowradius/2,\shadowradius/2)$) circle (\shadowradius);
+        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) circle (\shadowradius);
+        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) circle (\shadowradius);
+        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.north east)+(\shadowshift)+(-\shadowradius/2,-\shadowradius/2)$) circle (\shadowradius);
+        \shade[top color=innercolor,bottom color=outercolor] ($(#1.south west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) rectangle ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$);
+        \shade[left color=innercolor,right color=outercolor] ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$);
+        \shade[bottom color=innercolor,top color=outercolor] ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$);
+        \shade[outercolor,right color=innercolor,left color=outercolor] ($(#1.south west)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$);
+        \filldraw ($(#1.south west)+(\shadowshift)+(\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)-(\shadowradius/2,\shadowradius/2)$);
+    \end{pgfonlayer}
+}
+
+% create a shadow layer, so that we don't need to worry about overdrawing other things
+\pgfdeclarelayer{shadow} 
+\pgfsetlayers{shadow,main}
+
+\newsavebox\mybox
+\newlength\mylen
+
+\newcommand\shadowimage[2][]{%
+\setbox0=\hbox{\includegraphics[#1]{#2}}
+\setlength\mylen{\wd0}
+\ifnum\mylen<\ht0
+\setlength\mylen{\ht0}
+\fi
+\divide \mylen by 120
+\def\shadowshift{\mylen,-\mylen}
+\def\shadowradius{\the\dimexpr\mylen+\mylen+\mylen\relax}
+\begin{tikzpicture}
+\node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[#1]{#2}};
+\drawshadow{image}
+\end{tikzpicture}}
+
+\newcommand\shadowimagec[3][]{%
+\setbox0=\hbox{\includegraphics<#1>[#2]{#3}}
+\setlength\mylen{\wd0}
+\ifnum\mylen<\ht0
+\setlength\mylen{\ht0}
+\fi
+\divide \mylen by 120
+\def\shadowshift{\mylen,-\mylen}
+\def\shadowradius{\the\dimexpr\mylen+\mylen+\mylen\relax}
+\begin{tikzpicture}
+\node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics<#1>[#2]{#3}};
+\drawshadow{image}
+\end{tikzpicture}}
+
+
+\newenvironment{transbox}[1][]{%
+\begin{tikzpicture}
+\node[drop shadow,rounded corners,text width=\textwidth,fill=white, fill opacity=#1,text opacity=1] \bgroup
+}{
+\egroup;\end{tikzpicture}} 
+
+\newenvironment{transbox-tight}{%
+\begin{tikzpicture}
+\node[drop shadow,rounded corners,fill=uaf yellow, fill opacity=0.75,text opacity=1] \bgroup
+}{
+\egroup;\end{tikzpicture}} 
+
+
+% title page
+\title[] % (optional, use only with long paper titles)
+{Chronicles of the Greenland Ice Sheet}
+
+
+
+\author[Aschwanden] % (optional, use only with lots of authors)
+{Andy Aschwanden}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[Geophysical Institute] % (optional, but mostly needed)
+{\textcolor{white}{Geophysical Institute}}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date{}
+\titlegraphic{\vskip-0.5cm\shadowimage[width=\textwidth]{gris-nw-speed-exp-600m}}
+
+
+\begin{document}
+
+% define what is shown at the beginning of each section
+\AtBeginSection[]
+{
+  \begin{frame}<handout:0>
+    \frametitle{Outline}
+   \tableofcontents[currentsection,subsectionstyle=hide/hide/hide]
+  \end{frame}
+}
+
+% define what is shown at the beginning of each subsection
+\AtBeginSubsection[]
+{
+ \begin{frame}<beamer>
+  \frametitle{Outline}
+   \tableofcontents[currentsection,currentsubsection]
+ \end{frame}
+}
+
+
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{uaf_beamer_shade_bg}};}
+} 
+
+
+% insert titlepage
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\setbeamertemplate{background canvas}
+{
+%
+} 
+
+\begin{frame}{Greenland}
+\vspace{-1em}
+    \begin{figure}
+      \includegraphics<1>[width=.85\textwidth]{greenland-obs-overview_rotated-01}
+      \includegraphics<2>[width=.85\textwidth]{greenland-obs-basal-overview_rotated-01}
+   \end{figure}
+\end{frame}
+
+\begin{frame}{Greenland}
+  \begin{columns}
+    \column[T]{5cm}
+    \begin{figure}
+      \includegraphics<1>[height=.75\textheight]{greenland-obs-basal-overview-mo14}
+      {\footnotesize 
+      Observed speeds (Nagler et al, 2015)}
+    \end{figure}
+    \column[T]{5cm}
+    \begin{figure}
+      \includegraphics<1>[height=.75\textheight]{greenland-obs-overview}
+      {\small 
+      PISM simulation for SeaRISE}
+    \end{figure}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{2016}
+    \begin{figure}
+      \includegraphics<1>[width=.8\textwidth]{greenland-overview-3}
+      \footnotesize 
+      \caption{}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{IPCC AR5}
+  \begin{columns}
+    \column[T]{5cm}
+    \begin{figure}
+      \includegraphics<1>[height=.70\textheight]{gris-overview-speed-obs}
+      \footnotesize 
+      \caption{Observed speeds (Nagler et al, 2015)}
+    \end{figure}
+    \column[T]{5cm}
+    \begin{figure}
+      \includegraphics<1>[height=.70\textheight]{gris-overview-speed-searise}
+      \small 
+      \caption{PISM simulation for SeaRISE}
+    \end{figure}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{2016}
+  \begin{columns}
+    \column[T]{5cm}
+    \begin{figure}
+      \includegraphics<1>[height=.70\textheight]{gris-overview-speed-obs}
+      \footnotesize 
+      \caption{Observed speeds (Nagler et al, 2015)}
+    \end{figure}
+    \column[T]{5cm}
+    \begin{figure}
+      \includegraphics<1>[height=.70\textheight]{gris-overview-speed-exp}
+      \small 
+      \footnotesize 
+      \caption{PISM simulation (Aschwanden, Fahnestock, Truffer, 2016, Nature Comm.)}
+    \end{figure}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{IPCC AR5}
+    \begin{figure}
+      \includegraphics<1>[width=.8\textwidth]{nw-gris-600m_obs}
+      \footnotesize 
+      \caption{Observed speeds (Nagler et al, 2015)}
+    \end{figure}
+    \begin{figure}
+      \includegraphics<1>[width=.8\textwidth]{nw-gris-600m_searise}
+      \footnotesize
+      \caption{PISM simulation for SeaRISE}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{2016}
+    \begin{figure}
+      \includegraphics<1>[width=.8\textwidth]{nw-gris-600m_obs}
+      \footnotesize 
+      \caption{Observed speeds (Nagler et al, 2015)}
+    \end{figure}
+    \begin{figure}
+      \includegraphics<1>[width=.8\textwidth]{nw-gris-600m_best_v1}
+      \footnotesize
+      \caption{PISM simulation (Aschwanden, Fahnestock, Truffer, 2016, Nature Comm.)}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Projections}
+If we want to project the evolution of our ice sheets, we first need to look at the past
+
+Are the model illustrations compatible with our understanding of since-LGM change from observations?
+\end{frame}
+
+
+\end{document}
