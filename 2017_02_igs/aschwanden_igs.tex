@@ -1,4 +1,4 @@
-\documentclass[hide notes,intlimits]{beamer}
+\documentclass[shownotes notes,intlimits]{beamer}
 
 
 \mode<presentation>
@@ -19,9 +19,9 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,shadows, calc}
 
-% \usepackage{pgfpages}
-% \setbeamertemplate{note page}[plain]
-% \setbeameroption{show notes on second screen=right}
+\usepackage{pgfpages}
+\setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen=right}
 
 
 \definecolor{dark red}{HTML}{E41A1C}
@@ -139,7 +139,7 @@
 % title page
 \title[] % (optional, use only with long paper titles)
 {Chronicles of the Greenland Ice Sheet}
-\subtitle{An outlet glacier perspective}
+\subtitle{An Outlet Glacier Perspective}
 
 
 \author[Aschwanden] % (optional, use only with lots of authors)
@@ -149,7 +149,7 @@
 %   affiliation.
 
 \institute[Geophysical Institute] % (optional, but mostly needed)
-{\textcolor{white}{Geophysical Institute}}
+{Geophysical Institute, University of Alaska Fairbanks}
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
 
@@ -188,6 +188,10 @@
 % insert titlepage
 \begin{frame}
   \titlepage
+  \note[item]{Since the publication of IPCC's Fifth Assessment Report}
+  \note[item]{the West Antartic Ice Sheet has been dominating the news}
+  \note[item]{today, I'd like to talk about the long term stability}
+  \note[item]{of the Greenland Ice Sheet}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -199,16 +203,16 @@
   \begin{columns}
     \column[T]{6cm}
     \begin{itemize}
-      \item about 60\,\% of present-day mass loss occurs through 200+ outlet glaciers (Enderlin et al., 2014)
-      \item yet IPCC AR5 models have not been able to capture outlet glacier flow
-      \item due to poor knowledge of subglacial topography
-      \item radar data collection efforts by NASA's mission Operation Ice Bridge and CReSIS have led to a more detailed picture of the subglacial topography
+      \item<1-> about 60\,\% of present-day mass loss occurs through 200+ outlet glaciers (Enderlin et al., 2014)
+      \item<2-> yet IPCC AR5 models have not been able to capture outlet glacier flow
+      \item<3-> due to poor knowledge of subglacial topography
+      \item<4-> radar data collection efforts by NASA's mission Operation Ice Bridge and CReSIS have led to a more detailed picture of the subglacial topography (and ice thickness)
     \end{itemize}
     \column[T]{6cm}
     \vspace{-3.em}
     \begin{figure}
       \includegraphics<1>[height=.85\textheight]{greenland-obs-overview} \only<1>{\\ \scriptsize{Rignot \& Mouginot (2012)}}
-      \includegraphics<2>[height=.85\textheight]{greenland-exp-overview-oldbed} \only<2>{\\ \scriptsize{Morlighem et al. (2014)}}
+      \includegraphics<2>[height=.85\textheight]{greenland-exp-overview-oldbed} \only<2>{\\ \scriptsize{model simulation}}
       \includegraphics<3>[height=.85\textheight]{greenland-obs-basal-overview} \only<3>{\\ \scriptsize{Bamber et al. (2001)}}
       \includegraphics<4>[height=.85\textheight]{greenland-obs-basal-overview-mo14} \only<4>{\\ \scriptsize{Morlighem et al. (2014)}}
     \end{figure}
@@ -220,17 +224,18 @@
   \begin{columns}
     \column[T]{5cm}
     \begin{figure}
-      \includegraphics<1>[height=.75\textheight]{greenland-obs-basal-overview-mo14} \\
-      {\scriptsize
-      Subglacial topography (Morlighem et al., 2014)}
-    \end{figure}
-    \column[T]{5cm}
-    \begin{figure}
       \includegraphics<1>[height=.75\textheight]{greenland-obs-overview} \\
       {\scriptsize 
       Observed speeds (Rignot \& Mouginot, 2012)}
     \end{figure}
+    \column[T]{5cm}
+    \begin{figure}
+      \includegraphics<1>[height=.75\textheight]{greenland-obs-basal-overview-mo14} \\
+      {\scriptsize
+      Subglacial topography (Morlighem et al., 2014)}
+    \end{figure}
   \end{columns}
+  \note[item]{today we know that outlet glaciers flow in deep channels}
 \end{frame}
 
 
@@ -240,6 +245,17 @@
       \includegraphics<1>[width=0.95\textwidth]{greenland-overview-3} \\
       {\scriptsize Aschwanden, Fahnestock \& Truffer (2016, Nature Comms.)}
     \end{figure}
+    \note[item]{Now with the availability of high-resolution ice thickness measurements}
+    \note[item]{we wanted to know how much better ice sheet models}
+    \note[item]{have become at capturing outlet glacier flow}
+    \note[item]{so we combined an open-source ice sheet model capable}
+    \note[item]{of outlet-gacier resolving resolution}
+    \note[item]{with a high-res ice thickness map}
+    \note[item]{We compare observed and modeled flow across selected outlet glaciers}
+    \note[item]{We found that outlet glacier flow is well captured by the model if}
+    \note[item]{both where ice thickness is well constrained AND}
+    \note[item]{model resolution is high enough}
+    \note[item]{}
 \end{frame}
 
 
