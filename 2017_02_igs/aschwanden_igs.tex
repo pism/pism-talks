@@ -189,9 +189,11 @@
 \begin{frame}
   \titlepage
   \note[item]{Since the publication of IPCC's Fifth Assessment Report}
-  \note[item]{the West Antartic Ice Sheet has been dominating the news}
+  \note[item]{the West Antarctic Ice Sheet has been dominating the news}
   \note[item]{today, I'd like to talk about the long term stability}
   \note[item]{of the Greenland Ice Sheet}
+  \note[item]{in terms of SLR potential, I know, it's Antarctica first}
+  \note[item]{but \ldots}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -209,7 +211,7 @@
       \item<4-> radar data collection efforts by NASA's mission Operation Ice Bridge and CReSIS have led to a more detailed picture of the subglacial topography (and ice thickness)
     \end{itemize}
     \column[T]{6cm}
-    \vspace{-3.em}
+    \vspace{-2.em}
     \begin{figure}
       \includegraphics<1>[height=.85\textheight]{greenland-obs-overview} \only<1>{\\ \scriptsize{Rignot \& Mouginot (2012)}}
       \includegraphics<2>[height=.85\textheight]{greenland-exp-overview-oldbed} \only<2>{\\ \scriptsize{model simulation}}
@@ -217,6 +219,19 @@
       \includegraphics<4>[height=.85\textheight]{greenland-obs-basal-overview-mo14} \only<4>{\\ \scriptsize{Morlighem et al. (2014)}}
     \end{figure}
   \end{columns}
+  \note<1>[item]{Here we have observed surface speeds on a log scale,}
+  \note<1>[item]{where purple and red colors indicate fast flow}
+  \note<2>[item]{now, if we look at a model simulation representative of that time}
+  \note<2>[item]{we see that the bigger picture isn't that bad but when we zoom in}
+  \note<2>[item]{it becomes evident that we are not able to capture the fast flow in outlet glaciers}
+  \note<3>[item]{the reason for such a poor model performance was poor knowledge of subglacial topography}
+  \note<3>[item]{we know from Glaciology 100 that ice thickness is the major constraint on ice flow}
+  \note<3>[item]{so no surprise there}
+  \note<3>[item]{again focusing on Jakobshavn, we see that no channel is evident}
+  \note<3>[item]{In 2008, NASA started a large ice thickness data collection campaign}
+  \note<3>[item]{as part of their Mission Operation Ice Bridge, together with CReSIS}
+  \note<4>[item]{since then, thousands of km of radar profiles have been collected}
+  \note<4>[item]{which has resulted in a much more detailed picture of the subglacial topography}
 \end{frame}
 
 \begin{frame}{Beneath most outlet glaciers, there is a through}
@@ -249,18 +264,23 @@
     \note[item]{we wanted to know how much better ice sheet models}
     \note[item]{have become at capturing outlet glacier flow}
     \note[item]{so we combined an open-source ice sheet model capable}
-    \note[item]{of outlet-gacier resolving resolution}
+    \note[item]{of outlet-glacier resolving resolution}
     \note[item]{with a high-res ice thickness map}
     \note[item]{We compare observed and modeled flow across selected outlet glaciers}
     \note[item]{We found that outlet glacier flow is well captured by the model if}
     \note[item]{both where ice thickness is well constrained AND}
     \note[item]{model resolution is high enough}
-    \note[item]{}
 \end{frame}
 
 
 
 \begin{frame}{Where are the projections?}
+
+\begin{block}{Now that we have outlet glaciers, we could do new projections}
+  \begin{itemize}
+  \item technically easy to to, but issues with model initialization
+  \end{itemize}
+\end{block}
 
 \begin{block}{1-century-scale}
   \begin{itemize}
@@ -268,29 +288,20 @@
   \end{itemize}
 \end{block}
 
+
 \begin{block}{multi-century to millennia-scale}
   \begin{itemize}
   \item technically easy to to, but issues with model initialization
   \end{itemize}
 \end{block}
-
-We could go ahead now and do some projections
-
-If we want to project the evolution of our ice sheets, we first need to look at the past
-
-Are the model illustrations compatible with our understanding of since-LGM change from observations?
-
-Bring outlet glaciers into LGM
-
-We are intersted in the evolution beyond just one century
 \end{frame}
 
-\begin{frame}{Role of outlet glaciers during Last Glacial Maximum (LGM)}
+\begin{frame}{Role of outlet glaciers}
 
 \end{frame}
 
-\begin{frame}{LGM Model Calibration}
-  \begin{block}{Atmosphere}
+\begin{frame}{Model Calibration}
+  \begin{block}{Atmosphere, Isostasy}
     \begin{itemize}
     \item calibrated at 9,000\,m resolution
     \end{itemize}
@@ -299,27 +310,17 @@ We are intersted in the evolution beyond just one century
     \begin{itemize}
     \item calibrated at 6,000\,m resolution
     \item calving (\alert{stress}-, eigen-calving)
-    \item \alert{multi-year sea ice parameterized via back-pressure}
-    \item \alert{sub-shelf and frontal melt parameterization tied to atmosphere temperature}
+    \item \alert{multi-year sea ice parametrized via back-pressure}
+    \item \alert{sub-shelf and frontal melt} parametrization tied to atmosphere temperature
     \end{itemize}
   \end{block}
-  \begin{block}{Isostasy}
-    \begin{itemize}
-      \item calibrated at 9,000\,m resolution
-      \end{itemize}
-    \end{block}
     \alert{*new model physics}
+    \note[item]{We're standing here on the shoulder of giants}
+    \note[item]{who have paved the way}
 \end{frame}
 
-\begin{frame}{Role of model resolutions}
-  \begin{block}{Starting from the calibrated LGM state}
-    \begin{itemize}
-    \item run with constant-climate for 5,000 yrs $\forall$ dx $\in \left\{18,000, 9,000, 6,000, 4,500, 3,6000, 3,000, 2,400, 1,800\right\}$\,m 
-    \end{itemize}
-  \end{block}
-\end{frame}
 
-\begin{frame}{Greenland}
+\begin{frame}{LGM}
   \begin{columns}
     \column[T]{5cm}
     \vspace{-2em}
@@ -352,19 +353,19 @@ We are intersted in the evolution beyond just one century
   \end{columns}
 \end{frame}
 
-\begin{frame}{Simulated ice discharge by basin}
-  \begin{columns}
-    \column[T]{4cm}
-    \begin{itemize}
-      \item $2-4$ fold increase
-    \end{itemize}
-    \column[T]{6cm}
-    \vspace{-1em}
-    \begin{figure}
-      \includegraphics[height=0.85\textheight]{lgm_cc_d_hist}
-    \end{figure}
-  \end{columns}
-\end{frame}
+% \begin{frame}{Simulated ice discharge by basin}
+%   \begin{columns}
+%     \column[T]{4cm}
+%     \begin{itemize}
+%       \item $2-4$ fold increase
+%     \end{itemize}
+%     \column[T]{6cm}
+%     \vspace{-1em}
+%     \begin{figure}
+%       \includegraphics[height=0.85\textheight]{lgm_cc_d_hist}
+%     \end{figure}
+%   \end{columns}
+% \end{frame}
 
 \begin{frame}{Abrupt glacial/inter-glacial}
   \vspace{1em}
@@ -383,5 +384,19 @@ We are intersted in the evolution beyond just one century
   \end{figure}
 \end{frame}
 
+\begin{frame}{Acknowledgments}
+  \begin{block}{Inspiration}
+    \begin{itemize}
+      \item Martin Truffer (UAF)
+      \item Abbas Khan (DTU Space)
+      \item Kurt Kj{\ae}r, Kristian Kjeldsen (Nat. History Museum, Copenhagen)
+    \end{itemize}
+  \end{block}
+  \begin{block}{Funding}
+    \begin{figure}
+      \includegraphics[width=2cm]{nasa-logo}
+    \end{figure}
+  \end{block}
+\end{frame}
 
 \end{document}
