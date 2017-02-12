@@ -1,4 +1,4 @@
-\documentclass[shownotes notes,intlimits]{beamer}
+\documentclass[hide notes,intlimits]{beamer}
 
 
 \mode<presentation>
@@ -19,10 +19,9 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,shadows, calc}
 
-\usepackage{pgfpages}
-\setbeamertemplate{note page}[plain]
-\setbeameroption{show notes on second screen=right}
-
+% \usepackage{pgfpages}
+% \setbeamertemplate{note page}[plain]
+% \setbeameroption{show notes on second screen=right}
 
 \definecolor{dark red}{HTML}{E41A1C}
 \definecolor{dark green}{HTML}{4DAF4A}
@@ -205,7 +204,7 @@
   \begin{columns}
     \column[T]{6cm}
     \begin{itemize}
-      \item<1-> about 60\,\% of present-day mass loss occurs through 200+ outlet glaciers (Enderlin et al., 2014)
+      \item<1-> about 50\,\% of present-day mass loss occurs through 200+ outlet glaciers (Van den Broeke et al., 2009)
       \item<2-> yet IPCC AR5 models have not been able to capture outlet glacier flow
       \item<3-> due to poor knowledge of subglacial topography
       \item<4-> radar data collection efforts by NASA's mission Operation Ice Bridge and CReSIS have led to a more detailed picture of the subglacial topography (and ice thickness)
@@ -255,22 +254,29 @@
 
 
 \begin{frame}{Capturing outlet glacier flow}
-\vspace{-.5em}
-    \begin{figure}
-      \includegraphics<1>[width=0.95\textwidth]{greenland-overview-3} \\
-      {\scriptsize Aschwanden, Fahnestock \& Truffer (2016, Nature Comms.)}
-    \end{figure}
-    \note[item]{Now with the availability of high-resolution ice thickness measurements}
-    \note[item]{we wanted to know how much better ice sheet models}
-    \note[item]{have become at capturing outlet glacier flow}
-    \note[item]{so we combined an open-source ice sheet model capable}
-    \note[item]{of outlet-glacier resolving resolution}
-    \note[item]{with a high-res ice thickness map}
-    \note[item]{We compare observed and modeled flow across selected outlet glaciers}
-    \note[item]{We found that outlet glacier flow is well captured by the model if}
-    \note[item]{both where ice thickness is well constrained AND}
-    \note[item]{model resolution is high enough}
+  \begin{figure}
+    \includegraphics<1>[width=0.95\textwidth]{greenland-overview-3} \\
+    {\scriptsize Aschwanden, Fahnestock \& Truffer (2016, Nature Comms.)}
+  \end{figure}
+  \note[item]{Now with the availability of high-resolution ice thickness measurements}
+  \note[item]{we wanted to know how much better ice sheet models}
+  \note[item]{have become at capturing outlet glacier flow}
+  \note[item]{so we combined an open-source ice sheet model capable}
+  \note[item]{of outlet-glacier resolving resolution}
+  \note[item]{with a high-res ice thickness map}
+  \note[item]{We compare observed and modeled flow across selected outlet glaciers}
+  \note[item]{We found that outlet glacier flow is well captured by the model if}
+  \note[item]{both where ice thickness is well constrained AND}
+  \note[item]{model resolution is high enough}
 \end{frame}
+
+\begin{frame}{Capturing outlet glacier flow}
+  \begin{figure}
+    \includegraphics<1>[width=0.98\textwidth]{grid-resolution-4} \\
+    {\scriptsize Aschwanden, Fahnestock \& Truffer (2016, Nature Comms.)}
+  \end{figure}
+\end{frame}
+
 
 
 \setbeamertemplate{background canvas}
@@ -279,25 +285,13 @@
 } 
 
 \begin{frame}{Where are the projections?}
-
-\begin{block}{Now that we have outlet glaciers, we could do new projections}
-  \begin{itemize}
-  \item technically easy to to, but issues with model initialization
-  \end{itemize}
-\end{block}
-
-\begin{block}{1-century-scale}
-  \begin{itemize}
-  \item technically easy to to, but issues with model initialization
-  \end{itemize}
-\end{block}
-
-
-\begin{block}{multi-century to millennia-scale}
-  \begin{itemize}
-  \item technically easy to to, but issues with model initialization
-  \end{itemize}
-\end{block}
+  \begin{block}{Now that we have outlet glaciers, we could do new projections}
+    \begin{itemize}
+    \item century-scale projections: issues with model initialization
+    \item need to understand the role of outlet glaciers in the long term evolution of the GrIS
+    \item \alert{focus on millennium-scale evolution and stability instead}
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -305,10 +299,6 @@
 %
 } 
 
-
-\begin{frame}{Role of outlet glaciers}
-
-\end{frame}
 
 \begin{frame}{Model Calibration}
   \begin{block}{Atmosphere, Isostasy}
@@ -325,6 +315,11 @@
     \end{itemize}
   \end{block}
     \alert{*new model physics}
+  \begin{block}{Experiments}
+    \begin{itemize}
+    \item 5,000\,yrs with constant LGM climate at 1.2--18\,km
+    \end{itemize}
+  \end{block}
     \note[item]{We're standing here on the shoulder of giants}
     \note[item]{who have paved the way}
 \end{frame}
@@ -344,6 +339,7 @@
       \only<7>{\scriptsize{3,000m}\\}
       \only<8>{\scriptsize{2,400m}\\}
       \only<9>{\scriptsize{1,800m}\\}
+      \only<10->{\scriptsize{1,200m}\\}
       \includegraphics<1>[height=0.8\textheight]{lgm_cc_speed_18000m_sia_ws}
       \includegraphics<2>[height=0.8\textheight]{lgm_cc_speed_18000m_ws}
       \includegraphics<3>[height=0.8\textheight]{lgm_cc_speed_9000m_ws}
@@ -353,29 +349,17 @@
       \includegraphics<7>[height=0.8\textheight]{lgm_cc_speed_3000m_ws}
       \includegraphics<8>[height=0.8\textheight]{lgm_cc_speed_2400m_ws}
       \includegraphics<9>[height=0.8\textheight]{lgm_cc_speed_1800m_ws}
+      \includegraphics<10->[height=0.8\textheight]{lgm_cc_speed_1200m_ws}
     \end{figure}
     \column[T]{5cm}
     \vspace{-2em}
     \begin{figure}
-      \only<9>{\scriptsize{18,000m, SIA}\\}
-      \includegraphics<9>[height=0.8\textheight]{lgm_cc_speed_18000m_sia_ws}
+      \includegraphics<1-10>[width=4cm]{colorbar-speed}
+      \only<11>{\scriptsize{18,000m, SIA}\\}
+      \includegraphics<11>[height=0.8\textheight]{lgm_cc_speed_18000m_sia_ws}
     \end{figure}
   \end{columns}
 \end{frame}
-
-% \begin{frame}{Simulated ice discharge by basin}
-%   \begin{columns}
-%     \column[T]{4cm}
-%     \begin{itemize}
-%       \item $2-4$ fold increase
-%     \end{itemize}
-%     \column[T]{6cm}
-%     \vspace{-1em}
-%     \begin{figure}
-%       \includegraphics[height=0.85\textheight]{lgm_cc_d_hist}
-%     \end{figure}
-%   \end{columns}
-% \end{frame}
 
 \begin{frame}{Abrupt glacial/inter-glacial}
   \vspace{1em}
@@ -395,11 +379,29 @@
 \end{frame}
 
 \begin{frame}
+  \begin{columns}
+    \column[T]{5.5cm}
     \begin{figure}
-      \movie[showcontrols=true,autostart,loop,width=5cm]{\includegraphics[width=5cm]{gris-glacial-3600m-img_0000}}{gris-glacial-3600m-hd1920.mov}
+      \movie[showcontrols=true,autostart,loop,width=5.5cm]{\includegraphics[width=5.5cm]{gris-glacial-3600m-img_0000}}{gris-glacial-3600m-hd1920.mov}
+    \end{figure}
+    \column[T]{5.5cm}
+    \vspace{3em}
+    \begin{figure}
+      \includegraphics[width=5.5cm]{ts_glacial}
   \end{figure}
+\end{columns}
 \end{frame}
 
+\begin{frame}{Summary}
+  \begin{itemize}
+  \item Now that we can capture outlet glacier flow,
+  \item the door is open now for more realistic projections of SLR from GrIS.
+  \item GrIS has potential for disintegration on the 1,000--5,000 year time scale
+  \item Humboldt, North East Greenland Icestream, and Jakobshavn basin have most potential but
+  \item Helheim and Kangerdlugssuaq basins appear more stable.
+  \item Similar scenario for Antartica: $\sim$20\,m SLR (Winkelmann et al., 2015).
+  \end{itemize}
+\end{frame}
 
 \begin{frame}{Acknowledgments}
   \begin{block}{Inspiration}
@@ -414,9 +416,10 @@
       \item Antarctic Research Center
     \end{itemize}
   \end{block}
-  \begin{block}{Funding}
+  \begin{block}{PISM development is funded by}
     \begin{figure}
-      \includegraphics[width=2cm]{nasa-logo}
+      \includegraphics[width=2cm]{nasa-logo} \hspace{.5em}
+      \includegraphics[width=2cm]{NSF-logo-color}
     \end{figure}
   \end{block}
 \end{frame}
