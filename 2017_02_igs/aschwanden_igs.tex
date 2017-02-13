@@ -192,13 +192,9 @@
 % insert titlepage
 \begin{frame}
   \titlepage
-  \note[item]{Since the publication of IPCC's Fifth Assessment Report}
-  \note[item]{Antartica and, especially,
-  \note[item]{the West Antarctic Ice Sheet have been dominating the news}
-  \note[item]{today, I'd like to talk about the stability}
-  \note[item]{of the Greenland Ice Sheet in the context of outlet glaciers}
-  \note[item]{in terms of SLR potential, I know, it's Antarctica first}
-  \note[item]{but \ldots}
+  \note[item]{today I'd like revive the discussion about the}
+  \note[item]{longer term stability of the GrIS}
+  \note[item]{but with a twist: look at the role of outlet glaciers}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -235,10 +231,10 @@
   \note<1>[item]{In recent years, mass loss from the Greenland Ice Sheet was roughly equally split between}
   \note<1>[item]{changes in surface mass balance and changes in ice discharge}
   \note<1>[item]{from Greenland's 200 something outlet glaciers}
-  \note<1>[item]{Here we have observed surface speeds on a log scale,}
-  \note<1>[item]{where purple and red colors indicate fast flow}
-  \note<1>[item]{While IPCC's Fifth Assessment contained projections from ice sheet models}
-  \note<1>[item]{outlet glacier flow was basically abesent on those model representations}
+  \note<1>[item]{We can see the outlet glaciers pop out when we look observed surface speeds}
+  \note<1>[item]{However, in the context of projections of ice discharge}
+  \note<1>[item]{it's important to recongize that outlet glaciers have not be very well represented}
+  \note<1>[item]{in ice sheet model simulations prepared for AR5.}
   \note<2>[item]{if we look at a model simulation representative of that time}
   \note<2>[item]{we see that the bigger picture isn't that bad but when we zoom in}
   \note<2>[item]{it becomes evident that we are not able to capture the fast flow in outlet glaciers}
@@ -294,6 +290,12 @@
     \includegraphics<1>[width=0.98\textwidth]{grid-resolution-4} \\
     {\scriptsize Aschwanden, Fahnestock \& Truffer (2016, Nature Comms.)}
   \end{figure}
+  \note[item]{The importance of high resolution becomes apparent if we}
+  \note[item]{plot profiles of flow speed across outlet glaciers}
+  \note[item]{For example for Jakobshavn and Kong Oscar Glaciers, the correlation coefficient between}
+  \note[item]{observed and simulated flow speed increases with finer resolution}
+  \note[item]{but there are also glaciers such as Koge Bugt that shows poor agreement for all resolutions}
+  \note[item]{for most outlet glaciers with poor agreement we have reasonable understanding why this is}
 \end{frame}
 
 
@@ -304,11 +306,11 @@
 } 
 
 \begin{frame}{Where are the projections?}
-  \begin{block}{Now that we have outlet glaciers, we could do new projections}
+  \begin{block}{Now that we have outlet glaciers in our models}
+    we could do new projections
     \begin{itemize}
-    \item century-scale projections: issues with model initialization (but ISMIP6 is addressing it)
-    \item need to understand the long-term role of outlet glaciers
-    \item \alert{focus on millennium-scale evolution and stability instead}
+    \item on a century-scale: issues with model initialization (but ISMIP6 is addressing it)
+    \item or \alert{focus on millennium-scale evolution and stability instead}
     \end{itemize}
   \end{block}
   \begin{columns}
@@ -331,6 +333,23 @@
 %
 } 
 
+
+\begin{frame}{Experimental Setup}
+  \vspace{1em}
+    \begin{tikzpicture}[node distance = 2cm, auto]
+      % Place nodes
+      \node  (start) {};
+      \node [glacial, right of=start, node distance=2cm] (glacial) {LGM};
+      \node [warm, right of=glacial, node distance=4cm] (present day) {present day};
+      \node [hot, right of=present day, node distance=4cm] (warm) {warm};
+      % edges
+      \path [line] (glacial) -- (present day);
+      \path [line] (present day) -- (warm);
+    \end{tikzpicture}
+  \begin{figure}
+    \includegraphics[width=9cm]{glacial_forcing_ts}
+  \end{figure}
+\end{frame}
 
 \begin{frame}{LGM: Ice Sheet Model Calibration}
   \begin{block}{Atmosphere, Isostasy}
@@ -394,76 +413,25 @@
 \end{frame}
 
 
-\begin{frame}{Prognostic Simulations}
-  \begin{block}{Planned}
-    \vspace{2em}
-    \begin{tikzpicture}[node distance = 2cm, auto]
-      % Place nodes
-      \node  (start) {};
-      \node [glacial, node distance=4cm] (glacial) {LGM};
-      \node [warm, right of=glacial, node distance=4cm] (present day) {present day};
-      \node [hot, right of=present day, node distance=4cm] (warm) {warm};
-      % edges
-      \path [line] (glacial) -- (present day);
-      \path [line] (present day) -- (warm);
-    \end{tikzpicture}
-  \end{block}
-  \begin{block}{Today}
-    \vspace{2em}
-    \begin{tikzpicture}[node distance = 2cm, auto]
-      % Place nodes
-      \node  (start) {};
-      \node [warm, node distance=4cm] (present day) {present day};
-      \node [glacial, right of=present day, node distance=4cm] (glacial) {glacial};
-      \node [hot, right of=glacial, node distance=4cm] (warm) {warm};
-      % edges
-      \path [line] (present day) -- (glacial);
-      \path [line] (glacial) -- (warm);
-    \end{tikzpicture}
-  \end{block}
-\end{frame}
-
-
-
-\begin{frame}{Abrupt glacial/inter-glacial}
-  \vspace{1em}
-    \begin{tikzpicture}[node distance = 2cm, auto]
-      % Place nodes
-      \node  (start) {};
-      \node [warm, node distance=4cm] (present day) {present day};
-      \node [glacial, right of=present day, node distance=4cm] (glacial) {glacial};
-      \node [hot, right of=glacial, node distance=4cm] (warm) {warm};
-      % edges
-      \path [line] (present day) -- (glacial);
-      \path [line] (glacial) -- (warm);
-    \end{tikzpicture}
-  \begin{figure}
-    \includegraphics[width=9cm]{glacial_forcing_ts}
-  \end{figure}
-\end{frame}
-
 \begin{frame}
   \begin{columns}
-    \column[T]{5.5cm}
+    \column[c]{5.5cm}
     \begin{figure}
-      \movie[showcontrols=true,autostart,loop,width=5.5cm]{\includegraphics[width=5.5cm]{gris-glacial-3600m-img_0000}}{gris-glacial-3600m-hd1920.mov}
+      \movie[showcontrols=true,autostart,loop,width=5.5cm]{\includegraphics[width=5.5cm]{gris-glacial-2400m-img_0195}}{gris-warming-2400m-hd1920.mov}
     \end{figure}
-    \column[T]{6cm}
-    \vspace{3em}
-    \begin{figure}
-      \includegraphics[width=6cm]{ts_glacial}
-  \end{figure}
-\end{columns}
+    \column[c]{6cm}
+    no sea-level numbers because it's a test run :(
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Summary}
   \begin{itemize}
   \item Now that we can capture outlet glacier flow,
   \item the door is open now for more realistic projections of SLR from GrIS.
-  \item GrIS has potential for disintegration on the 1,000--5,000 year time scale
-  \item Humboldt, North East Greenland Icestream, and Jakobshavn basin have most potential but
-  \item Helheim and Kangerdlugssuaq basins appear more stable.
-  \item Similar scenario for Antartica: $\sim$20\,m SLR (Winkelmann et al., 2015).
+  \item first outlet glacier resolving long-term simulation
+  \item GrIS has potential for disintegration on the multi-millennium year time scale
+  \item Humboldt, North East Greenland Icestream, and Jakobshavn basin have most potential to disintegrate
+  \item but Helheim and Kangerdlugssuaq basins appear to be more stable.
   \end{itemize}
 \end{frame}
 
@@ -488,8 +456,6 @@
   \end{block}
 \end{frame}
 
-will help with Dorthe's comments
-first steps towards better understanding long term
 
 
 \end{document}
