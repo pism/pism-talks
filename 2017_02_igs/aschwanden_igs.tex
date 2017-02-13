@@ -19,9 +19,9 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,shadows, calc}
 
-% \usepackage{pgfpages}
-% \setbeamertemplate{note page}[plain]
-% \setbeameroption{show notes on second screen=right}
+\usepackage{pgfpages}
+\setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen=right}
 
 \definecolor{dark red}{HTML}{E41A1C}
 \definecolor{dark green}{HTML}{4DAF4A}
@@ -126,6 +126,11 @@
         % The filling: 
         top color=white, 
         bottom color=dark orange]
+\tikzstyle{hot} = [rectangle, draw,
+    text badly centered, rounded corners,draw=dark orange,
+        % The filling: 
+        top color=white, 
+        bottom color=dark red]
 \tikzstyle{glacial} = [rectangle, draw,
     text badly centered, rounded corners,draw=dark blue,
         % The filling: 
@@ -188,9 +193,10 @@
 \begin{frame}
   \titlepage
   \note[item]{Since the publication of IPCC's Fifth Assessment Report}
-  \note[item]{the West Antarctic Ice Sheet has been dominating the news}
-  \note[item]{today, I'd like to talk about the long term stability}
-  \note[item]{of the Greenland Ice Sheet}
+  \note[item]{Antartica and, especially,
+  \note[item]{the West Antarctic Ice Sheet have been dominating the news}
+  \note[item]{today, I'd like to talk about the stability}
+  \note[item]{of the Greenland Ice Sheet in the context of outlet glaciers}
   \note[item]{in terms of SLR potential, I know, it's Antarctica first}
   \note[item]{but \ldots}
 \end{frame}
@@ -212,15 +218,28 @@
     \column[T]{6cm}
     \vspace{-2.em}
     \begin{figure}
-      \includegraphics<1>[height=.85\textheight]{greenland-obs-overview} \only<1>{\\ \scriptsize{Rignot \& Mouginot (2012)}}
-      \includegraphics<2>[height=.85\textheight]{greenland-exp-overview-oldbed} \only<2>{\\ \scriptsize{model simulation}}
-      \includegraphics<3>[height=.85\textheight]{greenland-obs-basal-overview} \only<3>{\\ \scriptsize{Bamber et al. (2001)}}
-      \includegraphics<4>[height=.85\textheight]{greenland-obs-basal-overview-mo14} \only<4>{\\ \scriptsize{Morlighem et al. (2014)}}
+      % \only<1>{\\ \scriptsize{observed surface speed}}
+      \includegraphics<1>[height=.85\textheight]{greenland-obs-overview} 
+      \only<1>{\\ \scriptsize{Rignot \& Mouginot (2012)}}
+      % \only<2>{\\ \scriptsize{simulated surface speed}}
+      \includegraphics<2>[height=.85\textheight]{greenland-exp-overview-oldbed} 
+      \only<2>{\\ \scriptsize{model simulation}}
+      % \only<3>{\\ \scriptsize{subglacial topography}}
+      \includegraphics<3>[height=.85\textheight]{greenland-obs-basal-overview} 
+      \only<3>{\\ \scriptsize{Bamber et al. (2001)}}
+      % \only<4>{\\ \scriptsize{subglacial topography}}
+      \includegraphics<4>[height=.85\textheight]{greenland-obs-basal-overview-mo14} 
+      \only<4>{\\ \scriptsize{Morlighem et al. (2014)}}
     \end{figure}
   \end{columns}
+  \note<1>[item]{In recent years, mass loss from the Greenland Ice Sheet was roughly equally split between}
+  \note<1>[item]{changes in surface mass balance and changes in ice discharge}
+  \note<1>[item]{from Greenland's 200 something outlet glaciers}
   \note<1>[item]{Here we have observed surface speeds on a log scale,}
   \note<1>[item]{where purple and red colors indicate fast flow}
-  \note<2>[item]{now, if we look at a model simulation representative of that time}
+  \note<1>[item]{While IPCC's Fifth Assessment contained projections from ice sheet models}
+  \note<1>[item]{outlet glacier flow was basically abesent on those model representations}
+  \note<2>[item]{if we look at a model simulation representative of that time}
   \note<2>[item]{we see that the bigger picture isn't that bad but when we zoom in}
   \note<2>[item]{it becomes evident that we are not able to capture the fast flow in outlet glaciers}
   \note<3>[item]{the reason for such a poor model performance was poor knowledge of subglacial topography}
@@ -313,7 +332,7 @@
 } 
 
 
-\begin{frame}{LGM Climate Experiment: Ice Sheet Model Calibration}
+\begin{frame}{LGM: Ice Sheet Model Calibration}
   \begin{block}{Atmosphere, Isostasy}
     \begin{itemize}
     \item calibrated at 9,000\,m resolution
@@ -374,18 +393,50 @@
   \end{columns}
 \end{frame}
 
+
+\begin{frame}{Prognostic Simulations}
+  \begin{block}{Planned}
+    \vspace{2em}
+    \begin{tikzpicture}[node distance = 2cm, auto]
+      % Place nodes
+      \node  (start) {};
+      \node [glacial, node distance=4cm] (glacial) {LGM};
+      \node [warm, right of=glacial, node distance=4cm] (present day) {present day};
+      \node [hot, right of=present day, node distance=4cm] (warm) {warm};
+      % edges
+      \path [line] (glacial) -- (present day);
+      \path [line] (present day) -- (warm);
+    \end{tikzpicture}
+  \end{block}
+  \begin{block}{Today}
+    \vspace{2em}
+    \begin{tikzpicture}[node distance = 2cm, auto]
+      % Place nodes
+      \node  (start) {};
+      \node [warm, node distance=4cm] (present day) {present day};
+      \node [glacial, right of=present day, node distance=4cm] (glacial) {glacial};
+      \node [hot, right of=glacial, node distance=4cm] (warm) {warm};
+      % edges
+      \path [line] (present day) -- (glacial);
+      \path [line] (glacial) -- (warm);
+    \end{tikzpicture}
+  \end{block}
+\end{frame}
+
+
+
 \begin{frame}{Abrupt glacial/inter-glacial}
   \vspace{1em}
-  \begin{tikzpicture}[node distance = 2cm, auto]
-    % Place nodes
-    \node  (start) {};
-    \node [warm, right of =start, node distance=2.5cm] (present day) {present-day};
-    \node [glacial, right of=present day, node distance=4cm] (glacial) {glacial};
-    \node [warm, right of=glacial, node distance=4cm] (warm) {warm};
-    % edges
-    \path [line] (present day) -- (glacial);
-    \path [line] (glacial) -- (warm);
-  \end{tikzpicture}
+    \begin{tikzpicture}[node distance = 2cm, auto]
+      % Place nodes
+      \node  (start) {};
+      \node [warm, node distance=4cm] (present day) {present day};
+      \node [glacial, right of=present day, node distance=4cm] (glacial) {glacial};
+      \node [hot, right of=glacial, node distance=4cm] (warm) {warm};
+      % edges
+      \path [line] (present day) -- (glacial);
+      \path [line] (glacial) -- (warm);
+    \end{tikzpicture}
   \begin{figure}
     \includegraphics[width=9cm]{glacial_forcing_ts}
   \end{figure}
@@ -436,5 +487,9 @@
     \end{figure}
   \end{block}
 \end{frame}
+
+will help with Dorthe's comments
+first steps towards better understanding long term
+
 
 \end{document}
