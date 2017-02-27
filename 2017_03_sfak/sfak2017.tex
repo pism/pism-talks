@@ -164,13 +164,13 @@
 
 
 \author[Aschwanden] % (optional, use only with lots of authors)
-{\textcolor{white}{Andy Aschwanden}}
+{Andy Aschwanden}
 % - Give the names in the same order as the appear in the paper.
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
 
 \institute[Geophysical Institute] % (optional, but mostly needed)
-{\textcolor{white}{Geophysical Institute}}
+{Geophysical Institute}
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
 
@@ -198,16 +198,40 @@
 }
 
 
-
 \setbeamertemplate{background canvas}
   {
-     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{uaf_rhone2008}};}
+     \tikz{\node[inner sep=0pt,opacity=1.] {\includegraphics[width=\paperwidth]{uaf_beamer_shade_galen}};}
 } 
-
 
 % insert titlepage
 \begin{frame}
   \titlepage
+\end{frame}
+
+\setbeamertemplate{background canvas}
+  {
+} 
+
+\begin{frame}
+  \begin{figure}
+    \includegraphics<1>[height=8cm]{gurschengletscher-l}
+    \includegraphics<2>[height=8cm]{gurschengletscher}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Marine Ice Sheet Instability Hypothesis}
+  \begin{columns}[c]
+    \begin{column}{.65\linewidth}
+      \begin{figure}
+        \includegraphics<1>[height=8cm]{ant-marine}
+      \end{figure}
+    \end{column}
+    \begin{column}{.38\linewidth}
+      \begin{itemize}
+      \item blue colors: below sea level
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 
