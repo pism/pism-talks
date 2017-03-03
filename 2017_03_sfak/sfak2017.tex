@@ -223,6 +223,7 @@
   \note[item]{True to the stereotype, we have many cows in Uri and produce a lot of good cheese}
   \note[item]{Last year we had on bear roaming through Uri, which gave it some Alaska-feel}
   \note[item]{According to legend, William Tell was born in Uri, who freed us from the Austrian oppression in 1291}
+  \note[item]{We also have a lot of mountains to climb and to ski}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -231,6 +232,7 @@
 }
 
 \begin{frame}[plain]
+  \note[item]{So no surprise}
   \note[item]{I grew up on skis, I learned to downhill ski right after learning to walk}
   \note[item]{}
 \end{frame}
@@ -337,9 +339,11 @@
 %   -r 1 \
 %   columbia_landsat-hd1920.mp4
 
-\begin{frame}{Glacier Change in Alaska: Columbia Glacier}
-  \movie[showcontrols=true,autostart,loop,width=12cm]{\includegraphics[width=12cm]{columbia_year_0000}}{columbia_landsat-hd1920.mov}
-  {adapted from NASA's Scientific Visualization Studio}
+\begin{frame}{Melting Glaciers in Alaska: Columbia Glacier}
+  \begin{figure}
+    \movie[showcontrols=true,autostart,loop,width=12cm]{\includegraphics[width=12cm]{columbia_year_0000}}{columbia_landsat-hd1920.mov}
+    {adapted from NASA's Scientific Visualization Studio}
+  \end{figure}
   \note{In Alaska, glaciers are changing too.}
   \note{Who has been to Columbia Glacier near Valdez?}
   \note{When British explorers first surveyed it in 1794, its terminus extended south to the northern edge of Heather Island, a small island near the mouth of Columbia Bay. The glacier held that position until 1980, when it began a rapid retreat that continues today.}
@@ -350,14 +354,15 @@
 \end{frame}
 
 
-\begin{frame}{Glacier Change in Alaska: Columbia Glacier}
-  \movie[showcontrols=true,autostart,loop,width=12cm]{\includegraphics[width=12cm]{columbia-eis}}{columbia-eis.mov}
-\end{frame}
+% \begin{frame}{Glacier Change in Alaska: Columbia Glacier}
+%   \movie[showcontrols=true,autostart,loop,width=12cm]{\includegraphics[width=12cm]{columbia-eis}}{columbia-eis.mov}
+% \end{frame}
 
-\begin{frame}{Glacier Change in Alaska}
+\begin{frame}{Melting Glaciers in Alaska}
   \begin{itemize}
-  \item glacier covered area: 87,000\,km$^{2}$
-  \item mass loss 1994--2013: 75$\pm$11 Gt/yr loss $\Rightarrow$ 5\,cm (1.5\,in) layer of water covering Alaska
+  \item Columbia Glacier is not alone
+  \item How many glaciers are losing mass
+  \item total mass loss 1994--2013 from AK glaciers: 75$\pm$11 Gt/yr loss $\Rightarrow$ 5\,cm (1.5\,in) layer of water covering Alaska
   \end{itemize}
 \end{frame}
 
@@ -366,29 +371,88 @@
 }
 
 
-\setbeamertemplate{background canvas}
-{
-  \tikz{\node[inner sep=0pt,opacity=0.75] {\includegraphics[width=\paperwidth]{world_glacierized_area_16x12}};}
-}
+% \setbeamertemplate{background canvas}
+% {
+%   \tikz{\node[inner sep=0pt,opacity=0.75] {\includegraphics[width=\paperwidth]{world_glacierized_area_16x12}};}
+% }
 
-\begin{frame}{Glacier Change Worldwide}
-  \begin{itemize}
-    \item Presently, 10\,\% of land area is covered with ice
-    \item That's about 10 times the size of Alaska
-  \end{itemize}
-\end{frame}
+% \begin{frame}{Glacier Change Worldwide}
+%   \begin{itemize}
+%     \item Presently, 10\,\% of land area is covered with ice
+%     \item That's about 10 times the size of Alaska
+%   \end{itemize}
+% \end{frame}
 
 
-\setbeamertemplate{background canvas}
-{
-}
+% \setbeamertemplate{background canvas}
+% {
+% }
 
-\begin{frame}{The 3 Biggest Losers}
+\begin{frame}{Glacier Change Worldwide: The Biggest Losers}
   \begin{figure}
     {Alaska \qquad---\qquad West Greenland \qquad---\qquad West Anartica}
+    \\[1em]
     \includegraphics<1>[width=1\textwidth]{grace-world-2003-2010-01}
   \end{figure}
 \end{frame}
+
+\begin{frame}{Glacier and Climate}
+But glaciers and the climate are constantly changing, right
+
+Look at the past
+\end{frame}
+
+
+
+\begin{frame}{The sun drives the glacial/interglacial cycle}
+  \vspace{-2cm}
+  \begin{block}{Milankovitch Cycle}
+    \begin{figure}
+      \movie[showcontrols=true,autostart,loop,width=8cm]{\includegraphics[width=8cm]{orbital-forcing}}{orbital-forcing.mov}
+    \end{figure}
+  \end{block}
+  \begin{columns}[T]
+    \begin{column}{.32\linewidth}
+      41,000 yrs
+    \end{column}
+    \begin{column}{.32\linewidth}
+      100,000 yrs
+    \end{column}
+    \begin{column}{.32\linewidth}
+      26,000 yrs
+    \end{column}
+  \end{columns}
+  \note[item]{Changes in the obliquity (tilt) of Earth's axis}
+  \note[item]{Variations in the shape of Earth's orbit (eccentricity)}
+  \note[item]{Changes in Earth's "Wobble" (Precession)}
+\end{frame}
+
+
+\begin{frame}
+    \begin{figure}
+      \movie[showcontrols=true,loop,width=10cm]{\includegraphics[width=10cm]{alley-001}}{alley-milankovitch.mov}
+    \end{figure}
+    \centering{CO$_2$ feedback needed}
+    \note[item]{My colleague Richard Alley is much more eqloquent in explain what causes ice ages}
+    \note[item]{as he did in this hearing in front of congress a couple of years ago}
+\end{frame}
+
+\setbeamertemplate{background canvas}
+{
+  \tikz{\node[inner sep=0pt,opacity=0.5] {\includegraphics[height=\paperheight,width=\paperwidth]{ice-age}};}
+}
+
+\begin{frame}{Ice Ages}
+  \vspace{1.5cm}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{epica-temp}
+  \end{figure}
+\end{frame}
+
+\setbeamertemplate{background canvas}
+{
+}
+
 
 
 \begin{frame}{What if they melted completely?}
@@ -473,24 +537,6 @@
 \end{frame}
 
 
-\begin{frame}
-    \begin{figure}
-      \movie[showcontrols=true,autostart,loop,width=10cm]{\includegraphics[width=10cm]{alley-001}}{alley-milankovitch.mov}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Ice Ages}
-
-\end{frame}
-
-
-\begin{frame}{Carbon Dioxide}
-      \begin{figure}
-        \includegraphics<1>[width=\textwidth]{nasa_co2-graph}
-      \end{figure}
-\end{frame}
-
-
 \begin{frame}{Marine Ice Sheet Instability Hypothesis}
   \begin{columns}[c]
     \begin{column}{.65\linewidth}
@@ -504,6 +550,25 @@
       \end{itemize}
     \end{column}
   \end{columns}
+\end{frame}
+
+
+\setbeamertemplate{background canvas}
+{
+  \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{taku-8}};}
+}
+
+\begin{frame}{Questions?}
+\end{frame}
+
+\setbeamertemplate{background canvas}
+{
+}
+
+\begin{frame}{Carbon Dioxide}
+      \begin{figure}
+        \includegraphics<1>[width=\textwidth]{nasa_co2-graph}
+      \end{figure}
 \end{frame}
 
 
