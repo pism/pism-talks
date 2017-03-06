@@ -1,3 +1,4 @@
+\RequirePackage{flashmovie}
 \documentclass[hide notes,intlimits]{beamer}
 
 
@@ -16,7 +17,7 @@
 \usepackage{lmodern}
 \usepackage[multidot]{grffile}
 \usepackage[amssymb]{SIunits}
-
+% \usepackage{flashmovie}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,shadows, calc}
 
@@ -169,7 +170,7 @@
 %   affiliation.
 
 \institute[Geophysical Institute] % (optional, but mostly needed)
-{Geophysical Institute}
+{}
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
 
@@ -199,9 +200,16 @@
 
 \setbeamertemplate{background canvas}
   {
-     \tikz{\node[inner sep=0pt,opacity=1.] {\includegraphics[width=\paperwidth]{galenstock_bg}};}
+     \tikz{\node[inner sep=0pt,opacity=1.] {\includegraphics[width=\paperwidth]{SFALS_2017}};}
 }
 
+\begin{frame}[plain]
+\end{frame}
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1.] {\includegraphics[width=\paperwidth]{galenstock_bg}};}
+}
 
 % insert titlepage
 \begin{frame}
@@ -253,7 +261,8 @@
 \begin{frame}[plain]
   \note[item]{When I was a bit older, I became tired of waiting for the next gondola}
   \note[item]{so started with ski mountaineering}
-  \note[item]{and while spending my weekends in the mountains, I started to notice change}
+  \note[item]{and while spending my weekends in the mountains,}
+  \note[item]{I started to notice change}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -271,10 +280,12 @@
   \note[item]{Now, every spring ski patrol covers the ramp with a white tarp to preserve as much as possible}
   \note[item]{for the next winter}
   \note[item]{I asked myself: Are glaciers melting only where I grew up or is there more to it?}
+  \note[item]{Is this happens somewhere else?}
   \note[item]{so, to answer this, I decided to study glaciers and climate}
   \note[item]{but also it sounded like fun to study something that I can ski on\ldots}
   \note[item]{So during the rest of talk, I would like to give you my perspective of glaciers and glacier change}
-  \note[item]{I will tell you about the health of Alaska's glaciers and we glacilogists are so concerned about WAIS}
+  \note[item]{I will tell you about the health of Alaska's glaciers}
+  \note[item]{and why we glaciologists are so concerned about WAIS}
 \end{frame}
   
 
@@ -283,45 +294,30 @@
 } 
 
 
-% \begin{frame}
-%   \begin{itemize}
-%     \item Presently, 10 percent of land area on Earth is covered with glacial ice, including glaciers, ice caps, and the ice sheets of Greenland and Antarctica. Glacierized areas cover over 15 million square kilometers (5.8 million square miles).
-%     \item Glaciers store about 75 percent of the world's fresh water.
-%     \item During the maximum point of the last ice age, glaciers covered about 32 percent of the total land area.
-% \item size of AK: 663,268 sq mi (1,717,856 km2), glaciers: 87,000 sq km
-%   \end{itemize}
-% \end{frame}
 
-% \begin{frame}
-% \begin{itemize}
-% \item what do we use glaciers for?
-% \item contain 75\% of the world's fresh water
-% \item electricity, hydrodam, summer
-% \end{itemize}
-% \end{frame}
+\begin{frame}{Muir Glacier, Alaska}
+  \flashmovie[width=\paperwidth]{documenting_glacial_change.swf}
+\end{frame}
 
-% \begin{frame}{Glaciers Flow}
-% \begin{itemize}
-% \item what do we use glaciers for?
-% \item contain 75\% of the world's fresh water
-% \item electricity, hydrodam, summer
-% \end{itemize}
-% \end{frame}
-
-
-% \begin{frame}{Witnessing Glacier Change in Switzerland}
-%       \begin{figure}
-%         \only<1>{1994\\}
-%         \only<2>{2006\\}
-%         \includegraphics<1>[width=\textwidth]{steigletscher-repeat-1994}
-%         \includegraphics<2>[width=\textwidth]{steigletscher-repeat-2006} 
-%         {\\ \footnotesize{www.swisseduc.ch}}
-%       \end{figure}
-% \end{frame}
 
 \setbeamertemplate{background canvas}
 {
-  \tikz{\node[inner sep=0pt,opacity=0.5] {\includegraphics[width=\paperwidth]{ak_glacierized_area_16x12}};}
+  \tikz{\node[inner sep=0pt,opacity=1]{\includegraphics[width=\paperwidth,height=\paperheight]{columbia-glacier-2010}};}
+}
+
+\begin{frame}{Columbia Glacier}
+  \note[item]{Who has been to Columbia Glacier near Valdez?}
+  \note[item]{When Columbia Glacier was first surveyed by British explorers in 1794}m
+  \note[item]{it extented to Heather Bay and held that position until 1980.}
+  \note[item]{In 1980s, Columbia Glacier started a rapid that continues today.}
+  \note[item]{Since 1986, Colmbia Glacier retreated by more than 20 kilometers.}
+  \note[item]{The photo here it took from an Alaska Tourism website and it dates to 2010.}
+  \note[item]{You can see Columbia Glacier flowing into the ocean}
+  \note[item]{The vertical cliff here is called the glacier terminus or the calving front}
+\end{frame}
+
+\setbeamertemplate{background canvas}
+{
 }
 
 
@@ -330,16 +326,12 @@
   \begin{figure}
    \movie[showcontrols=true,autostart,loop,width=12cm]{\includegraphics[width=12cm]{columbia-eis}}{columbia-eis.mov}
   \end{figure}
-  \note[item]{I was wondering if this happens somewhere else?}
-  \note{In Alaska, they are changing too. Columbia glacier for example.}
-  \note{Who has been to Columbia Glacier near Valdez?}
-  \note{When British explorers first surveyed it in 1794, its front edge (terminus) extended to the northern edge of Heather Island, a small island. The glacier held that position until 1980, when it began a rapid retreat that continues today.}
+  \note[item]{Here is a video put together from time lapse photography by James Balog from EIS.}
+  \note[item]{Columbia Glacier looks like a river of frozen ice, all cracked up, flowing into the ocean}
+  \note[item]{It shows how fast the glacier retreated between 2007 and 2010.}
+  \note[item]{In fact, Columbia Glacier retreated so fast}
+  \note[item]{that they had to reposition the camera twice}
 \end{frame}
-
-
-% \begin{frame}{Glacier Change in Alaska: Columbia Glacier}
-%   \movie[showcontrols=true,autostart,loop,width=12cm]{\includegraphics[width=12cm]{columbia-eis}}{columbia-eis.mov}
-% \end{frame}
 
 
 \setbeamertemplate{background canvas}
@@ -362,6 +354,7 @@
   \note[item]{If you spread 75 Gt of water evenly over Alaska}
   \note[item]{and here we assume Alaska is flat}
   \note[item]{we would stand in 5cm deep water}
+  \note[item]{or, if we combine all 20 years, would be standing in about a meter of water}
 
 \end{frame}
 
@@ -370,22 +363,6 @@
 }
 
 
-% \setbeamertemplate{background canvas}
-% {
-%   \tikz{\node[inner sep=0pt,opacity=0.75] {\includegraphics[width=\paperwidth]{world_glacierized_area_16x12}};}
-% }
-
-% \begin{frame}{Glacier Change Worldwide}
-%   \begin{itemize}
-%     \item Presently, 10\,\% of land area is covered with ice
-%     \item That's about 10 times the size of Alaska
-%   \end{itemize}
-% \end{frame}
-
-
-% \setbeamertemplate{background canvas}
-% {
-% }
 
 \begin{frame}{Melting Glaciers Everywhere: The Biggest Losers}
   \begin{figure}
@@ -398,7 +375,7 @@
   \note[item]{This figure shows glacier mass loss world wide}
   \note[item]{Again, red colors indicate mass loss}
   \note[item]{The biggest red areas are Alaska, Greenland, and West Antartica}
-  \note[item]{These are the biggest losers}
+  \note[item]{These are the biggest losers right now}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -411,8 +388,11 @@
   \centering{``Hasn't the Climate Changed Before?''}
   \note[item]{But wait}
   \note[item]{aren't glaciers and the climate constantly changing}
-  \note[item]{number one question}
-  \note[item]{seat neighbor in airplane}
+  \note[item]{What's so special about today?}
+  \note[item]{That's probably the number one question}
+  \note[item]{I get from a seat neighbor in airplane}
+  \note[item]{So let me try to walk you through the climate of the past}
+  \note[item]{and how the climate influences glaciers}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -421,24 +401,12 @@
 
 
 \begin{frame}{Glacials and Interglacials}
-  \begin{columns}[c]
-    \begin{column}{.45\linewidth}
       \begin{figure}
-        \includegraphics<1>[height=7.5cm]{ice-age-movie-1}
-        {\\ \alert{glacial}}
+        \includegraphics<1>[height=8.2cm]{ice-age-movies}
       \end{figure}
-    \end{column}
-    \begin{column}{.45\linewidth}
-      \begin{figure}
-        \includegraphics<1>[height=7.5cm]{ice-age-movie-meltdown}
-        {\\ \alert{interglacial}}
-      \end{figure}
-    \end{column}
-  \end{columns}
   \note[item]{As we learned from Hollywood}
   \note[item]{there have been Ice Ages and Meltdowns}
   \note[item]{or as we call it: glacials and interglacials}
-  \note[item]{Visualize warm / cold}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -449,13 +417,19 @@
 \begin{frame}{Ice Cores: The 2-mile Time Machine}
   \note[item]{We know about glacials and interglacials from}
   \note[item]{geologic evidence and from ice cores}
-  \note[item]{Why do is core works, what does it represent, snow turns into ice, each layer is a time capsule}
+  \note[item]{What is an ice core and how does it work}
+  \note[item]{In cold areas such as Greenland and Antarctica}
+  \note[item]{snow falls every year on top of the snow from the previous year}
+  \note[item]{building layer afer layer, as you can see in the photo here}
+  \note[item]{when the weight of the overlying snow is heavy enough, the snow turns into ice}
+  \note[item]{during the process, tiny bubbles of air are being trapped within the ice}
+  \note[item]{the air in those bubbles contains a lot of information}
+  \note[item]{about the climate of the year when the snow fell}
   \note[item]{An ice cores are like a big archive that}
   \note[item]{stores information about past climate}
-  \note[item]{The information is locked up in tiny little air bubbles trapped within the ice}
+  \note[item]{each bubble is a time capsule}
   \note[item]{Ice cores from Greenland and Antartica are up to 2 mile deep}
   \note[item]{the deeper you go, the older the ice gets}
-  \note[item]{It's like a time capsule, a two mile long time machine}
   \note[item]{climate scientists have analyzed ice that is up to 800,000 years old}
   \note[item]{This gives us a pretty good picture about climate varibility over almost a million years}
 \end{frame}
