@@ -163,7 +163,7 @@
 
 
 \author[Aschwanden] % (optional, use only with lots of authors)
-{Andy Aschwanden}
+{The PISM Team}
 % - Give the names in the same order as the appear in the paper.
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
@@ -175,6 +175,7 @@
 
 
 \date{}
+\titlegraphic{\vskip-0.5cm\shadowimage[width=\textwidth]{gris-nw-speed-exp-600m}}
 
 \begin{document}
 
@@ -203,6 +204,81 @@
   \titlepage
 \end{frame}
 
+
+
+\begin{frame}{About PISM}
+\begin{itemize}
+\item open-source, fully-parallel ice sheet model capable of high-resolution simulation
+\item development in collaboration with Potsdam Institute for Climate Impact Research
+\item find us at \url{www.pism-docs.org}
+\item email us at \url{uaf-pism@alaska.edu}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{PISM Core Strength}
+  \begin{itemize}
+  \item demonstrated capability for multi-millennium long simulations using hybrid stress balance solver
+  \item easy to use (no workshops needed)
+  \item modularity (start simple and add physics if needed, add new physics, etc.)
+  \item standard output format netCDF: easy to analyze and visualize with standard tools
+  \item coupled to GCMs (DMI, MPI, NASA GISS: E. Fischer)
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Major Challenge for ISMIP6}
+  \begin{block}{Model Initialization}
+    \begin{itemize}
+    \item find initial state that is in close agreement with observations
+    \item validated over a period that is longer than the projections to be made
+    \item with minimized artifical drift
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Recent Developments}
+\begin{itemize}
+\item new calving parameterizations
+\item new frontal melt and back-stress parameterizations
+\item updates to isostasy model
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Outlet glaciers during LGM}
+  \begin{figure}  
+    \includegraphics[width=4cm]{colorbar-speed}
+  \end{figure}
+  \begin{columns}
+    \column[T]{5cm}
+    \vspace{-2em}
+    \begin{figure}
+      {\scriptsize{1,200m}\\}
+      \includegraphics[height=0.7\textheight]{lgm_cc_speed_1200m_ws}
+    \end{figure}
+    \column[T]{5cm}
+    \vspace{-2em}
+    \begin{figure}
+      {\scriptsize{18,000m, SIA}\\}
+      \includegraphics[height=0.7\textheight]{lgm_cc_speed_18000m_sia_ws}
+    \end{figure}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Funding}
+  \begin{figure}
+    \includegraphics[height=2.5cm]{nasa-logo} \hspace{1cm}
+    \includegraphics[height=2.5cm]{NSF-logo-color}
+  \end{figure}
+\begin{itemize}
+\item 2017--2019: project-specific support from NASA and NSF
+\item until May 2017: full NASA MAP support for Programmer Khroulev
+\item after May 2017: ?? support for Programmer Khroulev
+\end{itemize}
+\end{frame}
 
 
 \end{document}
