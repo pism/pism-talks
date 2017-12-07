@@ -3,7 +3,10 @@ gigsa_03_2016.pdf
 
 beamer*.sty
 *beamer*.png
+*logo*.png
+*logo*.pdf
 
+*.vrb
 *.out
 *.aux
 *.log
