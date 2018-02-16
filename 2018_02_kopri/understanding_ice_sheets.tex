@@ -272,7 +272,7 @@
 
 \begin{frame}[plain]
     \begin{figure}
-      \movie[showcontrols=true,loop,width=12cm]{\includegraphics[width=12cm]{68_grace_greenland_1080p}}{68_grace_greenland_1080p.mov}
+      \movie[showcontrols=true,loop,width=12cm]{\includegraphics[width=12cm]{../movies/68_grace_greenland_1080p}}{../movies/68_grace_greenland_1080p.mov}
   \end{figure}
   \begin{itemize}
   \item<2> 280\,Gt is about half of Lake Eerie or a 15\,cm high layer of water covering Alaska
@@ -488,7 +488,7 @@
       \begin{itemize}
       \item boundary conditions
       \item hydrology
-      \item ice-ocean interaction (e.g. calving)
+      \item ice-ocean interaction (e.g. calving, frontal melting)
       \end{itemize}
     \end{column}
   \end{columns}
@@ -686,15 +686,15 @@
   \item open-source, fully-parallel from start in 2006
   \item primary development at UAF, with global user base
   \item $>$100k lines of code; mostly C++
-  \item sustained NASA support \tiny (NAG5-11371, NNX09AJ38C, NNX13AM16G, NNX13AK27G), PI's Bueler, Aschwanden
+  \item NASA and NSF support
   \end{itemize}
   \begin{columns}
     \column[c]{4.75cm}
     \begin{figure}
       \includegraphics[width=\textwidth]{pism-uaf-publications}
     \end{figure}
-    \column[c]{6.25cm}
-    \includegraphics<1>[width=\textwidth]{pism-users}
+    \column[c]{5cm}
+    \includegraphics<1>[width=.7\textwidth]{pism-users}
   \end{columns}
 \end{frame}
 
@@ -703,7 +703,6 @@
   \begin{itemize}
   \item PISM uses a computationally-efficient approximation to the Stokes equations
   \item PISM runs on large HPC systems
-  \item currently installed on GI RCS's pacman, fish, \& chinook, as well as on NASA's pleiades cluster
   \item simulations typically use 100-500 cores and may take up to two weeks wall time to complete
   \end{itemize}
 \end{frame}
@@ -884,6 +883,11 @@
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Putting it all together}
+\end{frame}
+
+
 
 \begin{frame}
   \frametitle{The next thousand years}
@@ -893,7 +897,19 @@
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{In a thousand years}
+  \begin{figure}
+    \includegraphics[height=8cm]{rcp-final-states-composite}
+  \end{figure}
+\end{frame}
 
+\begin{frame}
+  \frametitle{The next thousand years}
+  \begin{figure}
+    \includegraphics[height=8cm]{les-composite}
+  \end{figure}
+\end{frame}
 
 
 \end{document}
