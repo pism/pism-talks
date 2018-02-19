@@ -96,11 +96,11 @@
 
 % title page
 \title[Ice sheet modeling] % (optional, use only with long paper titles)
-{Understanding ice sheets through observations and models}
+{Understanding ice sheets\\through observations and models}
 %\subtitle{Understanding ice sheet response to climate change through observations and models}
 
 \author[Aschwanden] % (optional, use only with lots of authors)
-{Andy Aschwanden}
+{Andy Aschwanden\\Geophysical Institute\\University of Alaska Fairbanks}
 % - Give the names in the same order as the appear in the paper.
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
@@ -108,7 +108,7 @@
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
 
-\titlegraphic{\vskip-1.5cm\includegraphics[height=4cm]{grn1km_speed_slr}}
+\titlegraphic{\vskip-1.cm\includegraphics[height=3cm]{grn1km_speed_slr}}
 
 \date{}
 
@@ -126,6 +126,18 @@
 % insert titlepage
 \begin{frame}
   \titlepage
+\end{frame}
+
+\setbeamertemplate{background canvas}
+  {
+} 
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1.] {\includegraphics[width=\paperwidth]{galenstock_bg}};}
+}
+
+\begin{frame}[plain]
   \note[item]{Who has ever seen a glacier?}
   \note[item]{Who has ever set foot on a glacier?}
   \note[item]{The picture here shows the view from on of my favorite places near}
@@ -143,6 +155,7 @@
 }
 
 \begin{frame}[plain]
+  \note[item]{I've been living in Alaska for the past nine years.}
   \note[item]{I grew up in the heart of Switzerland, in the Kanton Uri---a Kanton is the equivalent to a State}
   \note[item]{Like Alaska, we have many Subarus}
   \note[item]{True to the stereotype, we have many cows in Uri and produce a lot of good cheese}
@@ -160,7 +173,7 @@
 \begin{frame}[plain]
   \note[item]{So no surprise}
   \note[item]{I grew up on skis, I learned to downhill ski right after learning to walk}
-  \note[item]{In Switzerland ``skiing'' always means downhill skiing, unlike here in Fairbanks where skiing usually means XC skiing}
+  \note[item]{In Switzerland ``skiing'' always means downhill skiing, unlike in Alaska where skiing usually means XC skiing}
 \end{frame}
 
 
@@ -195,9 +208,8 @@
   \note[item]{Is this happens somewhere else?}
   \note[item]{so, to answer this, I decided to study glaciers and climate}
   \note[item]{but also it sounded like fun to study something that I can ski on\ldots}
-  \note[item]{So during the rest of talk, I would like to give you my perspective of glaciers and glacier change}
-  \note[item]{I will tell you about the health of Alaska's glaciers}
-  \note[item]{and why we glaciologists are so concerned about WAIS}
+  \note[item]{So during the rest of talk, I would like focus on glacier change in Greenland}
+  \note[item]{which is currently my main research focus}
 \end{frame}
   
 
@@ -258,7 +270,7 @@
     \item total area: 2.1 million km$^2$
     \item ice covered area:  1.7 million km$^2$
     \item \alert{for comparison: that's the total area of Alaska}
-    \item has ice equivalent to 7 m of sea-level rise
+    \item has ice equivalent of 7.2 m of sea-level rise
     \item over past 2 decades: losing mass at an accelerating rate
     \end{itemize}
     \note[item]{Explain why Greenland is of interest}
@@ -385,7 +397,7 @@
     \includegraphics[height=.8\textheight]{MODISGreenlandJakobshavn} \\
     \scriptsize{based on MODIS data from M. Fahnestock}
   \end{figure}
-  \note[item]{in this talk I will focus on Jakobshavn}
+  \note[item]{Let's focus on Jakobshavn Isbr{\ae}}
   \note[item]{Greenland's biggest and fastest flowing outlet glacier}
   \note[item]{drains about 7\% of the entire ice sheet}
 \end{frame}
@@ -395,7 +407,7 @@
  \begin{figure}
     \includegraphics[width=\textwidth]{Jakobshavn_groundline_retreat} \\
   \end{figure}
-  \note[item]{Will Harrison and late Keith Echelmeyer investigated Jakobshavn in the mid-80s}
+  \note[item]{My colleagues Will Harrison and late Keith Echelmeyer investigated Jakobshavn in the mid-80s}
   \note[item]{at that time JIB had a $\sim$10\,km long floating tongue}
   \note[item]{they found high flow speeds}
   \note[item]{relatively steady behavior}
@@ -884,7 +896,10 @@
 
 
 \begin{frame}
-  \frametitle{Putting it all together}
+  \frametitle{Estimating future sea-level rise}
+  \begin{figure}
+    \includegraphics[height=5cm]{grn1km_speed_slr}
+  \end{figure}
 \end{frame}
 
 
