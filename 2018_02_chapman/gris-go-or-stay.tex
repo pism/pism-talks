@@ -14,7 +14,6 @@
 \usepackage{lmodern}
 \usepackage{pdfpages}
 \usepackage[multidot]{grffile}
-\usepackage{media9}
 
 %\setbeameroption{show notes on second screen=right}
 
@@ -252,14 +251,21 @@
 \end{frame}
 
 \begin{frame}{Observed vs simulated flow speeds in 2013}
+  \begin{columns}[c]
+    \begin{column}{.65\linewidth}
     \begin{figure}
-      \includegraphics[width=0.35\textwidth]{greenland-exp-overview-oldbed}
-      \includegraphics[width=0.35\textwidth]{calib-speed-sia}
+      \includegraphics[width=\textwidth]{gris-obs-exp-old}
     \end{figure}
-    \vspace{-0.5em}
-    \begin{figure}
-      \includegraphics[height=1cm]{colorbar-speed}
-    \end{figure}
+    \end{column}
+    \begin{column}{.35\linewidth}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{roadblocks}
+      \end{figure}
+      \begin{itemize}
+      \item can't reproduce flow field
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 
@@ -302,18 +308,22 @@
   \note[item]{ice flows downhill}
 \end{frame}
 
-\begin{frame}{Now it's time for a new assessment}
+\begin{frame}{Ready for a new assessment}
   \begin{figure}
-    \includegraphics[height=4cm]{grn1km_speed_slr}
+    \includegraphics[width=11cm]{gris-pism-setup-2018}
   \end{figure}
-  \begin{itemize}
-  \item whole ice sheet simulations at $<$1\,km resolution
-  \item frontal melt parameterizations
-  \item new calving law
-  \end{itemize}
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{In a thousand years}
+  \begin{figure}
+    \includegraphics[height=6.5cm]{rcp-final-states-extend}
+  \end{figure}
+  \note[item]{In a thousand years, Greenland will look different to today}
+  \note[item]{Explain uncertainty map}
+
+\end{frame}
 
 \begin{frame}
   \frametitle{The next thousand years}
@@ -328,24 +338,22 @@
   \begin{figure}
     \includegraphics[height=8cm]{les-results}
   \end{figure}
-\end{frame}
-
-\begin{frame}
-  \frametitle{What are the uncertainties}
-  \begin{itemize}
-  \item first 2 centuries: ice dynamics
-  \item then: how we calculate ice melt
-  \end{itemize}
+\note[item]{a bit of a surprise to us}
+\note[item]{still checking the numbers}
+\note[item]{first 2 centuries: ice dynamics}
+\note[item]{how we calculate ice melt}
 \end{frame}
 
 
+
 \begin{frame}
-  \frametitle{Summary}
-  \begin{itemize}
-  \item first ``next'' generation modeling effort for Greenland
-  \end{itemize}
+  \frametitle{Will it stay or will it go?}
   \begin{figure}
-    \includegraphics[width=3cm]{clash}
+    \includegraphics[width=8cm]{giss_cmip5_delta_T}
+  \end{figure}
+  \centering{\alert{$\Rightarrow$} \alert{depends on emission path we follow}}
+  \begin{figure}
+    \includegraphics[width=2cm]{clash}
   \end{figure}
 \end{frame}
 
