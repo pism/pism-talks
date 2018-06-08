@@ -1,4 +1,3 @@
-\RequirePackage{flashmovie}
 \documentclass[hide notes,intlimits]{beamer}
 
 
@@ -10,14 +9,11 @@
 
 % load packages
 \usepackage{multimedia}
-%\usepackage{animate}
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[multidot]{grffile}
-\usepackage[amssymb]{SIunits}
-% \usepackage{flashmovie}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,shadows, calc}
 
@@ -238,7 +234,7 @@
 \begin{frame}[plain]
   \note[item]{So no surprise}
   \note[item]{I grew up on skis, I learned to downhill ski right after learning to walk}
-  \note[item]{In Switzerland ``skiing'' always means downhill skiing, unlike here in Fairbanks where skiing usually means XC skiing}
+  \note[item]{In Switzerland ``skiing'' always means downhill skiing, unlike here in Alaska where skiing usually means XC skiing}
 \end{frame}
 
 
@@ -295,15 +291,6 @@
 \end{frame}
 
 
-\begin{frame}{Glaciers in Alaska}
-  \flashmovie[width=15cm]{../movies/documenting_glacial_change.swf}
-  \url{http://serc.carleton.edu/eslabs/cryosphere/5a.html}
-  \note[item]{I found a great website illustrating glacier change}
-  \note[item]{where you can go and see for yourself}
-  \note[item]{Couldn't make it bigger.}
-\end{frame}
-
-
 \setbeamertemplate{background canvas}
 {
   \tikz{\node[inner sep=0pt,opacity=1]{\includegraphics[width=\paperwidth,height=\paperheight]{columbia-glacier-2010}};}
@@ -346,6 +333,7 @@
 \begin{frame}{Melting Glaciers in Alaska}
   \begin{itemize}
   \item total mass loss 1994--2013 from AK glaciers: 75$\pm$11 Gt/yr loss $\Rightarrow$ 5\,cm (2\,in) layer of water covering Alaska
+  \item or about 1\,m of water in 20 years
   \end{itemize}
   \note[item]{Explain thinning and mass loss}
   \note[item]{Columbia Glacier is not alone}
@@ -429,8 +417,8 @@
   \note[item]{during the process, tiny bubbles of air are being trapped within the ice}
   \note[item]{the air in those bubbles contains a lot of information}
   \note[item]{about the climate of the year when the snow fell}
-  \note[item]{An ice cores are like a big archive that}
-  \note[item]{stores information about past climate}
+  \note[item]{Ice cores are like a big archive that}
+  \note[item]{store information about past climate}
   \note[item]{each bubble is a time capsule}
   \note[item]{Ice cores from Greenland and Antartica are up to 2 mile deep}
   \note[item]{the deeper you go, the older the ice gets}
@@ -541,17 +529,12 @@
   \begin{figure}
     \includegraphics[width=.96\textwidth]{ice-sheet-cartoon}
   \end{figure}
-  \begin{itemize}
-    \item before the mid-90s mass loss was dominated by surface mass balance
-  \end{itemize}
   \note[item]{explain surface melt, ice discharge/calving, and basal melt}
   \note[item]{snow accumulates in the colder, higher altitude areas in the interior}
   \note[item]{turns into ice}
   \note[item]{and starts to flow downhill towards the coast}
   \note[item]{near the coast, surface melting can occur in the summer}
   \note[item]{but also some ice is dumped directly into the ocean}
-  \note[item]{before the mid-90s mass loss was dominated by surface mass balance (80-90\%)}
-  \note[item]{contribution of ice discharge was modest (10--20\%)}
   \note[item]{explaining in more detail in the next slide}
 
 \end{frame}
@@ -615,7 +598,7 @@
 
 \begin{frame}{Attack from below}
  \begin{figure}
-  \movie[showcontrols=true,autostart,loop,width=10cm]{\includegraphics[width=10cm]{gl-retreat}}{../gl-retreat.mov}
+  \movie[showcontrols=true,autostart,loop,width=10cm]{\includegraphics[width=10cm]{gl-retreat}}{../movies/gl-retreat.mov}
   \end{figure}
   \note[item]{Here you see an animation of the process}
   \note[item]{In the beginning, the shelf is thick and healthy}
@@ -649,7 +632,7 @@
 
 
 \begin{frame}{West Antarctic Ice Sheet}
-  \movie[showcontrols=true,width=10cm]{\includegraphics[width=10cm]{rignot-wais}}{../rignot-wais.mov}
+  \movie[showcontrols=true,width=10cm]{\includegraphics[width=10cm]{rignot-wais}}{../movies/rignot-wais.mov}
   \note[item]{Here is my colleague Eric Rignot}
 \end{frame}
 
@@ -667,6 +650,12 @@
 \note[item]{if we all work together, we will be able to adapt to these changes}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Greenland: The next thousand years}
+  \begin{figure}
+   \movie[showcontrols=true,loop,width=7cm]{\includegraphics[width=7cm]{../movies/gris_g900m_rcps_0000}}{../movies/gris-g900m_rcps-hd1920.mov}
+  \end{figure}
+\end{frame}
 
 
 \setbeamertemplate{background canvas}
@@ -686,7 +675,7 @@
   \vspace{-2cm}
   \begin{block}{Milankovitch Cycle}
     \begin{figure}
-      \movie[showcontrols=true,autostart,loop,width=8cm]{\includegraphics[width=8cm]{orbital-forcing}}{../orbital-forcing.mov}
+      \movie[showcontrols=true,autostart,loop,width=8cm]{\includegraphics[width=8cm]{orbital-forcing}}{../movies/orbital-forcing.mov}
     \end{figure}
   \end{block}
   \begin{columns}[T]
@@ -712,7 +701,7 @@
 
 \begin{frame}
     \begin{figure}
-      \movie[showcontrols=true,loop,width=10cm]{\includegraphics[width=10cm]{alley-001}}{../alley-milankovitch.mov}
+      \movie[showcontrols=true,loop,width=10cm]{\includegraphics[width=10cm]{alley-001}}{../movies/alley-milankovitch.mov}
     \end{figure}
     \note[item]{My colleague Richard Alley is much more eqloquent in explain what causes ice ages}
     \note[item]{as he did in this hearing in front of congress a couple of years ago}
