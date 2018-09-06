@@ -126,7 +126,6 @@
 % insert titlepage
 \begin{frame}
   \titlepage
-  \note[item]{Today I'd like to talk about the future of the GrIS}
   \note[item]{Collaboration between most glaciology faculty here at UAF}
   \note[item]{Mark F., Martin T., Regine H., and my former student Doug B.}
 \end{frame}
@@ -134,10 +133,44 @@
 
 \setbeamertemplate{background canvas}
   {
-     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{nasa-mapping-greenland-ice-sheet}};}
+     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-clean}};}
 } 
 
 \begin{frame}[plain]
+  \note[item]{We know Greenland was nearly ice-free for extended periods during the Pleistocene}
+  \note[item]{that's from 2.6 million years ago to 11,700 years ago}
+  \note[item]{Maybe Greenland looked somehting like this}
+\end{frame}
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-1}};}
+} 
+
+\begin{frame}[plain]
+  \note[item]{Lots of space to go hiking}
+\end{frame}
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-2}};}
+} 
+
+\begin{frame}[plain]
+  \note[item]{For caribous to roam}
+\end{frame}
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-3}};}
+} 
+
+\begin{frame}[plain]
+  \note[item]{or like a Jurassic Park}
+  \note[item]{Now the intersting question is:}
+  \note[item]{Can this happen again}
+  \note[item]{and under what conditions?}
+
 \end{frame}
 
 
@@ -146,13 +179,21 @@
 %
 } 
 
+\begin{frame}
+  \frametitle{Evolution over the next millennium}
+  \begin{figure}
+    \includegraphics<1>[height=7cm]{huy1999_fig3}
+    \includegraphics<2>[height=7cm]{huy1999_fig6}
+    \caption{e.g. Huybrechts and de Wolde, 1999}
+  \end{figure}
+  \note[item]{About two decades ago}
+  \note[item]{pioneers like R. Greve, C. Ritz, and P. Huybrechts}
+  \note[item]{developed the first ice sheet models to go after this question}
+  \note[item]{}
 
-
-\begin{frame}{Make Greenland Green Again}
-      \begin{figure}
-        \includegraphics[width=\textwidth]{gris-green-collage-all}
-      \end{figure}
 \end{frame}
+
+
 
 \begin{frame}{Observed vs simulated flow speeds in 2013}
   \begin{columns}[c]
@@ -170,6 +211,7 @@
       \end{itemize}
     \end{column}
   \end{columns}
+  \note[item]{}
 \end{frame}
 
 
@@ -240,6 +282,18 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Uncertainty analysis}
+  \begin{itemize}
+  \item choose the 4 GCMs and 10 parameters
+  \item prescribe distributions (normal, uniform, truncated normal, gamma)
+  \item draw 600 samples using Latin Hypercube Sampling
+  \item run 1,800 simulations at 1.8\,km resolution
+  \item run control simulation at 900\,m resolution (ensemble mean forcing)
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
   \frametitle{In a thousand years}
   \begin{figure}
     \includegraphics[height=6.5cm]{rcp-final-states-extend}
@@ -268,21 +322,30 @@
 
 \begin{frame}
   \frametitle{Uncertainty analysis}
-  Choose the 4 GCMs and 10 parameters
+  \begin{figure}
+    \includegraphics<1>[height=6cm]{gcm_rcp_26_year_2100_les_pie}
+    \includegraphics<2>[height=6cm]{gcm_rcp_26_year_2200_les_pie}
+    \includegraphics<3>[height=6cm]{gcm_rcp_26_year_2500_les_pie}
+    \includegraphics<4>[height=6cm]{gcm_rcp_26_year_3000_les_pie}
+    \includegraphics<5>[height=6cm]{gcm_rcp_45_year_2100_les_pie}
+    \includegraphics<6>[height=6cm]{gcm_rcp_45_year_2200_les_pie}
+    \includegraphics<7>[height=6cm]{gcm_rcp_45_year_2500_les_pie}
+    \includegraphics<8>[height=6cm]{gcm_rcp_45_year_3000_les_pie}
+    \includegraphics<9>[height=6cm]{gcm_rcp_85_year_2100_les_pie}
+    \includegraphics<10>[height=6cm]{gcm_rcp_85_year_2200_les_pie}
+    \includegraphics<11>[height=6cm]{gcm_rcp_85_year_2500_les_pie}
+    \includegraphics<12>[height=6cm]{gcm_rcp_85_year_3000_les_pie}
+  \end{figure}
 \end{frame}
 
 
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-all}};}
+} 
 
-\begin{frame}
-  \frametitle{Outlet glacier retreat}
-  \begin{figure}
-    \includegraphics<1>[height=7.25cm]{rcp45_Upernavik_Isstrom_S}
-    \includegraphics<2>[height=7.25cm]{rcp45_Store_Gletscher}
-  \end{figure}
-  \vspace{-0.5cm}
-  \begin{figure}
-    \includegraphics[height=1cm]{jet_horizontal}
-  \end{figure}
+\begin{frame}[plain]
+  \note[item]{Shad has dibs on packrafting}
 \end{frame}
 
 \end{document}
