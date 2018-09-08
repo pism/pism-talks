@@ -186,14 +186,36 @@
     \includegraphics<2>[height=7cm]{huy1999_fig6}
     \caption{e.g. Huybrechts and de Wolde, 1999}
   \end{figure}
-  \note[item]{About two decades ago}
-  \note[item]{pioneers like R. Greve, C. Ritz, and P. Huybrechts}
-  \note[item]{developed the first ice sheet models to go after this question}
-  \note[item]{}
+  \note<1>[item]{About two decades ago}
+  \note<1>[item]{pioneers like R. Greve, C. Ritz, and P. Huybrechts}
+  \note<1>[item]{developed the first ice sheet models to go after this question}
+  \note<1>[item]{Here I'm going to show an example from Huybrechts}
+  \note<1>[item]{You run a couple of warming scenarios}
+  \note<2>[item]{and see what happens after a thousand years}
+  \note<2>[item]{Well, if it gets warm enough, Greenland will become green\ldots}
 
 \end{frame}
 
 
+
+\begin{frame}{Observed vs simulated flow speeds in 1999}
+  \begin{columns}[c]
+    \begin{column}{.65\linewidth}
+    \begin{figure}
+      \includegraphics[width=\textwidth]{gris-obs-exp-old-1999}
+    \end{figure}
+    \end{column}
+    \begin{column}{.35\linewidth}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{roadblocks}
+      \end{figure}
+      \begin{itemize}
+      \item can't reproduce flow field
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \note[item]{}
+\end{frame}
 
 \begin{frame}{Observed vs simulated flow speeds in 2013}
   \begin{columns}[c]
@@ -207,7 +229,8 @@
         \includegraphics[width=\textwidth]{roadblocks}
       \end{figure}
       \begin{itemize}
-      \item can't reproduce flow field
+      \item a bit better than in 1999
+      \item but still can't reproduce flow field
       \end{itemize}
     \end{column}
   \end{columns}
@@ -306,7 +329,7 @@
 \begin{frame}
   \frametitle{The next thousand years}
   \begin{figure}
-   \movie[showcontrols=true,autostart,loop,width=7.25cm]{\includegraphics[width=7.25cm]{../movies/gris-g1200m_rcps-hd1920}}{../movies/gris-g1200m_rcps-hd1920.mov}
+   \movie[showcontrols=true,autostart,loop,width=7.25cm]{\includegraphics[width=7.25cm]{../movies/gris_g900m_rcps_0000}}{../movies/gris-g900m_rcps-hd1920.mov}
   \end{figure}
 \end{frame}
 
@@ -338,6 +361,26 @@
   \end{figure}
 \end{frame}
 
+
+\begin{frame}
+  \frametitle{Uncertainty analysis}
+  \begin{itemize}
+    \item uncertainties in ice dynamics dominate until 2200-ish
+    \item then uncertainties in surface mass balanace take over
+    \item uncertainties in ice-ocean interaction are very small
+  \end{itemize}
+\end{frame}
+
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-clean}};}
+} 
+
+\begin{frame}[plain]
+  \note[item]{In summary, Greenland will very likely become ice free within a millenniium }
+  \note[item]{if we keep following the RCP 8.5 scenario}
+\end{frame}
 
 \setbeamertemplate{background canvas}
   {
