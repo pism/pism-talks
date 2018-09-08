@@ -33,40 +33,6 @@
 \setbeamercolor{boxed}{fg=black,bg=light blue!25}
 \graphicspath{{../figures_2018_08/}{figures/}}
 
-% Define block styles
-\tikzstyle{initialization} = [ellipse, draw, 
-    text badly centered, draw=dark violet,
-        % The filling: 
-        top color=white, 
-        bottom color=dark violet]
-\tikzstyle{initialization faded} = [ellipse, draw, 
-    text badly centered, draw=dark violet!50,
-        % The filling: 
-        top color=white, 
-        bottom color=dark violet!25]
-\tikzstyle{hindcast} = [ellipse, draw,
-    text badly centered, rounded corners,draw=dark orange,
-        % The filling: 
-        top color=white, 
-        bottom color=dark orange]
-\tikzstyle{hindcast faded} = [ellipse, draw,
-    text badly centered, rounded corners,draw=dark orange!50,
-        % The filling: 
-        top color=white, 
-        bottom color=dark orange!25]
-\tikzstyle{forecast} = [ellipse, draw,
-    text badly centered, rounded corners,draw=dark blue,
-        % The filling: 
-        top color=white, 
-        bottom color=dark blue]
-\tikzstyle{forecast faded} = [ellipse, draw,
-    text badly centered, rounded corners,draw=dark blue!50,
-        % The filling: 
-        top color=white, 
-        bottom color=dark blue!50]
-\tikzstyle{arrow line} = [draw, -latex']
-\tikzstyle{line} = [draw]
-
 \newenvironment{transbox}[1][]{%
 \begin{tikzpicture}
 \node[drop shadow,rounded corners,text width=.9\textwidth,fill=white, fill opacity=#1,text opacity=1] \bgroup
@@ -310,8 +276,9 @@
   \item choose the 4 GCMs and 10 parameters
   \item prescribe distributions (normal, uniform, truncated normal, gamma)
   \item draw 600 samples using Latin Hypercube Sampling
-  \item run 1,800 simulations at 1.8\,km resolution
+  \item run 600 simulations at 1.8\,km resolution per RCP (1,800 total)
   \item run control simulation at 900\,m resolution (ensemble mean forcing)
+  \item Sobel indices attribution analysis (ask Doug for how it works)
   \end{itemize}
 \end{frame}
 
@@ -344,20 +311,20 @@
 
 
 \begin{frame}
+  \frametitle{Do outlet glaciers matter?}
+  \begin{figure}
+    \includegraphics[height=5.5cm]{rcp_d_rcp_tendency_of_ice_mass_due_to_discharge}
+    \caption{Ice discharge}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
   \frametitle{Uncertainty analysis}
   \begin{figure}
-    \includegraphics<1>[height=6cm]{gcm_rcp_26_year_2100_les_pie}
-    \includegraphics<2>[height=6cm]{gcm_rcp_26_year_2200_les_pie}
-    \includegraphics<3>[height=6cm]{gcm_rcp_26_year_2500_les_pie}
-    \includegraphics<4>[height=6cm]{gcm_rcp_26_year_3000_les_pie}
-    \includegraphics<5>[height=6cm]{gcm_rcp_45_year_2100_les_pie}
-    \includegraphics<6>[height=6cm]{gcm_rcp_45_year_2200_les_pie}
-    \includegraphics<7>[height=6cm]{gcm_rcp_45_year_2500_les_pie}
-    \includegraphics<8>[height=6cm]{gcm_rcp_45_year_3000_les_pie}
-    \includegraphics<9>[height=6cm]{gcm_rcp_85_year_2100_les_pie}
-    \includegraphics<10>[height=6cm]{gcm_rcp_85_year_2200_les_pie}
-    \includegraphics<11>[height=6cm]{gcm_rcp_85_year_2500_les_pie}
-    \includegraphics<12>[height=6cm]{gcm_rcp_85_year_3000_les_pie}
+    \includegraphics<1>[height=6.5cm]{gcm_rcp_26_year_2100_les_pie}
+    \includegraphics<2>[height=6.5cm]{gcm_rcp_26_year_2200_les_pie}
+    \includegraphics<3>[height=6.5cm]{gcm_rcp_26_year_2500_les_pie}
+    \includegraphics<4>[height=6.5cm]{gcm_rcp_26_year_3000_les_pie}
   \end{figure}
 \end{frame}
 
@@ -368,18 +335,27 @@
     \item uncertainties in ice dynamics dominate until 2200-ish
     \item then uncertainties in surface mass balanace take over
     \item uncertainties in ice-ocean interaction are very small
+    \item isostatic rebound does little to slow down mass loss
   \end{itemize}
 \end{frame}
 
 
 \setbeamertemplate{background canvas}
   {
-     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-clean}};}
+     \tikz{\node[inner sep=0pt,opacity=0.5] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-clean}};}
 } 
 
-\begin{frame}[plain]
+\begin{frame}{Summary}
+  \begin{transbox}
+    \begin{itemize}
+    \item We have performed the first millennium scale projections with an \emph{outlet glacier-resolving} ice sheet model 
+    \item Greenland will very likely become ice free in a millennium if we stay on an RCP 8.5 path
+      \item better characterization of basal and surface processes are needed
+    \end{itemize}
+  \end{transbox}
   \note[item]{In summary, Greenland will very likely become ice free within a millenniium }
   \note[item]{if we keep following the RCP 8.5 scenario}
+  \note[item]{Did I waste my time doing this work? You be the judge}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -387,8 +363,8 @@
      \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-all}};}
 } 
 
+
 \begin{frame}[plain]
-  \note[item]{Shad has dibs on packrafting}
 \end{frame}
 
 \end{document}
