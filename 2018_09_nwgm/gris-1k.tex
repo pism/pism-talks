@@ -11,11 +11,7 @@
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{pdfpages}
 \usepackage[multidot]{grffile}
-
-%\setbeameroption{show notes on second screen=right}
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
@@ -66,7 +62,7 @@
 %\subtitle{Will it stay or will it go?}
 
 \author[Aschwanden] % (optional, use only with lots of authors)
-{Andy Aschwanden \& many more}
+{Many \& Andy Aschwanden}
 % - Give the names in the same order as the appear in the paper.
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
@@ -279,6 +275,7 @@
   \item run 600 simulations at 1.8\,km resolution per RCP (1,800 total)
   \item run control simulation at 900\,m resolution (ensemble mean forcing)
   \item Sobel indices attribution analysis (ask Doug for how it works)
+  \item 2M CPU hours
   \end{itemize}
 \end{frame}
 
@@ -287,16 +284,16 @@
   \frametitle{In a thousand years}
   \begin{figure}
     \includegraphics[height=6.5cm]{rcp-final-states-extend}
+  \caption{Likelihood of a pixel being ice covered.}
   \end{figure}
   \note[item]{In a thousand years, Greenland will look different to today}
   \note[item]{Explain uncertainty map}
 
 \end{frame}
 
-\begin{frame}
-  \frametitle{The next thousand years}
+\begin{frame}[plain]
   \begin{figure}
-   \movie[showcontrols=true,autostart,loop,width=7.25cm]{\includegraphics[width=7.25cm]{../movies/gris_g900m_rcps_0000}}{../movies/gris-g900m_rcps-hd1920.mov}
+   \movie[showcontrols=true,autostart,loop,width=8cm]{\includegraphics[width=8cm]{../movies/gris_g900m_rcps_0000}}{../movies/gris-g900m_rcps-hd1920.mov}
   \end{figure}
 \end{frame}
 
@@ -345,7 +342,7 @@
 \begin{frame}{Summary}
   \begin{transbox}
     \begin{itemize}
-    \item We have performed the first millennium scale projections with an \emph{outlet glacier-resolving} ice sheet model 
+    \item We have performed the first millennium scale projections with an \textbf{outlet glacier-resolving} ice sheet model 
     \item Greenland will very likely become ice free in a millennium if we stay on an RCP 8.5 path
       \item better characterization of basal and surface processes are needed
     \end{itemize}
