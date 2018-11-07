@@ -1,5 +1,10 @@
-\documentclass[hide notes,intlimits]{beamer}
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% End: 
 
+\documentclass[hide notes,intlimits]{beamer}
 
 \mode<presentation>
 {
@@ -252,6 +257,8 @@
     \includegraphics<3>[width=0.8\textwidth]{gulkana2016-line}
     {\\ Fifty Years of Glacier Change in Alaska; USGS}
   \end{figure}
+  \note[item]{Here's a photo I found on the USGS website on}
+  \note[item]{50 years of glacier change in Alaska}
   \note[item]{Gulkana thinned and retreated}
 \end{frame}
 
@@ -263,7 +270,7 @@
 
 \begin{frame}{Columbia Glacier}
   \note[item]{Who has been to Columbia Glacier near Valdez?}
-  \note[item]{The photo here it took from an Alaska Tourism website and it dates to 2010.}
+  \note[item]{This photo is from an Alaska Tourism website and it dates to 2010.}
   \note[item]{You can see Columbia Glacier flowing into the ocean}
   \note[item]{The vertical cliff here is called the glacier terminus or the calving front}
 \end{frame}
@@ -341,6 +348,7 @@
   \note[item]{Glaciers are melting worldwide}
   \note[item]{This figure shows glacier mass loss world wide}
   \note[item]{Again, red colors indicate mass loss}
+  \note[item]{High mountain Asia hard to resolve}
   \note[item]{The biggest red areas are Alaska, Greenland, and West Antartica}
   \note[item]{These are the biggest losers right now}
 \end{frame}
@@ -352,7 +360,7 @@
 
 
 \begin{frame}{}
-  \centering{\alert{\textbf{``Hasn't the Climate Changed Before?''}}}
+  \centering{\alert{\textbf{{\Bigg``Hasn't the Climate Changed Before?''}}}}
   \note[item]{But wait}
   \note[item]{aren't glaciers and the climate constantly changing}
   \note[item]{What's so special about today?}
@@ -392,7 +400,7 @@
   \note[item]{during the process, tiny bubbles of air are being trapped within the ice}
   \note[item]{the air in those bubbles contains a lot of information}
   \note[item]{about the climate of the year when the snow fell}
-  \note[item]{An ice cores are like a big archive that}
+  \note[item]{An ice core is like a big archive that}
   \note[item]{stores information about past climate}
   \note[item]{each bubble is a time capsule}
   \note[item]{Ice cores from Greenland and Antartica are up to 2 mile deep}
@@ -419,6 +427,7 @@
   \note[item]{There have been times when it was warmer than today}
   \note[item]{but the last time it was warmer was more the 100,000yrs ago }
   \note[item]{This cycle of glacials and interglacials is driven by how much sun light the Northern Hemisphere receives}
+  \note[item]{These are the Milankovitch cycle}
   \note[item]{The physics behind this is well understood but would take up a whole other talk}
 \end{frame}
 
@@ -427,7 +436,7 @@
 {
 }
 
-\begin{frame}{So what makes the past 100\,yrs so special}
+\begin{frame}{What makes the past 100\,yrs so special?}
   \begin{figure}
     \includegraphics[width=\textwidth]{Global_Temp_and_CO2}
   \end{figure}
@@ -448,40 +457,6 @@
 
 \setbeamertemplate{background canvas}
   {
-     \tikz{\node[inner sep=0pt,opacity=0.5] {\includegraphics[height=\paperheight,width=\paperwidth]{uaf_power_plant}};}
-} 
-
-\begin{frame}{What if this trend continues?}
-  \begin{itemize}
-  \item Combustion of available fossil fuel resources sufficient to eliminate the Antarctic Ice Sheet (Winkelmann \emph{et al.}, 2015)
-  \item and probably the  Greenland Ice Sheet too
-  \item though this would take on the order of 10,000 years
-  \end{itemize}
-  \note[item]{Now that we know adding carbon dioxide to the atmosphere will make the world warmer}
-  \note[item]{where does the additional carbon dioxide come from?}
-  \note[item]{It mostly comes from us burning fossil fuels}
-  \note[item]{where will this lead to?}
-  \note[item]{My colleagues asked the a provocative question: what would happen if\ldots}
-\end{frame}
-
-\setbeamertemplate{background canvas}
-  {
-} 
-
-\begin{frame}{What does this mean}
-  \vspace{0cm}
-  \begin{figure}
-    \includegraphics<1>[height=0.9\textheight]{sea-level-potential-01}
-    \includegraphics<2>[height=0.9\textheight]{sea-level-potential-liberty-01}
-  \end{figure}
-  \note[item]{How much ice can we melt?}
-  \note<1>[item]{If all glaciers melted, Alaska, Switzerland, Himalaya, sea level would rise by 1 meter}
-  \note<1>[item]{If the Greenland Ice Sheet melted, sea level would rise by more than 6 meter (or 20ft)}
-  \note<1>[item]{If Antartica melted, sea level would rise by 60 meter (or 200ft)}
-\end{frame}
-
-\setbeamertemplate{background canvas}
-  {
      \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{sea_level_rise_composite}};}
 } 
 
@@ -493,27 +468,34 @@
 \end{frame}
 
 
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=0.5] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-flow-3d}};}
+} 
+
+\begin{frame}{The Parallel Ice Sheet Model}
+\begin{transbox}[0.5]
+  \begin{figure}
+    \includegraphics[width=0.5\textwidth]{pism-logo}
+  \end{figure}
+  \begin{itemize}
+  \item developed at \includegraphics[height=0.5cm]{logo_uaf} since 2007
+  \item but legacy code dates back to the 1990s
+  \item >20 users around the world
+  \end{itemize}
+\end{transbox}
+\end{frame}
 
 \setbeamertemplate{background canvas}
   {
 } 
 
-\begin{frame}{The Parallel Ice Sheet Model}
-  \begin{figure}
-    \includegraphics[width=0.5\textwidth]{pism-logo}
-  \end{figure}
-  \begin{itemize}
-  \item developed at \includegraphics[height=0.75cm]{logo_uaf} since 2007
-  \item but legacy code dates back to the 1990s
-  \item >20 users around the world
-  \end{itemize}
-\end{frame}
-
 \begin{frame}{Current Applications}
   \begin{figure}
     \includegraphics[width=0.9\textwidth]{pism-applications-composite-01}
   \end{figure}
-
+  \note[item]{Lots of different applications}
+  \note[item]{In the remainder I'm going to highlight my recent research}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -568,40 +550,46 @@
 \begin{frame}{Observed vs simulated flow speeds in 1999}
   \begin{columns}[c]
     \begin{column}{.65\linewidth}
-    \begin{figure}
-      \includegraphics[width=\textwidth]{gris-obs-exp-old-1999}
-    \end{figure}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{gris-obs-exp-old-1999}
+      \end{figure}
     \end{column}
     \begin{column}{.35\linewidth}
-      \begin{figure}
-        \includegraphics[width=\textwidth]{roadblocks}
-      \end{figure}
-      \begin{itemize}
-      \item can't reproduce flow field
-      \end{itemize}
+      \begin{block}{Roadblock}
+        \begin{figure}
+          \includegraphics[width=\textwidth]{roadblocks}
+        \end{figure}
+        \begin{itemize}
+        \item can't reproduce flow field
+        \end{itemize}
+      \end{block}
     \end{column}
   \end{columns}
   \note[item]{ISM were excluded from AR4}
+  \note[item]{Explain colorbar}
+  \note[item]{Explain plots}
 \end{frame}
 
 \begin{frame}{Observed vs simulated flow speeds in 2013}
   \begin{columns}[c]
     \begin{column}{.65\linewidth}
-    \begin{figure}
-      \includegraphics[width=\textwidth]{gris-obs-exp-old}
-    \end{figure}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{gris-obs-exp-old}
+      \end{figure}
     \end{column}
     \begin{column}{.35\linewidth}
-      \begin{figure}
-        \includegraphics[width=\textwidth]{roadblocks}
-      \end{figure}
-      \begin{itemize}
-      \item a bit better than in 1999
-      \item but still can't reproduce flow field
-      \end{itemize}
+      \begin{block}{Roadblock}
+        \begin{figure}
+          \includegraphics[width=\textwidth]{roadblocks}
+        \end{figure}
+        \begin{itemize}
+        \item a bit better than in 1999
+        \item but still can't reproduce flow field
+        \end{itemize}
+      \end{block}
     \end{column}
   \end{columns}
-  \note[item]{}
+  \note[item]{Some improvement}
 \end{frame}
 
 
@@ -650,18 +638,18 @@
   \end{figure}
   \note[item]{Over the past year, we've assembled the best data sets}
   \note[item]{added new model physics such better calving parameterizations}
-  \note[item]{don't look at the figures carefully}
   \note[item]{to bring you the first post-AR5 sea level estimates}
   \note[item]{for the next millennium}
+  \note[item]{\alert{that resolve outlet glaciers}}
 \end{frame}
 
 \begin{frame}
   \frametitle{Evolution over the next millennium}
   \begin{columns}[c]
     \begin{column}{.85\linewidth}
-    \begin{figure}
-    \includegraphics[width=\textwidth]{les18_ctrl}
-    \end{figure}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{les18_ctrl}
+      \end{figure}
     \end{column}
     \begin{column}{.15\linewidth}
       \begin{figure}
@@ -669,6 +657,10 @@
       \end{figure}
     \end{column}
   \end{columns}
+  \note[item]{We took three representative concentration pathway (RCP) scenarios}
+  \note[item]{using temperature forcing from a GCM}
+  \note[item]{and performed three simulations for a thousand years}
+  \note[item]{explain figures and results}
 \end{frame}
 
 
@@ -755,12 +747,12 @@
 
 \setbeamertemplate{background canvas}
   {
-     \tikz{\node[inner sep=0pt,opacity=0.5] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-clean-50op}};}
+     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-clean-50op}};}
 } 
 
 \begin{frame}
   \frametitle{Main Findings}
-  \begin{transbox}
+  \begin{transbox}[0.5]
   \alert{$\Rightarrow$} Greenland could lose
   \begin{itemize}
     \item  5--19\,cm SLE (RCP 2.6), 8--23\,cm SLE (RCP 4.5), and 14--34\,cm SLE (RCP 8.5) by 2100
@@ -775,7 +767,7 @@
 
 \begin{frame}
   \frametitle{Main Findings}
-  \begin{transbox}[0]
+  \begin{transbox}[0.5]
     \begin{itemize}
     \item We have performed the first millennium scale projections with an \textbf{outlet glacier-resolving} ice sheet model 
     \item Greenland will very likely become ice free in a millennium if we stay on an RCP 8.5 path
