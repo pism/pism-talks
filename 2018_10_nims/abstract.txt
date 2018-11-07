@@ -1,3 +1,48 @@
+Introduction into ice sheet flow (Andy Aschwanden)
+
+Here we introduce the continuum equations that govern ice flow and that are at the heart of both ISSM and PISM; namely the Stokes equations, the rheological equations, and boundary conditions.
+
+
 The Parallel Ice Sheet Model (PISM)
 
-The Parallel Ice Sheet Model (PISM) is a fully-parallel, open-source ice sheet model capable of high-resolution simulations of glaciers and ice sheets over time scales from years to millions of years. While PISM's history dates back to the late 1990's, PISM in its current form emerged around 2003 and became open-source in 2006. The development was led by mathematician Ed Bueler and math graduate student Jed Brown, as well as glaciologist Craig Lingle, and included exact solutions for verification. Today, PISM is one of the main workhorses in computational glaciology, used around the world by many groups. Strengths include it's parallel core, scalability, well-documented source code and an API that allows for easy extension and coupling to other models.
+The Parallel Ice Sheet Model (PISM) is a fully-parallel, open-source ice sheet model capable of high-resolution simulations of glaciers and ice sheets over time scales from years to millions of years. While PISM's history dates back to the late 1990's, PISM in its current form emerged around 2003 and became open-source in 2006. The development was led by mathematician Ed Bueler and math graduate student Jed Brown, as well as glaciologist Craig Lingle, and included exact solutions for verification. Today, PISM is one of the main workhorses in computational glaciology, used around the world by many groups. Strengths include it's parallel core, scalability, well-documented source code and an API that allows for easy extension and coupling to other models. (15min)
+
+Install PISM (30min)
+
+Hands-on: Searise Antarctica
+
+Goal: don't be scared!
+Usually work in needed to create input files such as subglacial topography, ice thickness, climate, etc. What exactly is needed depends on your particular application. Here we start with a simple example about the Antartic Ice Sheet. It's part of the PISM distribution. A lot of decisions have to be made when setting up the model for a new application. In the example we show, these decisions have been made but don't claim it's the right thing to do. These choices correspond to command line options such as:
+
+pismr -Mx 
+
+Steps:
+
+- Prepare input files
+- Model initialization: need unobservable input such as temperature field. We do spin up.
+- Why a smoothing run?
+- Smoothing resolves inconsistencies in data sets and model physics
+- Do a first simulation
+- Look at results
+- Wait a while, when the run is done, look at it
+- show scalar and spatial time series with ncview
+- open run in QGIS
+
+
+What is PISM made of?
+
+- stress balance solver
+- energy balance solver
+- bedrock deformation solver
+- rheology
+- subglacial hydrology
+- basal motion
+- couplers
+- free boundaries (are hard)
+
+Numerical Methods in PISM FD/FEM.
+
+- uniform cartesian grid, mostly FD for the contiuum equations
+- iterative solvers for stress balance (Picard)
+
+(30min)
