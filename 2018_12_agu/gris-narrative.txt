@@ -1,0 +1,17 @@
+
+
+Many of us have wondered how much the Greenland Ice Sheet will contribute to global sea-level and how it would look like in the near and not-so near future. We know from exposure dating that Greenland was nearly ice free for extended periods during the Pleistocene. It has been speculated that the transition from an ice covered Greenland to an ice free Greenland could have happened very quickly, on the order of a few thousand years.
+
+What does the mean in the current warming climate? For the past two decades, glaciologists have attempted to project the future of the Greenland Ice Sheet under different warming scenarios using ice sheet models. A key ingredient to making accurate projections is the ability to reproduce present day. And just like for weather forecasts, getting today right is crucial. However, until now, all efforts have struggled with reproducing the velocity field.
+
+As a consequence, no projections made with ice sheet models were included in IPCC's Forth Assessement Report. This led to a concerted effort to improve ice sheet models. Yet while models gained skill, and their results were included in AR5, models still had trouble with outlet glacier flow.
+
+Thanks to NASA's Operation IceBridge, this has now changed. Accurate ice thickness now enables models to capture the flow patterns in outlet glaciers with high fidelity.
+
+Uncertainty Quantification
+
+What is the role of outlet glaciers?
+
+Let's get back to the importance of outlet glaciers
+
+This is not a final answer, it is the beginning of a new era.
