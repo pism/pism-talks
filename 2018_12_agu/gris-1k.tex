@@ -101,7 +101,7 @@
 
 \setbeamertemplate{background canvas}
   {
-     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-clean}};}
+     \tikz{\node[inner sep=0pt,opacity=1] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-slr}};}
 } 
 
 \begin{frame}[plain]
@@ -118,28 +118,8 @@
 }
 
 
-\begin{frame}{Observed vs simulated flow speeds in 1999}
-  \begin{columns}[c]
-    \begin{column}{.6\linewidth}
-    \begin{figure}
-      \includegraphics[width=\textwidth]{gris-obs-exp-old-1999}
-      \\ \tiny{adapted from Aschwanden, Fahnestock, Truffer (2016) \textit{Nature Communications}}
-    \end{figure}
-    \end{column}
-    \begin{column}{.4\linewidth}
-      \begin{figure}
-        \includegraphics[width=\textwidth]{roadblocks}
-      \end{figure}
-      \begin{itemize}
-      \item can't reproduce flow field
-      \item ice sheet models excluded from AR4
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \note[item]{ISM were excluded from AR4}
-\end{frame}
 
-\begin{frame}{Observed vs simulated flow speeds in 2013}
+\begin{frame}{Observed vs simulated flow speeds (2013 model)}
   \begin{columns}[c]
     \begin{column}{.6\linewidth}
     \begin{figure}
@@ -152,8 +132,7 @@
         \includegraphics[width=\textwidth]{roadblocks}
       \end{figure}
       \begin{itemize}
-      \item a bit better than in 1999
-      \item but still can't reproduce flow field
+      \item can't reproduce the velocity field
       \end{itemize}
     \end{column}
   \end{columns}
@@ -185,23 +164,11 @@
 
 \begin{frame}{A new outlet glacier resolving assessment}
   \begin{figure}
-    \includegraphics[width=11cm]{gris-pism-setup-2018}
+    \includegraphics[width=4cm]{ismip6_logo}
   \end{figure}
-  \note[item]{Over the past year, we've assembled the best data sets}
-  \note[item]{added new model physics such better calving parameterizations}
-  \note[item]{don't look at the figures carefully}
-  \note[item]{to bring you the first post-AR5 sea level estimates}
-  \note[item]{for the next millennium}
-\end{frame}
-
-\begin{frame}{A baseline for ISMIP6}
   \begin{figure}
-    \includegraphics[width=11cm]{ismip6_logo}
+    \includegraphics[width=10cm]{gris-pism-setup-2018}
   \end{figure}
-  \begin{itemize}
-    \item perform the first outlet glacier resolving assessment
-    \item provide a baseline for ISMIP6
-  \end{itemize}
   \note[item]{Over the past year, we've assembled the best data sets}
   \note[item]{added new model physics such better calving parameterizations}
   \note[item]{don't look at the figures carefully}
@@ -225,28 +192,36 @@
     \begin{figure}
     \includegraphics[width=\textwidth]{uncertainty-quantification}
     \end{figure}
-    \note[item]{Sobol Indices: Andrew Davis' talk last AGU}
 \end{frame}
 
 \begin{frame}
   \frametitle{In a thousand years}
   \begin{figure}
     \includegraphics[height=6.5cm]{rcp-final-states-extend}
-  \caption{Likelihood of a pixel being ice covered.}
+  \caption{Likelihood of a pixel being ice covered. Likelihoods less than 16 percent are masked.}
   \end{figure}
   \note[item]{In a thousand years, Greenland will look different to today}
   \note[item]{Explain uncertainty map}
 \end{frame}
 
-\begin{frame}{What contributes to uncertainty?}
-\begin{figure}
-  \includegraphics<1>[width=\textwidth]{sobel_ts_26}
-  \includegraphics<2>[width=\textwidth]{sobel_ts_45}
-  \includegraphics<3>[width=\textwidth]{sobel_ts_85}
-\end{figure}
+\begin{frame}
+  \frametitle{Evolution over the next millennium}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{gris-les}
+  \end{figure}
 \end{frame}
 
-\begin{frame}{What contributes to uncertainty?}
+
+\begin{frame}{Uncertainty attribution using Sobel Indices}
+  \begin{figure}
+    \includegraphics<1>[width=\textwidth]{sobel_ts_26}
+    \includegraphics<2>[width=\textwidth]{sobel_ts_45}
+    \includegraphics<3>[width=\textwidth]{sobel_ts_85}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Uncertainty attribution using Sobel Indices}
   \begin{columns}[c]
     \begin{column}{.32\linewidth}
       \begin{figure}
@@ -265,40 +240,41 @@
     \end{column}
   \end{columns}
   \begin{itemize}
-  \item Lessons
+  \item uncertainties in ice dynamics matter in the next 200 yrs (RCPs 2.6 and 4.5)
+  \item the ocean does not provide a significant source of uncertainty (all RCPs)
+  \item uncertainties due to climate forcing grow over time (RCP 8.5 in particular)
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Evolution over the next millennium}
-  \begin{columns}[c]
-    \begin{column}{.85\linewidth}
-    \begin{figure}
-    \includegraphics[width=\textwidth]{les18_les}
-    \end{figure}
-    \end{column}
-    \begin{column}{.15\linewidth}
-      \begin{figure}
-        \includegraphics[height=1cm]{legend-rcp}
-      \end{figure}
-    \end{column}
-  \end{columns}
-\end{frame}
-
+% \begin{frame}[plain]
+%   \begin{figure}
+%   \includemedia[
+%   width=8cm,
+%   activate=pageopen,
+%   addresource=gris-g900m_rcps-hd1920.mov,
+%   flashvars={src=gris-g900m_rcps-hd1920.mov
+%     % controlbar autohide
+%     % no title and other info before start
+%     % no related videos after end
+%   }
+%   ]
+%   {\includegraphics[width=8cm]{gris_g900m_rcps_0000}}{StrobeMediaPlayback.swf}
+% \end{figure}
+% \end{frame}
 
 \begin{frame}[plain]
   \begin{figure}
   \includemedia[
-  width=8cm,
+  width=12cm,
   activate=pageopen,
-  addresource=gris-g900m_rcps-hd1920.mov,
-  flashvars={src=gris-g900m_rcps-hd1920.mov
+  addresource=nw-g600m_rcp_45-hd1920.mp4 ,
+  flashvars={src=nw-g600m_rcp_45-hd1920.mp4
     % controlbar autohide
     % no title and other info before start
     % no related videos after end
   }
   ]
-  {\includegraphics[width=8cm]{gris_g900m_rcps_0000}}{StrobeMediaPlayback.swf}
+  {\includegraphics[width=12cm]{nw_g600m_rcp45_0000}}{StrobeMediaPlayback.swf}
 \end{figure}
 \end{frame}
 
@@ -307,30 +283,14 @@
   \includemedia[
   width=12cm,
   activate=pageopen,
-  addresource=nw-g600m_rcp_85-hd1920.mp4 ,
-  flashvars={src=nw-g600m_rcp_85-hd1920.mp4
+  addresource=upernavik-g600m_rcp_45-hd1920.mp4 ,
+  flashvars={src=upernavik-g600m_rcp_45-hd1920.mp4
     % controlbar autohide
     % no title and other info before start
     % no related videos after end
   }
   ]
-  {\includegraphics[width=12cm]{nw_g600m_rcp85_0000}}{StrobeMediaPlayback.swf}
-\end{figure}
-\end{frame}
-
-\begin{frame}[plain]
-  \begin{figure}
-  \includemedia[
-  width=12cm,
-  activate=pageopen,
-  addresource=upernavik-g600m_rcp_85-hd1920.mp4 ,
-  flashvars={src=upernavik-g600m_rcp_85-hd1920.mp4
-    % controlbar autohide
-    % no title and other info before start
-    % no related videos after end
-  }
-  ]
-  {\includegraphics[width=12cm]{upernavik_g600m_rcp85_0000}}{StrobeMediaPlayback.swf}
+  {\includegraphics[width=12cm]{upernavik_g600m_rcp45_0000}}{StrobeMediaPlayback.swf}
 \end{figure}
 \end{frame}
 
@@ -340,9 +300,12 @@
 \end{figure}
 \end{frame}
 
-\setbeamertemplate{background canvas}
-  {
-     \tikz{\node[inner sep=0pt,opacity=0.5] {\includegraphics[height=\paperheight,width=\paperwidth]{gris-green-collage-clean-50op}};}
-} 
+\begin{frame}{1.5--2 yr Postdoc at UAF}
+\begin{itemize}
+\item NSF project ``Understanding the controls on spatial and temporal variability in ice discharge using a Greenland-wide ice sheet model''
+\item collaboration with Patrick Heimbach, University of Texas at Austin
+\end{itemize}
+\end{frame}
+
 
 \end{document}
