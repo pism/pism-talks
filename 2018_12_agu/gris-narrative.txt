@@ -1,28 +1,50 @@
 
+Slide 2
 
-Many of us have wondered how much the Greenland Ice Sheet will contribute to global sea-level, and how it would look like in the near and not-so near future. We know from exposure dating that Greenland was nearly ice free for extended periods during the Pleistocene. And it has been speculated that the transition from an ice covered Greenland to an ice free Greenland could have happened very quickly, on the order of a few thousand years. What does this mean in the current warming climate? For the past two decades, glaciologists have attempted to project the future of the Greenland Ice Sheet using ice sheet models.
+Many of us have wondered how much the Greenland Ice Sheet will contribute to global sea-level, and how it would look like in the near and not-so near future. We know that Greenland was nearly ice free for extended periods during the Pleistocene. And it has been speculated that the transition from an ice covered Greenland to an ice free Greenland could have happened very quickly, on the order of a few thousand years. What does this mean in the current warming climate? For the past two decades, glaciologists have attempted to project the future of the Greenland Ice Sheet using ice sheet models.
 
-A key ingredient to make accurate projections with a model is the ability to reproduce present day. It's like making a  weather forecast: getting today right is crucial to predict tomorrow. However, previous efforts have struggled with reproducing the velocity field, presenting a major roadblock. [Explain Figure]
+Slide 3
 
-Thanks to NASA's Operation IceBridge, this has changed. Accurate ice thickness now enables models to capture the flow patterns in outlet glaciers with high fidelity.
+A key ingredient in accurately projection sea-level rise with an ice sheet model is model's the ability to reproduce present day. It's like making a  weather forecast: to predict tomorrow, you need to know the weather today. Unfortunately, previous efforts have struggled with reproducing the velocity field, presenting a major roadblock. Here is a comparison of the observed surface speeds and a model realization using the best available data sets in 2013. As you can see, the model fails to capture the fast outlet glacier flow shown in purple and red colors.
+
+Slide 4
+
+Thanks to NASA's Operation IceBridge, this has changed. Accurate ice thickness now enables models to capture the flow patterns in outlet glaciers with high fidelity. Here is model realization using the BedMachine ice thickness data set that became available in 2014.
+
+Slide 5
 
 Now, for the first time we can do an assessment of Greenland's contribution to sea-level with a model that resolves outlet glacier flow. 
 With the help of my colleagues I put together a new modeling framework that includes frontal melt, stress calving, isostasy, and much more. The idea here is to provide something like a baseline for the ongoing Ice Sheet Model Intercomparison Project for CMIP6. First ISMPI6 results are expected sometime next year.
 
-In a thousand years, Greenland will look different than today. Following an RCP 2.6 scenario, the margin will retreat almost everywhere except in south-east where accumulation rates are high. However, the ice sheet will resemble today's configuration with many outlet glaciers. Following the RCP 4.5 trajectory leads to a much reduced ice sheet where most outlet glaciers have become land terminating. And for RCP 8.5, the ice sheet is gone. [Pause] I hope you have been wondering why I only showed one single simulation for each RCP scenario even though the session is called: "Quantifying and Decreasing Uncertainty in Projections of Future Sea Level Change". Of course I don't believe that estimating sea-level should be done without an uncertainty quantification. In fact, the uncertainty quantification is an integral aspect of this study. Let me walk you through it.
+Slide 6
 
-We select eleven model parameters: two representing the climate (e.g. the choice of GCM to calculate surface temperature increase for a given RCP scenario), three representing surface processes (how air temperature convert to melt, four relating to ocean processes such as calving and frontal melt, and two relating to ice dynamics such as sliding. For each of the eleven paramters, we prescribe an appropriate distribution, for example a truncated normal distribution for the exponent of the sliding law. We then draw 500 samples using a Latin Hypercube Sampling method. Finally, for each of the three RCP scenarios we run 500 simulations, burning 2M CPU hours over the course of a year.
+Here are the results. In a thousand years, Greenland will look different than today. Following an RCP 2.6 scenario, the margin will retreat almost everywhere except in south-east where accumulation rates are high. However, the ice sheet will resemble today's configuration with many outlet glaciers. Following the RCP 4.5 trajectory leads to a much reduced ice sheet where most outlet glaciers have become land terminating. And for RCP 8.5, the ice sheet is gone. [Pause] I hope you have been wondering why I only showed one single simulation for each RCP scenario even though the session is called: "Quantifying and Decreasing Uncertainty in Projections of Future Sea Level Change". Of course I don't believe that estimating sea-level should be done without an uncertainty quantification. In fact, the uncertainty quantification is an integral aspect of this study. Let me walk you through it.
+
+Slide 7
+
+We select eleven model parameters: two representing the climate (e.g. the choice of GCM to calculate surface temperature increase for a given RCP scenario), three representing surface processes (how air temperature convert to melt, four relating to ocean processes such as calving and frontal melt, and two relating to ice dynamics such as sliding. For each of the eleven parameters, we prescribe an appropriate distribution, for example a truncated normal distribution for the exponent of the sliding law. We then draw 500 samples using a Latin Hypercube Sampling method. Finally, for each of the three RCP scenarios we run 500 simulations, burning 2M CPU hours over the course of a year.
+
+Slide 8
 
 The result is a likelihood map of Greenland in a thousand year: the likelihood of a pixel being ice covered. White colors indicate that at least 84 percent of the ensemble members have ice in a given location, while blue-ish colors indicate smaller likelihoods.
 
-How will we get there? One of the climate parameters is the choice of GCM that produces the temperature forcing. I found 4 GCM realizations in the CMIP5 archive that were carried out outil 2300, after which we extrapolated. [Explain Figure]
-Just before AGU last year, Mark, Martin, and myself looked at this figure. Wouldn't it be nice to know which parameter contributes the most to the uncertainty in mass loss? Serendipitously, I later attended a talk by Andrew Davies at the AGU in New Orleans where he explained that Sobel Indices can exactly do that.Back home, Doug then perfomed the analysis.
+Slide 9
 
-A key finding of the Sobel analysis is that uncertainties vary with time and across RCP scenarios. Much to our surprise uncertainties in prescribing calving and frontal melt do not contribute significanlty to uncertainties in mass loss. Uncertainties in basal motion (i.e. the exponent in the sliding law)  matter in the next 200 years and then decline for RCPs 2.6 and 4.5 but for 8.5. Uncertainties due to climate forcing grow over time (RCP 8.5 in particular), and so do surface processes.
+How will we get there? One of the eleven parameters is the choice of GCM that produces the temperature forcing. I found 4 GCM realizations in the CMIP5 archive that were carried out outil 2300, after which we extrapolated.
+The upper panel shows the temperature anomalies projected by the GCMs. Shown are the ensemble minimum and maximums. The thick solid line is a control that we use for inter-scenario comparison. As you can see, there is significant spread among the four GCM realizations, which then of course turns into large variability in projected sea-level contribution. The lower panel shows the projected contribution to sea-level. Here the shaded area shows the 84th and 16th percentiles of the ensemble. 67 % of the ensemble members lose >90 % and 58 % of ensemble members lose >99 % of initial ice volume.
 
-The past two decades have seen large changes in outlet glaciers and at present, increased ice discharge contributes about 40% the increase in mass loss (60% are due to enhanced surface runoff). What is the role of outlet glaciers in the future? Our Greenland-wide simulations allow us to address this question. Let's have a look at north-west Greenland between Sverdrup Glacier and Rink Isbrae. Following the RCP 4.5 scenario, outlet glaciers will retreat significantly over the next four hundred years, however, their relative contribution to mass loss will decrease. Why?
+Just before AGU last year, Mark, Martin, and myself looked at this figure. Wouldn't it be nice to know which parameter contributes the most to the uncertainty in mass loss? Fortunatly I later attended a talk by Andrew Davies at the AGU in New Orleans. Andrew explained that Sobel Indices can exactly do that. Soon after AGU Doug then perfomed the analysis.
+
+Slide 10
+
+A key finding of the Sobel analysis is that uncertainties vary with time and across RCP scenarios. Much to our surprise uncertainties in prescribing calving and frontal melt do not contribute significanlty to uncertainties in mass loss. Uncertainties in basal motion (i.e. the exponent in the sliding law)  matter in the next 200 years and then decline for RCPs 2.6 and 4.5 but for 8.5. Uncertainties due to climate forcing grow over time (RCP 8.5 in particular), and so do surface processes. A caveat is that there could be interactions between sliding and ocean forcing that are not captured by the Sobel analysis.
+
+Slide 11
+
+The past two decades have seen large changes in outlet glaciers and at present, increased ice discharge contributes about 40% the increase in mass loss (60% are due to enhanced surface runoff). What is the role of outlet glaciers in the future? Our Greenland-wide simulations allow us to address this question. Let's have a look at north-west Greenland between Sverdrup Glacier and Rink Isbrae. [Start movie] Following the RCP 4.5 scenario, outlet glaciers will retreat significantly over the next four hundred years, however, their relative contribution to mass loss will decrease. Why?
 
 We illustrate this with Upernavik Isstrom South. The glacier shows relatively gradual retreat, with short episodes when the glacier speeds up after it loses contact with a bedrock high. While the glacier speeds ups, the flux (product of ice thickness and horizontally-averaged velocities) overall decreases.
 
 In summary we find that Greenland could very well disappear within a millennium if we continue on the RCP 8.5 path.
 Of course this study is not a final answer, it is rather the beginning of a new era in ice sheet modeling.
+
