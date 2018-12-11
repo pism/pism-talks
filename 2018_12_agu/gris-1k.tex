@@ -15,7 +15,6 @@
 % load packages
 \usepackage{media9}
 \usepackage[english]{babel}
-\usepackage[T1]{fontenc}
 \usepackage[multidot]{grffile}
 
 \usepackage{tikz}
@@ -140,7 +139,7 @@
 \end{frame}
 
 
-\begin{frame}{Accurate ice thickness does the trick \includegraphics[height=1cm]{oib}}
+\begin{frame}{Accurate ice thickness does the trick}
   \begin{columns}[c]
     \begin{column}{.6\linewidth}
     \begin{figure}
@@ -150,7 +149,8 @@
     \end{column}
     \begin{column}{.4\linewidth}
       \begin{figure}
-        \includegraphics[width=.85\textwidth]{greenland-bed-mcb}
+        \includegraphics[height=1cm]{oib} \\
+        \includegraphics[width=.7\textwidth]{greenland-bed-mcb}
       \\ \tiny{adapted from Morlighem et al.  (2014) \textit{Nature Geosci}}
       \end{figure}
     \end{column}
@@ -207,8 +207,27 @@
 \begin{frame}
   \frametitle{Evolution over the next millennium}
   \begin{figure}
-    \includegraphics[width=\textwidth]{gris-les}
+    \includegraphics[width=0.95\textwidth]{gris-les}
   \end{figure}
+  \begin{columns}[c]
+    \begin{column}{.6\linewidth}
+  \small{
+    For RCP 8.5:
+  \begin{itemize}
+  \item 67\% of the ensemble members lose >90\%
+  \item 58\% lose >99\% of initial ice volume.
+  \end{itemize}
+  }
+    \end{column}
+    \begin{column}{.4\linewidth}
+      \small{
+        Question:
+      \begin{itemize}
+      \item what contributes to the uncertainty
+      \end{itemize}
+      }
+    \end{column}
+  \end{columns}
 \end{frame}
 
 
@@ -223,9 +242,8 @@
   \includemedia[
   width=12cm,
   activate=pageopen,
-  addresource=nw-g600m_rcp_45-hd1920.mp4 ,
-  flashvars={src=nw-g600m_rcp_45-hd1920.mp4
-  }
+  addresource=nw-g600m_rcp_45-hd1920.mp4,
+  flashvars={src=nw-g600m_rcp_45-hd1920.mp4}
   ]
   {\includegraphics[width=12cm]{nw_g600m_rcp45_0000}}{StrobeMediaPlayback.swf}
 \end{figure}
@@ -244,26 +262,17 @@
 \end{figure}
 \end{frame}
 
-\begin{frame}[plain]
+\begin{frame}{Postdoc available, aaschwanden@alaska.edu}
   \begin{figure}
   \includemedia[
-  width=8cm,
+  width=7cm,
   activate=pageopen,
   addresource=gris-g900m_rcps-hd1920.mp4,
   flashvars={src=gris-g900m_rcps-hd1920.mp4
   }
   ]
-  {\includegraphics[width=8cm]{gris_g900m_rcps_0000}}{StrobeMediaPlayback.swf}
+  {\includegraphics[width=7cm]{gris_g900m_rcps_0000}}{StrobeMediaPlayback.swf}
 \end{figure}
 \end{frame}
-
-
-\begin{frame}{1.5--2 yr Postdoc at UAF}
-\begin{itemize}
-\item NSF project ``Understanding the controls on spatial and temporal variability in ice discharge using a Greenland-wide ice sheet model''
-\item collaboration with Patrick Heimbach, University of Texas at Austin
-\end{itemize}
-\end{frame}
-
 
 \end{document}
