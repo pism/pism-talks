@@ -1,0 +1,20 @@
+You probably all have heard about the possibly dire consequences of global warming.
+Let's look at Greenland, for example.
+In Greenland, the ice is melting rapidly. At present we are losing about 250 Gt of ice per year, that is about half the volume of Lake Eerie.
+Have you ever wondered how Greenland could look like in a thousand years?
+
+With the help of several colleagues I investigated how Greenland will look like for three different warming scenarios.
+I have made my simulations with the Parallel Ice Sheet Model that we develop here at University of Alaska Fairbanks, together with scientists from all around the world.
+
+First we look at an optimistic scenario. For this scenario, we would have to could Greenhouse gas emissions considerably, and even remove greenhouse gases fromt he atmosphere. Even then Greenland would shrink a lot and contribute between half and 2 meters to sea level.
+
+The second scenario is an intermediate scenario. Here Greenland would shrink to about half of its size or more, contributing between 2 and 4 meters.
+
+Finally, if we continue business as usual, Greenland will most likely disappear.
+
+
+Of course no model is perfect, and many processes remain poorly understood. That's why uncertainy quantification methods. For each of the three scenarios, we ran 500 simulations with different parameter combinations. That gives us an idea of how sensitive the model is to things we don't know for certain. That's where you get the ranges from.
+
+Under the "business as usual" scenario we could be losing over 5 Lake Eerie's worth of ice per year into the ocean around 2500, raising global sea-level by up to a centimeter per year.
+
+Lake Eerie is 450 Gt
