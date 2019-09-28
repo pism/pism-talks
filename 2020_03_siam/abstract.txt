@@ -1,0 +1,8 @@
+Using Gaussian Process Emulators to reduce uncertainty in sea level projections with ice sheet models
+
+Andy Aschwanden
+Rachel Chen
+Doug Brinkerhoff
+
+Uncertainty Quantification is becoming an integral tool of estimating future sea level rise. Using a numerical ice sheet model, Aschwanden et al (2019) performed a 500 member ensemble simulation and projected that by 2100 Greenland could contribute 5-19 cm (RCP 2.6), 8-23 cm (RCP 4.5), and 14-33 cm (RCP 8.5) to sea level on the 16/84th percentile confidence interval. High-resolution numerical ice sheet model simulations are computationally expensive, and thus the number of ensemble members is often limited by the availability of high-performance computing resources. To investigate how well the 500 member ensemble of the numerical ice sheet model characterize the sea level rise probability distributions (PDFs), we performed a second, much larger (>2k) member ensemble for RCP 4.5 and compared the their respective PDFs using the Kullbeck-Leibler divergence. Our goal is to provide guidance on how many simulations with the ice sheet model are necessary to accurately characterize the sea-level contribution PDF. We then fit Gaussian Process (GP) emulators to the results of Aschwanden et al (2019). We conclude that statistical models can help reducing uncertainties in sea level projections by complementing numerical computer models.
+
