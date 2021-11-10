@@ -96,7 +96,7 @@
 % insert titlepage
 \begin{frame}
   \titlepage
-  \note[item]{Collaboration Martin, Doug}
+  \note[item]{Collaboration Martin, Doug, Tim}
 \end{frame}
 
 
@@ -106,12 +106,25 @@
 }
 
 \begin{frame}{Modern sea-level change}
-  \begin{figure}
-    \includegraphics<1>[width=0.8\textwidth]{sea-level-from-altimetry}\\
-    \includegraphics<1>[width=4cm]{sea-level-contrib-2006-2018}
-  \end{figure}
-  
-  \note[item]{2006-2018}
+  \vspace{-1.5em}
+  \begin{minipage}[t][5cm][t]{\textwidth}
+    \begin{figure}
+      \includegraphics<1->[height=5cm]{sea-level-from-altimetry}\\
+    \end{figure}
+  \end{minipage}
+  \vspace{-2.em}
+  \begin{minipage}[t][4cm][t]{\textwidth}
+  \begin{columns}[c]
+    \begin{column}{.45\textwidth}
+      \uncover<1>{Sea-level contribution 1993--18}
+      \uncover<2>{Sea-level contribution 2006--18}
+    \end{column}
+    \begin{column}{.45\textwidth}
+    \includegraphics<1>[height=2.75cm]{sea-level-contrib-1993-2018}
+    \includegraphics<2>[height=2.75cm]{sea-level-contrib-2006-2018}
+    \end{column}
+  \end{columns}
+  \end{minipage}
 \end{frame}
 
 \setbeamertemplate{background canvas}
@@ -165,13 +178,13 @@
   \begin{columns}[c]
     \begin{column}{.6\linewidth}
     \begin{figure}
-      \includegraphics[width=0.9\textwidth]{gris-obs-exp-old}
+      \includegraphics[height=5.75cm]{gris-obs-exp-old}
       \\ \tiny{adapted from Aschwanden, Fahnestock, Truffer (2016) \textit{Nature Comms.}}
     \end{figure}
     \end{column}
     \begin{column}{.4\linewidth}
       \begin{figure}
-        \includegraphics[width=\textwidth]{roadblocks}
+        \includegraphics[width=.75\textwidth]{roadblocks}
       \end{figure}
       \begin{itemize}
       \item can't reproduce the velocity field
@@ -244,13 +257,13 @@
   \begin{columns}[c]
     \begin{column}{.6\linewidth}
     \begin{figure}
-      \includegraphics[width=0.9\textwidth]{gris-obs-exp-old}
+      \includegraphics[height=5.75cm]{gris-obs-exp-old}
       \\ \tiny{adapted from Aschwanden, Fahnestock, Truffer (2016) \textit{Nature Comms.}}
     \end{figure}
     \end{column}
     \begin{column}{.4\linewidth}
       \begin{figure}
-        \includegraphics[width=\textwidth]{roadblocks}
+        \includegraphics[width=.75\textwidth]{roadblocks}
       \end{figure}
       \begin{itemize}
       \item still can't reproduce the velocity field
@@ -380,6 +393,7 @@
 \begin{frame}{All sunshine? Wait a minute\ldots}
   \begin{figure}
     \includegraphics[width=\textwidth]{GIS_hist_with_obs}
+    \caption{Aschwanden, Brinkerhoff, Bartholomaus, \& Truffer (in press)}
   \end{figure}
   \begin{columns}[c]
     \begin{column}{.5\textwidth}
@@ -414,73 +428,78 @@
 
 
 
-%% \begin{frame}{AS19 Projections}
-%%   \begin{figure}
-%%     \includegraphics[width=0.9\textwidth]{projection_as19}
-%%   \end{figure}
-%% \begin{itemize}
-%% \item 500 member ensemble to assess parametric uncertainty
-%% \item all scenarios show large variance, which is a feature not a bug
-%% \end{itemize}
-%% \note[item]{}
-%% \end{frame}
+\begin{frame}{AS19 Projections}
+  \begin{figure}
+    \includegraphics[width=0.9\textwidth]{projection_as19_bars}
+  \end{figure}
+\begin{itemize}
+\item 500 member ensemble to assess parametric uncertainty
+\item all scenarios show large variance, which is a feature not a bug
+\end{itemize}
+\note[item]{}
+\end{frame}
 
 
-%% \begin{frame}{Limitations of AS19 and ISMIP6}
-%%   \begin{figure}
-%%     \includegraphics[width=0.75\textwidth]{IS_historical}
-%%   \end{figure}
-%% \begin{itemize}
-%% \item AS19 did prior calibration and literature values to define probability distributions of parameters \alert{but}
-%% \item did \alert{NOT} excplicitly condition on observations
-%% \item see our commentary in TCD (in revision)
-%% \end{itemize}
-%% \note[item]{}
-%% \end{frame}
+\begin{frame}{Limitations of AS19 and ISMIP6}
+  \begin{figure}
+    % \includegraphics[width=0.75\textwidth]{IS_historical}
+  \end{figure}
+\begin{itemize}
+\item AS19 did prior calibration and literature values to define probability distributions of parameters \alert{but}
+\item did \alert{NOT} excplicitly condition on observations
+\item see our commentary in TCD (in revision)
+\end{itemize}
+\note[item]{}
+\end{frame}
 
-%% \begin{frame}{2-step calibration}
-%% Which quantities should we use?
-%% \begin{itemize}
-%% \item use the quantity of interest: mass change
-%% \item use quantity that contributes a lot to uncertainty: ice flow
-%% \end{itemize}
-%% \note[item]{}
-%% \end{frame}
+\begin{frame}{2-step calibration}
+Which quantities should we use?
+\begin{itemize}
+\item use the quantity of interest: mass change
+\item use quantity that contributes a lot to uncertainty: ice flow
+\end{itemize}
+\note[item]{}
+\end{frame}
 
-%% \begin{frame}{1. Ice Flow: calibrate parameters}
-%% \begin{itemize}
-%% \item use Markov Chain Monte Carlo sampling to find the joint distribution of these parameters.
-%% \item think of PISM as a map $\mathcal{F}$ from a parameter vector $\mathbf{x}$ to surface speeds $\mathbf{Y}$
-%% \begin{equation}
-%% \mathbf{Y} = \mathcal{F}(\mathbf{x})
-%% \end{equation}
-%% \item running the forward model (PISM) is too expensive for MCMC
-%% \item Generate a ``cheap'' surrogate model $\mathcal{G}$ such that
-%% \begin{equation}
-%% \mathcal{G}(\mathbf{x}) \approx \mathcal{F}(\mathbf{x})
-%% \end{equation}
-%% \end{itemize}
+\begin{frame}{1. Ice Flow: calibrate parameters}
+\begin{itemize}
+\item use Markov Chain Monte Carlo sampling to find the joint distribution of these parameters.
+\item think of PISM as a map $\mathcal{F}$ from a parameter vector $\mathbf{x}$ to surface speeds $\mathbf{Y}$
+\begin{equation}
+\mathbf{Y} = \mathcal{F}(\mathbf{x})
+\end{equation}
+\item running the forward model (PISM) is too expensive for MCMC
+\item Generate a ``cheap'' surrogate model $\mathcal{G}$ such that
+\begin{equation}
+\mathcal{G}(\mathbf{x}) \approx \mathcal{F}(\mathbf{x})
+\end{equation}
+\end{itemize}
 
-%%   \note[item]{We take a Bayesian approach and use Markov Chain Monte Carlo sampling to find the joint distribution of these parameters.  While this problem is computationally challenging due to the significant expense of running the forward model, we made it tractable by employing a neural-network based surrogate model that provides a low-cost mapping from parameters to velocity fields \citep{Brinkerhoff2020}.}
-%% \end{frame}
+  \note[item]{We take a Bayesian approach and use Markov Chain Monte Carlo sampling to find the joint distribution of these parameters.  While this problem is computationally challenging due to the significant expense of running the forward model, we made it tractable by employing a neural-network based surrogate model that provides a low-cost mapping from parameters to velocity fields \citep{Brinkerhoff2020}.}
+\end{frame}
 
-%% \begin{frame}{1. Ice Flow: training data}
-%% \begin{itemize}
-%% \item select 8 relevant parameters
-%% \item define a prior probability distribution for each parameter
-%% \item draw 1,000 samples using Sobol Sequences
-%% \item run PISM 1,000 times
-%% \end{itemize}
-%% \end{frame}
+\begin{frame}{1. Ice Flow: training data}
+\begin{itemize}
+\item select 8 relevant parameters
+\item define a prior probability distribution for each parameter
+\item draw 1,000 samples using Sobol Sequences
+\item run PISM 1,000 times
+\end{itemize}
+\end{frame}
 
-%% \begin{frame}{1. Ice Flow: Surrogate model}
-%% \begin{itemize}
-%% \item use 4 layer Neural Network surrogate model by Brinkerhoff et al (2021)
-%% \item implemented in PyTorch
-%% \item train surrogate model on NVIDIA GPU
-%% \end{itemize}
-%% \end{frame}
+\begin{frame}{1. Ice Flow: Surrogate model}
+\begin{itemize}
+\item use 4 layer Neural Network surrogate model by Brinkerhoff et al (2021)
+\item implemented in PyTorch
+\item train surrogate model on NVIDIA GPU
+\end{itemize}
+\end{frame}
 
+\begin{frame}{1. Ice Flow: Surrogate model}
+  \begin{figure}
+    \includegraphics<1->[width=\textwidth]{prior_posterior}
+  \end{figure}
+\end{frame}
 
 
 
@@ -502,13 +521,11 @@
 %% \end{frame}
 
 
-%% \begin{frame}{Calibrated Projections}
-%%   \begin{figure}
-%%     \includegraphics<1>[width=0.75\textwidth]{projection_as19}
-%%     \includegraphics<2>[width=0.75\textwidth]{projection_flow}
-%%     \includegraphics<3>[width=0.75\textwidth]{projection_flowmass}
-%%     \includegraphics<4>[width=0.75\textwidth]{projection_bars}
-%%   \end{figure}
-%% \end{frame}
+\begin{frame}{Calibrated Projections}
+  \begin{figure}
+    \includegraphics<1>[width=0.75\textwidth]{projection_as19_bars}
+    \includegraphics<2>[width=0.75\textwidth]{projection_calibrated_bars}
+  \end{figure}
+\end{frame}
 
 \end{document}
