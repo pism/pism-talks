@@ -1,4 +1,4 @@
-Storyline
+Story-line
 
 Title Slide
 
@@ -6,9 +6,9 @@ Title Slide
 
 Slide "Modern sea-level change"
 
-Over the past 25 years, global mean sea level has risen at a rate of about 3 mm per year, as measured from satellite altimetry. Between 1993 and 2018, Greenland and Antartica contributed about 25% to sea-level rise.
+Over the past 25 years, global mean sea level has risen at a rate of about 3 mm per year, as measured from satellite altimetry. Between 1993 and 2018, Greenland and Antarctica contributed about 25% to sea-level rise.
 
-However, focusing on the more recent history from 2006 until 2018, the contribution of the ice sheets increased to 35%. Cleary, if we want to predict future sea-level, we need to understand the role of the ice sheets within the climate system, and how much they will contribute to sea-level rise.
+However, focusing on the more recent history from 2006 until 2018, the contribution of the ice sheets increased to 35%. Clearly, if we want to predict future sea-level, we need to understand the role of the ice sheets within the climate system, and how much they will contribute to sea-level rise.
 
 Slide "IPCC AR4, 2007"
 
@@ -22,17 +22,73 @@ The poor performance of the models and the exclusion from IPCC led to a frenzy i
 
 Slide "IPCC AR5, 2013"
 
-Fast forward a couple of years to 2013. With better ice sheet models at hand, a group of modelers formed the Sea-level Response to Ice Sheet Evolution or SeaRISE community effort. For the first time, modelers performed a standarized set of experiments, aimed at estimating mass loss from the ice sheets.
+Fast forward a couple of years to 2013. With better ice sheet models at hand, a group of modelers formed the Sea-level Response to Ice Sheet Evolution or SeaRISE community effort. For the first time, modelers performed a standardized set of experiments, aimed at estimating mass loss from the ice sheets.
 
-If we go into IPCC's fifth assessement report, we will find the SeaRISE effort only mentioned in passing, along with a single study. While that study appeared in Nature, the model used was basic and only two dimensional along a flowline. Again, models were deemed untrustworthy.
+If we go into IPCC's fifth assessment report, we will find the SeaRISE effort only mentioned in passing, along with a single study. While that study appeared in Nature, the model used was basic and only two dimensional along a flow-line. Again, models were deemed untrustworthy.
 
 Slide "Observed vs simulated flow speeds (2013 model)"
 
-Let's do the same exercise again. This time we use data and a model representative of 2013. As you can see, the results more or less remains the same. The models are still not able to capture the fast flow in Greenland's coastal areas.
+Let's do the same exercise again. This time we use data and a model representative of 2013. As you can see, the results more or less remains the same. The models are still not able to capture the fast flow in Greenland's coastal areas. So what's going on?
 
-It's not model improvements that did the trick. It was a 100 Million Dollar investment by NASA. Their Operation Ice Bridge spent 10 years mapping ice thickness all across Greenland.
+Slide "Post 2014 models"
+
+2014 was a watershed moment for modeling the Greenland Ice Sheet. While the models kept getting better, it wasn't model improvements that did the trick. It was a 100 Million Dollar investment by NASA. Their Operation Ice Bridge spent 10 years mapping ice thickness all across Greenland. As glaciers generally flow downhill, ice thickness exerts a first order control on ice flow. Without accurate ice thicknesses you can't accurately reproduce ice flow. In that sense, when you have garbage coming in, you get garbage coming out.
+
+Finally, models have become decent at reproducing present-day ice flow patterns.
+
+Slide "IPCC AR6, 2021"
+
+In 2014, the community effort "Ice Sheet Model Intercomparison for CMIP6" was started, with the goal of projection mass loss from Greenland and Antarctica for IPCC AR6. About 15 modeling groups world-wide participated in ISMIP6 to produce the first multi-model ensemble projections. With little to no funding available.
+
+Slide "Modern and projected mass loss from Greenland"
+
+This is Figure 9.17 in AR6. It shows the ISMIP6 projections for to emission pathways, the historical simulations, and observations. Projected 21st century mass loss ranges from about 0 to 25cm, with medians of 6 and 13 cm.
+
+Slide "All sunshine and rainbows"
+
+So are we done now, is it "all sunshine and rainbows"?
+
+Wait a minute. This is not how I remember the draft of Figure 9.17 looked like this. And not just me. Martin Truffer noticed it, too. And so did our former students Tim Bartholomaus and Doug Brinkerhoff.
+
+The draft figure showed a kink at the transition from the historical simulations to the projections. The historical simulations are needed to generate an initial state for 2015, the start of the projections. How the historical simulations were done was left up to the indiviual modelers. Anyway, let's zoom in around 2015. IMBIE is a reconstruction based on observations, the historical simulations are not shown in the plot. But the transition looks rather smooth.
+
+Slide "A closer look"
+
+We were unable to follow what IPCC did with the ISMIP6 projections and decided a closer look was warranted. We downloaded the ISMIP6 simulations from the offical repository and made our own plots.
+
+The figure shows the IMBIE observations in blue, and the ISMIP6 simulations in grey. The ISMIP6 mean in shown in black. It's pretty obvious that the ISMIP6 means under-estimates the historical trend. The ISMIP6 mean instead closely tracks the 95th percentile.
+
+The question now arises: can we trust projections made with model that under-estimate the historical trend. Wouldn't you expect the models to under-estimate future mass loss too? We summarized our concerns in an opinion paper that is currently in press.
+
+The whole situation was a deja-vu. But what did it remind me of?
+
+Slide "Modern and projected Arctic sea ice extend"
+
+Oh yes, right. Back in 2007, Arctic sea ice loss was all over the news. The busy plot shows Arctic sea ice extend, both modeled, and observed (in red). No model at that time was able to reproduce the observed rapid decline.
+
+How do we go from here?
+
+Part II
+
+Slide "2 key requirements"
+
+In our opinion, accurate predictions of the cryosphere's contribution to sea level require that models:
+
+1. Fully characterize uncertainties in model structure, parameters, initial conditions, and boundary conditions.
+2. Yield simulations that fit observations within observational uncertainty.
+
+In the remainder of the talk, I will focus on the second point: that historical simulations fit observations.
 
 
-This is not how I remember.
+Slide "The first large ensemble projections for Greenland"
 
-We prescribe priors for each of the eight parameters based on the literature and on prior experience. For most parameters, we choose rather vague priors with uniform distributions, seen here in blue.
+In 2019 we published a paper that assessed the future of the Greenland Ice Sheet in a probabilistic way. We ran 500 simulations with slightly varying parameters to understand how Greenland will respond to future warming.
+
+Slide "AS19 Ensemble Projections"
+
+The results are shown in the upper figure. The figure shows the median, 5-95th and 16-84th percentiles for three RCP scenarios. As you can see, the variance is pretty large. This is a feature of our approach, not a bug. We varied several parameters within their published uncertainty range. And not on what we thought they ought to be. In the figure below, you see examples of the prior distributions we chose. Most priors were uniform distributions, but it looks jagged because the 500 memeber ensemble does not completely fill the parameter space.
+
+Slide "What's wrong with AS19"
+
+While our work was rather ground breaking, it also had its deficiencies. Just like the ISMIP6 efforts, we did not condition our projections on observations.
+
