@@ -1,5 +1,38 @@
 Storyline
 
-Over the last 25 years, global mean sea level has rise at a rate of about 3 mm per year, as measured from satellite altimetry.
+Title Slide
+
+
+
+Slide "Modern sea-level change"
+
+Over the past 25 years, global mean sea level has risen at a rate of about 3 mm per year, as measured from satellite altimetry. Between 1993 and 2018, Greenland and Antartica contributed about 25% to sea-level rise.
+
+However, focusing on the more recent history from 2006 until 2018, the contribution of the ice sheets increased to 35%. Cleary, if we want to predict future sea-level, we need to understand the role of the ice sheets within the climate system, and how much they will contribute to sea-level rise.
+
+Slide "IPCC AR4, 2007"
+
+To understand where we are today we need to go back to 2007, when the Intergovernmental Panel on Climate Change released its forth assessment report. The IPCC did not include any ice sheet model-based projections because, at that time, the models were not able to track observed changes in Greenland and Antarctica.
+
+Slide "Observed vs simulated flow speeds (2007 model)"
+
+If we took all the data available in 2007 and model from 2007, the result would look something like the figure here. On the left side you see the observed surface speeds in meters per year, where blue and red colors indicate fast flow. The fast flow is concentrated near the coast. The model, on the right side, does not show much fast flow.
+
+The poor performance of the models and the exclusion from IPCC led to a frenzy in model development. Each group tried to up their game, mainly focusing on implementing better approximations to the conservation of momentum equations. That was about the team when I joined the ice sheet modeling group of Ed Bueler here at UAF.
+
+Slide "IPCC AR5, 2013"
+
+Fast forward a couple of years to 2013. With better ice sheet models at hand, a group of modelers formed the Sea-level Response to Ice Sheet Evolution or SeaRISE community effort. For the first time, modelers performed a standarized set of experiments, aimed at estimating mass loss from the ice sheets.
+
+If we go into IPCC's fifth assessement report, we will find the SeaRISE effort only mentioned in passing, along with a single study. While that study appeared in Nature, the model used was basic and only two dimensional along a flowline. Again, models were deemed untrustworthy.
+
+Slide "Observed vs simulated flow speeds (2013 model)"
+
+Let's do the same exercise again. This time we use data and a model representative of 2013. As you can see, the results more or less remains the same. The models are still not able to capture the fast flow in Greenland's coastal areas.
+
+It's not model improvements that did the trick. It was a 100 Million Dollar investment by NASA. Their Operation Ice Bridge spent 10 years mapping ice thickness all across Greenland.
+
 
 This is not how I remember.
+
+We prescribe priors for each of the eight parameters based on the literature and on prior experience. For most parameters, we choose rather vague priors with uniform distributions, seen here in blue.

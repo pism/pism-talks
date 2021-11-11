@@ -74,8 +74,7 @@
 
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
-
-% \titlegraphic{\vskip-1.cm\includegraphics[height=3.5cm]{gris-green-collage-clean}}
+ \titlegraphic{\vskip-.5cm\includegraphics[height=1.5cm]{pism_logo_v2_transp}}
 
 \date{}
 
@@ -88,7 +87,7 @@
 
 \setbeamertemplate{background canvas}
   {
-     \tikz{\node[inner sep=0pt,opacity=0.5] {\includegraphics[width=\paperwidth]{earth-drowning}};}
+     \tikz{\node[inner sep=0pt,opacity=0.6] {\includegraphics[width=\paperwidth]{earth-drowning}};}
 }
 
 
@@ -133,45 +132,26 @@
 }
 
 
-
-
-\begin{frame}{A brief history of model-based projections in IPCC}
+\begin{frame}
+  \frametitle{IPCC AR4, 2007}
   \begin{columns}[c]
-    \begin{column}{.1\linewidth}
-      Year
+    \begin{column}{.4\linewidth}
+      \begin{figure}
+        \includegraphics[height=5cm]{ar4-wg1}
+      \end{figure}
     \end{column}
-    \begin{column}{.1\linewidth}
-      Report
-    \end{column}
-    \begin{column}{.12\linewidth}
-      \# 
-    \end{column}
-    \begin{column}{.60\linewidth}
-      Type of models
-    \end{column}
-  \end{columns}
-  \vspace{0.25em}
-  \hrule
-
-  \begin{columns}[c]
-    \begin{column}{.1\linewidth}
-      2007
-    \end{column}
-    \begin{column}{.1\linewidth}
-      AR4
-    \end{column}
-    \begin{column}{.12\linewidth}
-      0
-    \end{column}
-    \begin{column}{.6\linewidth}
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \includegraphics[height=3.5cm]{no-ice-sheet-models}
+      \end{figure}
       \begin{itemize}
-      \item models excluded due to their inability to track modern ice sheet change
+      \item No results from ice sheet models included due to the models' inability to track recent changes
       \end{itemize}
     \end{column}
-  \end{columns}
-  \hrule
-
+\end{columns}
 \end{frame}
+
+
 
 
 \begin{frame}{Observed vs simulated flow speeds (2007 model)}
@@ -188,6 +168,7 @@
       \end{figure}
       \begin{itemize}
       \item can't reproduce the velocity field
+      \item this led to a model development frenzy
       \end{itemize}
     \end{column}
   \end{columns}
@@ -195,65 +176,27 @@
 \end{frame}
 
 
-
-\begin{frame}{A brief history of model-based projections in IPCC}
+\begin{frame}
+  \frametitle{IPCC AR5, 2013}
   \begin{columns}[c]
-    \begin{column}{.1\linewidth}
-      Year
-    \end{column}
-    \begin{column}{.1\linewidth}
-      Report
-    \end{column}
-    \begin{column}{.12\linewidth}
-      \# 
-    \end{column}
-    \begin{column}{.60\linewidth}
-      Type of models
-    \end{column}
-  \end{columns}
-  \vspace{0.25em}
-  \hrule
-
-  \begin{columns}[c]
-    \begin{column}{.1\linewidth}
-      2007
-    \end{column}
-    \begin{column}{.1\linewidth}
-      AR4
-    \end{column}
-    \begin{column}{.12\linewidth}
-      0
+    \begin{column}{.4\linewidth}
+      \begin{figure}
+        \includegraphics[height=5cm]{ar5-wg1}
+      \end{figure}
     \end{column}
     \begin{column}{.6\linewidth}
-      \begin{itemize}
-      \item models excluded due to their inability to track modern ice sheet change
-      \end{itemize}
+      \begin{figure}
+        \includegraphics[width=4.75cm]{searise}
+      \end{figure}
+      \begin{figure}
+        \includegraphics[width=4.75cm]{nick2013}
+      \end{figure}
     \end{column}
   \end{columns}
-  \hrule
-
-  \begin{columns}[c]
-    \begin{column}{.1\linewidth}
-      2013
-    \end{column}
-    \begin{column}{.1\linewidth}
-      AR5
-    \end{column}
-    \begin{column}{.12\linewidth}
-      unclear
-    \end{column}
-    \begin{column}{.60\linewidth}
-      \begin{itemize}
-      \item models split between surface mass balance and dynamical changes
-      \item multi-model ensemble was not used directly
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \hrule
-
 \end{frame}
 
 \begin{frame}{Observed vs simulated flow speeds (2013 model)}
+  \alert{Have the models gotten any better? Not really.}
   \begin{columns}[c]
     \begin{column}{.6\linewidth}
     \begin{figure}
@@ -277,7 +220,7 @@
 
 
 \begin{frame}{Post 2014 models}
-  \alert{Have the models gotten any better?}
+  \alert{Have the models gotten any better? Yes. Sort of.}
   \begin{columns}[c]
     \begin{column}{.6\linewidth}
     \begin{figure}
@@ -289,7 +232,7 @@
       \begin{figure}
         % \includegraphics[height=1cm]{oib} \\
         \includegraphics[height=5.75cm]{greenland-bed-mcb}
-      \\ \tiny{adapted from Morlighem et al. (2014) \textit{Nature Geosci}}
+      \\ \tiny{adapted from Morlighem et al. (2014) \textit{Nature Geosci.}}
       \end{figure}
     \end{column}
   \end{columns}
@@ -302,72 +245,16 @@
   \note[item]{ice flows downhill}
 \end{frame}
 
-\begin{frame}{A brief history of model-based projections in IPCC}
-  \begin{columns}[c]
-    \begin{column}{.1\linewidth}
-      Year
-    \end{column}
-    \begin{column}{.1\linewidth}
-      Report
-    \end{column}
-    \begin{column}{.12\linewidth}
-      \# 
-    \end{column}
-    \begin{column}{.60\linewidth}
-      Type of models
-    \end{column}
-  \end{columns}
-  \vspace{0.25em}
-  \hrule
 
+\begin{frame}
+  \frametitle{IPCC AR6, 2021}
   \begin{columns}[c]
-    \begin{column}{.1\linewidth}
-      2007
-    \end{column}
-    \begin{column}{.1\linewidth}
-      AR4
-    \end{column}
-    \begin{column}{.12\linewidth}
-      0
+    \begin{column}{.4\linewidth}
+      \begin{figure}
+        \includegraphics[height=5cm]{ar6-wg1}
+      \end{figure}
     \end{column}
     \begin{column}{.6\linewidth}
-      \begin{itemize}
-      \item models excluded due to their inability to track modern ice sheet change
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \hrule
-
-  \begin{columns}[c]
-    \begin{column}{.1\linewidth}
-      2013
-    \end{column}
-    \begin{column}{.1\linewidth}
-      AR5
-    \end{column}
-    \begin{column}{.12\linewidth}
-      unclear
-    \end{column}
-    \begin{column}{.60\linewidth}
-      \begin{itemize}
-      \item models split between surface mass balance and dynamical changes
-      \item multi-model ensemble was not used directly
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \hrule
-
-  \begin{columns}[c]
-    \begin{column}{.1\linewidth}
-      2021
-    \end{column}
-    \begin{column}{.1\linewidth}
-      AR6
-    \end{column}
-    \begin{column}{.12\linewidth}
-      14 (GIS)\\ 18 (AIS)
-    \end{column}
-    \begin{column}{.60\linewidth}
       \begin{itemize}
       \item multi-model ensemble
       \item Ice Sheet Model Intercomparison for CMIP Phase 6 (ISMIP6)
@@ -375,10 +262,8 @@
       \end{itemize}
     \end{column}
   \end{columns}
-  \hrule
-  \vspace{0.5em}
-  AIS: Antarctic Ice Sheet, \quad GIS: Greenland Ice Sheet  
 \end{frame}
+
 
 
 \begin{frame}{Modern and projected mass loss from Greenland}
@@ -413,15 +298,17 @@
 
 
 \begin{frame}{Modern and projected Arctic sea ice extend}
+  \vspace{-1em}
   \begin{minipage}[t][1.25cm][t]{\textwidth}
     \begin{figure}
       \includegraphics<1->[width=1cm]{brain_solution}
     \end{figure}
   \end{minipage}
   \vspace{0.25em}
-  \begin{minipage}[t][6.25cm][b]{\textwidth}
+  \begin{minipage}[t][6.75cm][b]{\textwidth}
     \begin{figure}
-          \includegraphics<2>[height=6cm]{grl23061-fig-0001}
+      \includegraphics<2>[height=5.5cm]{grl23061-fig-0001}
+      \uncover<2>{\caption{Stroeve et al (2007)}}
     \end{figure}
   \end{minipage}
 \end{frame}
@@ -447,7 +334,7 @@
 \begin{itemize}
 \item AS19 did prior calibration and literature values to define probability distributions of parameters \alert{but}
 \item did \alert{NOT} excplicitly condition on observations
-\item see our commentary in TCD (in revision)
+\item see our commentary in \alert{The Cryosphere (in print)}
 \end{itemize}
 \note[item]{}
 \end{frame}
@@ -494,6 +381,13 @@ Which quantities should we use?
 \item train surrogate model on NVIDIA GPU
 \end{itemize}
 \end{frame}
+
+\begin{frame}{1. Ice Flow: Surrogate model}
+  \begin{figure}
+    \includegraphics<1->[width=\textwidth]{prior}
+  \end{figure}
+\end{frame}
+
 
 \begin{frame}{1. Ice Flow: Surrogate model}
   \begin{figure}
