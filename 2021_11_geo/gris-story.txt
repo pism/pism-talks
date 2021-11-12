@@ -2,7 +2,7 @@ Story-line
 
 Title Slide
 
-
+Today I'd like to share my thoughts about the credibility of sea-level projections made with numerical ice sheet models. The title is already a give-away; I don't think the community's latest projections are very credible.
 
 Slide "Modern sea-level change"
 
@@ -32,7 +32,7 @@ Let's do the same exercise again. This time we use data and a model representati
 
 Slide "Post 2014 models"
 
-2014 was a watershed moment for modeling the Greenland Ice Sheet. While the models kept getting better, it wasn't model improvements that did the trick. It was a 100 Million Dollar investment by NASA. Their Operation Ice Bridge spent 10 years mapping ice thicknesses all across Greenland, particulary in coastal areas. As glaciers generally flow downhill, ice thickness exerts a first order control on ice flow. Without accurate ice thicknesses you can't accurately reproduce ice flow. In that sense, when you have garbage coming in, you get garbage coming out.
+2014 was a watershed moment for modeling the Greenland Ice Sheet. While the models kept getting better, it wasn't model improvements that did the trick. It was a 100 Million Dollar investment by NASA. Their Operation Ice Bridge spent 10 years mapping ice thicknesses all across Greenland, particularly in coastal areas. As glaciers generally flow downhill, ice thickness exerts a first order control on ice flow. Without accurate ice thicknesses you can't accurately reproduce ice flow. In that sense, when you have garbage coming in, you get garbage coming out.
 
 With a new ice thickness data set released in 2014, models finally have become decent at reproducing present-day ice flow patterns.
 
@@ -52,7 +52,7 @@ Wait a minute. This is not how I remember the draft of Figure 9.17 looked like w
 
 Slide "Modern and project mass loss from Greenland II"
 
-The draft figure showed a kink at the transition from the historical simulations to the projections. The historical simulations are needed to generate an initial state for 2015, the start of the projections. How the historical simulations were done was left up to the indiviual modelers.
+The draft figure showed a kink at the transition from the historical simulations to the projections. The historical simulations are needed to generate an initial state for 2015, the start of the projections. How the historical simulations were done was left up to the individual modelers.
 
 Anyway, let's zoom in around 2015. IMBIE is a reconstruction based on observations, the historical simulations are not shown in the plot. But the transition looks rather smooth, lacking the kink.
 
@@ -60,11 +60,11 @@ Here is a screen shot of the original draft figure, clearly showing a change in 
 
 Slide "A closer look"
 
-We were unable to follow what IPCC did with the ISMIP6 projections and decided a closer look was needed. We downloaded the ISMIP6 simulations from the offical repository and made our own plots.
+We were unable to follow what IPCC did with the ISMIP6 projections and decided a closer look was needed. We downloaded the ISMIP6 simulations from the official repository and made our own plots.
 
-The figure shows the IMBIE observations in blue, and the ISMIP6 simulations in grey. The ISMIP6 mean in shown in black. It's pretty obvious that the ISMIP6 mean under-estimates the historical trend. In fact the ISMIP6 mean instead closely tracks the 95th percentile.
+The figure shows the IMBIE observations in blue, and the ISMIP6 simulations in gray. The ISMIP6 mean in shown in black. It's pretty obvious that the ISMIP6 mean under-estimates the historical trend. In fact the ISMIP6 mean instead closely tracks the 95th percentile.
 
-The question now arises: can we trust projections made with modesl that under-estimate the historical trend. Wouldn't you expect the models to under-estimate future mass loss too? We summarized our concerns in an opinion paper that is currently in press.
+The question now arises: can we trust projections made with models that under-estimate the historical trend. Wouldn't you expect the models to under-estimate future mass loss too? We summarized our concerns in an opinion paper that is currently in press.
 
 The whole situation was a deja-vu. But what did it remind me of?
 
@@ -90,13 +90,56 @@ In the remainder of the talk, I will focus on the second point: that historical 
 
 Slide "The first large ensemble projections for Greenland"
 
-In 2019 we published a paper that assessed the future of the Greenland Ice Sheet in a probabilistic way. We ran 500 simulations with slightly varying parameters to understand how Greenland will respond to future warming.
+In 2019 we published a paper that assessed the future of the Greenland Ice Sheet in a probabilistic way. We ran 500 simulations with slightly varying parameters to understand how Greenland will respond to future warming. Our work was the first to rigorously quantify parametric uncertainty.
 
 Slide "AS19 Ensemble Projections"
 
-The results are shown in the upper figure. The figure shows the median, 5-95th and 16-84th percentiles for three RCP scenarios. As you can see, the variance is pretty large. This is a feature of our approach, not a bug. We varied several parameters within their published uncertainty range. And not on what we thought they ought to be. In the figure below, you see examples of the prior distributions we chose. Most priors were uniform distributions, but it looks jagged because the 500 memeber ensemble does not completely fill the parameter space.
+The results are shown in the upper figure. The figure shows the median, 5-95th and 16-84th percentiles for three RCP scenarios. As you can see, the variance is pretty large. This is a feature of our approach, not a bug. We varied several parameters within their published uncertainty range. And not on what we thought they ought to be. In the figure below, you see examples of the prior distributions we chose. Most priors were uniform distributions, but it looks jagged because the 500 member ensemble does not completely fill the parameter space.
 
 Slide "What's wrong with AS19"
 
 While our work was rather ground breaking, it also had its deficiencies. Just like the ISMIP6 efforts, we did not condition our projections on observations.
+
+Slide "A Bayesian calibration in two steps"
+
+Doug developed a two step probabilistic calibration method to condition projections on historical observations. But which observations should we use? A natural choice is the quantity of interest. In our case, we want to predict mass loss so let's use mass change. Second we use surface speeds because our 2019 work showed that uncertainties in ice flow parameters contribute a lot to uncertainties in mass loss.
+
+Slide "1. Ice Flow calibration: strategy"
+
+Let's start with calibrating ice flow parameters. How do we do this probabilistic ally? Our strategy is to use Markov Chain Monte Carlo sampling to find the joint distribution of parameters given observations. Let's think of the ice sheet model as a map F from a parameter vector x to surface speeds Y. While our ice sheet model PISM is relatively computationally efficient, it is too expensive to run 100s of thousands of times, needed for MCMC. To skirt the issue, we instead use a computationally cheap surrogate model G that approximates the ice flow model F.
+
+Slide "1. Ice Flow calibration: surrogate model"
+
+We adapted the 4 layer Neural Network surrogate model that Doug had developed earlier. The model is implemented in PyTorch and PyTorch-Lightning, and we can train the model on GPUs.
+
+
+Slide "1. Ice Flow calibration: dimensionality reduction"
+
+There is a caveat. Y is not a scalar but the number of grid points, which is on the order of 10 to the power of six. So we have a map from 8 parameters to 1,000,000 points. That's hard.
+
+The genius part of Doug's approach is to use Principal Component Analysis to reduce the dimension of Y. Fortunately we only need the first 100-ish eigen-coefficients or as we call them, eigen-glaciers, to create a good surrogate model. Now we have reduced the problem for 1,000,000 to 100 unknowns. Not bad.
+
+Slide "1. Ice Flow calibration: training data"
+
+Now we need data to train the surrogate model on. First we select eight parameters that describe ice flow. For each parameter we prescribe a prior distribution. Next we draw 1000 samples using Sobol Sequences. Then we run the ice sheet model 1000 times, once for each parameter combination.
+
+Slide "1. Ice Flow calibration: surrogate model"
+
+Using the trained surrogate model, we create a much larger ensemble, this time with 1,000,000 member. This is much cheaper than running PISM 1000 times. Then we sample from this 1,000,000 member strong ensemble using a Markov Chain Monte Carlo Method, given observations. What you get are the posterior distributions of the eight parameters. These distributions best reproduce the surface speed observations.
+
+Slide "Use posterior as new prior"
+
+Now we create 500 samples from the posterior. The we redo the 2019 modeling effort. The difference to the 2019 ensemble is that we now only sample from the parameter space that can reproduce the observed surface speeds. Running PISM 500 times for a 100 model years takes a moment, so let's wait. The results are new projections, condition on surface speeds. What we find is that now the variance is greatly reduced, as well as the median.
+
+Slide "2. Mass Loss: Bayesian calibration"
+
+The second step is the actual Bayesian calibration. Here we weight ensemble members based on their likelihood relative to observations of mass change. We resample simulations proportionally to these likelihoods to create a new ensemble that is consistent with respect to both observations of surface speed and mass change to within observational uncertainty. Now we have fully calibrated projections that are conditioned on surface speeds and mass loss. The variance is reduced even further. We believe this is a step towards credible projections of future mass loss from ice sheets.
+
+Slide "Final thoughts"
+
+For the first part, "Fully characterize uncertainties in model structure, parameters, initial conditions, and boundary conditions", we addressed parametric uncertainty.
+
+And we presented a first step towards the second point, "Yield simulations that fit observations within observational uncertainty."
+
+Artificial Intelligence and Machine Learning have become buzzwords. What I like here is that we use the surrogate model only for calibration of the high-fidelity model, while we use the high-fidelity model for the actual projections.
 
