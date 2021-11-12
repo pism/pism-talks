@@ -98,6 +98,29 @@
   \note[item]{Collaboration Martin, Doug, Tim}
 \end{frame}
 
+\setbeamertemplate{background canvas}
+  {
+}
+
+  \begin{frame}
+    \begin{figure}
+      \includegraphics[height=4cm]{fire-alarm}
+    \end{figure}
+    \begin{figure}
+      \includegraphics[height=4cm]{fire-truck}
+    \end{figure}
+\end{frame}
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=0.6] {\includegraphics[height=\paperheight]{earth-drowning-desat}};}
+}
+
+\begin{frame}
+  \titlepage
+  \note[item]{Collaboration Martin, Doug, Tim}
+\end{frame}
+
 
 \setbeamertemplate{background canvas}
   {
@@ -293,8 +316,7 @@
 \begin{frame}{Modern and projected mass loss from Greenland II}
   \begin{figure}
     \includegraphics<1>[width=.9\textwidth]{ar6-fig17-no-zoom}
-    \includegraphics<2>[width=.9\textwidth]{ar6-fig17-with-zoom}
-    \includegraphics<3>[width=.9\textwidth]{ar6_wg1_fig_9_17_draft_with_zoom}
+    \includegraphics<2>[width=.9\textwidth]{ar6_wg1_fig_9_17_draft_with_zoom}
     \caption{IPCC AR6, Fig. 9.17}
   \end{figure}
 \end{frame}
@@ -367,8 +389,8 @@
 \begin{frame}{2 key requirements}
 Accurate predictions of the cryosphere's contribution to sea level require that models:
 \begin{enumerate}
-    \item<1> Fully characterize uncertainties in model structure, parameters, initial conditions, and boundary conditions.
-    \item<1-2> Yield simulations that fit observations within observational uncertainty. 
+    \item Fully characterize uncertainties in model structure, parameters, initial conditions, and boundary conditions.
+    \item Yield simulations that fit observations within observational uncertainty. 
 \end{enumerate}
   \begin{figure}
     \includegraphics[width=0.45\textwidth]{difference-accuracy-and-precision}
@@ -424,10 +446,10 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
     \begin{minipage}[t][6cm][t]{\textwidth}
         \begin{columns}[c]
     \begin{column}{.3\textwidth}
-    \includegraphics<1->[height=5.5cm]{greenland-obs-rignot}
+    \includegraphics<3>[height=5.5cm]{greenland-obs-rignot}
     \end{column}
     \begin{column}{.65\textwidth}
-    \includegraphics<3>[height=3cm]{GIS_hist_only_obs}
+    \includegraphics<1->[height=3cm]{GIS_hist_only_obs}
     \end{column}
   \end{columns}
 

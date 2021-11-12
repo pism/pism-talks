@@ -1,5 +1,7 @@
 Story-line
 
+Before I start, I'd like to blame any inconsistencies in my talk to the fire alarm in the GI this morning.
+
 Title Slide
 
 Today I'd like to share my thoughts about the credibility of sea-level projections made with numerical ice sheet models. The title is already a give-away; I don't think the community's latest projections are very credible.
@@ -16,7 +18,7 @@ To understand where we are today we need to go back to 2007, when the Intergover
 
 Slide "Observed vs simulated flow speeds (2007 model)"
 
-If we took all the data available in 2007 and feed it into model from 2007, the result would look like something the figure here. On the left side you see the observed surface speeds in meters per year, where blue and red colors indicate fast flow. The fast flow is concentrated near the coast. The model, on the right side, does not show much fast flow, blue and red colors are most absent.
+Why was that? If we took all the data available in 2007 and feed it into model from 2007, the result would look like the figure here. On the left side you see the observed surface speeds in meters per year, where blue and red colors indicate fast flow. The fast flow is concentrated near the coast. The model, on the right side, does not show much fast flow, blue and red colors are mostly missing.
 
 The poor performance of the models and the exclusion from IPCC led to a frenzy in model development. Each group tried to up their game, mainly focusing on implementing better approximations to the conservation of momentum equations. That was about the time when I joined the ice sheet modeling group of Ed Bueler here at UAF in 2009.
 
@@ -28,7 +30,7 @@ If we go into IPCC's fifth assessment report, we will find the SeaRISE effort on
 
 Slide "Observed vs simulated flow speeds (2013 model)"
 
-Let's do the same exercise again. This time we use data and a model representative of 2013. As you can see, the result remains more or less the same. The models are still not able to capture the fast flow in Greenland's coastal areas. So what's going on?
+Let's do the same exercise again. This time we use data and a model representative of 2013. As you can see, the result remains more or less the same. The models are still not able to to capture the fast flow in Greenland's coastal areas. So what's going on?
 
 Slide "Post 2014 models"
 
@@ -38,7 +40,7 @@ With a new ice thickness data set released in 2014, models finally have become d
 
 Slide "IPCC AR6, 2021"
 
-In 2014, the community effort "Ice Sheet Model Intercomparison Project for CMIP6" was started, with the goal of projection mass loss from Greenland and Antarctica for IPCC AR6. About 15 modeling groups world-wide participated in ISMIP6 to produce the first multi-model ensemble projections. With little to no funding available.
+In same year of 2014, the community effort "Ice Sheet Model Intercomparison Project for CMIP6" was started, with the goal of projection mass loss from Greenland and Antarctica for IPCC AR6. About 15 modeling groups world-wide participated in ISMIP6 to produce the first multi-model ensemble projections. With little to no funding available.
 
 Slide "Modern and projected mass loss from Greenland"
 
@@ -54,7 +56,7 @@ Slide "Modern and project mass loss from Greenland II"
 
 The draft figure showed a kink at the transition from the historical simulations to the projections. The historical simulations are needed to generate an initial state for 2015, the start of the projections. How the historical simulations were done was left up to the individual modelers.
 
-Anyway, let's zoom in around 2015. IMBIE is a reconstruction based on observations, the historical simulations are not shown in the plot. But the transition looks rather smooth, lacking the kink.
+Anyway, let's zoom in around 2015. IMBIE is a reconstruction based on observations, the historical simulations are not shown in the plot. But the transition looks rather smooth, lacking a kink.
 
 Here is a screen shot of the original draft figure, clearly showing a change in slope.
 
@@ -62,7 +64,7 @@ Slide "A closer look"
 
 We were unable to follow what IPCC did with the ISMIP6 projections and decided a closer look was needed. We downloaded the ISMIP6 simulations from the official repository and made our own plots.
 
-The figure shows the IMBIE observations in blue, and the ISMIP6 simulations in gray. The ISMIP6 mean in shown in black. It's pretty obvious that the ISMIP6 mean under-estimates the historical trend. In fact the ISMIP6 mean instead closely tracks the 95th percentile.
+The figure shows the IMBIE observations in blue, and the ISMIP6 simulations in gray. The ISMIP6 mean in shown in black. It's pretty obvious that the ISMIP6 mean under-estimates the historical trend. Instead ISMIP6 mean  closely tracks the 95th percentile.
 
 The question now arises: can we trust projections made with models that under-estimate the historical trend. Wouldn't you expect the models to under-estimate future mass loss too? We summarized our concerns in an opinion paper that is currently in press.
 
@@ -82,7 +84,12 @@ Slide "2 key requirements"
 
 In our opinion, accurate predictions of the cryosphere's contribution to sea level require that models:
 
+button
+
 1. Fully characterize uncertainties in model structure, parameters, initial conditions, and boundary conditions.
+
+button
+
 2. Yield simulations that fit observations within observational uncertainty.
 
 In the remainder of the talk, I will focus on the second point: that historical simulations fit observations.
@@ -90,7 +97,7 @@ In the remainder of the talk, I will focus on the second point: that historical 
 
 Slide "The first large ensemble projections for Greenland"
 
-In 2019 we published a paper that assessed the future of the Greenland Ice Sheet in a probabilistic way. We ran 500 simulations with slightly varying parameters to understand how Greenland will respond to future warming. Our work was the first to rigorously quantify parametric uncertainty.
+In 2019 we published a paper that assessed the future of the Greenland Ice Sheet in a probabilistic way. We ran 500 simulations with slightly varying parameters. Our work was the first to rigorously quantify parametric uncertainty.
 
 Slide "AS19 Ensemble Projections"
 
@@ -106,7 +113,7 @@ Doug developed a two step probabilistic calibration method to condition projecti
 
 Slide "1. Ice Flow calibration: strategy"
 
-Let's start with calibrating ice flow parameters. How do we do this probabilistic ally? Our strategy is to use Markov Chain Monte Carlo sampling to find the joint distribution of parameters given observations. Let's think of the ice sheet model as a map F from a parameter vector x to surface speeds Y. While our ice sheet model PISM is relatively computationally efficient, it is too expensive to run 100s of thousands of times, needed for MCMC. To skirt the issue, we instead use a computationally cheap surrogate model G that approximates the ice flow model F.
+Let's start with calibrating ice flow parameters. How do we do this probabilistic ally? Our strategy is to use Markov Chain Monte Carlo sampling to find the joint distribution of parameters given observations. Let's think of the ice sheet model as a map F from a parameter vector x to surface speeds Y. While our ice sheet model PISM is relatively computationally efficient, it is too expensive to run it 100s of thousands of times, needed for MCMC. To skirt the issue, we instead use a computationally cheap surrogate model G that approximates the ice flow model F.
 
 Slide "1. Ice Flow calibration: surrogate model"
 
@@ -115,9 +122,11 @@ We adapted the 4 layer Neural Network surrogate model that Doug had developed ea
 
 Slide "1. Ice Flow calibration: dimensionality reduction"
 
-There is a caveat. Y is not a scalar but the number of grid points, which is on the order of 10 to the power of six. So we have a map from 8 parameters to 1,000,000 points. That's hard.
+There is a caveat. Y is not a scalar but the number of grid points (observations), which is on the order of 10 to the power of six. So we have a map from 8 parameters to 1,000,000 points. That's hard.
 
-The genius part of Doug's approach is to use Principal Component Analysis to reduce the dimension of Y. Fortunately we only need the first 100-ish eigen-coefficients or as we call them, eigen-glaciers, to create a good surrogate model. Now we have reduced the problem for 1,000,000 to 100 unknowns. Not bad.
+The genius part of Doug's approach is to use Principal Component Analysis to reduce the dimension of Y. Fortunately we only need the first 100-ish eigen-coefficients or as we call them, eigen-glaciers, to create a good surrogate model. Now we have reduced the problem from 1,000,000 to 100 unknowns. Not bad.
+
+The figure shows the first three eigen-glaciers and they explained variance.
 
 Slide "1. Ice Flow calibration: training data"
 
@@ -129,11 +138,11 @@ Using the trained surrogate model, we create a much larger ensemble, this time w
 
 Slide "Use posterior as new prior"
 
-Now we create 500 samples from the posterior. The we redo the 2019 modeling effort. The difference to the 2019 ensemble is that we now only sample from the parameter space that can reproduce the observed surface speeds. Running PISM 500 times for a 100 model years takes a moment, so let's wait. The results are new projections, condition on surface speeds. What we find is that now the variance is greatly reduced, as well as the median.
+Now we create 500 samples from the posterior to redo the 2019 modeling effort. The difference to the 2019 ensemble is that we now only sample from the parameter space that can reproduce the observed surface speeds. Running PISM 500 times for a 100 model years takes a moment, so let's wait. The results are new projections, condition on surface speeds. What we find is that now the variance is greatly reduced, as well as the median.
 
 Slide "2. Mass Loss: Bayesian calibration"
 
-The second step is the actual Bayesian calibration. Here we weight ensemble members based on their likelihood relative to observations of mass change. We resample simulations proportionally to these likelihoods to create a new ensemble that is consistent with respect to both observations of surface speed and mass change to within observational uncertainty. Now we have fully calibrated projections that are conditioned on surface speeds and mass loss. The variance is reduced even further. We believe this is a step towards credible projections of future mass loss from ice sheets.
+The second step is the actual Bayesian calibration. Here we weight ensemble members based on their likelihood relative to observations of mass change. We resample simulations proportionally to these likelihoods to create a new ensemble that is consistent with respect to both observations of surface speed and mass change to within observational uncertainty. Now we have fully calibrated projections that are conditioned. The variance is reduced even further. We believe this is a step towards credible projections of future mass loss from ice sheets.
 
 Slide "Final thoughts"
 
