@@ -14,7 +14,7 @@ However, focusing on the more recent history from 2006 until 2018, the contribut
 
 Slide "IPCC AR4, 2007"
 
-To understand where we are today we need to go back to 2007, when the Intergovernmental Panel on Climate Change released its forth assessment report. The IPCC did not include any ice sheet model-based projections because, at that time, the models were not able to track observed changes in Greenland and Antarctica.
+To understand where we are today, we need to go back to 2007, when the Intergovernmental Panel on Climate Change released its forth assessment report. The IPCC did not include any ice sheet model-based projections because, at that time, the models were not able to track observed changes in Greenland and Antarctica.
 
 Slide "Observed vs simulated flow speeds (2007 model)"
 
