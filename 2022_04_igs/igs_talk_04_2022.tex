@@ -4,7 +4,7 @@
 %%% TeX-engine: xetex
 %%% End: 
 
-\documentclass[hide notes,intlimits,aspecratio=169]{beamer}
+\documentclass[hide notes,intlimits]{beamer}
 \mode<presentation>
 {
   \usetheme[footline]{PISMshade}
@@ -61,7 +61,7 @@
 
 % title page
 \title[Ice sheet modeling] % (optional, use only with long paper titles)
-{Towards credible projections of sea-level rise}
+{Predicting sea-level rise from ice sheets}
 \subtitle{The Good, the Bad, and the Ugly}
 \author[Aschwanden] % (optional, use only with lots of authors)
 {\textbf{Andy Aschwanden}\\ with \\D. Brinkerhoff, M. Truffer, T. Bartholomaus}
@@ -78,7 +78,7 @@
 \date{}
 
 
-\subject{The Greenland Ice Sheet}
+\subject{Credible sea-level projections}
 
 \begin{document}
 
@@ -101,62 +101,92 @@
   {
 }
 
-  \begin{frame}
-    \begin{figure}
-      \includegraphics[height=4cm]{fire-alarm}
-    \end{figure}
-    \begin{figure}
-      \includegraphics[height=4cm]{fire-truck}
-    \end{figure}
-\end{frame}
 
-\setbeamertemplate{background canvas}
-  {
-     \tikz{\node[inner sep=0pt,opacity=0.6] {\includegraphics[height=\paperheight]{earth-drowning-desat}};}
-}
-
-\begin{frame}
-  \titlepage
-  \note[item]{Collaboration Martin, Doug, Tim}
+\begin{frame}{How it began: March 2020}
+  \begin{figure}
+    \includegraphics<1>[width=.9\textwidth]{ar6_wg1_fig_9_17_draft_with_zoom}
+    \caption{IPCC AR6 Draft, Fig. 9.17}
+  \end{figure}
 \end{frame}
 
 
-\setbeamertemplate{background canvas}
-  {
-     \tikz{\node[inner sep=0pt,opacity=0.35] {\includegraphics[height=\paperheight]{earth-drowning-desat}};}
-}
-
-\part{The bad\\[2em] \includegraphics[height=3cm]{thebad}}
-
-\frame{\partpage}
 
 
-\begin{frame}{Modern sea-level change}
-  \vspace{-1.5em}
-  \begin{minipage}[t][5cm][t]{\textwidth}
-    \begin{figure}
-      \includegraphics<1->[height=5cm]{sea-level-from-altimetry}\\
-    \end{figure}
-  \end{minipage}
-  \vspace{-2.em}
-  \begin{minipage}[t][4cm][t]{\textwidth}
+\begin{frame}{A closer look}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{IS_Historical}
+    \caption{Aschwanden, Brinkerhoff, Bartholomaus, \& Truffer (2021)}
+  \end{figure}
   \begin{columns}[c]
-    \begin{column}{.45\textwidth}
-      \uncover<1>{Sea-level contribution 1993--18}
-      \uncover<2>{Sea-level contribution 2006--18}
+    \begin{column}{.5\textwidth}
+      \begin{minipage}[t][.5\textheight][t]{\textwidth}
+        \alert{Almost all historical simulations under-estimate modern mass loss}
+      \end{minipage}
     \end{column}
-    \begin{column}{.45\textwidth}
-    \includegraphics<1>[height=2.75cm]{sea-level-contrib-1993-2018}
-    \includegraphics<2>[height=2.75cm]{sea-level-contrib-2006-2018}
+    \begin{column}{.25\textwidth}
     \end{column}
   \end{columns}
-  \end{minipage}
 \end{frame}
 
-\setbeamertemplate{background canvas}
-{
-%
-}
+
+
+
+\begin{frame}
+  \frametitle{Lack of funding}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{greve-1995}
+      \end{figure}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+  \frametitle{Lack of funding}
+  \begin{columns}[c]
+    \begin{column}{.5\linewidth}
+      \centering{200M USD}
+      \begin{figure}
+        \includegraphics[height=5cm]{spiderman-nowayhome}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\linewidth}
+      \centering{$\approx$10M USD per year}
+      \begin{figure}
+        \includegraphics[height=3.5cm]{nsf_logo_color}
+      \end{figure}
+      \centering{for glaciology}
+    \end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+Funding for glaciological research is tiny compared to the problem at hand
+\end{frame}
+
+\begin{frame}{Observed vs simulated flow speeds (2007 model)}
+  \begin{columns}[c]
+    \begin{column}{.6\linewidth}
+    \begin{figure}
+      \includegraphics[height=5.75cm]{gris-obs-exp-old}
+      \\ \tiny{adapted from Aschwanden, Fahnestock, Truffer (2016) \textit{Nature Comms.}}
+    \end{figure}
+    \end{column}
+    \begin{column}{.4\linewidth}
+      \begin{figure}
+        \includegraphics[width=.75\textwidth]{roadblocks}
+      \end{figure}
+      \begin{itemize}
+      \item can't reproduce the velocity field
+      \item this led to a model development frenzy
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \note[item]{}
+\end{frame}
 
 
 \begin{frame}
@@ -179,28 +209,6 @@
 \end{frame}
 
 
-
-
-\begin{frame}{Observed vs simulated flow speeds (2007 model)}
-  \begin{columns}[c]
-    \begin{column}{.6\linewidth}
-    \begin{figure}
-      \includegraphics[height=5.75cm]{gris-obs-exp-old}
-      \\ \tiny{adapted from Aschwanden, Fahnestock, Truffer (2016) \textit{Nature Comms.}}
-    \end{figure}
-    \end{column}
-    \begin{column}{.4\linewidth}
-      \begin{figure}
-        \includegraphics[width=.75\textwidth]{roadblocks}
-      \end{figure}
-      \begin{itemize}
-      \item can't reproduce the velocity field
-      \item this led to a model development frenzy
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \note[item]{}
-\end{frame}
 
 
 \begin{frame}
@@ -327,47 +335,7 @@
 \end{frame}
 
 
-\begin{frame}{A closer look}
-  \begin{figure}
-    \includegraphics[width=\textwidth]{GIS_hist_with_obs}
-    \caption{Aschwanden, Brinkerhoff, Bartholomaus, \& Truffer (in press)}
-  \end{figure}
-  \begin{columns}[c]
-    \begin{column}{.5\textwidth}
-      \begin{minipage}[t][.5\textheight][t]{\textwidth}
-        \alert{Almost all historical simulations under-estimate modern mass loss}
-      \end{minipage}
-    \end{column}
-    \begin{column}{.25\textwidth}
-      \begin{minipage}[t][.5\textheight][t]{\textwidth}
-        \begin{figure}
-          \includegraphics<2>[width=1.8cm]{brain_thinking}
-        \end{figure}
-      \end{minipage}
-    \end{column}
-  \end{columns}
-\end{frame}
 
-
-
-\begin{frame}{Modern and projected Arctic sea ice extend}
-  \begin{columns}[c]
-    \begin{column}{.75\textwidth}
-      \begin{minipage}[t][.5\textheight][c]{\textwidth}
-        \begin{figure}
-          \includegraphics<1>[height=6.25cm]{CCS108_Fig2_6}
-        \end{figure}
-      \end{minipage}
-    \end{column}
-    \begin{column}{.2\textwidth}
-      \begin{minipage}[t][.5\textheight][c]{\textwidth}
-        \begin{figure}
-          \includegraphics<1>[width=1.8cm]{brain_solution}
-        \end{figure}
-      \end{minipage}
-    \end{column}
-  \end{columns}
-\end{frame}
 
 
 \setbeamertemplate{background canvas}
@@ -376,7 +344,7 @@
 }
 
 
-\part{A way forward}
+\part{A path forward}
 
 \frame{\partpage}
 
@@ -394,6 +362,15 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
     \includegraphics[width=0.45\textwidth]{difference-accuracy-and-precision}
   \end{figure}
 \end{frame}
+
+\begin{frame}{Accounting for all sources of uncertainty}
+
+\end{frame}
+
+\begin{frame}{Conditioning simulations on observations}
+
+\end{frame}
+
 
 \begin{frame}{The first large ensemble projections for Greenland}
   \begin{figure}
