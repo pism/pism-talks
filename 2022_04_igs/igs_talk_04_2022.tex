@@ -111,11 +111,10 @@
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Questions}
   \begin{itemize}
   \item What is going on?
   \item How did we get here?
-  \item Why is this happening?
   \item How can we move forward?
   \end{itemize}
 \end{frame}
@@ -213,7 +212,7 @@
 \begin{frame}{The post AR4 world: Stokes models}
     \begin{figure}
       \includegraphics[height=7cm]{gillet-chaulet_2012_fig_1}
-      \\ \tiny{Gillet-Caulet et al. (2012)}
+      \\ \tiny{Gillet-Chaulet et al. (2012)}
     \end{figure}
 
 \end{frame}
@@ -230,8 +229,13 @@
       \includegraphics[height=7cm]{morlighem_2010_fig_2}
       \\ \tiny{Morlighem et al. (2010)}
     \end{figure}
-
 \end{frame}
+
+%% \begin{frame}{The post AR4 world: Observations}
+%%     \includegraphics<1>[width=.5\textwidth]{world-grace-2002-2016}
+
+%% \end{frame}
+
 
 \begin{frame}
   \frametitle{IPCC AR5, 2013}
@@ -273,12 +277,8 @@
   \note[item]{}
 \end{frame}
 
-
-
-community - Operation IceBridge (Tom Wagner)
-
 \begin{frame}{Post AR5 models}
-  \alert{Have the models gotten any better? Yes. Sort of.}
+  \alert{Have the models gotten any better? Yes.}
   \begin{columns}[c]
     \begin{column}{.6\linewidth}
     \begin{figure}
@@ -324,10 +324,8 @@ community - Operation IceBridge (Tom Wagner)
 \end{frame}
 
 
-
-
-
-
+\part{What's going on?}
+\frame{\partpage}
 
 \begin{frame}{A closer look: Greenland}
   \begin{figure}
@@ -353,7 +351,7 @@ community - Operation IceBridge (Tom Wagner)
   \begin{columns}[c]
     \begin{column}{.5\textwidth}
       \begin{minipage}[t][.5\textheight][t]{\textwidth}
-        \alert{Almost all historical simulations under-estimate modern mass loss}
+        \alert{Spread in simulations much larger than observational uncertainty}
       \end{minipage}
     \end{column}
     \begin{column}{.25\textwidth}
@@ -369,9 +367,182 @@ community - Operation IceBridge (Tom Wagner)
 \end{frame}
 
 
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=0.35] {\includegraphics[height=\paperheight]{earth-drowning-desat}};}
+}
+
+
+\part{A path forward}
+
+\frame{\partpage}
+
+\setbeamertemplate{background canvas}
+  {
+}
+
+\begin{frame}{2 key requirements}
+Accurate predictions of the cryosphere's contribution to sea level require that models:
+\begin{enumerate}
+    \item Fully characterize uncertainties in model structure, parameters, initial conditions, and boundary conditions.
+    \item Yield simulations that fit observations within observational uncertainty. 
+\end{enumerate}
+  \begin{figure}
+    \includegraphics[width=0.4\textwidth]{difference-accuracy-and-precision}
+  \end{figure}
+  \begin{itemize}
+    \item \alert{No new ideas.}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Accounting for all sources of uncertainty}
+    \begin{minipage}[t][3.2cm][t]{\textwidth}
+    \begin{figure}
+      \includegraphics<1->[height=3cm]{sle_pdf_initial}
+    \end{figure}
+  \end{minipage}
+  We can cast this in a \alert{Bayesian} framework:
+  \begin{columns}[c]
+    \begin{column}{.4\textwidth}
+  \begin{itemize}
+  \item model uncertainty
+  \item inital state uncertainty
+  \item parametric uncertainty
+  \item aleatoric uncertainty
+  \end{itemize}
+    \end{column}
+    \begin{column}{.55\textwidth}
+\begin{align} 
+    P(\Delta z|\mathcal{F})&= \int P(\Delta z|f,\mathbf{k},\mathcal{M}) \nonumber \\
+                           &  \times P(f|\mathcal{F}) P(\mathbf{k}|\mathcal{M})  P(\mathcal{I}|\mathcal{M})P(\mathcal{M}) \nonumber \\
+                           & \times \mathrm{d} \mathbf{k} \; \mathrm{d} f \; \mathrm{d} \mathcal{I}\; \mathrm{d} \mathcal{M}.
+    \label{prior_distribution}
+\end{align}
+    \end{column}
+  \end{columns}
+  \vspace{1em}
+\alert{$\Rightarrow$} Is that the good or the ugly part??
+
+\end{frame}
+
+\begin{frame}{Model uncertainty}
+  \begin{figure}
+    \includegraphics<1>[width=5cm]{ismip6_logo}
+  \end{figure}
+  \begin{itemize}
+    \item
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Initial state uncertainty}
+  \begin{figure}
+  \includegraphics<1>[width=7cm]{initial-state-ensemble} \\
+    \tiny{credit: ECMWF}
+  \end{figure}
+  \begin{itemize}
+  \item time scale when \alert{ice sheet weather} turn into \alert{ice sheet climate} not known (analogy from Vaughan and Arthern, 2007)
+  \item perturbation analysis: is ice thickness the analog for sea surface temperature?
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Parametric uncertainty}
+  \begin{columns}[c]
+    \begin{column}{.5\textwidth}
+  \begin{figure}
+    \includegraphics<1>[width=3cm]{stone_2010_fig_6} \\
+    \includegraphics<1>[width=5cm]{stone_2010_fig_7} \\
+    \tiny{Stone et al, 2010}
+  \end{figure}
+    \end{column}
+    \begin{column}{.5\textwidth}
+  \begin{figure}
+    \includegraphics<1>[width=5cm]{bulthuis_2019_fig_6} \\
+    \tiny{Bulthuis et al, 2019}
+  \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
 
 
 
+
+
+
+\begin{frame}
+  \begin{minipage}[t][3.2cm][t]{\textwidth}
+    \begin{figure}
+      \includegraphics<1->[height=3cm]{sle_pdf_uq}
+    \end{figure}
+  \end{minipage}
+  Build upon ISMIP6 but each model contributes an ensemble of simulations
+  \begin{itemize}
+  \item  using random parameter values drawn from consensus estimates of the uncertainties associated with parametrically defined physics
+  \item random realizations of climate and ocean forcings
+  \item will yield a distribution of sea level projections that is much broader, and thus less certain, than that presented in recent sea level rise projections
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Conditioning simulations on observations}
+  \begin{minipage}[t][3.2cm][t]{\textwidth}
+    \begin{figure}
+      \includegraphics<1->[height=3cm]{sle_pdf_calib}
+    \end{figure}
+  \end{minipage}
+    \begin{columns}[c]
+    \begin{column}{.45\textwidth}
+    \begin{figure}
+      \includegraphics<1->[height=3.5cm]{nias_2019_fig_1} \\
+      \tiny{Nias et al, 2019}
+    \end{figure}
+    \end{column}
+    \begin{column}{.45\textwidth}
+    \begin{figure}
+      \includegraphics<1->[height=3.5cm]{gilford_2020_fig_6} \\
+      \tiny{Gildford et al, 2020}
+    \end{figure}
+    \end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Bayesian Calibration}
+    \begin{minipage}[t][2cm][t]{\textwidth}
+      \begin{block}{Which observations should we use?}
+        \begin{itemize}
+        \item<2-> use the quantity of interest: mass change
+        \item<3> use quantity that contributes a lot to uncertainty: ice flow
+        \end{itemize}
+        \note[item]{}
+      \end{block}
+  \end{minipage}
+    \begin{minipage}[t][6cm][t]{\textwidth}
+        \begin{columns}[c]
+    \begin{column}{.3\textwidth}
+    \includegraphics<3>[height=5.5cm]{greenland-obs-rignot}
+    \end{column}
+    \begin{column}{.65\textwidth}
+    \includegraphics<1->[height=3cm]{GIS_hist_only_obs}
+    \end{column}
+  \end{columns}
+
+    \end{minipage}
+
+\end{frame}
+
+\begin{frame}
+  \begin{figure}
+    \includegraphics<1->[height=8cm]{sle_pdf_w_obs_2020_2100}
+  \end{figure}
+\end{frame}
+
+\part{?}
+\frame{\partpage}
+
+
+\begin{frame}{this comes at a steep cost}
+The ambitious characterization of uncertainties and en- semble conditioning we propose requires a massive interna- tional and inter-agency effort in both model development and improved observational capabilities. We call for professional support for the largely computational sea level projection ef- fort. These resources, in the form of dedicated developers and high-performance computing time, will free up scien- tists to continue basic science,
+\end{frame}
 
 
 \begin{frame}
@@ -397,72 +568,6 @@ community - Operation IceBridge (Tom Wagner)
 \begin{frame}
 Funding for glaciological research is tiny compared to the problem at hand
 \end{frame}
-
-
-
-
-
-
-\setbeamertemplate{background canvas}
-  {
-     \tikz{\node[inner sep=0pt,opacity=0.35] {\includegraphics[height=\paperheight]{earth-drowning-desat}};}
-}
-
-
-\part{A path forward}
-
-\frame{\partpage}
-
-\setbeamertemplate{background canvas}
-  {
-}
-
-\begin{frame}{2 key requirements}
-Accurate predictions of the cryosphere's contribution to sea level require that models:
-\begin{enumerate}
-    \item Fully characterize uncertainties in model structure, parameters, initial conditions, and boundary conditions.
-    \item Yield simulations that fit observations within observational uncertainty. 
-\end{enumerate}
-  \begin{figure}
-    \includegraphics[width=0.45\textwidth]{difference-accuracy-and-precision}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Accounting for all sources of uncertainty}
-
-\end{frame}
-
-\begin{frame}{Conditioning simulations on observations}
-
-\end{frame}
-
-
-
-\begin{frame}{A Bayesian (Probabilistic) Calibration in two steps}
-    \begin{minipage}[t][2cm][t]{\textwidth}
-      \begin{block}{Which observations should we use?}
-        \begin{itemize}
-        \item<2-> use the quantity of interest: mass change
-        \item<3> use quantity that contributes a lot to uncertainty: ice flow
-        \end{itemize}
-        \note[item]{}
-      \end{block}
-  \end{minipage}
-    \begin{minipage}[t][6cm][t]{\textwidth}
-        \begin{columns}[c]
-    \begin{column}{.3\textwidth}
-    \includegraphics<3>[height=5.5cm]{greenland-obs-rignot}
-    \end{column}
-    \begin{column}{.65\textwidth}
-    \includegraphics<1->[height=3cm]{GIS_hist_only_obs}
-    \end{column}
-  \end{columns}
-
-    \end{minipage}
-
-\end{frame}
-
-
 
 
 \begin{frame}{Final thoughts}
