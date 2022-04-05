@@ -117,6 +117,9 @@
   \item How did we get here?
   \item How can we move forward?
   \end{itemize}
+  \begin{figure}
+    \includegraphics<1>[width=.6\textwidth]{ar6_wg1_fig_9_17_draft_with_zoom}
+  \end{figure}
 \end{frame}
 
 \part{How did we get here?}
@@ -136,13 +139,14 @@
   \begin{columns}[c]
     \begin{column}{.5\linewidth}
     \begin{figure}
-        \includegraphics[height=0.75\textheight]{greve_1995_flow}
+      \includegraphics[height=0.75\textheight]{greve_1995_flow}\\
+      \tiny{Greve, 1995}
     \end{figure}
     \end{column}
     \begin{column}{.4\linewidth}
       \begin{figure}
-      \includegraphics[height=.7\textheight]{greenland-obs-rignot}
-      \caption{\tiny{Rignot \& Mouginot, 2012}}
+      \includegraphics[height=.7\textheight]{greenland-obs-rignot}\\
+      \tiny{Rignot \& Mouginot, 2012}
       \end{figure}
     \end{column}
   \end{columns}
@@ -210,18 +214,21 @@
 \end{frame}
 
 \begin{frame}{The post AR4 world: Stokes models}
+  \begin{columns}[c]
+    \begin{column}{.6\linewidth}
     \begin{figure}
       \includegraphics[height=7cm]{gillet-chaulet_2012_fig_1}
       \\ \tiny{Gillet-Chaulet et al. (2012)}
     \end{figure}
+    \end{column}
+    \begin{column}{.4\linewidth}
+      \begin{figure}
+        \includegraphics[width=.75\textwidth]{elmer}
+        \includegraphics[width=.75\textwidth]{issm}
+      \end{figure}
+    \end{column}
+  \end{columns}
 
-\end{frame}
-
-\begin{frame}{The post AR4 world: Sensitivity Analysis}
-    \begin{figure}
-      \includegraphics[height=7cm]{larour_2012_fig_4}
-      \\ \tiny{Larour et al. (2012)}
-    \end{figure}
 \end{frame}
 
 \begin{frame}{The post AR4 world: Data Assimilation}
@@ -231,10 +238,30 @@
     \end{figure}
 \end{frame}
 
-%% \begin{frame}{The post AR4 world: Observations}
-%%     \includegraphics<1>[width=.5\textwidth]{world-grace-2002-2016}
+\begin{frame}{The post AR4 world: Data Assimilation}
+    \begin{figure}
+      \includegraphics[height=7cm]{macayeal_1993_fig_5}
+      \\ \tiny{MayAyeal (1993)}
+    \end{figure}
+\end{frame}
 
-%% \end{frame}
+\begin{frame}{The post AR4 world: Sensitivity Analysis}
+    \begin{figure}
+      \includegraphics[height=7cm]{larour_2012_fig_4}
+      \\ \tiny{Larour et al. (2012)}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{The post AR4 world: Observations}
+  \begin{figure}
+    \includegraphics<1>[height=3cm]{grace-satellites} \vspace{0.5em}
+    \includegraphics<1>[height=3cm]{sentinel-satellites}
+    \\[.5em]
+    \includegraphics<1>[height=3cm]{oib}
+  \end{figure}
+  Data rich(er)
+\end{frame}
 
 
 \begin{frame}
@@ -278,7 +305,7 @@
 \end{frame}
 
 \begin{frame}{Post AR5 models}
-  \alert{Have the models gotten any better? Yes.}
+  \alert{Have the models gotten any better? Yes. Finally.}
   \begin{columns}[c]
     \begin{column}{.6\linewidth}
     \begin{figure}
@@ -367,11 +394,6 @@
 \end{frame}
 
 
-\setbeamertemplate{background canvas}
-  {
-     \tikz{\node[inner sep=0pt,opacity=0.35] {\includegraphics[height=\paperheight]{earth-drowning-desat}};}
-}
-
 
 \part{A path forward}
 
@@ -391,7 +413,7 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
     \includegraphics[width=0.4\textwidth]{difference-accuracy-and-precision}
   \end{figure}
   \begin{itemize}
-    \item \alert{No new ideas.}
+    \item \alert{No new ideas used here.}
   \end{itemize}
 \end{frame}
 
@@ -406,9 +428,9 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
     \begin{column}{.4\textwidth}
   \begin{itemize}
   \item model uncertainty
-  \item inital state uncertainty
+  \item initial state uncertainty
   \item parametric uncertainty
-  \item aleatoric uncertainty
+  \item (aleatoric uncertainty)
   \end{itemize}
     \end{column}
     \begin{column}{.55\textwidth}
@@ -430,7 +452,7 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
     \includegraphics<1>[width=5cm]{ismip6_logo}
   \end{figure}
   \begin{itemize}
-    \item
+    \item core strength of ISMIP6 and similar community efforts
   \end{itemize}
 \end{frame}
 
@@ -442,6 +464,7 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
   \begin{itemize}
   \item time scale when \alert{ice sheet weather} turn into \alert{ice sheet climate} not known (analogy from Vaughan and Arthern, 2007)
   \item perturbation analysis: is ice thickness the analog for sea surface temperature?
+  \item hindcasts and reanalyses may help
   \end{itemize}
 \end{frame}
 
@@ -469,7 +492,7 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
 
 
 
-\begin{frame}
+\begin{frame}{Beyond ISMIP6}
   \begin{minipage}[t][3.2cm][t]{\textwidth}
     \begin{figure}
       \includegraphics<1->[height=3cm]{sle_pdf_uq}
@@ -540,9 +563,29 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
 \frame{\partpage}
 
 
-\begin{frame}{this comes at a steep cost}
-The ambitious characterization of uncertainties and en- semble conditioning we propose requires a massive interna- tional and inter-agency effort in both model development and improved observational capabilities. We call for professional support for the largely computational sea level projection ef- fort. These resources, in the form of dedicated developers and high-performance computing time, will free up scien- tists to continue basic science,
+\begin{frame}{We need}
+  The ambitious characterization of uncertainties and ensemble conditioning we propose requires
+  \begin{itemize}
+  \item a massive international and inter-agency effort in both model development and improved observational capabilities
+  \item professional support for the largely computational sea level projection effort. 
+  \end{itemize}
+  \begin{figure}
+    \includegraphics[height=2cm]{inter-agency-cooperation}
+  \end{figure}
 \end{frame}
+
+\begin{frame}{Funding}
+  \alert{ISMIP6 was a community effort which received little or no funding}
+  \vspace{1em}
+  \begin{itemize}
+  \item Projecting future sea level is an effort too severely under-resourced to meet its mission
+  \item yet millions of lives and trillions of US dollars depend on an accurate, reliable answer. 
+  \end{itemize}
+  \begin{figure}
+    \includegraphics[height=2cm]{money-falling}
+  \end{figure}
+\end{frame}
+
 
 
 \begin{frame}
@@ -556,29 +599,21 @@ The ambitious characterization of uncertainties and en- semble conditioning we p
     \end{column}
     \begin{column}{.5\linewidth}
       \centering{$\approx$10M USD per year}
-      \begin{figure}
-        \includegraphics[height=3.5cm]{nsf_logo_color}
-      \end{figure}
       \centering{for glaciology}
+      \begin{figure}
+        \includegraphics[height=3.5cm]{nsf_logo_color} \\[0.25em]
+        \includegraphics[height=1.5cm]{peanuts} 
+      \end{figure}
     \end{column}
-\end{columns}
+  \end{columns}
+  \vspace{1em}
+  \centering{Analogy credit: Ginny Catania / Tom Wagner}
 \end{frame}
 
 
-\begin{frame}
-Funding for glaciological research is tiny compared to the problem at hand
-\end{frame}
 
 
 \begin{frame}{Final thoughts}
-  \begin{enumerate}
-  \item Fully characterize uncertainties in model structure, \alert{parameters}, initial conditions, and boundary conditions.
-  \item \alert{Yield simulations that fit observations within observational uncertainty.}
-  \end{enumerate}
-  \begin{itemize}
-  \item the surrogate model is only used to aid in model calibration
-  \item \alert{not} for the actual projections
-  \end{itemize}
 \end{frame}
 
 
