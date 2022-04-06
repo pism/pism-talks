@@ -32,17 +32,6 @@
 \setbeamercolor{boxed}{fg=black,bg=light blue!25}
 \graphicspath{{figures/}{../figures/}{../figures_2018_08/}{../2021_09_cph/figures/}{../2021_11_geo/figures/}}
 
-\newenvironment{transbox}[1][]{%
-\begin{tikzpicture}
-\node[drop shadow,rounded corners,text width=.9\textwidth,fill=white, fill opacity=#1,text opacity=1] \bgroup
-}{
-\egroup;\end{tikzpicture}} 
-
-\newenvironment{transbox-tight}{%
-\begin{tikzpicture}
-\node[drop shadow,rounded corners,fill=uaf yellow, fill opacity=0.75,text opacity=1] \bgroup
-}{
-\egroup;\end{tikzpicture}} 
 
 \newcommand{\jl}{[\![}
 \newcommand{\jr}{]\!\hskip 0.003cm ]}
@@ -82,7 +71,8 @@
 
 \begin{document}
 
-
+\begin{frame}[plain]
+\end{frame}
 
 \setbeamertemplate{background canvas}
   {
@@ -418,9 +408,9 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
 \end{frame}
 
 \begin{frame}{Accounting for all sources of uncertainty}
-    \begin{minipage}[t][3.2cm][t]{\textwidth}
+    \begin{minipage}[t][2.75cm][t]{\textwidth}
     \begin{figure}
-      \includegraphics<1->[height=3cm]{sle_pdf_initial}
+      \includegraphics<1->[height=2cm]{bayes_theorem}
     \end{figure}
   \end{minipage}
   We can cast this in a \alert{Bayesian} framework:
@@ -443,7 +433,8 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
     \end{column}
   \end{columns}
   \vspace{1em}
-\alert{$\Rightarrow$} Is that the good or the ugly part??
+  
+\alert{$\Rightarrow$} Is Bayesian stats the good or the ugly part??
 
 \end{frame}
 
@@ -464,7 +455,6 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
   \begin{itemize}
   \item time scale when \alert{ice sheet weather} turn into \alert{ice sheet climate} not known (analogy from Vaughan and Arthern, 2007)
   \item perturbation analysis: is ice thickness the analog for sea surface temperature?
-  \item hindcasts and reanalyses may help
   \end{itemize}
 \end{frame}
 
@@ -480,8 +470,8 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
     \end{column}
     \begin{column}{.5\textwidth}
   \begin{figure}
-    \includegraphics<1>[width=5cm]{bulthuis_2019_fig_6} \\
-    \tiny{Bulthuis et al, 2019}
+    \includegraphics<1>[width=5cm]{hill_2021_fig_5} \\
+    \tiny{Hill et al, 2021}
   \end{figure}
     \end{column}
   \end{columns}
@@ -489,13 +479,11 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
 
 
 
-
-
-
 \begin{frame}{Beyond ISMIP6}
   \begin{minipage}[t][3.2cm][t]{\textwidth}
     \begin{figure}
-      \includegraphics<1->[height=3cm]{sle_pdf_uq}
+      \includegraphics<1>[height=3cm]{sle_pdf_initial}
+      \includegraphics<2>[height=3cm]{sle_pdf_uq}
     \end{figure}
   \end{minipage}
   Build upon ISMIP6 but each model contributes an ensemble of simulations
@@ -506,22 +494,18 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
   \end{itemize}
 \end{frame}
 
+
 \begin{frame}{Conditioning simulations on observations}
-  \begin{minipage}[t][3.2cm][t]{\textwidth}
-    \begin{figure}
-      \includegraphics<1->[height=3cm]{sle_pdf_calib}
-    \end{figure}
-  \end{minipage}
     \begin{columns}[c]
     \begin{column}{.45\textwidth}
     \begin{figure}
-      \includegraphics<1->[height=3.5cm]{nias_2019_fig_1} \\
+      \includegraphics<1->[height=5cm]{nias_2019_fig_1} \\
       \tiny{Nias et al, 2019}
     \end{figure}
     \end{column}
     \begin{column}{.45\textwidth}
     \begin{figure}
-      \includegraphics<1->[height=3.5cm]{gilford_2020_fig_6} \\
+      \includegraphics<1->[height=5cm]{gilford_2020_fig_6} \\
       \tiny{Gildford et al, 2020}
     \end{figure}
     \end{column}
@@ -553,14 +537,20 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
 
 \end{frame}
 
+
+\begin{frame}{Putting it together}
+    \begin{figure}
+      \includegraphics<1->[height=6cm]{sle_pdf_calib}
+    \end{figure}
+\end{frame}
+
+
 \begin{frame}
   \begin{figure}
     \includegraphics<1->[height=8cm]{sle_pdf_w_obs_2020_2100}
   \end{figure}
 \end{frame}
 
-\part{?}
-\frame{\partpage}
 
 
 \begin{frame}{We need}
@@ -610,10 +600,58 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
   \centering{Analogy credit: Ginny Catania / Tom Wagner}
 \end{frame}
 
+\begin{frame}
+  \begin{columns}[c]
+    \begin{column}{.2\linewidth}
+      \centering{``The Good''}
+      \begin{figure}
+        \includegraphics[height=1.5cm]{thegood}
+      \end{figure}
+    \end{column}
+    \begin{column}{.7\linewidth}
+      \begin{itemize}
+      \item glaciological community (IGS, ISMIP6, IMBIE, etc)
+      \item more data becoming available every day
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{2em}
+  \begin{columns}[c]
+    \begin{column}{.2\linewidth}
+      \centering{``The Bad''}
+      \begin{figure}
+        \includegraphics[height=1.5cm]{thebad}
+      \end{figure}
+    \end{column}
+    \begin{column}{.7\linewidth}
+      \begin{itemize}
+      \item credible predictions: not yet there
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{2em}
+  \begin{columns}[c]
+    \begin{column}{.2\linewidth}
+      \centering{``The Ugly''}
+      \begin{figure}
+        \includegraphics[height=1.5cm]{theugly}
+      \end{figure}
+    \end{column}
+    \begin{column}{.7\linewidth}
+      \begin{itemize}
+      \item insufficient funding
+      \item uncertainty quantification gets messy
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+  
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[height=\paperheight]{all-models-are-wrong}};}
+}
 
-
-
-\begin{frame}{Final thoughts}
+\begin{frame}{}
 \end{frame}
 
 
