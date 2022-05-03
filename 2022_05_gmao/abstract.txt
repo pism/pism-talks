@@ -1,0 +1,3 @@
+A reanalysis of the Greenland Ice Sheet
+
+Accurate redictions of the ice sheets' future contribution to sea-level require that models yield simulations that fit observations within observational uncertainty, yet current ice sheet hindcasts show poor agreement with observations. While eanalyses created by blending observations with numerical models using data assimilation techniques have widely-available for decades, for both the atmosphere (e.g., ERA, MERRA-2) and the ocean (e.g., ECCO), currently similar products for the ice sheets do not exist.
