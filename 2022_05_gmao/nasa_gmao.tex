@@ -30,7 +30,7 @@
 \definecolor{light violet}{HTML}{CAB2D6}
 
 \setbeamercolor{boxed}{fg=black,bg=light blue!25}
-\graphicspath{{../2022_04_igs/figures/}{../figures/}{../figures_2018_08/}{../2021_09_cph/figures/}{../2021_11_geo/figures/}}
+\graphicspath{{figures/}{../2022_04_igs/figures/}{../figures/}{../figures_2018_08/}{../2021_09_cph/figures/}{../2021_11_geo/figures/}}
 
 
 \newcommand{\jl}{[\![}
@@ -50,10 +50,9 @@
 
 % title page
 \title[Ice sheet modeling] % (optional, use only with long paper titles)
-{Predicting sea-level rise from ice sheets}
-\subtitle{The Good, the Bad, and the Ugly}
+{A reanalysis of the Greenland Ice Sheet}
 \author[Aschwanden] % (optional, use only with lots of authors)
-{\textbf{Andy Aschwanden}\\ with \\D. Brinkerhoff, M. Truffer, T. Bartholomaus}
+{\textbf{Andy Aschwanden}\\ with \\Doug Brinkerhoff, Mark Fahnestock}
 \institute{Geophysical Institute, University of Alaska Fairbanks}
 
 % - Give the names in the same order as the appear in the paper.
@@ -62,7 +61,7 @@
 
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
- \titlegraphic{\vskip-.5cm\includegraphics[height=1.5cm]{thegood}\includegraphics[height=1.5cm]{thebad}\includegraphics[height=1.5cm]{theugly}}
+% \titlegraphic{\vskip-.5cm\includegraphics[height=1.5cm]{thegood}\includegraphics[height=1.5cm]{thebad}\includegraphics[height=1.5cm]{theugly}}
 
 \date{}
 
@@ -84,62 +83,14 @@
 % insert titlepage
 \begin{frame}
   \titlepage
-  \note[item]{Collaboration Martin, Doug, Tim}
 \end{frame}
 
 \setbeamertemplate{background canvas}
   {
 }
 
-\begin{frame}[label=leone]
-  \begin{columns}[c]
-    \begin{column}{.2\linewidth}
-      \centering{``The Good''}
-      \begin{figure}
-        \includegraphics[height=1.5cm]{thegood}
-      \end{figure}
-    \end{column}
-    \begin{column}{.7\linewidth}
-      \begin{itemize}
-      \item ice sheet modeling has come a long way
-      \item glaciological community (IGS, ISMIP6, IMBIE, etc)
-      \item more data becoming available every day
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \vspace{2em}
-  \begin{columns}[c]
-    \begin{column}{.2\linewidth}
-      \centering{``The Bad''}
-      \begin{figure}
-        \includegraphics[height=1.5cm]{thebad}
-      \end{figure}
-    \end{column}
-    \begin{column}{.7\linewidth}
-      \begin{itemize}
-      \item credible predictions: not yet there
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \vspace{2em}
-  \begin{columns}[c]
-    \begin{column}{.2\linewidth}
-      \centering{``The Ugly''}
-      \begin{figure}
-        \includegraphics[height=1.5cm]{theugly}
-      \end{figure}
-    \end{column}
-    \begin{column}{.7\linewidth}
-      \begin{itemize}
-      \item insufficient funding
-      \item uncertainty quantification gets messy
-      \end{itemize}
-    \end{column}
-  \end{columns}
-\end{frame}
 
-
-\begin{frame}{How this talk came about}
+\begin{frame}{Motivation}
   \begin{figure}
     \includegraphics<1>[width=.9\textwidth]{ar6_wg1_fig_9_17_draft_with_zoom}
     \caption{IPCC AR6 Draft, Fig. 9.17}
@@ -486,6 +437,7 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
 \end{frame}
 
 \begin{frame}{Model uncertainty}
+  Multi-model ensembles
   \begin{figure}
     \includegraphics<1>[width=5cm]{ismip6_logo}
   \end{figure}
@@ -585,69 +537,44 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
 \end{frame}
 
 
-\begin{frame}{Putting it together}
+\begin{frame}{2. Mass Loss: Bayesian Calibration}
+  \begin{minipage}[t][4cm][t]{\textwidth}
     \begin{figure}
-      \includegraphics<1->[height=6cm]{sle_pdf_calib}
+    \includegraphics[height=4cm]{GIS_hist_only_obs}
     \end{figure}
-\end{frame}
-
-
-\begin{frame}
-  \begin{figure}
-    \includegraphics<1->[height=8cm]{sle_pdf_w_obs_2020_2100}
-  \end{figure}
-\end{frame}
-
-
-
-\begin{frame}{We need}
-  The ambitious characterization of uncertainties and ensemble conditioning we propose requires
+  \end{minipage}
   \begin{itemize}
-  \item a massive international and inter-agency effort in both model development and improved observational capabilities
-  \item professional support for the largely computational sea level projection effort. 
+  \item  weight members based on their likelihood relative to observations of mass change.
+  \item resample simulations proportionally to these likelihoods to create a new ensemble that is consistent with respect to both  observations of surface speed and mass change to within observational uncertainty
   \end{itemize}
-  \begin{figure}
-    \includegraphics[height=2cm]{inter-agency-cooperation}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Funding}
-  \alert{ISMIP6 was a community effort which received little or no funding}
-  \vspace{1em}
-  \begin{itemize}
-  \item Projecting future sea level is an effort too severely under-resourced to meet its mission
-  \item yet millions of lives and trillions of US dollars depend on an accurate, reliable answer. 
-  \end{itemize}
-  \begin{figure}
-    \includegraphics[height=2cm]{money-falling}
-  \end{figure}
 \end{frame}
 
 
 
-\begin{frame}
- \frametitle{Lack of funding}
-  \begin{columns}[c]
-    \begin{column}{.5\linewidth}
-      \centering{200M USD}
-      \begin{figure}
-        \includegraphics[height=5cm]{spiderman-nowayhome}
-      \end{figure}
+\begin{frame}{Calibrated 2100 Projections}
+\begin{columns}[c]
+    \begin{column}{.5\textwidth}
+    \begin{figure}
+      \includegraphics[height=7.75cm]{sle_pdf_w_obs__calib_2010_2020_2020_2100}
+    \end{figure}
     \end{column}
-    \begin{column}{.5\linewidth}
-      \centering{$\approx$10M USD per year}
-      \centering{for glaciology}
-      \begin{figure}
-        \includegraphics[height=3.5cm]{nsf_logo_color} \\[0.25em]
-        \includegraphics[height=1.5cm]{peanuts} 
-      \end{figure}
+    \begin{column}{.5\textwidth}
+  \begin{itemize}
+  \item median reduced by 16-30\%
+  \item uncertainty range reduced by 38-56\%
+    \end{itemize}
     \end{column}
   \end{columns}
-  \vspace{1em}
-  \centering{Analogy credit: Ginny Catania / Tom Wagner}
 \end{frame}
 
-\againframe{leone}
+
+\begin{frame}
+  \begin{figure}
+    \includegraphics<1->[width=\textwidth]{flowchart}
+  \end{figure}
+\end{frame}
+
+
   
 \setbeamertemplate{background canvas}
   {
