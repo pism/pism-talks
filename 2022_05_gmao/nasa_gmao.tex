@@ -103,8 +103,6 @@
   \end{itemize}
 \end{frame}
 
-\part{How did we get here?}
-\frame{\partpage}
 
 
 \begin{frame}
@@ -131,25 +129,6 @@
       \end{figure}
     \end{column}
   \end{columns}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{IPCC AR3, 2001}
-  \begin{columns}[c]
-    \begin{column}{.4\linewidth}
-      \begin{figure}
-        \includegraphics[height=5cm]{ar3-wg1}
-      \end{figure}
-    \end{column}
-    \begin{column}{.5\linewidth}
-      \begin{itemize}
-        \item 1 ice sheet model (?)
-        \item ``The Antarctic ice sheet is likely to gain mass, while the Greenland ice sheet is likely to lose mass''
-        \item ``However, loss of grounded ice leading to substantial sea level rise from WAIS is now widely agreed to be very unlikely during the 21st century''
-      \end{itemize}
-    \end{column}
-\end{columns}
 \end{frame}
 
 
@@ -216,20 +195,6 @@
     \begin{figure}
       \includegraphics[height=7cm]{morlighem_2010_fig_2}
       \\ \tiny{Morlighem et al. (2010)}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{The post AR4 world: Data Assimilation}
-    \begin{figure}
-      \includegraphics[height=7cm]{macayeal_1993_fig_5}
-      \\ \tiny{MayAyeal (1993)}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{The post AR4 world: Sensitivity Analysis}
-    \begin{figure}
-      \includegraphics[height=7cm]{larour_2012_fig_4}
-      \\ \tiny{Larour et al. (2012)}
     \end{figure}
 \end{frame}
 
@@ -332,8 +297,6 @@
 \end{frame}
 
 
-\part{What's going on?}
-\frame{\partpage}
 
 \begin{frame}{A closer look: Greenland}
   \begin{figure}
@@ -351,34 +314,6 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{A closer look: Antarctica}
-  \begin{figure}
-    \includegraphics[width=\textwidth]{AIS_historical}
-    \caption{Aschwanden, Brinkerhoff, Bartholomaus, \& Truffer (2021)}
-  \end{figure}
-  \begin{columns}[c]
-    \begin{column}{.5\textwidth}
-      \begin{minipage}[t][.5\textheight][t]{\textwidth}
-        \alert{Spread in simulations much larger than observational uncertainty}
-      \end{minipage}
-    \end{column}
-    \begin{column}{.25\textwidth}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-
-\begin{frame}{Try it yourself}
-  \begin{figure}
-    \includegraphics[width=.85\textwidth]{ismip6-ipcc-github-repo}
-  \end{figure}
-\end{frame}
-
-
-
-\part{A path forward}
-
-\frame{\partpage}
 
 \setbeamertemplate{background canvas}
   {
@@ -435,28 +370,24 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
 \end{frame}
 
 
-\begin{frame}{Accounting for all sources of uncertainty}
-    \begin{minipage}[t][2.75cm][t]{\textwidth}
+\begin{frame}{Go Bayesian}
+    \begin{minipage}[t][1.75cm][t]{\textwidth}
     \begin{figure}
-      \includegraphics<1->[height=2cm]{bayes_theorem}
+      \includegraphics<1->[height=1.7cm]{bayes_theorem}
     \end{figure}
   \end{minipage}
   We can cast this in a \alert{Bayesian} framework:
   \begin{figure}
-    \includegraphics<1>[width=12cm]{slr-probability}    
+    \includegraphics<1>[width=8cm]{slr-probability}    
   \end{figure}
-
-\end{frame}
-
-
-\begin{frame}{Sea-level contribution probability density function}
-\begin{align}
-P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right) =&  \nonumber \\
- = &\int \underbrace{P\left(\Delta_{2100} | \mathbf{M},\mathcal{H}, \mathcal{F} \right)}_{\text{Projection}} \underbrace{P\left(\mathbf{M} | \mathbf{D},\mathcal{H}, \mathcal{F} \right)}_{\text{Calibration}}\, \mathrm{d} \mathbf{M},
-    \label{eq:pos-pred}
-\end{align}
+\begin{equation*}
+P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
+ = \int \underbrace{P\left(\Delta_{2100} | \mathbf{M},\mathcal{H}, \mathcal{F} \right)}_{\text{Projection}} \underbrace{P\left(\mathbf{M} | \mathbf{D},\mathcal{H}, \mathcal{F} \right)}_{\text{Calibration}}\, \mathrm{d} \mathbf{M},
+\end{equation*}
 $\mathbf{M}$: model parameters
 \end{frame}
+
+
 
 \begin{frame}{Probabilistic Calibration}
     \begin{minipage}[t][2.75cm][t]{\textwidth}
@@ -464,8 +395,12 @@ $\mathbf{M}$: model parameters
       \includegraphics<1->[height=2cm]{bayes_theorem}
     \end{figure}
     \end{minipage}
+\begin{equation*}
+P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
+ = \int \underbrace{P\left(\Delta_{2100} | \mathbf{M},\mathcal{H}, \mathcal{F} \right)}_{\text{Projection}} \alert{\underbrace{P\left(\mathbf{M} | \mathbf{D},\mathcal{H}, \mathcal{F} \right)}_{\text{Calibration}}}\, \mathrm{d} \mathbf{M},
+\end{equation*}
     \begin{itemize}
-    \item $P(\mathbf{M}|\mathbf{D},\mathcal{H})$ is analytically intractable
+    \item \alert{$P(\mathbf{M}|\mathbf{D},\mathcal{H})$} is analytically intractable
     \item we characterize the distribution with random samples (i.e. by approximating it with a histogram)
     \item We further subdivide this procedure into two sub-stages:
       \begin{enumerate}
@@ -512,7 +447,8 @@ $\mathbf{M}$: model parameters
       \end{column}
       \begin{column}{.65\textwidth}
         \begin{equation*}
-          P(\mathbf{m}_{\mathrm{flow}}|\mathbf{u}_{\mathrm{obs}})
+          P(\mathbf{m}_{\mathrm{flow}}|\mathbf{u}_{\mathrm{obs}}) \propto P(\mathbf{u}_{\mathrm{obs}} | \mathbf{m}_{\mathrm{flow}},\mathcal{H}) P(\mathbf{m}_{\mathrm{flow}})
+          \label{eq:bayes}
         \end{equation*}
         \begin{itemize}
         \item $\mathbf{m}_{\mathrm{flow}}$: parameters controlling ice flow
@@ -531,7 +467,7 @@ $\mathbf{M}$: model parameters
 \begin{equation*}
 \mathbf{Y} = \mathcal{F}(\mathbf{x})
 \end{equation*}
-\item running the forward model (PISM) is too expensive for MCMC
+\item running the forward model (PISM) is too expensive for MCMC and no gradients
 \item Generate a ``cheap'' surrogate model $\mathcal{G}$ such that
 \begin{equation*}
 \mathcal{G}(\mathbf{x}) \approx \mathcal{F}(\mathbf{x})
@@ -539,7 +475,7 @@ $\mathbf{M}$: model parameters
 \item use the 4 layer Neural Network surrogate model by Brinkerhoff et al (2021), implemented in PyTorch
 \end{itemize}
   \begin{figure}
-    \includegraphics[width=.35\textwidth]{neural-network}
+    \includegraphics[width=.25\textwidth]{neural-network}
   \end{figure}
 \end{frame}
 
@@ -625,9 +561,13 @@ $\mathbf{M}$: model parameters
 
 
 \begin{frame}{2. Mass Loss: Particle Filtering}
+  \begin{equation*}
+    \label{eq:parameter_posterior}
+    P(\mathbf{M}|\mathbf{u}_{\mathrm{obs}},\Delta_{\mathrm{obs}}) \propto P(\Delta_{\mathrm{obs}}|\mathbf{M}) P(\mathbf{m}^{*}) P(\mathbf{m}_{\mathrm{flow}}|\mathbf{u}_{\mathrm{obs}})
+  \end{equation*}
   \begin{minipage}[t][4cm][t]{\textwidth}
     \begin{figure}
-    \includegraphics[height=4cm]{GIS_hist_only_obs}
+    \includegraphics[height=3.5cm]{GIS_hist_only_obs}
     \end{figure}
   \end{minipage}
   \begin{itemize}
@@ -638,19 +578,20 @@ $\mathbf{M}$: model parameters
 
 
 \begin{frame}{Posterior distributions}
-\begin{columns}[c]
+  \begin{columns}[c]
     \begin{column}{.5\textwidth}
-    \begin{figure}
-      \includegraphics[height=7.75cm]{sle_pdf_w_obs_calibrated_2020.pdf}
-    \end{figure}
+      \begin{figure}
+        \includegraphics[height=7.75cm]{sle_pdf_w_obs_calibrated_2020.pdf}
+      \end{figure}
     \end{column}
     \begin{column}{.5\textwidth}
-  \begin{itemize}
-  \item fully calibrated posterior agrees well with observations (IMBIE)
-    \end{itemize}
+      \begin{itemize}
+      \item fully calibrated posterior agrees well with observations (IMBIE)
+      \item (which is by design)
+      \end{itemize}
     \end{column}
   \end{columns}
- \end{frame}
+\end{frame}
 
 
 \begin{frame}{Calibrated 2100 Projections}
@@ -659,6 +600,24 @@ $\mathbf{M}$: model parameters
     \end{figure}
 \end{frame}
 
+
+\begin{frame}{Next step: create reanalysis}
+  \begin{block}{A reanalysis for the Greenland Ice Sheet 1980--2020 (RAGIS-40)}
+    \begin{figure}
+      \includegraphics[height=2.5cm]{merra2-logo}
+    \end{figure}
+    \begin{itemize}
+      \item similar to MERRA-2, ERA5, ECCO, etc.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}{Observations for assimilation and validation}
+  \begin{figure}
+    \includegraphics<1->[width=\textwidth]{observation-timeline}
+  \end{figure}
+\end{frame}
 
 \begin{frame}{Initial idea 2020: Kalman Smoother}
   \begin{figure}
@@ -671,6 +630,35 @@ $\mathbf{M}$: model parameters
     \includegraphics<1>[width=\textwidth]{flowchart-particle-filter}
     \includegraphics<2>[width=\textwidth]{flowchart-particle-filter-tasks}
   \end{figure}
+\end{frame}
+
+
+\begin{frame}{Challenge: Initial state}
+  \begin{columns}[c]
+    \begin{column}{.35\textwidth}
+      \begin{figure}
+        \includegraphics[height=5cm]{gris-surface-dem}
+      \end{figure}
+    \end{column}
+    \begin{column}{.6\textwidth}
+  \begin{figure}
+  \includegraphics<1>[width=6cm]{initial-state-ensemble} \\
+    \tiny{credit: ECMWF}
+  \end{figure}
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+    \item we lack a DEM for 1980
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Challenge: Ensemble distribution}
+  \begin{itemize}
+    \item We need automated start/stopping of ensemble simulations (MPI jobs)
+  \end{itemize}
+
 \end{frame}
 
 
