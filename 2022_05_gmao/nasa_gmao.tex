@@ -61,7 +61,7 @@
 
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
-% \titlegraphic{\vskip-.5cm\includegraphics[height=1.5cm]{thegood}\includegraphics[height=1.5cm]{thebad}\includegraphics[height=1.5cm]{theugly}}
+\titlegraphic{\vskip-.5cm\includegraphics[height=1.5cm]{pism_logo_v2_transp}}
 
 \date{}
 
@@ -70,14 +70,10 @@
 
 \begin{document}
 
-\begin{frame}[plain]
-\end{frame}
 
 \setbeamertemplate{background canvas}
   {
-     \tikz{\node[inner sep=0pt,opacity=0.6] {\includegraphics[height=\paperheight]{earth-drowning-desat}};}
 }
-
 
  
 % insert titlepage
@@ -402,6 +398,43 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
   \end{itemize}
 \end{frame}
 
+\begin{frame}{The first large ensemble projections for Greenland}
+  \begin{figure}
+    \includegraphics[width=0.8\textwidth]{Greenland_RCP_85_2008_2300_comp_4k.0293_print}
+    \caption{NASA Scientific Visualization Studio. After Aschwanden et al. (2019).}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{AS19 Ensemble Projections}
+  \begin{minipage}[t][4cm][t]{\textwidth}
+    \begin{figure}
+      \includegraphics[height=4cm]{projection_as19_bars}
+    \end{figure}
+  \end{minipage}
+  \alert{Prescribe pior distributions to assess parametric uncertainty}
+  \begin{minipage}[t][3cm][t]{\textwidth}
+    \begin{figure}
+      \includegraphics[height=3cm]{prior}
+    \end{figure}
+  \end{minipage}
+\end{frame}
+
+
+
+\begin{frame}{What's wrong with AS19}
+  \begin{minipage}[t][4cm][t]{\textwidth}
+    \begin{figure}
+      \includegraphics[height=4cm]{projection_as19_bars}
+    \end{figure}
+  \end{minipage}
+  \centering{
+  \alert{No conditioning on observations}}
+  \begin{minipage}[t][3cm][t]{\textwidth}
+  \end{minipage}
+\end{frame}
+
+
 \begin{frame}{Accounting for all sources of uncertainty}
     \begin{minipage}[t][2.75cm][t]{\textwidth}
     \begin{figure}
@@ -409,107 +442,44 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
     \end{figure}
   \end{minipage}
   We can cast this in a \alert{Bayesian} framework:
-  \begin{columns}[c]
-    \begin{column}{.4\textwidth}
-  \begin{itemize}
-  \item model uncertainty
-  \item initial state uncertainty
-  \item parametric uncertainty
-  \item (aleatoric uncertainty)
-  \end{itemize}
-    \end{column}
-    \begin{column}{.55\textwidth}
-\begin{align} 
-    P(\Delta z|\mathcal{F})&= \int P(\Delta z|f,\mathbf{k},\mathcal{M}) \nonumber \\
-                           &  \times P(f|\mathcal{F}) P(\mathbf{k}|\mathcal{M})  P(\mathcal{I}|\mathcal{M})P(\mathcal{M}) \nonumber \\
-                           & \times \mathrm{d} \mathbf{k} \; \mathrm{d} f \; \mathrm{d} \mathcal{I}\; \mathrm{d} \mathcal{M}.
-    \label{prior_distribution}
+  \begin{figure}
+    \includegraphics<1>[width=12cm]{slr-probability}    
+  \end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Sea-level contribution probability density function}
+\begin{align}
+P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right) =&  \nonumber \\
+ = &\int \underbrace{P\left(\Delta_{2100} | \mathbf{M},\mathcal{H}, \mathcal{F} \right)}_{\text{Projection}} \underbrace{P\left(\mathbf{M} | \mathbf{D},\mathcal{H}, \mathcal{F} \right)}_{\text{Calibration}}\, \mathrm{d} \mathbf{M},
+    \label{eq:pos-pred}
 \end{align}
-    \end{column}
-  \end{columns}
-  \vspace{1em}
-  
-\alert{$\Rightarrow$} Is Bayesian stats the good or the ugly part??
-
+$\mathbf{M}$: model parameters
 \end{frame}
 
-\begin{frame}{Model uncertainty}
-  Multi-model ensembles
-  \begin{figure}
-    \includegraphics<1>[width=5cm]{ismip6_logo}
-  \end{figure}
-  \begin{itemize}
-    \item core strength of ISMIP6 and similar community efforts
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Initial state uncertainty}
-  \begin{figure}
-  \includegraphics<1>[width=7cm]{initial-state-ensemble} \\
-    \tiny{credit: ECMWF}
-  \end{figure}
-  \begin{itemize}
-  \item time scale when \alert{ice sheet weather} turn into \alert{ice sheet climate} not known (analogy from Vaughan and Arthern, 2007)
-  \item perturbation analysis: is ice thickness the analog for sea surface temperature?
-  \end{itemize}
-\end{frame}
-
-
-\begin{frame}{Parametric uncertainty}
-  \begin{columns}[c]
-    \begin{column}{.5\textwidth}
-  \begin{figure}
-    \includegraphics<1>[width=3cm]{stone_2010_fig_6} \\
-    \includegraphics<1>[width=5cm]{stone_2010_fig_7} \\
-    \tiny{Stone et al, 2010}
-  \end{figure}
-    \end{column}
-    \begin{column}{.5\textwidth}
-  \begin{figure}
-    \includegraphics<1>[width=5cm]{hill_2021_fig_5} \\
-    \tiny{Hill et al, 2021}
-  \end{figure}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-
-
-\begin{frame}{Beyond ISMIP6}
-  \begin{minipage}[t][3.2cm][t]{\textwidth}
+\begin{frame}{Probabilistic Calibration}
+    \begin{minipage}[t][2.75cm][t]{\textwidth}
     \begin{figure}
-      \includegraphics<1>[height=3cm]{sle_pdf_initial}
-      \includegraphics<2>[height=3cm]{sle_pdf_uq}
+      \includegraphics<1->[height=2cm]{bayes_theorem}
     \end{figure}
-  \end{minipage}
-  Build upon ISMIP6 but each model contributes an ensemble of simulations
-  \begin{itemize}
-  \item  using random parameter values drawn from consensus estimates of the uncertainties associated with parametrically defined physics
-  \item random realizations of climate and ocean forcings
-  \item will yield a distribution of sea level projections that is much broader, and thus less certain, than that presented in recent sea level rise projections
-  \end{itemize}
+    \end{minipage}
+    \begin{itemize}
+    \item $P(\mathbf{M}|\mathbf{D},\mathcal{H})$ is analytically intractable
+    \item we characterize the distribution with random samples (i.e. by approximating it with a histogram)
+    \item We further subdivide this procedure into two sub-stages:
+      \begin{enumerate}
+      \item parameter calibration
+      \item particle filtering (aka importance sampling, Bayesian calibration)
+      \end{enumerate}
+    \end{itemize}
 \end{frame}
 
 
-\begin{frame}{Conditioning simulations on observations}
-    \begin{columns}[c]
-    \begin{column}{.45\textwidth}
-    \begin{figure}
-      \includegraphics<1->[height=5cm]{nias_2019_fig_1} \\
-      \tiny{Nias et al, 2019}
-    \end{figure}
-    \end{column}
-    \begin{column}{.45\textwidth}
-    \begin{figure}
-      \includegraphics<1->[height=5cm]{gilford_2020_fig_6} \\
-      \tiny{Gildford et al, 2020}
-    \end{figure}
-    \end{column}
-    \end{columns}
-\end{frame}
 
 
-\begin{frame}{Bayesian Calibration}
+
+\begin{frame}{Probabilistic Calibration in two steps}
     \begin{minipage}[t][2cm][t]{\textwidth}
       \begin{block}{Which observations should we use?}
         \begin{itemize}
@@ -534,7 +504,127 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
 \end{frame}
 
 
-\begin{frame}{2. Mass Loss: Bayesian Calibration}
+\begin{frame}{1. Ice Flow calibration}
+  \begin{minipage}[t][6cm][t]{\textwidth}
+    \begin{columns}[c]
+      \begin{column}{.3\textwidth}
+        \includegraphics[height=5.5cm]{greenland-obs-rignot}
+      \end{column}
+      \begin{column}{.65\textwidth}
+        \begin{equation*}
+          P(\mathbf{m}_{\mathrm{flow}}|\mathbf{u}_{\mathrm{obs}})
+        \end{equation*}
+        \begin{itemize}
+        \item $\mathbf{m}_{\mathrm{flow}}$: parameters controlling ice flow
+        \item $\mathbf{u}_{\mathrm{obs}}$: surface speed observations
+        \end{itemize}
+      \end{column}
+    \end{columns}  
+  \end{minipage}
+\end{frame}
+
+
+\begin{frame}{1. Ice Flow calibration: strategy}
+\begin{itemize}
+\item use Markov Chain Monte Carlo sampling (MCMC) to find the joint distribution of these parameters given observations.
+\item think of the ice sheet model as a map $\mathcal{F}$ from a parameter vector $\mathbf{x}$ to surface speeds $\mathbf{Y}$
+\begin{equation*}
+\mathbf{Y} = \mathcal{F}(\mathbf{x})
+\end{equation*}
+\item running the forward model (PISM) is too expensive for MCMC
+\item Generate a ``cheap'' surrogate model $\mathcal{G}$ such that
+\begin{equation*}
+\mathcal{G}(\mathbf{x}) \approx \mathcal{F}(\mathbf{x})
+\end{equation*}
+\item use the 4 layer Neural Network surrogate model by Brinkerhoff et al (2021), implemented in PyTorch
+\end{itemize}
+  \begin{figure}
+    \includegraphics[width=.35\textwidth]{neural-network}
+  \end{figure}
+\end{frame}
+
+
+
+\begin{frame}{1. Ice Flow calibration: dimensionality reduction}
+  \alert{Challenge $\mathbf{Y}$ is not a scalar}:
+\begin{eqnarray*}
+\mathbf{x} = \{x_1, x_2,\ldots,x_n\}, & n = 8, \\ 
+\mathbf{Y} = \{Y_1, Y_2, \ldots,Y_m \},& m \ge 10^6
+\end{eqnarray*}
+\vspace{-1.5em}
+\begin{block}{SVD / PCA / EOF}
+\begin{itemize}
+\item decompose training data into ``eigen-glaciers'' using Principal Component Analysis (``eigen faces'' in picture analysis)
+\item we only need to simulate the first $\sim$100 eigen-coefficients to capture 99.95\% of the variance
+\item we have reduced the problem from 10$^6$ to $\sim$100 unknowns.
+\end{itemize}
+\vspace{-0.5em}
+\end{block}
+\begin{figure}
+  \includegraphics<1->[height=6cm]{eigenglaciers_0}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{1. Ice Flow calibration: training data}
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \includegraphics<1->[width=.95\textwidth]{calib-speeds}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+      \item select 8 relevant parameters
+      \item define a prior probability distribution for each parameter
+      \item draw 1,000 samples using Sobol Sequences
+      \item run PISM 1,000 times
+      \end{itemize}
+    \end{column}
+  \end{columns}  
+\end{frame}
+
+
+
+
+\begin{frame}{1. Ice Flow: surrogate model and sampling}
+  \begin{figure}
+    \includegraphics[width=0.75\textwidth]{prior_posterior}
+  \end{figure}
+  \begin{itemize}
+  \item using the surrogate model, create 1,000,000 member strong ensemble
+  \item run MCMC sampling given observations
+  \item what you get are posterior distributions of the parameters
+  \item these distributions best fit the surface speeds observations
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Use posterior as new prior}
+\begin{columns}[c]
+    \begin{column}{.5\textwidth}
+      \begin{figure}
+        \includegraphics<1>[height=7.5cm]{sle_pdf_w_obs_as19_2020.pdf}
+        \includegraphics<2>[height=7.5cm]{sle_pdf_w_obs_as19flow_2020.pdf}
+    \end{figure}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{figure}
+    \includegraphics[width=0.85\textwidth]{prior_posterior}
+  \end{figure}
+
+  \begin{itemize}
+  \item<1> create 500 samples from posterior
+  \item<1> rerun PISM 500x, wait
+  \item<2> get new projections conditioned on surface speeds
+  \item<2> find reduced variance
+  \end{itemize}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+
+\begin{frame}{2. Mass Loss: Particle Filtering}
   \begin{minipage}[t][4cm][t]{\textwidth}
     \begin{figure}
     \includegraphics[height=4cm]{GIS_hist_only_obs}
@@ -547,27 +637,39 @@ Accurate predictions of the cryosphere's contribution to sea level require that 
 \end{frame}
 
 
-
-\begin{frame}{Calibrated 2100 Projections}
+\begin{frame}{Posterior distributions}
 \begin{columns}[c]
     \begin{column}{.5\textwidth}
     \begin{figure}
-      \includegraphics[height=7.75cm]{sle_pdf_w_obs__calib_2010_2020_2020_2100}
+      \includegraphics[height=7.75cm]{sle_pdf_w_obs_calibrated_2020.pdf}
     \end{figure}
     \end{column}
     \begin{column}{.5\textwidth}
   \begin{itemize}
-  \item median reduced by 16-30\%
-  \item uncertainty range reduced by 38-56\%
+  \item fully calibrated posterior agrees well with observations (IMBIE)
     \end{itemize}
     \end{column}
   \end{columns}
+ \end{frame}
+
+
+\begin{frame}{Calibrated 2100 Projections}
+    \begin{figure}
+      \includegraphics[height=7.75cm]{sle_pdf_w_obs_2020_2100}
+    \end{figure}
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}{Initial idea 2020: Kalman Smoother}
   \begin{figure}
-    \includegraphics<1->[width=\textwidth]{flowchart}
+    \includegraphics<1->[width=\textwidth]{flowchart-kalman-smoother}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Current idea 2022: Particle Filter}
+  \begin{figure}
+    \includegraphics<1>[width=\textwidth]{flowchart-particle-filter}
+    \includegraphics<2>[width=\textwidth]{flowchart-particle-filter-tasks}
   \end{figure}
 \end{frame}
 
