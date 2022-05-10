@@ -52,7 +52,7 @@
 \title[Ice sheet modeling] % (optional, use only with long paper titles)
 {A reanalysis of the Greenland Ice Sheet}
 \author[Aschwanden] % (optional, use only with lots of authors)
-{\textbf{Andy Aschwanden}\\ with \\Doug Brinkerhoff, Mark Fahnestock}
+{\textbf{Andy Aschwanden}\\ with \\Doug Brinkerhoff, Mark Fahnestock, Constantine Khroulev}
 \institute{Geophysical Institute, University of Alaska Fairbanks}
 
 % - Give the names in the same order as the appear in the paper.
@@ -623,21 +623,31 @@ P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
   \begin{figure}
     \includegraphics<1->[width=\textwidth]{flowchart-kalman-smoother}
   \end{figure}
+  \tiny
+  \begin{equation}
+    \begin{array}{lccc}
+     \textrm{Forecast Step} \qquad \qquad & \mathbf{x}_{k}^{f} &=&  \mathcal{M}_{k:k-1} \mathbf{x}_{k-1}^a, \\[.5em]
+     &  \mathbf{P}_{k}^{f} &=&  \mathcal{M}_{k:k-1} \mathbf{P}_{k-1}^a \mathcal{M}_{k:k-1}^{T} + \mathbf{Q}_{k}, \\[1.em]
+     \textrm{Analysis Step} \qquad \qquad & \mathbf{K}_{k} & = & \mathbf{P}_{k}^{f} \mathbf{H}_{k}^{T}\left(\mathbf{H}_{k} \mathbf{P}_{k}^{f} \mathbf{H}_{k}^{T} \mathbf{R}_{k} \right)^{-1}, \\[0.5em]
+     & \mathbf{x}_{k}^{a} &=&  \mathbf{x}_{k-1}^f + \mathbf{K}_{k} \left(\mathbf{y}_{k} - \mathbf{H}_{k} \mathbf{x}_{k}^{f} \right), \\[.5em]
+     &  \mathbf{P}_{k}^{a} &=&  \left( \mathbf{1} - \mathbf{K}_{k} \mathbf{H}_{k} \right)\mathbf{P}_{k-1}^f
+     \\\end{array}
+  \end{equation}
+  \normalsize
 \end{frame}
 
 \begin{frame}{Current idea 2022: Particle Filter}
   \begin{figure}
-    \includegraphics<1>[width=\textwidth]{flowchart-particle-filter}
-    \includegraphics<2>[width=\textwidth]{flowchart-particle-filter-tasks}
+    \includegraphics[width=\textwidth]{flowchart-particle-filter-tasks}
   \end{figure}
 \end{frame}
 
 
-\begin{frame}{Challenge: Initial state}
+\begin{frame}{Challenges}
   \begin{columns}[c]
     \begin{column}{.35\textwidth}
       \begin{figure}
-        \includegraphics[height=5cm]{gris-surface-dem}
+        \includegraphics[height=4.5cm]{gris-surface-dem}
       \end{figure}
     \end{column}
     \begin{column}{.6\textwidth}
@@ -649,16 +659,8 @@ P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
   \end{columns}
   \begin{itemize}
     \item we lack a DEM for 1980
-  \end{itemize}
-
-\end{frame}
-
-
-\begin{frame}{Challenge: Ensemble distribution}
-  \begin{itemize}
     \item We need automated start/stopping of ensemble simulations (MPI jobs)
   \end{itemize}
-
 \end{frame}
 
 
