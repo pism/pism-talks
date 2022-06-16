@@ -1,0 +1,119 @@
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% End: 
+
+\documentclass[hide notes,intlimits]{beamer}
+\mode<presentation>
+{
+  \usetheme[footline]{PISMshade}
+  \setbeamercovered{transparent}
+}
+
+% load packages
+\usepackage{media9}
+\usepackage[english]{babel}
+\usepackage[multidot]{grffile}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{shadows}
+
+\definecolor{dark red}{HTML}{E41A1C}
+\definecolor{dark green}{HTML}{4DAF4A}
+\definecolor{dark violet}{HTML}{984EA3}
+\definecolor{dark blue}{HTML}{084594}
+\definecolor{dark orange}{HTML}{FF7F00}
+\definecolor{light blue}{HTML}{377EB8}
+\definecolor{light red}{HTML}{FB9A99}
+\definecolor{light violet}{HTML}{CAB2D6}
+
+\setbeamercolor{boxed}{fg=black,bg=light blue!25}
+\graphicspath{{figures/}{../figures/}{../figures_2018_08/}{../2021_09_cph/figures/}{../2021_11_geo/figures/}}
+
+
+\newcommand{\jl}{[\![}
+\newcommand{\jr}{]\!\hskip 0.003cm ]}
+\newcommand{\bpsi}{\boldsymbol{\psi}}
+\newcommand{\bPsi}{\boldsymbol{\Psi}}
+\newcommand{\bphi}{\boldsymbol{\phi}}
+\newcommand{\bPhi}{\boldsymbol{\Phi}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\D}{\,\mathrm{d}}
+\newcommand{\Tsnow}{T_{\text{snow}}}
+\newcommand{\Hatm}{H_{\text l}^{\text{atm}}}
+
+\newcommand{\mathtext}[1]{\mathsf{#1}}
+
+% title page
+\title[Ice sheet modeling] % (optional, use only with long paper titles)
+{Jakobshavn}
+\subtitle{The Good, the Bad, and the Ugly}
+\author[Aschwanden] % (optional, use only with lots of authors)
+{\textbf{Andy Aschwanden}\\ with \\D. Brinkerhoff and others}
+\institute{Geophysical Institute, University of Alaska Fairbanks}
+
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+ \titlegraphic{\vskip-.5cm\includegraphics[height=2.5cm]{jib_temperature_forcing_1980_2020}}
+
+\date{}
+
+
+\subject{CIncedible sea-level projections}
+
+\begin{document}
+
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=0.6] {\includegraphics[height=\paperheight]{earth-drowning-desat}};}
+}
+
+
+ 
+% insert titlepage
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\setbeamertemplate{background canvas}
+  {
+}
+
+\begin{frame}
+      \begin{figure}
+        \includegraphics[height=0.8\textheight]{jib-ocean-forcing-overview}
+      \end{figure}
+\end{frame}
+
+
+\begin{frame}
+      \begin{figure}
+        \includegraphics<1>[height=0.8\textheight]{jib_1985_speed_observed}
+        \includegraphics<2>[height=0.8\textheight]{jib_1985_speed_simulated}
+      \end{figure}
+\end{frame}
+
+\begin{frame}
+      \begin{figure}
+        \includegraphics<1>[height=0.8\textheight]{jib_ocean_observation_categorical_1980_2020}
+        \includegraphics<2>[height=0.8\textheight]{jib_ocean_forcing_1980_2020_normalized}
+      \end{figure}
+\end{frame}
+
+
+\begin{frame}{Multitask Gaussian Process Model}
+
+\end{frame}
+
+
+
+\end{document}
