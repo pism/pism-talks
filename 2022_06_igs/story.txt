@@ -1,0 +1,19 @@
+
+
+In the later 90s and 2000s, May 2003 Landsat 7 broke, landsat aquisitons were limited
+
+
+
+What we are able to do:
+
+- reconstructed ocean forcing
+- increase in ocean forcing leads to increase in subshelf melt rates
+- higher sub shelf melt rates lead to thinning
+- retreat, and speed up
+
+I do hope the audience will appreciate my dedication to give a talk here at the symposium. Iwas working on my talk during our layover in Anchorage yesterday and got so hungry that I picked up a breakfast something from McDonalds. For the first time in my life! It was not only terrible it also came at a steep price. Martin now has the lifelong rights to give me a hard time for this culinary sidestep. I hope this will be acknowledged in my obituary approriately.
+
+
+Between 1995 and 1998, subsurface ocean temperatures rose by about 1.5°C along the west coast of Greenland as a result of increasing subsurface water temperatures in the subpolar gyre. These warm waters led to a disintegration of buttressing floating ice tongues, which triggered a positive feedback between retreat, thinning, and outlet glacier acceleration, known as the outlet glacier–acceleration feedback. A stark example is Jakobshavn Isbræ, Greenland’s largest and fastest flowing outlet glacier. Following the loss of its floating tongue between 2000 and 2003, the glacier’s flow speeds doubled as the ice thinned.
+
+To generate time series of ocean temperature and salinity from the observations, we categorized observations as ``Bay'' or ``Fjord'' and modeled temperature and salinity as Multi-task Gaussian Processes. Gaussian Process Multitask models are a class of non-parametric Bayesian models for learning correlated tasks effectively by transferring knowledge across tasks. A multitask model uses a mean function for each task and a common covariance function. This approach allows us to generate samples that are consistent with observations and their associate uncertainties.

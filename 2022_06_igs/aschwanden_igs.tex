@@ -50,8 +50,8 @@
 
 % title page
 \title[Ice sheet modeling] % (optional, use only with long paper titles)
-{Jakobshavn}
-\subtitle{The Good, the Bad, and the Ugly}
+{Memoirs of Sermeq Kujalleq\\(Jakobshavn Isbr{\ae})}
+\subtitle{1980--2020}
 \author[Aschwanden] % (optional, use only with lots of authors)
 {\textbf{Andy Aschwanden}\\ with \\D. Brinkerhoff and others}
 \institute{Geophysical Institute, University of Alaska Fairbanks}
@@ -74,11 +74,29 @@
 
 \setbeamertemplate{background canvas}
   {
-     \tikz{\node[inner sep=0pt,opacity=0.6] {\includegraphics[height=\paperheight]{earth-drowning-desat}};}
 }
 
 
- 
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{mccarthy-summer-school-2022-group}};}
+}
+
+\begin{frame}[plain]
+\end{frame}
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{mcdonalds-breakfast}};}
+}
+
+\begin{frame}[plain]
+\end{frame}
+
+\setbeamertemplate{background canvas}
+  {
+}
+
 % insert titlepage
 \begin{frame}
   \titlepage
@@ -86,23 +104,85 @@
 
 \setbeamertemplate{background canvas}
   {
+     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{jib-front-retreat}};}
 }
 
 \begin{frame}
+\end{frame}
+
+ \setbeamertemplate{background canvas}
+  {
+}
+
+\begin{frame}{Termini 1985}
       \begin{figure}
-        \includegraphics[height=0.8\textheight]{jib-ocean-forcing-overview}
+        \includegraphics<1>[width=.975\textwidth]{jib-fronts-1985}
+      \end{figure}
+\end{frame}
+
+\begin{frame}{Termini 2020}
+      \begin{figure}
+        \includegraphics<1>[width=.975\textwidth]{jib-fronts-2020}
       \end{figure}
 \end{frame}
 
 
 \begin{frame}
       \begin{figure}
-        \includegraphics<1>[height=0.8\textheight]{jib_1985_speed_observed}
-        \includegraphics<2>[height=0.8\textheight]{jib_1985_speed_simulated}
+        \includegraphics<1>[width=\textwidth]{jib-setup}
       \end{figure}
 \end{frame}
 
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{jib-ocean-forcing-overview}};}
+}
+  
 \begin{frame}
+\end{frame}
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{jib-ocean-forcing-overview}};}
+}
+
+
+\begin{frame}
+\end{frame}
+
+\setbeamertemplate{background canvas}
+  {
+}
+
+  \begin{frame}
+    72 ensemble members drawn from distributions
+  \begin{itemize}
+  \item damage mechanics (5)
+  \item calving (2)
+  \end{itemize}
+\end{frame}
+
+  
+  
+\begin{frame}
+  \begin{columns}[t]
+    \begin{column}{2cm}
+      \begin{figure}
+        \includegraphics<1>[width=\textwidth]{roman-motyka-yakutat}
+        \includegraphics<2>[width=\textwidth]{pism_logo_v2_transp}
+      \end{figure}
+    \end{column}
+    \begin{column}{10cm}
+      \begin{figure}
+        \includegraphics<1>[width=\textwidth]{jib_1985_speed_observed}
+        \includegraphics<2>[width=\textwidth]{jib_1985_speed_simulated}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Ocean Forcing Reconstruction}
       \begin{figure}
         \includegraphics<1>[height=0.8\textheight]{jib_ocean_observation_categorical_1980_2020}
         \includegraphics<2>[height=0.8\textheight]{jib_ocean_forcing_1980_2020_normalized}
@@ -110,10 +190,25 @@
 \end{frame}
 
 
-\begin{frame}{Multitask Gaussian Process Model}
 
+
+\begin{frame}
+      \begin{figure}
+        \includegraphics<1>[width=\textwidth]{jib_total_grounding_line_flux}
+      \end{figure}
 \end{frame}
 
 
+\begin{frame}[plain]
+  \begin{figure}
+  \includemedia[
+  width=12cm,
+  activate=pageopen,
+  addresource=jakobshavn_flowline_id_14_hd1920.mp4,
+  flashvars={src=jakobshavn_flowline_id_14_hd1920.mp4}
+  ]
+  {\includegraphics[width=12cm]{jakobshavn_flowline_000}}{StrobeMediaPlayback.swf}
+\end{figure}
+\end{frame}
 
 \end{document}
