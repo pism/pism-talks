@@ -3,6 +3,9 @@
 In the later 90s and 2000s, May 2003 Landsat 7 broke, landsat aquisitons were limited
 
 
+We apply a particle filtering method to hindcasts of Jakobshavn Isbrae from 1980 to 2020. Particle filtering is ...
+We use a variety of observations including surface speeds, front positions, ice discharge, and subshelf melt rates to filter particles.
+
 
 What we are able to do:
 
@@ -14,6 +17,37 @@ What we are able to do:
 I do hope the audience will appreciate my dedication to give a talk here at the symposium. Iwas working on my talk during our layover in Anchorage yesterday and got so hungry that I picked up a breakfast something from McDonalds. For the first time in my life! It was not only terrible it also came at a steep price. Martin now has the lifelong rights to give me a hard time for this culinary sidestep. I hope this will be acknowledged in my obituary approriately.
 
 
-Between 1995 and 1998, subsurface ocean temperatures rose by about 1.5°C along the west coast of Greenland as a result of increasing subsurface water temperatures in the subpolar gyre. These warm waters led to a disintegration of buttressing floating ice tongues, which triggered a positive feedback between retreat, thinning, and outlet glacier acceleration, known as the outlet glacier–acceleration feedback. A stark example is Jakobshavn Isbræ, Greenland’s largest and fastest flowing outlet glacier. Following the loss of its floating tongue between 2000 and 2003, the glacier’s flow speeds doubled as the ice thinned.
 
-To generate time series of ocean temperature and salinity from the observations, we categorized observations as ``Bay'' or ``Fjord'' and modeled temperature and salinity as Multi-task Gaussian Processes. Gaussian Process Multitask models are a class of non-parametric Bayesian models for learning correlated tasks effectively by transferring knowledge across tasks. A multitask model uses a mean function for each task and a common covariance function. This approach allows us to generate samples that are consistent with observations and their associate uncertainties.
+While ice sheet models have come a long way, there is still work to do. The current generation of ice sheet models still has a hard time reproducing historical trends. This figure shows the historical Greenland simulations that were used by IPCC AR6 along with the IMBIE reconstruction. Most simulations underestimate historical mass loss.
+While reproducing historical trends is not a sufficient conditions to have confidence in a model, I think it's necessary condition.
+
+Now you may ask what has that to do with a talk about Jakobshavn? Many of you here are at least somewhat familiar with history of Jakobshavn Isbrae. In the mid 1980's Jakobshavn had a stable floating tongue. However, between 1995 and 1998, subsurface ocean temperatures rose by about 1.5°C along the west coast of Greenland. These warm waters led to a disintegration of the buttressing floating ice tongues, which triggered a positive feedback between retreat, thinning, and outlet glacier acceleration, known as the outlet glacier–acceleration feedback. The largest changes occured between 2002 and 2004, and many papers have been written about it. I think Jakobshavn provides a great opportunity for each model and modeler to demonstrate their skill. My confidence in ice sheet models that can reproduce these changes within or close to observational uncertainty would be a lot higher than in those how can't. Because the past two decades of change have been quite well documented, over-tuning a model to one set of observations is not an option here.
+
+Let's start with the results first before I explain the modeling setup. I'm going to show an animation from 1980 to 2020  along the flow line here.
+
+The colormap indicates the year. The bottom plot shows the front position along flowline with the observed position for select years. The other subplots show speed, subshelf melt rate and shelf thickness.
+
+After 1995 the subshelf melt rates start to increase as a result of increased ocean temperatures, and the shelf begins to thin. Between 2000 and 2003 the front retreats several kilometers. Flow speeds increase as the glacier retreats. However, the tongue doesn't break off.
+
+Alright, where do we stand? We are able to simulate an increase subshelf melt. This leads to thinning, retreat and speed up. But, as I showed in the previous slide, the tongue doesn't break.
+
+What are the relevant processes?
+- We have ice flow, simulated by PISM.
+- We have surface runoff that we route subglacially to the glacier terminus using a hydrologic model
+- we use a damage mechanics model to soften the ice when damage occurs
+- we calculate subshelf melt using the Holland and Jenkins 3-equations model.
+- calving occurs when the von mises stress exceeds a threshold
+- we modulate calving seasonally, calving is reduced in the winter when there is melange
+- frontal melt is calculated as a function of ocean forcing and subglacial discharge.
+
+Ocean temperatre and salinity observations are rather sparse in the fjord, there are some observations from OMG and Dave Holland had some XCTD casts. But more observations exist in the bay. We extracted data at depths between 225 and 275m because of the sill at the fjord mouth. Here are all observations as a function of time. The observations from the bay are shown in black, the ones from the fjord in blue. fjord observations only exist from 2009 on. Those seem to be consistently lower than bay temperatures.
+
+We reconstructed time series of temperature and salinity using a Gaussian Process Multitask model. Gaussian Process Multitask models are a class of non-parametric Bayesian models for learning correlated tasks effectively by transferring knowledge across tasks. A multitask model uses a mean function for each task and a common covariance function. This approach allows us to generate samples that are consistent with observations and their associate uncertainties.
+
+Whare are the other data sets used?
+
+We use climatic mass balance and surface meltwater runoff from HIRHAM5. Ice thickness is from BedMachine. We also reconstructed a surface DEM by merging the 1980's AERODEM and more modern DEMs. Then we created an ensemble by drawing from parameters relating to damage mechanics and calving. And performed 72 simulations.
+
+Here are the observed surface speeds from 1985 based on work by Roman Motyka. And here is one of the ensemble members. Our simulation started at 1980, and thus I think both front position and speeds are caputred reasonbly well.
+
+I'd like to conclude that our particle filtering approach works well. In fact it works so well that it filters out all particles.

@@ -30,7 +30,7 @@
 \definecolor{light violet}{HTML}{CAB2D6}
 
 \setbeamercolor{boxed}{fg=black,bg=light blue!25}
-\graphicspath{{figures/}{../figures/}{../figures_2018_08/}{../2021_09_cph/figures/}{../2021_11_geo/figures/}}
+\graphicspath{{figures/}{../figures/}{../figures_2018_08/}{../2022_04_igs/figures/}{../2021_09_cph/figures/}{../2021_11_geo/figures/}}
 
 
 \newcommand{\jl}{[\![}
@@ -50,10 +50,9 @@
 
 % title page
 \title[Ice sheet modeling] % (optional, use only with long paper titles)
-{Memoirs of Sermeq Kujalleq\\(Jakobshavn Isbr{\ae})}
-\subtitle{1980--2020}
+{The break-up of Sermeq Kujalleq\\(Jakobshavn Isbr{\ae})}
 \author[Aschwanden] % (optional, use only with lots of authors)
-{\textbf{Andy Aschwanden}\\ with \\D. Brinkerhoff and others}
+{\textbf{Andy Aschwanden}, Doug Brinkerhoff\\ and others}
 \institute{Geophysical Institute, University of Alaska Fairbanks}
 
 % - Give the names in the same order as the appear in the paper.
@@ -62,12 +61,13 @@
 
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
- \titlegraphic{\vskip-.5cm\includegraphics[height=2.5cm]{jib_temperature_forcing_1980_2020}}
+ \titlegraphic{\vskip-.5cm\includegraphics[height=3cm]{jib_temperature_forcing_1980_2020_green}}
 
+ 
 \date{}
 
 
-\subject{CIncedible sea-level projections}
+\subject{Incredible sea-level projections}
 
 \begin{document}
 
@@ -102,6 +102,14 @@
   \titlepage
 \end{frame}
 
+\begin{frame}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{GIS_historical}
+        \tiny{Aschwanden, Brinkerhoff, Bartholomaus, \& Truffer (2021)}
+      \end{figure}
+\end{frame}
+
+
 \setbeamertemplate{background canvas}
   {
      \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{jib-front-retreat}};}
@@ -110,9 +118,105 @@
 \begin{frame}
 \end{frame}
 
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{jib-front-retreat-flowline}};}
+}
+
+\begin{frame}
+\end{frame}
+
  \setbeamertemplate{background canvas}
   {
 }
+
+\begin{frame}[plain]
+  \begin{figure}
+  \includemedia[
+  width=11cm,
+  activate=pageopen,
+  addresource=jakobshavn_flowline_id_14_hd1920.mp4,
+  flashvars={loop=true&src=jakobshavn_flowline_id_14_hd1920.mp4}
+  ]
+  {\includegraphics[width=1cm]{jakobshavn_flowline_000}}{StrobeMediaPlayback.swf}
+\end{figure}
+\end{frame}
+
+\begin{frame}{}
+  \begin{block}{What we get right}
+  \begin{centering}
+    increase in ocean forcing \alert{$\Rightarrow$} increase in subshelf melt rates \alert{$\Rightarrow$} thinning of the floating tongue \alert{$\Rightarrow$} flow acceleration
+  \end{centering}
+  \end{block}
+  \begin{block}{What is wrong}
+    \begin{itemize}
+      \item floating tongue does not disintegrate
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+  
+\begin{frame}{Relevant Processes}
+      \begin{figure}
+        \includegraphics<1>[width=\textwidth]{jib-setup-processes}
+      \end{figure}
+\end{frame}
+
+
+
+\setbeamertemplate{background canvas}
+  {
+     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{jib-ocean-forcing-overview}};}
+}
+  
+
+
+\begin{frame}
+\end{frame}
+
+\setbeamertemplate{background canvas}
+  {
+}
+
+\begin{frame}{Ocean Forcing Reconstruction}
+      \begin{figure}
+        \includegraphics<1>[height=0.8\textheight]{jib_ocean_observation_categorical_1980_2020}
+        \includegraphics<2>[height=0.8\textheight]{jib_ocean_forcing_1980_2020_normalized}
+      \end{figure}
+\end{frame}
+
+  
+  \begin{frame}{Ensemble simulations}
+    72 ensemble members drawn from parameter distributions relating to
+  \begin{itemize}
+  \item damage mechanics (5)
+  \item calving (2)
+  \end{itemize}
+      \begin{figure}
+        \includegraphics<1>[width=\textwidth]{jib-setup}
+      \end{figure}
+\end{frame}
+
+  
+  
+\begin{frame}{1985}
+  \begin{columns}[t]
+    \begin{column}{2cm}
+      \begin{figure}
+        \includegraphics<1>[width=\textwidth]{roman-motyka-yakutat}
+        \includegraphics<2>[width=\textwidth]{pism_logo_v2_transp}
+      \end{figure}
+    \end{column}
+    \begin{column}{11cm}
+      \begin{figure}
+        \includegraphics<1>[width=\textwidth]{jib_1985_speed_observed}
+        \includegraphics<2>[width=\textwidth]{jib_1985_speed_simulated}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
 
 \begin{frame}{Termini 1985}
       \begin{figure}
@@ -127,88 +231,49 @@
 \end{frame}
 
 
-\begin{frame}
-      \begin{figure}
-        \includegraphics<1>[width=\textwidth]{jib-setup}
-      \end{figure}
-\end{frame}
-
-
-\setbeamertemplate{background canvas}
-  {
-     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{jib-ocean-forcing-overview}};}
-}
-  
-\begin{frame}
-\end{frame}
-
-\setbeamertemplate{background canvas}
-  {
-     \tikz{\node[inner sep=0pt,opacity=1.0] {\includegraphics[width=\paperwidth]{jib-ocean-forcing-overview}};}
-}
-
-
-\begin{frame}
-\end{frame}
-
-\setbeamertemplate{background canvas}
-  {
-}
-
-  \begin{frame}
-    72 ensemble members drawn from distributions
-  \begin{itemize}
-  \item damage mechanics (5)
-  \item calving (2)
-  \end{itemize}
-\end{frame}
-
-  
-  
-\begin{frame}
-  \begin{columns}[t]
-    \begin{column}{2cm}
-      \begin{figure}
-        \includegraphics<1>[width=\textwidth]{roman-motyka-yakutat}
-        \includegraphics<2>[width=\textwidth]{pism_logo_v2_transp}
-      \end{figure}
-    \end{column}
-    \begin{column}{10cm}
-      \begin{figure}
-        \includegraphics<1>[width=\textwidth]{jib_1985_speed_observed}
-        \includegraphics<2>[width=\textwidth]{jib_1985_speed_simulated}
-      \end{figure}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Ocean Forcing Reconstruction}
-      \begin{figure}
-        \includegraphics<1>[height=0.8\textheight]{jib_ocean_observation_categorical_1980_2020}
-        \includegraphics<2>[height=0.8\textheight]{jib_ocean_forcing_1980_2020_normalized}
-      \end{figure}
-\end{frame}
-
-
-
-
-\begin{frame}
+\begin{frame}{Grounding line flux}
       \begin{figure}
         \includegraphics<1>[width=\textwidth]{jib_total_grounding_line_flux}
       \end{figure}
 \end{frame}
 
 
+\begin{frame}{What we get right}
+  \begin{centering}
+    increase in ocean forcing \alert{$\Rightarrow$} increase in subshelf melt rates \alert{$\Rightarrow$} thinning of the floating tongue \alert{$\Rightarrow$} flow acceleration
+  \end{centering}
+\end{frame}
+
+\begin{frame}{What is missing}
+      \begin{minipage}[t][.9\textheight][t]{.9\textwidth}
+  \begin{block}{Calving}
+    \begin{itemize}
+    \item Downs, Brinkerhoff, Morlighem (revised): 
+a simple stochastic model relating surface runoff rates and calving threshold is able to reproduce observations with respect to both mean position and characteristic temporal variability.    \end{itemize}
+      \begin{figure}
+        \includegraphics<2->[width=.9\textwidth]{jib-runoff-1980-2020.pdf}
+      \end{figure}
+  \end{block}
+
+      \end{minipage}
+\end{frame}
+
+
+ \setbeamertemplate{background canvas}
+  {
+}
+
 \begin{frame}[plain]
   \begin{figure}
   \includemedia[
-  width=12cm,
+  width=11cm,
   activate=pageopen,
   addresource=jakobshavn_flowline_id_14_hd1920.mp4,
   flashvars={src=jakobshavn_flowline_id_14_hd1920.mp4}
   ]
-  {\includegraphics[width=12cm]{jakobshavn_flowline_000}}{StrobeMediaPlayback.swf}
+  {\includegraphics[width=11cm]{jakobshavn_flowline_000}}{StrobeMediaPlayback.swf}
 \end{figure}
 \end{frame}
+
 
 \end{document}
