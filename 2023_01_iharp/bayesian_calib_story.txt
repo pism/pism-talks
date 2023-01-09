@@ -1,0 +1,51 @@
+
+Both the Antartic and the Greenland ice sheet have been losing mass over the past decades. The figure shows the mean and 2-sigma of the cumulative mass loss since 2000 for both ice sheets.
+
+Let's add the historical simulations produced for IPCC's AR6. In the case of Greenland, the historical simulations seriously under-estimate mass loss. For Antarctica, the picture is a bit more complex.
+
+If we want to produce accurate predictions of the cryosphere's contribution to sea-level, then we require that our models:
+- Yield simulations that fit observations within observational uncertainty.
+- Fully characterize uncertainties in model structure, parameters, initial conditions, and boundary conditions.
+If the first condition is not satisfied, then the distribution of model predictions is likely to be biased relative to reality.
+If the second point is not satisfied, then predictive uncertainties are likely to be underestimated.
+
+Today, I'll focus on the first point.
+I'd like to show how we can use Bayesian calibration to ensure that model simulations agree observations. For this project I have been collaborating with my colleagues Mark Fahenstock, also from UAF and part of iHARP, and with Doug Brinkerhoff from the University of Montana in Missoula. Should you like the the concepts I'm presenting here I'd like to point out the Doug is the mastermind behind our approach. If you don't like it, I'll take the blame.
+
+I'm neither the first to talk about Bayesian calibration for ice sheet models nor do I claim our method is particularly ingenious. Quite the contrary, I'm going to use basic concepts from Bayesian statistics and from Machine Learning that many of you are familiar with. 
+Our goal is to calculate the probability of a contribution to sea-level by 2100, denoted here by Delta 2100, given data D, that is, observations, an ice sheet model H, and climate forcing F. We can split this into a projection and a calibration period. We will focus on calibration and use a two step method. First we will calibrate some model parameters and in the second step we will use particle filtering to cull an ensemble of simulations.
+
+Which targets should be use for calibration? A natural choice is the quantity of interest. In our case, we want to predict mass loss, so we use mass change.
+
+(button)
+
+Another good target are surface speeds because uncertainties in ice flow parameters contribute significantly to uncertainties in future mass loss, we've learned that from previous studies.
+
+How does it work? First we need an ice sheet model. For now we are using the Parallel Ice Sheet Model or PISM. However there is nothing special about PISM, and any other ice sheet model could be used. We then generate training data with PISM. To do this, we selected 8 parameters which stronglhy control how ice flow. We drew 1,000 samples from this 8-dimensional parameter space, and ran PISM 1,000, once for each parameter combination. This gives us 1,000 surface speeds fields
+
+We then used those surface speeds fields to train a surrogate model. Or surrogate models, to be more precise.
+
+To reduce the dimensionality of the problem, we performed a principal component analysis. This yields a set of "eigenglaciers". It's pretty similar to calculating eigenfaces in image analysis.
+
+Then we trained a 4 layer Neural Network on the principal components. To reduce overfitting, we actually created 50 surrogate models with slighlty different weights to form a committee. The model is currently implemented in PyTorch-Lightning and can be trained on GPUs.
+
+For all parameters, we set Beta priors and then sample the parameter space given observed surface speeds. Here we use a manifold Metropolis Adjusted Languevin Algorithm with a variable step size. This can also be done on GPUs.
+
+Now we have posterior distributions of our parameters.
+
+First we ran an ensemble of 500 members using the uncalibrated parameters from 2008 to 2020. The PDF of the cumulative mass loss shows a huge variance and is slightly biased with respect to observations.
+
+Now created a new ensemble by drawing from the posterior and repeated the simulations. The new "flow" calibrated simulations show much better agreement with observations.
+
+The second calibration step is the particle filtering, also known as Bayesian calibration or importance sampling. Here we weigh members based on their likelihood relative to observations of mass change. The we resample simulations proportionally to these likelihood to create a new ensemble that is consistent with respect to bobthe observations of surface speed and mass change.
+
+This fully calibrated ensemble now produced mass loss in agreement with observations, which is by design.
+
+Taking that fully calibrated ensemble and run it out to 2100 we find that compared to the uncalibrated prior simulations, the variance is reduced as well as the bias.
+I believe this is a useful step towards more credible predictions of sea level rise.
+
+Now I'd like to use this method to calibrate the parameters of the ice sheet model ISSM.
+
+
+
+
