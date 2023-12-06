@@ -66,22 +66,26 @@ Dept Computer Science, University of Montana, Missoula}
 }
 
   
-\begin{frame}
-    \begin{minipage}[t][16cm][t]{\textwidth}
-        \begin{columns}[c]
-    \begin{column}{.68\textwidth}
+\begin{frame}[noframenumbering]
+    \begin{minipage}[t][6cm][t]{\textwidth}
   \begin{figure}
-    \includegraphics[width=\textwidth]{GIS_historical}    
+    \includegraphics[width=.75\textwidth]{GIS_historical}    
     \caption{\tiny{Aschwanden, Brinkerhoff, Bartholomaus \& Truffer (2021)}}
   \end{figure}
-    \end{column}
-    \begin{column}{.28\textwidth}
+    \end{minipage}
+    \begin{minipage}[t][3.5cm][t]{\textwidth}
     Uncertainties due to
+        \begin{columns}[c]
+    \begin{column}{.25\textwidth}
 \begin{itemize}\setlength\itemsep{.25em}
     \item \alert{Parameters}
     \item Models
+\end{itemize}
+    \end{column}
+    \begin{column}{.65\textwidth}
+\begin{itemize}\setlength\itemsep{.25em}
     \item Forcing
-    \item Initial State
+    \item Initial State (Poster by A. Pohle, C51D-0982)
 \end{itemize}
     \end{column}
   \end{columns}
@@ -121,19 +125,23 @@ P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
 \end{frame}
 
 \begin{frame}{Which observations should we use?}
-    \begin{minipage}[t][2cm][t]{\textwidth}
+    \begin{minipage}[t][1cm][t]{\textwidth}
         \begin{itemize}
         \item use the quantity of interest: \alert{mass change}
         \item use quantity that contributes a lot to uncertainty: \alert{ice flow}
         \end{itemize}
   \end{minipage}
-    \begin{minipage}[t][6cm][t]{\textwidth}
+    \begin{minipage}[t][10cm][t]{\textwidth}
         \begin{columns}[c]
     \begin{column}{.3\textwidth}
+   \begin{block}{Surface Speeds}
     \includegraphics[height=5cm]{greenland-obs-rignot}
+    \end{block}
     \end{column}
     \begin{column}{.65\textwidth}
+   \begin{block}{Mass Change}
     \includegraphics[height=4cm]{GIS_hist_only_obs}
+    \end{block}
     \end{column}
   \end{columns}
     \end{minipage}
@@ -151,11 +159,11 @@ P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
 \end{frame}
 
 
-\begin{frame}{3. Surrogate Model: implementation}
-  \begin{figure}
-    \includegraphics[width=\textwidth]{neural-network-pytorch}
-  \end{figure}
-\end{frame}
+%% \begin{frame}{3. Surrogate Model: implementation}
+%%   \begin{figure}
+%%     \includegraphics[width=\textwidth]{neural-network-pytorch}
+%%   \end{figure}
+%% \end{frame}
 
 
 \begin{frame}{Uncalibrated Simulations}
