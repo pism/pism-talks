@@ -16,39 +16,14 @@
 }
 
 % load packages
-\usepackage{media9}
 \usepackage[english]{babel}
 \usepackage[multidot]{grffile}
 
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
 \usetikzlibrary{shadows}
 
-\definecolor{dark red}{HTML}{E41A1C}
-\definecolor{dark green}{HTML}{4DAF4A}
-\definecolor{dark violet}{HTML}{984EA3}
-\definecolor{dark blue}{HTML}{084594}
-\definecolor{dark orange}{HTML}{FF7F00}
-\definecolor{light blue}{HTML}{377EB8}
-\definecolor{light red}{HTML}{FB9A99}
-\definecolor{light violet}{HTML}{CAB2D6}
-
-\setbeamercolor{boxed}{fg=black,bg=light blue!25}
 \graphicspath{{figures/}{../2022_04_igs/figures/}{../figures/}{../figures_2018_08/}{../2021_09_cph/figures/}{../2021_11_geo/figures/}}
 
-
-\newcommand{\jl}{[\![}
-\newcommand{\jr}{]\!\hskip 0.003cm ]}
-\newcommand{\bpsi}{\boldsymbol{\psi}}
-\newcommand{\bPsi}{\boldsymbol{\Psi}}
-\newcommand{\bphi}{\boldsymbol{\phi}}
-\newcommand{\bPhi}{\boldsymbol{\Phi}}
-\newcommand{\bn}{\mathbf{n}}
-\newcommand{\bq}{\mathbf{q}}
-\newcommand{\bv}{\mathbf{v}}
-\newcommand{\D}{\,\mathrm{d}}
-\newcommand{\Tsnow}{T_{\text{snow}}}
-\newcommand{\Hatm}{H_{\text l}^{\text{atm}}}
 
 \newcommand{\mathtext}[1]{\mathsf{#1}}
 
@@ -133,7 +108,7 @@ Dept Computer Science, University of Montana, Missoula}
 
 \begin{frame}{2-step Probabilistic Calibration}
   \begin{figure}
-    \includegraphics<1>[width=8cm]{slr-probability}    
+    \includegraphics<1>[width=10cm]{slr-probability}    
   \end{figure}
 \begin{equation*}
 P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
@@ -170,47 +145,9 @@ P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
   \vspace{-1.5em}
     \begin{minipage}[t][8.2cm][t]{\textwidth}
     \begin{figure}
-      \includegraphics[height=8cm]{surrogate_model_clean}
+      \includegraphics[height=8cm]{surrogate_model_all_pism}
     \end{figure}
     \end{minipage}
-\end{frame}
-
-\begin{frame}{}
-  \vspace{-1.5em}
-    \begin{minipage}[t][8.2cm][t]{\textwidth}
-    \begin{figure}
-      \includegraphics[height=8cm]{surrogate_model_1}
-    \end{figure}
-    \end{minipage}
-\end{frame}
-
-\begin{frame}{}
-  \vspace{-1.5em}
-    \begin{minipage}[t][8.2cm][t]{\textwidth}
-    \begin{figure}
-      \includegraphics[height=8cm]{surrogate_model_2}
-    \end{figure}
-    \end{minipage}
-\end{frame}
-
-\begin{frame}{}
-  \vspace{-1.5em}
-    \begin{minipage}[t][8.2cm][t]{\textwidth}
-    \begin{figure}
-      \includegraphics[height=8cm]{surrogate_model_3}
-    \end{figure}
-    \end{minipage}
-\end{frame}
-
-
-
-\begin{frame}{3. Surrogate Model: dimensionality reduction}
-  \vspace{-0.5em}
-  \begin{minipage}[t][10cm][t]{\textwidth}
-    \begin{figure}
-      \includegraphics<1>[width=.75\textwidth]{surrogate_model_pca}
-    \end{figure}
-  \end{minipage}
 \end{frame}
 
 
@@ -220,23 +157,6 @@ P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
   \end{figure}
 \end{frame}
 
-\begin{frame}{4. Sampling}
-  \vspace{-1.5em}
-    \begin{minipage}[t][8.2cm][t]{\textwidth}
-    \begin{figure}
-      \includegraphics[height=8cm]{surrogate_model_4_mala}
-    \end{figure}
-    \end{minipage}
-\end{frame}
-
-\begin{frame}{5. Posterior Distributions}
-  \vspace{-1.5em}
-    \begin{minipage}[t][8.2cm][t]{\textwidth}
-    \begin{figure}
-      \includegraphics[height=8cm]{surrogate_model_5}
-    \end{figure}
-    \end{minipage}
-\end{frame}
 
 \begin{frame}{Uncalibrated Simulations}
 \begin{columns}[c]
