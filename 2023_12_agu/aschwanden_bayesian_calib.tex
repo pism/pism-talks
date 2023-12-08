@@ -41,8 +41,7 @@ Dept Computer Science, University of Montana, Missoula}
 
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
-\titlegraphic{\includegraphics[height=2.5cm]{jib_temperature_forcing_1980_2020_green}\\[.25em]\includegraphics[height=1.cm]{iHARP-Logo_Transparent}\includegraphics[height=1.cm]{NSF_logo_color}\includegraphics[height=1.cm]{nasa-logo}}
-
+\titlegraphic{\includegraphics[height=2.5cm]{jib_temperature_forcing_1980_2020_green}\\[.25em]\includegraphics[height=1.cm]{GI_logo_color}\hskip2em\includegraphics[height=1.cm]{iHARP-Logo_Transparent}\hskip2em\includegraphics[height=1.cm]{NSF_logo_color}\hskip2em\includegraphics[height=1.cm]{nasa-logo}\hskip2em\includegraphics[height=.75cm]{university_of_montana_logo}}
 
 \date{}
 
@@ -67,38 +66,34 @@ Dept Computer Science, University of Montana, Missoula}
 
   
 \begin{frame}[noframenumbering]
-    \begin{minipage}[t][6cm][t]{\textwidth}
+    \begin{minipage}[t][5.25cm][t]{\textwidth}
   \begin{figure}
-    \includegraphics[width=.75\textwidth]{GIS_historical}    
-    \caption{\tiny{Aschwanden, Brinkerhoff, Bartholomaus \& Truffer (2021)}}
+    \includegraphics[width=.75\textwidth]{GIS_historical}\\[-1em]
+    {\tiny{Aschwanden, Brinkerhoff, Bartholomaus \& Truffer (2021)}}
   \end{figure}
     \end{minipage}
     \begin{minipage}[t][3.5cm][t]{\textwidth}
-    Uncertainties due to
+    \textbf{Uncertainties} due to
         \begin{columns}[c]
-    \begin{column}{.25\textwidth}
+    \begin{column}{.18\textwidth}
 \begin{itemize}\setlength\itemsep{.25em}
     \item \alert{Parameters}
     \item Models
 \end{itemize}
     \end{column}
-    \begin{column}{.65\textwidth}
+    \begin{column}{.4\textwidth}
 \begin{itemize}\setlength\itemsep{.25em}
     \item Forcing
     \item Initial State (Poster by A. Pohle, C51D-0982)
 \end{itemize}
     \end{column}
+    \begin{column}{.25\textwidth}
+    \includegraphics[width=.75\textwidth]{pohle_poster_agu_2023}    
+    \end{column}
   \end{columns}
     \end{minipage}
 \end{frame}
 
-%% \begin{frame}{}
-%%     \begin{minipage}[t][8cm][t]{\textwidth}
-%%     \begin{figure}
-%%       \includegraphics<1>[height=8cm]{sle_pdf_w_obs_2020_2100}
-%%     \end{figure}
-%%     \end{minipage}
-%% \end{frame}
 
 % insert titlepage
 \begin{frame}
@@ -157,13 +152,6 @@ P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
     \end{figure}
     \end{minipage}
 \end{frame}
-
-
-%% \begin{frame}{3. Surrogate Model: implementation}
-%%   \begin{figure}
-%%     \includegraphics[width=\textwidth]{neural-network-pytorch}
-%%   \end{figure}
-%% \end{frame}
 
 
 \begin{frame}{Uncalibrated Simulations}
