@@ -3,7 +3,17 @@ Ice sheet models have come a long way in the past two decades. However, challeng
 Today, I'd like to introduce a probabilistic method to reduce uncertainties in parameters
 I'd like to show how we can use Bayesian calibration to ensure that model simulations agree observations. For this project I have been collaborating with my colleagues Mark Fahenstock, also from UAF and part of iHARP, and with Doug Brinkerhoff from the University of Montana in Missoula. Should you like the the concepts I'm presenting here I'd like to point out the Doug is the mastermind behind our approach. If you don't like it, I'll take the blame.
 
-I'm neither the first to talk about Bayesian calibration for ice sheet models nor do I claim our method is particularly ingenious. Quite the contrary, I'm going to use basic concepts from Bayesian statistics and from Machine Learning that many of you are familiar with. 
+I'm neither the first to talk about Bayesian calibration for ice sheet models nor do I claim our method is particularly ingenious. Quite the contrary, I'm going to use basic concepts from Bayesian statistics and from Machine Learning that many of you are familiar with.
+
+Calibrating sea-level projections using observations can greatly reduce the variance and correct the bias. Let's start with a prior. In this case we use the 500-member ensemble projections from our paper in 2019, which start in 2008. However, there is nothing special about our prior, any large ensemble can be calibrated.
+The left column shows observed and simulated cumulative mass loss at 2020 in cm sea-level equivalent. For observations, we use the reconciled balance from the Ice Sheet Mass Balance Intercomparison Experiment (IMBIE). The mean is the solid black line, and the dashed black lines mark two standard deviations.
+Our projections are grouped into the three RCP scenarios 2.6, 4.5, and 8.5. At 2020, the pathways have not yet diverged, and the projections are the same.
+At the top of each plot the percentiles are shown. The solid black line is the median. Comparing the 5/95th percentiles of the projections to the two sigmas of the observations, we note the large variance and the bias. Our prior projections over-estimate cumulative mass loss at 2020.
+Now if w look at the posterior, which are the calibrated projections, we note that both bias and variance are greatly reduced. Observed mean and posterior median agree well.
+How does this translate into projections at 2100?
+
+
+
 Our goal is to calculate the probability of a contribution to sea-level by 2100, denoted here by Delta 2100, given data D, that is, observations, an ice sheet model H, and climate forcing F. We can split this into a projection and a calibration period. We will focus on calibration and use a two step method. First we will calibrate some model parameters and in the second step we will use particle filtering to cull an ensemble of simulations.
 
 Which targets should be use for calibration? A natural choice is the quantity of interest. In our case, we want to predict mass loss, so we use mass change.

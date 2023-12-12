@@ -41,7 +41,7 @@ Dept Computer Science, University of Montana, Missoula}
 
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
-\titlegraphic{\includegraphics[height=2.5cm]{jib_temperature_forcing_1980_2020_green}\\[.25em]\includegraphics[height=1.cm]{GI_logo_color}\hskip2em\includegraphics[height=1.cm]{iHARP-Logo_Transparent}\hskip2em\includegraphics[height=1.cm]{NSF_logo_color}\hskip2em\includegraphics[height=1.cm]{nasa-logo}\hskip2em\includegraphics[height=.75cm]{university_of_montana_logo}}
+\titlegraphic{\vspace{-2em}\includegraphics[height=2.5cm]{jib_temperature_forcing_1980_2020_green}\\[.25em]\includegraphics[height=1.cm]{GI_logo_color}\hskip1em\includegraphics[height=1.cm]{iHARP-Logo_Transparent}\hskip1em\includegraphics[height=1.cm]{NSF_logo_color}\hskip1em\includegraphics[height=1.cm]{nasa-logo}\hskip1em\includegraphics[height=.75cm]{university_of_montana_logo}}
 
 \date{}
 
@@ -104,6 +104,21 @@ Dept Computer Science, University of Montana, Missoula}
   {
 }
 
+\begin{frame}{Calibrated 2100 Projections}
+        \begin{columns}[c]
+    \begin{column}{.8\textwidth}
+    \begin{figure}
+      \includegraphics[height=7.cm]{sle_pdf_prior_posterior_w_obs_2020_2100}
+    \end{figure}
+    \end{column}
+    \begin{column}{.25\textwidth}
+\begin{itemize}\setlength\itemsep{.25em}
+    \item AS19: Aschwanden et al (2019)
+\end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 
 \begin{frame}{2-step Probabilistic Calibration}
   \begin{figure}
@@ -143,12 +158,11 @@ P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
 \end{frame}
 
 
-
-\begin{frame}{}
+\begin{frame}{Workflow}
   \vspace{-1.5em}
-    \begin{minipage}[t][8.2cm][t]{\textwidth}
+    \begin{minipage}[t][7.25cm][t]{\textwidth}
     \begin{figure}
-      \includegraphics[height=8cm]{surrogate_model_all_pism}
+      \includegraphics[height=7.25cm]{surrogate_model_all_pism}
     \end{figure}
     \end{minipage}
 \end{frame}
@@ -225,14 +239,20 @@ P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
   \end{columns}
 \end{frame}
 
-
-
 \begin{frame}{Calibrated 2100 Projections}
+        \begin{columns}[c]
+    \begin{column}{.8\textwidth}
     \begin{figure}
-      \includegraphics[height=7.75cm]{sle_pdf_w_obs_2020_2100}
+      \includegraphics[height=7.cm]{sle_pdf_prior_posterior_w_obs_2020_2100}
     \end{figure}
+    \end{column}
+    \begin{column}{.25\textwidth}
+\begin{itemize}\setlength\itemsep{.25em}
+    \item AS19: Aschwanden et al (2019)
+\end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
-
 
 
 \end{document}
