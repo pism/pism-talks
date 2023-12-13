@@ -168,19 +168,6 @@ P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
 \end{frame}
 
 
-\begin{frame}{Uncalibrated Simulations}
-\begin{columns}[c]
-    \begin{column}{.5\textwidth}
-      \begin{figure}
-        \includegraphics<1>[height=7.5cm]{sle_pdf_w_obs_as19_2020.pdf}
-    \end{figure}
-    \end{column}
-    \begin{column}{.5\textwidth}
-    \end{column}
-  \end{columns}
-
-\end{frame}
-
 
 \begin{frame}{Flow Calibration}
 \begin{columns}[c]
@@ -195,10 +182,10 @@ P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
   \end{figure}
 
   \begin{itemize}
-  \item<1> create 500 samples from posterior
-  \item<1> rerun PISM 500x, wait
-  \item<2> get new projections conditioned on surface speeds
-  \item<2> find reduced variance
+  \item create 500 samples from posterior
+  \item rerun PISM 500x, wait
+  \item get new projections conditioned on surface speeds
+  \item find reduced variance
   \end{itemize}
     \end{column}
   \end{columns}
@@ -222,23 +209,6 @@ P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
   \end{itemize}
 \end{frame}
 
-
-\begin{frame}{Posterior distributions}
-  \begin{columns}[c]
-    \begin{column}{.5\textwidth}
-      \begin{figure}
-        \includegraphics[height=7.75cm]{sle_pdf_w_obs_calibrated_2020.pdf}
-      \end{figure}
-    \end{column}
-    \begin{column}{.5\textwidth}
-      \begin{itemize}
-      \item fully calibrated posterior agrees well with observations (IMBIE)
-      \item (which is by design)
-      \end{itemize}
-    \end{column}
-  \end{columns}
-\end{frame}
-
 \begin{frame}{Calibrated 2100 Projections}
         \begin{columns}[c]
     \begin{column}{.8\textwidth}
@@ -254,5 +224,10 @@ P\left(\Delta_{2100} | \mathbf{D}, \mathcal{H}, \mathcal{F} \right)
   \end{columns}
 \end{frame}
 
+\begin{frame}{Validation}
+    \begin{figure}
+      \includegraphics[width=.75\textwidth]{historical_partitioning_calibrated}
+    \end{figure}
+\end{frame}
 
 \end{document}
