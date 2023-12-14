@@ -1,13 +1,17 @@
-I hope by now, most if not all of you are aware that the recent generation of ice sheet models struggled with reproducing historical mass loss. Uncertainties in mass loss projections arise from uncertainties in model parameters, from model uncertainty, from the climate forcing, and from the initial state.
+Uncertainties in mass loss projections arise from uncertainties in model parameters, from model uncertainty, from the climate forcing, and from the initial state.
 
-If you are interested in how we can improve initial states, I suggest to visit the poster of Annegret Pohle this afternoon.
-In this talk, I'd like to introduce a probabilistic calibration method to ensure that model simulations agree observations. I'm neither the first to talk about Bayesian calibration for ice sheet models nor do I claim our method is particularly ingenious. Quite the contrary, I'm going to use basic concepts from Bayesian statistics and from Machine Learning that many of you are familiar with.
+If you are interested in how we can improve initial states, I suggest to visit the poster of Annegret Pohle tomorrow morning
+.
+In this talk, I'd like to introduce a probabilistic calibration method to ensure that historical model simulations agree observations. Of course I'm not the first to use Bayesian calibration for ice sheet models. And I do hope I'm not the last one
 
-Calibrating sea-level projections using observations can greatly reduce the variance and correct the bias. Let's start with a prior. In this case we use the 500-member ensemble projections from our paper in 2019. This ensemble started in 2008. However, there is nothing special about our prior, any large ensemble can be calibrated.
-The left column shows observed and simulated cumulative mass loss at 2020 in cm sea-level equivalent. For observations, we use the reconciled mass balance from the Ice Sheet Mass Balance Intercomparison Experiment (IMBIE). The mean is the solid black line, and the dashed black lines mark two standard deviations.
+Since we only have 10 minutes, Here are the results
+Calibrating sea-level projections using observations can greatly reduce the variance and correct the bias.
+To get started we need a prior. In this case we use the 500-member ensemble projections from our paper in 2019. However, there is nothing special about our choice of prior, any large ensemble can be calibrated.
+The left column shows observed and simulated cumulative mass loss between 2008 abd 2020 in cm sea-level equivalent. For observations, we use the reconciled mass balance from the Ice Sheet Mass Balance Intercomparison Experiment (IMBIE). The mean is the solid black line, and the dashed black lines mark two standard deviations.
 Our projections are grouped into the three RCP scenarios 2.6, 4.5, and 8.5. At 2020, the pathways have not yet diverged, and the projections are the same.
-At the top of each plot the percentiles are shown. The solid black line is the median. Comparing the 5/95th percentiles of the projections to the two sigmas of the observations, we note the large variance and the large bias. Our prior projections over-estimate cumulative mass loss at 2020.
-Now if ww look at the posteriors, which are the calibrated projections, we note that both bias and variance are greatly reduced. Observed mean and posterior median agree well.
+The plot shows both the kernel density estimates and different percentiles.
+Comparing the 5/95th percentiles of the projections to the two sigmas of the observations, we note the large variance and the large bias. Our prior projections over-estimate cumulative mass loss at 2020.
+Now if we look at the posteriors, which are the calibrated projections, we note that both bias and variance are greatly reduced. Observed mean and posterior median agree well.
 How does this translate into projections at 2100?
 Again the uncalibrated projections show a large variance. After calibration, the posterior projections show less variance and the median is lower, too.
 
@@ -18,7 +22,7 @@ Which targets should be use for calibration? A natural choice is the quantity of
 
 Another good target are surface speeds because uncertainties in ice flow parameters contribute significantly to uncertainties in future mass loss.
 
-The workflow is the following. First we need an ice sheet model. For now we are using the Parallel Ice Sheet Model or PISM. Again nothing special about PISM, and any other ice sheet model could be used. We then generate training data with PISM. To do this, we selected 8 parameters which stronglhy control how ice flow. We drew 1,000 samples from this 8-dimensional parameter space, and ran PISM 1,000 times, once for each parameter combination. This gives us 1,000 surface speeds fields.
+The workflow is the following. First we need an ice sheet model. For now we are using the Parallel Ice Sheet Model or PISM. Again nothing special about PISM, and any other ice sheet model could be used. We then generate training data with PISM. To do this, we selected 8 parameters which strongly control how ice flow. We drew 1,000 samples from this 8-dimensional parameter space, and ran PISM 1,000 times, once for each parameter combination. This gives us 1,000 surface speeds fields.
 
 We then used those surface speeds fields to train a surrogate model. Or surrogate models, to be more precise.
 
@@ -26,15 +30,16 @@ To reduce the dimensionality of the problem, we performed a principal component 
 
 Then we trained a 4 layer Neural Network on the principal components. To reduce overfitting, we actually created 50 surrogate models with slighlty different weights to form a committee. The model is implemented in PyTorch-Lightning and can be trained on GPUs.
 
-For all parameters, we set Beta priors and then sample the parameter space given observed surface speeds. Here we use a manifold Metropolis Adjusted Languevin Algorithm with a variable step size. This can also be done on GPUs. This gives us the  posterior distributions of our parameters.
+For all parameters, we set Beta priors and then sample the parameter space given observed surface speeds. Here we use variant of the  manifold Metropolis Adjusted Languevin Algorithm with a variable step size. This can also be done on GPUs. This gives us the  posterior distributions of our parameters.
 
-Then we created a new ensemble by drawing 500 samples from the posterior distributions and ran PISM with these 500 samples. The new "flow" calibrated simulations show much better agreement with observations.
+Then we created a new ensemble by drawing 500 samples from the posterior distributions and we ran PISM with these 500 samples. The new "flow" calibrated simulations show much better agreement with observations.
 
 The second calibration step is the particle filtering, also known as Bayesian calibration or importance sampling. Here we weigh members based on their likelihood relative to observations of mass change. Then we resample simulations proportionally to the likelihood to create a new ensemble that is consistent with respect to both the observations of surface speed and mass change.
 
-This fully calibrated ensemble now produced mass loss in agreement with observations, which is by design.
+This fully calibrated ensemble now shows cumulative loss in agreement with observations, which is by design.
 
 Taking that fully calibrated ensemble and running it out to 2100 brings us back to the slide I showed earlier.
 We find that compared to the uncalibrated prior simulations, the variance is reduced as well as the bias.
 
-To make sure that the calibrated ensemble does not agree with observations for the completely wrong reasons, we also compared the ensemble's ice discharge and surface mass balance to IMBIE. And in the calibrated case, both agree well.
+To make sure that the calibrated ensemble does not agree with observations for the completely wrong reasons, we also compared the ensemble's ice discharge and surface mass balance to IMBIE. You can see that the flow calibration does a good job in reigning in the simulated ice discharge.
+And in the calibrated case, both agree well.
